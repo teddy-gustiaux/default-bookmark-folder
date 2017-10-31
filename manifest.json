@@ -9,11 +9,29 @@
 
   "permissions": [
     "bookmarks",
-    "tabs"
+    "tabs",
+    "storage"
   ],
 
+  "icons": {
+    "48": "icons/default-bookmark-folder-48.png",
+    "96": "icons/default-bookmark-folder-96.png"
+  },
+
   "background": {
-    "scripts": ["dbf.js"]
+    "scripts": ["default-bookmark-folder.js"]
+  },
+
+  "options_ui": {
+    "page": "options/options.html",
+    "browser_style": true
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "default-bookmark-folder-188abd8a59116a380c082e4f76899ebc",
+      "strict_min_version": "57"
+    }
   }
 
 }
