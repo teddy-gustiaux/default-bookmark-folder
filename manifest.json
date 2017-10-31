@@ -29,7 +29,7 @@
 
   "applications": {
     "gecko": {
-      "id": "default-bookmark-folder-188abd8a59116a380c082e4f76899ebc",
+      "id": "default-bookmark-folder@temporary-id.org",
       "strict_min_version": "57"
     }
   }
