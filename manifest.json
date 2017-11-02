@@ -9,9 +9,16 @@
 
   "permissions": [
     "bookmarks",
+    "activeTab",
     "tabs",
     "storage"
   ],
+
+  "page_action": {
+    "default_icon": "icons/star-button-empty-48.png",
+    "default_title": "Bookmark it!",
+    "browser_style": true
+  },
 
   "icons": {
     "48": "icons/default-bookmark-folder-48.png",
