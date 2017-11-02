@@ -1,16 +1,19 @@
-function onMoved(bookmarkItem) {
-}
-
-function onRejected(error) {
-    console.log(`An error occurred: ${error}`);
-}
+/*
+ * ================================================================================
+ * OVERRIDING DEFAULT BOOKMARK FOLDER
+ * ================================================================================
+ */
 
 function handleCreated(id, bookmarkInfo) {
-    var gettingFolder = browser.storage.sync.get("folder");
-    gettingFolder.then((res) => {
-        if (res.folder !== undefined) {
-            var movingBookmark = browser.bookmarks.move(id, {parentId: res.folder});
-            movingBookmark.then(onMoved, onRejected);
+    var gettingOverride = browser.storage.sync.get("override");
+    gettingOverride.then((res) => {
+        if (res.override === true) {
+            var gettingFolder = browser.storage.sync.get("folder");
+            gettingFolder.then((res) => {
+                if (res.folder !== undefined) {
+                    browser.bookmarks.move(id, {parentId: res.folder});
+                }
+            });
         }
     });
 }
