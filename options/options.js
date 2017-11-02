@@ -24,7 +24,7 @@ function restoreOptions() {
 }
 
 function makeIndent(indentLength) {
-    return "-".repeat(indentLength);
+    return "\xA0\xA0".repeat(indentLength);
 }
 
 function buildItems(bookmarkItem, indent) {
