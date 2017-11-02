@@ -11,7 +11,8 @@ function saveOptions(e) {
     browser.storage.sync.set({
         folder: document.querySelector("#folder").value,
         override: document.querySelector("#override").checked,
-        icon: document.querySelector("#icon").checked
+        icon: document.querySelector("#icon").checked,
+        inbox: document.querySelector("#inbox").checked
     });
     e.preventDefault();
 }
@@ -30,6 +31,10 @@ function restoreOptions() {
     var gettingIcon = browser.storage.sync.get("icon");
     gettingIcon.then((res) => {
         if (res.icon !== undefined) document.querySelector("#icon").checked =  res.icon;
+    });
+    var gettingInbox= browser.storage.sync.get("inbox");
+    gettingInbox.then((res) => {
+        if (res.inbox !== undefined) document.querySelector("#inbox").checked =  res.inbox;
     });
 }
 
