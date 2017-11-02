@@ -45,7 +45,7 @@ function buildItems(bookmarkItem, indent) {
         }
     }
     if (bookmarkItem.children) {
-        for (child of bookmarkItem.children) {
+        for (var child of bookmarkItem.children) {
             buildItems(child, indent);
         }
     }
