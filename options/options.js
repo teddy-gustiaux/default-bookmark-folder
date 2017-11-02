@@ -58,7 +58,7 @@ function buildTree(bookmarkItems) {
 }
 
 function onRejected(error) {
-    console.log(`An error occured: ${error}`);
+    console.log(`An error occurred: ${error}`);
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
