@@ -9,7 +9,9 @@ function setOption(selectElement, value) {
 
 function saveOptions(e) {
     browser.storage.sync.set({
-        folder: document.querySelector("#folder").value
+        folder: document.querySelector("#folder").value,
+        override: document.querySelector("#override").checked,
+        icon: document.querySelector("#icon").checked
     });
     e.preventDefault();
 }
@@ -17,9 +19,17 @@ function saveOptions(e) {
 function restoreOptions() {
     var gettingTree = browser.bookmarks.getTree();
     gettingTree.then(buildTree, onRejected);
-    var gettingItem = browser.storage.sync.get("folder");
-    gettingItem.then((res) => {
+    var gettingFolder= browser.storage.sync.get("folder");
+    gettingFolder.then((res) => {
         if (res.folder !== undefined) setOption(document.querySelector("#folder"), res.folder);
+    });
+    var gettingOverride = browser.storage.sync.get("override");
+    gettingOverride.then((res) => {
+        if (res.override !== undefined) document.querySelector("#override").checked =  res.override;
+    });
+    var gettingIcon = browser.storage.sync.get("icon");
+    gettingIcon.then((res) => {
+        if (res.icon !== undefined) document.querySelector("#icon").checked =  res.icon;
     });
 }
 

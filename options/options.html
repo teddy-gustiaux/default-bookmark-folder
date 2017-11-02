@@ -3,15 +3,20 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="options.css"/>
 </head>
 
 <body>
 <form>
-    <label>Select the default bookmark folder:</label>
-    <select id="folder">
-        <option selected value="none">No folder selected</option>
-    </select>
-    <button type="submit">Save</button>
+    <section class="options">
+        <label class="title">Select the default bookmark folder:&nbsp;</label>
+        <select id="folder">
+            <option selected value="none">No folder selected</option>
+        </select>
+        <label class="title">Override default location:&nbsp;<input type="checkbox" id="override" class="switch"/></label>
+        <label class="title">Add dedicated bookmark icon:&nbsp;<input type="checkbox" id="icon" class="switch"/></label>
+        <button type="submit">Save</button>
+    </section>
 </form>
 <script src="options.js"></script>
 </body>
