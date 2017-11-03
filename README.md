@@ -2,9 +2,17 @@
 # Default bookmark folder
 
 ![LOGO](https://github.com/teddy-gustiaux/default-bookmark-folder/raw/master/icons/default-bookmark-folder-24.png)
-**WebExtension allowing you to choose the default bookmark location folder.**
+**WebExtension allowing you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon.**
 
-*This is a work in progress. Please don't hesitate to come back for updates!*
+### How to use
+
+*In the extension settings:*
+
+1. Select the new default folder for bookmarks.
+2. (Optional) Enable the "quick bookmark" icon option.
+This will activate the round star icon (next to the regular bookmark icon), to (un)bookmark a page with only one click. If the current page is bookmarked, the icon color will change to red.  
+3. (Optional) Enable the use of the icon indicator only for bookmarks in the default folder.
+In other words, the icon will only show the current page as bookmarked if the said bookmark is in the default folder.
 
 ### Attribution
 
