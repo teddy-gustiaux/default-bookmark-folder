@@ -105,7 +105,6 @@ function updateActiveTab() {
                         searching = browser.bookmarks.search(currentTab.url);
                     }
                     searching.then((bookmarks) => {
-                        // Only proceed if exactly one match
                         if (bookmarks.length === 1) {
                             currentBookmark = bookmarks[0];
                             // Only proceed if bookmark matches current tab address
@@ -119,8 +118,13 @@ function updateActiveTab() {
                             } else {
                                 currentBookmark = undefined;
                             }
-                        } else {
+                        } else if (bookmarks.length === 0) {
+                            // No bookmarks
                             currentBookmark = undefined;
+                        } else if (bookmarks.length > 1) {
+                            // Duplicate bookmarks
+                            currentBookmark = undefined;
+                            browser.pageAction.hide(currentTab.id);
                         }
                         updateIcon();
                     });
