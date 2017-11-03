@@ -1,3 +1,30 @@
+/*
+ * ================================================================================
+ * CONSTANTS
+ * ================================================================================
+ */
+
+const OPTIONS_FOLDER = "folder";
+const OPTIONS_OVERRIDE = "override";
+const OPTIONS_ICON = "icon";
+const OPTIONS_INBOX = "inbox";
+
+const QUERY_FOLDER = "#" + OPTIONS_FOLDER;
+const QUERY_OVERRIDE = "#" + OPTIONS_OVERRIDE;
+const QUERY_ICON = "#" + OPTIONS_ICON;
+const QUERY_INBOX = "#" + OPTIONS_INBOX;
+
+const UNNAMED_FOLDER = "[no name]";
+
+/*
+ * ================================================================================
+ * FUNCTIONS
+ * ================================================================================
+ */
+
+/*
+ * Sets the selection option in a <select> element
+ */
 function setOption(selectElement, value) {
     return [...selectElement.options].some((option, index) => {
         if (option.value === value) {
@@ -7,50 +34,53 @@ function setOption(selectElement, value) {
     });
 }
 
+/*
+ * Saves the options form
+ */
 function saveOptions(e) {
     browser.storage.sync.set({
-        folder: document.querySelector("#folder").value,
-        override: document.querySelector("#override").checked,
-        icon: document.querySelector("#icon").checked,
-        inbox: document.querySelector("#inbox").checked
+        folder: document.querySelector(QUERY_FOLDER).value,
+        override: document.querySelector(QUERY_OVERRIDE).checked,
+        icon: document.querySelector(QUERY_ICON).checked,
+        inbox: document.querySelector(QUERY_INBOX).checked
     });
     e.preventDefault();
 }
 
+/*
+ * Restores the extension options
+ */
 function restoreOptions() {
     var gettingTree = browser.bookmarks.getTree();
     gettingTree.then(buildTree, onRejected);
-    var gettingFolder= browser.storage.sync.get("folder");
+    var gettingFolder= browser.storage.sync.get([OPTIONS_OVERRIDE,OPTIONS_FOLDER,OPTIONS_ICON,OPTIONS_INBOX]);
     gettingFolder.then((res) => {
-        if (res.folder !== undefined) setOption(document.querySelector("#folder"), res.folder);
-    });
-    var gettingOverride = browser.storage.sync.get("override");
-    gettingOverride.then((res) => {
-        if (res.override !== undefined) document.querySelector("#override").checked =  res.override;
-    });
-    var gettingIcon = browser.storage.sync.get("icon");
-    gettingIcon.then((res) => {
-        if (res.icon !== undefined) document.querySelector("#icon").checked =  res.icon;
-    });
-    var gettingInbox= browser.storage.sync.get("inbox");
-    gettingInbox.then((res) => {
-        if (res.inbox !== undefined) document.querySelector("#inbox").checked =  res.inbox;
+        if (res[OPTIONS_FOLDER] !== undefined) setOption(document.querySelector(QUERY_FOLDER), res[OPTIONS_FOLDER]);
+        if (res[OPTIONS_OVERRIDE] !== undefined) document.querySelector(QUERY_OVERRIDE).checked =  res[OPTIONS_OVERRIDE];
+        if (res[OPTIONS_ICON] !== undefined) document.querySelector(QUERY_ICON).checked =  res[OPTIONS_ICON];
+        if (res[OPTIONS_INBOX] !== undefined) document.querySelector(QUERY_INBOX).checked =  res[OPTIONS_INBOX];
     });
 }
 
+/*
+ * Adds an unbreakable space for indentation
+ */
 function makeIndent(indentLength) {
     return "\xA0\xA0".repeat(indentLength);
 }
 
+/*
+ * Builds the <select> options from the bookmarks tree
+ */
 function buildItems(bookmarkItem, indent) {
     if (!bookmarkItem.url) {
         if (!bookmarkItem.title && indent === 0) {
             // Root of the bookmark tree
         } else {
-            var select = document.querySelector("#folder");
+            var select = document.querySelector(QUERY_FOLDER);
             var displayName;
             if (!bookmarkItem.title) {
-                displayName = "(no name)";
+                displayName = UNNAMED_FOLDER;
             } else {
                 displayName = bookmarkItem.title;
             }
@@ -67,14 +97,22 @@ function buildItems(bookmarkItem, indent) {
     indent--;
 }
 
-
+/*
+ * Builds the bookmarks tree
+ */
 function buildTree(bookmarkItems) {
     buildItems(bookmarkItems[0], 0);
 }
 
+/*
+ * Logs errors to the console
+ */
 function onRejected(error) {
     console.log(`An error occurred: ${error}`);
 }
 
+// Listen for loading of the options page
 document.addEventListener('DOMContentLoaded', restoreOptions);
+
+// Listen for saving of the options page
 document.querySelector("form").addEventListener("submit", saveOptions);
