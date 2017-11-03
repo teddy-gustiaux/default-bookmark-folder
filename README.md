@@ -4,6 +4,10 @@
 ![LOGO](https://github.com/teddy-gustiaux/default-bookmark-folder/raw/master/icons/default-bookmark-folder-24.png)
 **WebExtension allowing you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon.**
 
+<a href="https://addons.mozilla.org/en-US/firefox/addon/default-bookmark-folder/">
+<img border="0" src="https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_1.png" width="172" height="60">
+</a>
+
 ### How to use
 
 *In the extension settings:*
