@@ -1,5 +1,5 @@
 body {
-    width: 55%;
+    width: 60%;
     font-family: "Open Sans", sans-serif;
     font-size: 1em;
     font-weight: 300;
@@ -39,6 +39,7 @@ section.options select {
 label {
     display: block;
     padding: 0.2em 0;
+    margin-top: 1.2em;
 }
 
 label:hover {
@@ -48,6 +49,11 @@ label:hover {
 .title {
     font-size: 1.2em;
     margin-bottom: 0.5em;
+}
+
+.note {
+    font-size: 0.9em;
+    font-style: italic;
 }
 
 input[type="checkbox"].switch{
