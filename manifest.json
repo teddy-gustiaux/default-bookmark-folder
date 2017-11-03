@@ -4,7 +4,7 @@
   "author": "Teddy Gustiaux",
   "version": "1.0",
 
-  "description": "Allows you to choose the default bookmark location folder.",
+  "description": "Allows you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon.",
   "homepage_url": "https://github.com/teddy-gustiaux/default-bookmark-folder",
 
   "permissions": [
@@ -36,8 +36,8 @@
 
   "applications": {
     "gecko": {
-      "id": "default-bookmark-folder@temporary-id.org",
-      "strict_min_version": "57"
+      "id": "default-bookmark-folder@gustiaux.com",
+      "strict_min_version": "56"
     }
   }
 
