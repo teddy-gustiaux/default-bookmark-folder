@@ -1,5 +1,16 @@
 /*
  * ================================================================================
+ * CONSTANTS
+ * ================================================================================
+ */
+
+const OPTIONS_FOLDER = "folder";
+const OPTIONS_OVERRIDE = "override";
+const OPTIONS_ICON = "icon";
+const OPTIONS_INBOX = "inbox";
+
+/*
+ * ================================================================================
  * OVERRIDING DEFAULT BOOKMARK FOLDER
  * ================================================================================
  */
@@ -8,16 +19,11 @@
  * Moves the bookmark to the specified folder (if option activated)
  */
 function handleCreated(id, bookmarkInfo) {
-    var gettingOverride = browser.storage.sync.get("override");
+    var gettingOverride = browser.storage.sync.get([OPTIONS_OVERRIDE, OPTIONS_FOLDER]);
     gettingOverride.then((res) => {
-        if (res.hasOwnProperty('override') && res.override === true) {
-            var gettingFolder = browser.storage.sync.get("folder");
-            gettingFolder.then((res) => {
-                if (res.folder !== undefined) {
-                    browser.bookmarks.move(id, {parentId: res.folder});
-                }
-            });
-        }
+        if (res.hasOwnProperty(OPTIONS_OVERRIDE) && res[OPTIONS_OVERRIDE] === true) {
+            if (res[OPTIONS_FOLDER] !== undefined) browser.bookmarks.move(id, {parentId: res[OPTIONS_FOLDER]});
+            }
     });
 }
 
@@ -62,10 +68,10 @@ function toggleBookmark(tab) {
     if (currentBookmark) {
         browser.bookmarks.remove(currentBookmark.id);
     } else {
-        var gettingFolder = browser.storage.sync.get("folder");
+        var gettingFolder = browser.storage.sync.get(OPTIONS_FOLDER);
         gettingFolder.then((res) => {
-            if (res.folder !== undefined) {
-                browser.bookmarks.create({title: currentTab.title, url: currentTab.url, parentId: res.folder});
+            if (res[OPTIONS_FOLDER] !== undefined) {
+                browser.bookmarks.create({title: currentTab.title, url: currentTab.url, parentId: res[OPTIONS_FOLDER]});
             } else {
                 browser.bookmarks.create({title: currentTab.title, url: currentTab.url});
             }
@@ -86,29 +92,45 @@ function updateActiveTab() {
     }
 
     function updateTab(tabs) {
-        if (tabs[0]) {
-            currentTab = tabs[0];
-            browser.pageAction.show(currentTab.id);
-            var searching;
-            if (isSupportedProtocol(currentTab.url)) {
-                searching = browser.bookmarks.search({url: currentTab.url});
-            } else {
-                searching = browser.bookmarks.search(currentTab.url);
-            }
-            searching.then((bookmarks) => {
-                // Only proceed if exactly one match
-                if (bookmarks.length === 1) {
-                    currentBookmark = bookmarks[0];
-                    if (currentBookmark.url === currentTab.url) {
+        var gettingIcon = browser.storage.sync.get([OPTIONS_ICON, OPTIONS_FOLDER, OPTIONS_INBOX]);
+        gettingIcon.then((res) => {
+            if (tabs[0]) {
+                currentTab = tabs[0];
+                if (res.hasOwnProperty(OPTIONS_ICON) && res[OPTIONS_ICON] === true) {
+                    browser.pageAction.show(currentTab.id);
+                    var searching;
+                    if (isSupportedProtocol(currentTab.url)) {
+                        searching = browser.bookmarks.search({url: currentTab.url});
                     } else {
-                        currentBookmark = undefined;
+                        searching = browser.bookmarks.search(currentTab.url);
                     }
+                    searching.then((bookmarks) => {
+                        // Only proceed if exactly one match
+                        if (bookmarks.length === 1) {
+                            currentBookmark = bookmarks[0];
+                            // Only proceed if bookmark matches current tab address
+                            if (currentBookmark.url === currentTab.url) {
+                                if (res.hasOwnProperty(OPTIONS_INBOX) && res[OPTIONS_INBOX] === true) {
+                                    // Only keep current bookmark if it is in the default location
+                                    if (res[OPTIONS_FOLDER] === undefined || currentBookmark.parentId !== res[OPTIONS_FOLDER]) {
+                                        currentBookmark = undefined;
+                                    }
+                                }
+                            } else {
+                                currentBookmark = undefined;
+                            }
+                        } else {
+                            currentBookmark = undefined;
+                        }
+                        updateIcon();
+                    });
                 } else {
                     currentBookmark = undefined;
+                    browser.pageAction.hide(currentTab.id);
+                    updateIcon();
                 }
-                updateIcon();
-            });
-        }
+            }
+        });
     }
 
     var gettingActiveTab = browser.tabs.query({active: true, currentWindow: true});
@@ -123,6 +145,9 @@ browser.bookmarks.onCreated.addListener(updateActiveTab);
 
 // Listen for bookmarks being removed
 browser.bookmarks.onRemoved.addListener(updateActiveTab);
+
+// Listen for bookmarks being moved
+browser.bookmarks.onMoved.addListener(updateActiveTab);
 
 // Listen to tab URL changes
 browser.tabs.onUpdated.addListener(updateActiveTab);
