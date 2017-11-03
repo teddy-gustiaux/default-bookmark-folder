@@ -13,9 +13,10 @@
 *In the extension settings:*
 
 1. Select the new default folder for bookmarks.
-2. (Optional) Enable the "quick bookmark" icon option.
+2. Enable the override of the default location.
+3. (Optional) Enable the "quick bookmark" icon option.
 This will activate the round star icon (next to the regular bookmark icon), to (un)bookmark a page with only one click. If the current page is bookmarked, the icon color will change to red.  
-3. (Optional) Enable the use of the icon indicator only for bookmarks in the default folder.
+4. (Optional) Enable the use of the icon indicator only for bookmarks in the default folder.
 In other words, the icon will only show the current page as bookmarked if the said bookmark is in the default folder.
 
 ### Attribution
