@@ -15,8 +15,8 @@
   ],
 
   "page_action": {
-    "default_icon": "icons/star-button-empty-48.png",
-    "default_title": "Bookmark it!",
+    "default_icon": "icons/cross-48.png",
+    "default_title": "The icon is disabled. Enable it in the add-on settings.",
     "browser_style": true
   },
 

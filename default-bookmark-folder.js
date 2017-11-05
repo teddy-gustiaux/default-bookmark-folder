@@ -46,22 +46,37 @@ var currentBookmark;
  * Updates the browserAction icon to reflect whether the current page
  * is already bookmarked.
  */
-function updateIcon() {
-    browser.pageAction.setIcon({
-        path: currentBookmark ? {
-            32: "icons/star-button-32.png",
-            48: "icons/star-button-48.png"
-        } : {
-            32: "icons/star-button-empty-32.png",
-            48: "icons/star-button-empty-48.png"
-        },
-        tabId: currentTab.id
-    });
-    browser.pageAction.setTitle({
-        // Screen readers can see the title
-        title: currentBookmark ? 'Unbookmark it!' : 'Bookmark it!',
-        tabId: currentTab.id
-    });
+function updateIcon(iconEnabled) {
+    if (iconEnabled === true) {
+        browser.pageAction.setIcon({
+            path: currentBookmark ? {
+                32: "icons/star-button-32.png",
+                48: "icons/star-button-48.png"
+            } : {
+                32: "icons/star-button-empty-32.png",
+                48: "icons/star-button-empty-48.png"
+            },
+            tabId: currentTab.id
+        });
+        browser.pageAction.setTitle({
+            // Screen readers can see the title
+            title: currentBookmark ? 'Unbookmark it!' : 'Bookmark it!',
+            tabId: currentTab.id
+        });
+    } else {
+        browser.pageAction.setIcon({
+            path: {
+                32: "icons/cross-32.png",
+                48: "icons/cross-48.png"
+            },
+            tabId: currentTab.id
+        });
+        browser.pageAction.setTitle({
+            // Screen readers can see the title
+            title: 'The icon is disabled. Enable it in the add-on settings.',
+            tabId: currentTab.id
+        });
+    }
 }
 
 /*
@@ -129,12 +144,12 @@ function updateActiveTab() {
                             currentBookmark = undefined;
                             browser.pageAction.hide(currentTab.id);
                         }
-                        updateIcon();
+                        updateIcon(true);
                     });
                 } else {
                     currentBookmark = undefined;
                     browser.pageAction.hide(currentTab.id);
-                    updateIcon();
+                    updateIcon(false);
                 }
             }
         });
