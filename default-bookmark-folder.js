@@ -19,12 +19,15 @@ const OPTIONS_INBOX = "inbox";
  * Moves the bookmark to the specified folder (if option activated)
  */
 function handleCreated(id, bookmarkInfo) {
-    var gettingOverride = browser.storage.sync.get([OPTIONS_OVERRIDE, OPTIONS_FOLDER]);
-    gettingOverride.then((res) => {
-        if (res.hasOwnProperty(OPTIONS_OVERRIDE) && res[OPTIONS_OVERRIDE] === true) {
-            if (res[OPTIONS_FOLDER] !== undefined) browser.bookmarks.move(id, {parentId: res[OPTIONS_FOLDER]});
-            }
-    });
+    // Only process bookmarks (not folders)
+    if (bookmarkInfo.hasOwnProperty("url") && bookmarkInfo.url !== undefined) {
+        var gettingOverride = browser.storage.sync.get([OPTIONS_OVERRIDE, OPTIONS_FOLDER]);
+        gettingOverride.then((res) => {
+            if (res.hasOwnProperty(OPTIONS_OVERRIDE) && res[OPTIONS_OVERRIDE] === true) {
+                if (res[OPTIONS_FOLDER] !== undefined) browser.bookmarks.move(id, {parentId: res[OPTIONS_FOLDER]});
+                }
+        });
+    }
 }
 
 // Listen for bookmarks being created
