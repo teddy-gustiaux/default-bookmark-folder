@@ -51,15 +51,23 @@ function saveOptions(e) {
  * Restores the extension options
  */
 function restoreOptions() {
+
+    function updateOptions(bookmarkItems) {
+        buildTree(bookmarkItems);
+        var gettingFolder= browser.storage.local.get([OPTIONS_OVERRIDE,OPTIONS_FOLDER,OPTIONS_ICON,OPTIONS_INBOX]);
+        gettingFolder.then((res) => {
+            if (res[OPTIONS_FOLDER] !== undefined) {
+                setOption(document.querySelector(QUERY_FOLDER), res[OPTIONS_FOLDER]);
+            }
+            if (res[OPTIONS_OVERRIDE] !== undefined) document.querySelector(QUERY_OVERRIDE).checked =  res[OPTIONS_OVERRIDE];
+            if (res[OPTIONS_ICON] !== undefined) document.querySelector(QUERY_ICON).checked =  res[OPTIONS_ICON];
+            if (res[OPTIONS_INBOX] !== undefined) document.querySelector(QUERY_INBOX).checked =  res[OPTIONS_INBOX];
+        });
+    }
+
     var gettingTree = browser.bookmarks.getTree();
-    gettingTree.then(buildTree, onRejected);
-    var gettingFolder= browser.storage.local.get([OPTIONS_OVERRIDE,OPTIONS_FOLDER,OPTIONS_ICON,OPTIONS_INBOX]);
-    gettingFolder.then((res) => {
-        if (res[OPTIONS_FOLDER] !== undefined) setOption(document.querySelector(QUERY_FOLDER), res[OPTIONS_FOLDER]);
-        if (res[OPTIONS_OVERRIDE] !== undefined) document.querySelector(QUERY_OVERRIDE).checked =  res[OPTIONS_OVERRIDE];
-        if (res[OPTIONS_ICON] !== undefined) document.querySelector(QUERY_ICON).checked =  res[OPTIONS_ICON];
-        if (res[OPTIONS_INBOX] !== undefined) document.querySelector(QUERY_INBOX).checked =  res[OPTIONS_INBOX];
-    });
+    gettingTree.then(updateOptions, onRejected);
+
 }
 
 /*
