@@ -9,6 +9,8 @@ const OPTIONS_OVERRIDE = "override";
 const OPTIONS_ICON = "icon";
 const OPTIONS_INBOX = "inbox";
 
+const FOLDER_NONE = "none";
+
 /*
  * ================================================================================
  * OVERRIDING DEFAULT BOOKMARK FOLDER
@@ -21,11 +23,13 @@ const OPTIONS_INBOX = "inbox";
 function handleCreated(id, bookmarkInfo) {
     // Only process bookmarks (not folders)
     if (bookmarkInfo.hasOwnProperty("url") && bookmarkInfo.url !== undefined) {
-        var gettingOverride = browser.storage.sync.get([OPTIONS_OVERRIDE, OPTIONS_FOLDER]);
+        var gettingOverride = browser.storage.local.get([OPTIONS_OVERRIDE, OPTIONS_FOLDER]);
         gettingOverride.then((res) => {
             if (res.hasOwnProperty(OPTIONS_OVERRIDE) && res[OPTIONS_OVERRIDE] === true) {
-                if (res[OPTIONS_FOLDER] !== undefined) browser.bookmarks.move(id, {parentId: res[OPTIONS_FOLDER]});
+                if (res[OPTIONS_FOLDER] !== undefined && res[OPTIONS_FOLDER] !== FOLDER_NONE) {
+                    browser.bookmarks.move(id, {parentId: res[OPTIONS_FOLDER]});
                 }
+            }
         });
     }
 }
@@ -86,9 +90,9 @@ function toggleBookmark(tab) {
     if (currentBookmark) {
         browser.bookmarks.remove(currentBookmark.id);
     } else {
-        var gettingFolder = browser.storage.sync.get(OPTIONS_FOLDER);
+        var gettingFolder = browser.storage.local.get(OPTIONS_FOLDER);
         gettingFolder.then((res) => {
-            if (res[OPTIONS_FOLDER] !== undefined) {
+            if (res[OPTIONS_FOLDER] !== undefined && res[OPTIONS_FOLDER] !== FOLDER_NONE) {
                 browser.bookmarks.create({title: currentTab.title, url: currentTab.url, parentId: res[OPTIONS_FOLDER]});
             } else {
                 browser.bookmarks.create({title: currentTab.title, url: currentTab.url});
@@ -110,7 +114,7 @@ function updateActiveTab() {
     }
 
     function updateTab(tabs) {
-        var gettingIcon = browser.storage.sync.get([OPTIONS_ICON, OPTIONS_FOLDER, OPTIONS_INBOX]);
+        var gettingIcon = browser.storage.local.get([OPTIONS_ICON, OPTIONS_FOLDER, OPTIONS_INBOX]);
         gettingIcon.then((res) => {
             if (tabs[0]) {
                 currentTab = tabs[0];

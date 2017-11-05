@@ -38,7 +38,7 @@ function setOption(selectElement, value) {
  * Saves the options form
  */
 function saveOptions(e) {
-    browser.storage.sync.set({
+    browser.storage.local.set({
         folder: document.querySelector(QUERY_FOLDER).value,
         override: document.querySelector(QUERY_OVERRIDE).checked,
         icon: document.querySelector(QUERY_ICON).checked,
@@ -53,7 +53,7 @@ function saveOptions(e) {
 function restoreOptions() {
     var gettingTree = browser.bookmarks.getTree();
     gettingTree.then(buildTree, onRejected);
-    var gettingFolder= browser.storage.sync.get([OPTIONS_OVERRIDE,OPTIONS_FOLDER,OPTIONS_ICON,OPTIONS_INBOX]);
+    var gettingFolder= browser.storage.local.get([OPTIONS_OVERRIDE,OPTIONS_FOLDER,OPTIONS_ICON,OPTIONS_INBOX]);
     gettingFolder.then((res) => {
         if (res[OPTIONS_FOLDER] !== undefined) setOption(document.querySelector(QUERY_FOLDER), res[OPTIONS_FOLDER]);
         if (res[OPTIONS_OVERRIDE] !== undefined) document.querySelector(QUERY_OVERRIDE).checked =  res[OPTIONS_OVERRIDE];
