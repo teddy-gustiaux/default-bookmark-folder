@@ -21,16 +21,18 @@ const FOLDER_NONE = "none";
  * Moves the bookmark to the specified folder (if option activated)
  */
 function handleCreated(id, bookmarkInfo) {
-    // Only process bookmarks (not folders)
-    if (bookmarkInfo.hasOwnProperty("url") && bookmarkInfo.url !== undefined) {
-        var gettingOverride = browser.storage.local.get([OPTIONS_OVERRIDE, OPTIONS_FOLDER]);
-        gettingOverride.then((res) => {
-            if (res.hasOwnProperty(OPTIONS_OVERRIDE) && res[OPTIONS_OVERRIDE] === true) {
-                if (res[OPTIONS_FOLDER] !== undefined && res[OPTIONS_FOLDER] !== FOLDER_NONE) {
-                    browser.bookmarks.move(id, {parentId: res[OPTIONS_FOLDER]});
+    // Only process bookmarks (not folders or separators) with an actual URL
+    if (bookmarkInfo.type === "bookmark" && bookmarkInfo.hasOwnProperty("url")) {
+        if (bookmarkInfo.url !== undefined && bookmarkInfo.url !== "about:blank") {
+            var gettingOverride = browser.storage.local.get([OPTIONS_OVERRIDE, OPTIONS_FOLDER]);
+            gettingOverride.then((res) => {
+                if (res.hasOwnProperty(OPTIONS_OVERRIDE) && res[OPTIONS_OVERRIDE] === true) {
+                    if (res[OPTIONS_FOLDER] !== undefined && res[OPTIONS_FOLDER] !== FOLDER_NONE) {
+                        browser.bookmarks.move(id, {parentId: res[OPTIONS_FOLDER]});
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 }
 
