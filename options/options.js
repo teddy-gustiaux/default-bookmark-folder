@@ -8,11 +8,13 @@ const OPTIONS_FOLDER = "folder";
 const OPTIONS_OVERRIDE = "override";
 const OPTIONS_ICON = "icon";
 const OPTIONS_INBOX = "inbox";
+const OPTIONS_ADDTOTOP = "addtotop";
 
 const QUERY_FOLDER = "#" + OPTIONS_FOLDER;
 const QUERY_OVERRIDE = "#" + OPTIONS_OVERRIDE;
 const QUERY_ICON = "#" + OPTIONS_ICON;
 const QUERY_INBOX = "#" + OPTIONS_INBOX;
+const QUERY_ADDTOTOP = "#" + OPTIONS_ADDTOTOP;
 
 const UNNAMED_FOLDER = "[no name]";
 
@@ -42,7 +44,8 @@ function saveOptions(e) {
         folder: document.querySelector(QUERY_FOLDER).value,
         override: document.querySelector(QUERY_OVERRIDE).checked,
         icon: document.querySelector(QUERY_ICON).checked,
-        inbox: document.querySelector(QUERY_INBOX).checked
+        inbox: document.querySelector(QUERY_INBOX).checked,
+        addtotop: document.querySelector(QUERY_ADDTOTOP).checked
     });
     e.preventDefault();
 }
@@ -54,7 +57,7 @@ function restoreOptions() {
 
     function updateOptions(bookmarkItems) {
         buildTree(bookmarkItems);
-        var gettingFolder= browser.storage.local.get([OPTIONS_OVERRIDE,OPTIONS_FOLDER,OPTIONS_ICON,OPTIONS_INBOX]);
+        var gettingFolder= browser.storage.local.get([OPTIONS_OVERRIDE,OPTIONS_FOLDER,OPTIONS_ICON,OPTIONS_INBOX,OPTIONS_ADDTOTOP]);
         gettingFolder.then((res) => {
             if (res[OPTIONS_FOLDER] !== undefined) {
                 setOption(document.querySelector(QUERY_FOLDER), res[OPTIONS_FOLDER]);
@@ -62,6 +65,7 @@ function restoreOptions() {
             if (res[OPTIONS_OVERRIDE] !== undefined) document.querySelector(QUERY_OVERRIDE).checked =  res[OPTIONS_OVERRIDE];
             if (res[OPTIONS_ICON] !== undefined) document.querySelector(QUERY_ICON).checked =  res[OPTIONS_ICON];
             if (res[OPTIONS_INBOX] !== undefined) document.querySelector(QUERY_INBOX).checked =  res[OPTIONS_INBOX];
+            if (res[OPTIONS_ADDTOTOP] !== undefined) document.querySelector(QUERY_ADDTOTOP).checked =  res[OPTIONS_ADDTOTOP];
         });
     }
 
