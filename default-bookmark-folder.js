@@ -12,6 +12,60 @@ const OPTIONS_ADDTOTOP = "addtotop";
 
 const FOLDER_NONE = "none";
 
+const OPTIONS_ARRAY = [ OPTIONS_FOLDER, OPTIONS_OVERRIDE, OPTIONS_ICON, OPTIONS_INBOX, OPTIONS_ADDTOTOP ];
+
+/*
+ * ================================================================================
+ * UTILITIES
+ * ================================================================================
+ */
+
+/*
+ * Indicates if the override settings has been enabled and a folder selected
+ */
+function isNewLocationSet(options) {
+    var isSet = false;
+    if (options.hasOwnProperty(OPTIONS_OVERRIDE) && options[OPTIONS_OVERRIDE] === true) {
+        if (options[OPTIONS_FOLDER] !== undefined && options[OPTIONS_FOLDER] !== FOLDER_NONE) {
+            isSet = true;
+        }
+    }
+    return isSet;
+}
+
+/*
+ * Indicates if the "quick bookmark" icon has been enabled
+ */
+function quickBookmarkMode(options) {
+    var isEnabled = false;
+    if (options.hasOwnProperty(OPTIONS_ICON) && options[OPTIONS_ICON] === true) {
+        isEnabled = true;
+    }
+    return isEnabled;
+}
+
+/*
+ * Indicates if the "inbox mode" has been enabled
+ */
+function inboxMode(options) {
+    var isEnabled = false;
+    if (options.hasOwnProperty(OPTIONS_INBOX) && options[OPTIONS_INBOX] === true) {
+        isEnabled = true;
+    }
+    return isEnabled;
+}
+
+/*
+ * Indicates if the "add to top of folder mode" has been enabled
+ */
+function addToTopMode(options) {
+    var isEnabled = false;
+    if (options.hasOwnProperty(OPTIONS_ADDTOTOP) && options[OPTIONS_ADDTOTOP] === true) {
+        isEnabled = true;
+    }
+    return isEnabled;
+}
+
 /*
  * ================================================================================
  * OVERRIDING DEFAULT BOOKMARK FOLDER
@@ -25,17 +79,20 @@ function handleCreated(id, bookmarkInfo) {
     // Only process bookmarks (not folders or separators) with an actual URL
     if (bookmarkInfo.type === "bookmark" && bookmarkInfo.hasOwnProperty("url")) {
         if (bookmarkInfo.url !== undefined && bookmarkInfo.url !== "about:blank") {
-            var gettingOverride = browser.storage.local.get([OPTIONS_OVERRIDE, OPTIONS_FOLDER, OPTIONS_ADDTOTOP]);
-            gettingOverride.then((res) => {
-                if (res.hasOwnProperty(OPTIONS_OVERRIDE) && res[OPTIONS_OVERRIDE] === true) {
-                    if (res[OPTIONS_FOLDER] !== undefined && res[OPTIONS_FOLDER] !== FOLDER_NONE) {
-                        if (res[OPTIONS_ADDTOTOP] !== undefined ) {
-                            browser.bookmarks.move(id, {parentId: res[OPTIONS_FOLDER], index: 0});
-                        } else {
-                            browser.bookmarks.move(id, {parentId: res[OPTIONS_FOLDER]});
-                        }
-                    }
+
+            var gettingOptions = browser.storage.local.get(OPTIONS_ARRAY);
+            gettingOptions.then((options) => {
+
+                var bookmarkTreeNode = {};
+
+                if (isNewLocationSet(options)) {
+                    bookmarkTreeNode.parentId = options[OPTIONS_FOLDER];
                 }
+                if (addToTopMode(options)) {
+                    bookmarkTreeNode.index = 0;
+                }
+
+                browser.bookmarks.move(id, bookmarkTreeNode);
             });
         }
     }
@@ -97,14 +154,8 @@ function toggleBookmark(tab) {
     if (currentBookmark) {
         browser.bookmarks.remove(currentBookmark.id);
     } else {
-        var gettingFolder = browser.storage.local.get(OPTIONS_FOLDER);
-        gettingFolder.then((res) => {
-            if (res[OPTIONS_FOLDER] !== undefined && res[OPTIONS_FOLDER] !== FOLDER_NONE) {
-                browser.bookmarks.create({title: currentTab.title, url: currentTab.url, parentId: res[OPTIONS_FOLDER]});
-            } else {
-                browser.bookmarks.create({title: currentTab.title, url: currentTab.url});
-            }
-        });
+        // Create the bookmark (will toggle the handleCreated listener callback function)
+        browser.bookmarks.create({title: currentTab.title, url: currentTab.url});
     }
 }
 
@@ -121,11 +172,11 @@ function updateActiveTab() {
     }
 
     function updateTab(tabs) {
-        var gettingIcon = browser.storage.local.get([OPTIONS_ICON, OPTIONS_FOLDER, OPTIONS_INBOX]);
-        gettingIcon.then((res) => {
+        var gettingOptions = browser.storage.local.get(OPTIONS_ARRAY);
+        gettingOptions.then((options) => {
             if (tabs[0]) {
                 currentTab = tabs[0];
-                if (res.hasOwnProperty(OPTIONS_ICON) && res[OPTIONS_ICON] === true) {
+                if (quickBookmarkMode(options)) {
                     browser.pageAction.show(currentTab.id);
                     var searching;
                     if (isSupportedProtocol(currentTab.url)) {
@@ -138,9 +189,9 @@ function updateActiveTab() {
                             currentBookmark = bookmarks[0];
                             // Only proceed if bookmark matches current tab address
                             if (currentBookmark.url === currentTab.url) {
-                                if (res.hasOwnProperty(OPTIONS_INBOX) && res[OPTIONS_INBOX] === true) {
+                                if (inboxMode(options)) {
                                     // Only keep current bookmark if it is in the default location
-                                    if (res[OPTIONS_FOLDER] === undefined || currentBookmark.parentId !== res[OPTIONS_FOLDER]) {
+                                    if (options[OPTIONS_FOLDER] === undefined || currentBookmark.parentId !== options[OPTIONS_FOLDER]) {
                                         currentBookmark = undefined;
                                     }
                                 }

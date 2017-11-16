@@ -18,6 +18,8 @@ const QUERY_ADDTOTOP = "#" + OPTIONS_ADDTOTOP;
 
 const UNNAMED_FOLDER = "[no name]";
 
+const OPTIONS_ARRAY = [ OPTIONS_FOLDER, OPTIONS_OVERRIDE, OPTIONS_ICON, OPTIONS_INBOX, OPTIONS_ADDTOTOP ];
+
 /*
  * ================================================================================
  * FUNCTIONS
@@ -57,8 +59,8 @@ function restoreOptions() {
 
     function updateOptions(bookmarkItems) {
         buildTree(bookmarkItems);
-        var gettingFolder= browser.storage.local.get([OPTIONS_OVERRIDE,OPTIONS_FOLDER,OPTIONS_ICON,OPTIONS_INBOX,OPTIONS_ADDTOTOP]);
-        gettingFolder.then((res) => {
+        var gettingOptions= browser.storage.local.get(OPTIONS_ARRAY);
+        gettingOptions.then((res) => {
             if (res[OPTIONS_FOLDER] !== undefined) {
                 setOption(document.querySelector(QUERY_FOLDER), res[OPTIONS_FOLDER]);
             }
