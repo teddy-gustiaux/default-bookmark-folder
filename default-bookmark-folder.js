@@ -165,7 +165,7 @@ function toggleBookmark(tab) {
 function updateActiveTab() {
 
     function isSupportedProtocol(urlString) {
-        var supportedProtocols = ["https:", "http:", "ftp:", "file:"];
+        var supportedProtocols = ["https:", "http:"];
         var url = document.createElement('a');
         url.href = urlString;
         return supportedProtocols.indexOf(url.protocol) != -1;
