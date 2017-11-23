@@ -67,6 +67,13 @@ function addToTopMode(options) {
 }
 
 /*
+ * Logs errors to the console
+ */
+function onError(error) {
+    console.log(`An error occurred: ${error}`);
+}
+
+/*
  * ================================================================================
  * OVERRIDING DEFAULT BOOKMARK FOLDER
  * ================================================================================
@@ -93,7 +100,7 @@ function handleCreated(id, bookmarkInfo) {
                 }
 
                 browser.bookmarks.move(id, bookmarkTreeNode);
-            });
+            }, onError);
         }
     }
 }
@@ -207,18 +214,18 @@ function updateActiveTab() {
                             browser.pageAction.hide(currentTab.id);
                         }
                         updateIcon(true);
-                    });
+                    }, onError);
                 } else {
                     currentBookmark = undefined;
                     browser.pageAction.hide(currentTab.id);
                     updateIcon(false);
                 }
             }
-        });
+        }, onError);
     }
 
     var gettingActiveTab = browser.tabs.query({active: true, currentWindow: true});
-    gettingActiveTab.then(updateTab);
+    gettingActiveTab.then(updateTab, onError);
 }
 
 // Listen for clicks on the button

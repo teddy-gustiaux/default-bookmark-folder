@@ -107,7 +107,7 @@ function restoreOptions() {
             if (res[OPTIONS_INBOX] !== undefined) document.querySelector(QUERY_INBOX).checked =  res[OPTIONS_INBOX];
             if (res[OPTIONS_ADDTOTOP] !== undefined) document.querySelector(QUERY_ADDTOTOP).checked =  res[OPTIONS_ADDTOTOP];
             (res[MISC_TAB] !== undefined) ? switchTab(res[MISC_TAB]) : switchTab(TAB_DEFAULT_NUMBER);
-        });
+        }, onError);
     }
 
     var gettingTree = browser.bookmarks.getTree();
