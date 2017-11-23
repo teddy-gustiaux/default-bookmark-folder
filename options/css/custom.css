@@ -1,0 +1,11 @@
+body {
+    padding: 2rem;
+}
+
+#tab_container .container_item {
+    display: none;
+}
+
+#tab_container .container_item.is-active {
+    display: block;
+}
