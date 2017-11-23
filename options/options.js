@@ -1,5 +1,43 @@
 /*
  * ================================================================================
+ * TAB MANAGEMENT
+ * ================================================================================
+ */
+
+var TAB_DEFAULT_NUMBER = 1;
+
+function tabManagement() {
+
+    var menuTabs = document.querySelectorAll('.tab_menu');
+
+    Array.from(menuTabs).forEach(link => {
+        link.addEventListener('click', function (event) {
+            var tabNumber = this.dataset.tab;
+            switchTab(tabNumber);
+        });
+    });
+}
+
+function switchTab(number) {
+    var tabs = document.querySelectorAll('.tab_menu');
+    Array.from(tabs).forEach(tabItem => {
+        tabItem.classList.remove('is-active');
+    });
+    document.querySelector("[data-tab='" + number + "']").classList.add('is-active');
+
+    var containers = document.querySelectorAll('.container_item');
+    Array.from(containers).forEach(containerItem => {
+        containerItem.classList.remove('is-active');
+    });
+    document.querySelector("[data-item='" + number + "']").classList.add('is-active');
+
+    browser.storage.local.set({
+        tab: number
+    }).then(null, onError);
+}
+
+/*
+ * ================================================================================
  * CONSTANTS
  * ================================================================================
  */
@@ -17,8 +55,9 @@ const QUERY_INBOX = "#" + OPTIONS_INBOX;
 const QUERY_ADDTOTOP = "#" + OPTIONS_ADDTOTOP;
 
 const UNNAMED_FOLDER = "[no name]";
+const MISC_TAB = "tab";
 
-const OPTIONS_ARRAY = [ OPTIONS_FOLDER, OPTIONS_OVERRIDE, OPTIONS_ICON, OPTIONS_INBOX, OPTIONS_ADDTOTOP ];
+const OPTIONS_ARRAY = [ OPTIONS_FOLDER, OPTIONS_OVERRIDE, OPTIONS_ICON, OPTIONS_INBOX, OPTIONS_ADDTOTOP, MISC_TAB ];
 
 /*
  * ================================================================================
@@ -48,8 +87,7 @@ function saveOptions(e) {
         icon: document.querySelector(QUERY_ICON).checked,
         inbox: document.querySelector(QUERY_INBOX).checked,
         addtotop: document.querySelector(QUERY_ADDTOTOP).checked
-    });
-    e.preventDefault();
+    }).then(null, onError);
 }
 
 /*
@@ -68,11 +106,12 @@ function restoreOptions() {
             if (res[OPTIONS_ICON] !== undefined) document.querySelector(QUERY_ICON).checked =  res[OPTIONS_ICON];
             if (res[OPTIONS_INBOX] !== undefined) document.querySelector(QUERY_INBOX).checked =  res[OPTIONS_INBOX];
             if (res[OPTIONS_ADDTOTOP] !== undefined) document.querySelector(QUERY_ADDTOTOP).checked =  res[OPTIONS_ADDTOTOP];
+            (res[MISC_TAB] !== undefined) ? switchTab(res[MISC_TAB]) : switchTab(TAB_DEFAULT_NUMBER);
         });
     }
 
     var gettingTree = browser.bookmarks.getTree();
-    gettingTree.then(updateOptions, onRejected);
+    gettingTree.then(updateOptions, onError);
 
 }
 
@@ -121,12 +160,13 @@ function buildTree(bookmarkItems) {
 /*
  * Logs errors to the console
  */
-function onRejected(error) {
+function onError(error) {
     console.log(`An error occurred: ${error}`);
 }
 
 // Listen for loading of the options page
 document.addEventListener('DOMContentLoaded', restoreOptions);
+document.addEventListener('DOMContentLoaded', tabManagement);
 
 // Listen for saving of the options page
-document.querySelector("form").addEventListener("submit", saveOptions);
+document.querySelector("#tab_container").addEventListener("change", saveOptions);
