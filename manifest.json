@@ -26,7 +26,7 @@
   },
 
   "background": {
-    "scripts": ["default-bookmark-folder.js"]
+    "scripts": ["background.js"]
   },
 
   "options_ui": {
