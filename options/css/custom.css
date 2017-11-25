@@ -1,11 +1,11 @@
 body {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 #tab_container .container_item {
-    display: none;
+  display: none;
 }
 
 #tab_container .container_item.is-active {
-    display: block;
+  display: block;
 }

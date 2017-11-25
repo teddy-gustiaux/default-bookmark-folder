@@ -8,32 +8,32 @@ var TAB_DEFAULT_NUMBER = 1;
 
 function tabManagement() {
 
-    var menuTabs = document.querySelectorAll('.tab_menu');
+  var menuTabs = document.querySelectorAll('.tab_menu');
 
-    Array.from(menuTabs).forEach(link => {
-        link.addEventListener('click', function (event) {
-            var tabNumber = this.dataset.tab;
-            switchTab(tabNumber);
-        });
+  Array.from(menuTabs).forEach(link => {
+    link.addEventListener('click', function (event) {
+      var tabNumber = this.dataset.tab;
+      switchTab(tabNumber);
     });
+  });
 }
 
 function switchTab(number) {
-    var tabs = document.querySelectorAll('.tab_menu');
-    Array.from(tabs).forEach(tabItem => {
-        tabItem.classList.remove('is-active');
-    });
-    document.querySelector("[data-tab='" + number + "']").classList.add('is-active');
+  var tabs = document.querySelectorAll('.tab_menu');
+  Array.from(tabs).forEach(tabItem => {
+    tabItem.classList.remove('is-active');
+  });
+  document.querySelector("[data-tab='" + number + "']").classList.add('is-active');
 
-    var containers = document.querySelectorAll('.container_item');
-    Array.from(containers).forEach(containerItem => {
-        containerItem.classList.remove('is-active');
-    });
-    document.querySelector("[data-item='" + number + "']").classList.add('is-active');
+  var containers = document.querySelectorAll('.container_item');
+  Array.from(containers).forEach(containerItem => {
+    containerItem.classList.remove('is-active');
+  });
+  document.querySelector("[data-item='" + number + "']").classList.add('is-active');
 
-    browser.storage.local.set({
-        tab: number
-    }).then(null, onError);
+  browser.storage.local.set({
+    tab: number
+  }).then(null, onError);
 }
 
 /*
@@ -57,7 +57,7 @@ const QUERY_ADDTOTOP = "#" + OPTIONS_ADDTOTOP;
 const UNNAMED_FOLDER = "[no name]";
 const MISC_TAB = "tab";
 
-const OPTIONS_ARRAY = [ OPTIONS_FOLDER, OPTIONS_OVERRIDE, OPTIONS_ICON, OPTIONS_INBOX, OPTIONS_ADDTOTOP, MISC_TAB ];
+const OPTIONS_ARRAY = [OPTIONS_FOLDER, OPTIONS_OVERRIDE, OPTIONS_ICON, OPTIONS_INBOX, OPTIONS_ADDTOTOP, MISC_TAB];
 
 /*
  * ================================================================================
@@ -69,25 +69,25 @@ const OPTIONS_ARRAY = [ OPTIONS_FOLDER, OPTIONS_OVERRIDE, OPTIONS_ICON, OPTIONS_
  * Sets the selection option in a <select> element
  */
 function setOption(selectElement, value) {
-    return [...selectElement.options].some((option, index) => {
-        if (option.value === value) {
-            selectElement.selectedIndex = index;
-            return true;
-        }
-    });
+  return [...selectElement.options].some((option, index) => {
+    if (option.value === value) {
+      selectElement.selectedIndex = index;
+      return true;
+    }
+  });
 }
 
 /*
  * Saves the options form
  */
 function saveOptions(e) {
-    browser.storage.local.set({
-        folder: document.querySelector(QUERY_FOLDER).value,
-        override: document.querySelector(QUERY_OVERRIDE).checked,
-        icon: document.querySelector(QUERY_ICON).checked,
-        inbox: document.querySelector(QUERY_INBOX).checked,
-        addtotop: document.querySelector(QUERY_ADDTOTOP).checked
-    }).then(null, onError);
+  browser.storage.local.set({
+    folder: document.querySelector(QUERY_FOLDER).value,
+    override: document.querySelector(QUERY_OVERRIDE).checked,
+    icon: document.querySelector(QUERY_ICON).checked,
+    inbox: document.querySelector(QUERY_INBOX).checked,
+    addtotop: document.querySelector(QUERY_ADDTOTOP).checked
+  }).then(null, onError);
 }
 
 /*
@@ -95,23 +95,23 @@ function saveOptions(e) {
  */
 function restoreOptions() {
 
-    function updateOptions(bookmarkItems) {
-        buildTree(bookmarkItems);
-        var gettingOptions= browser.storage.local.get(OPTIONS_ARRAY);
-        gettingOptions.then((res) => {
-            if (res[OPTIONS_FOLDER] !== undefined) {
-                setOption(document.querySelector(QUERY_FOLDER), res[OPTIONS_FOLDER]);
-            }
-            if (res[OPTIONS_OVERRIDE] !== undefined) document.querySelector(QUERY_OVERRIDE).checked =  res[OPTIONS_OVERRIDE];
-            if (res[OPTIONS_ICON] !== undefined) document.querySelector(QUERY_ICON).checked =  res[OPTIONS_ICON];
-            if (res[OPTIONS_INBOX] !== undefined) document.querySelector(QUERY_INBOX).checked =  res[OPTIONS_INBOX];
-            if (res[OPTIONS_ADDTOTOP] !== undefined) document.querySelector(QUERY_ADDTOTOP).checked =  res[OPTIONS_ADDTOTOP];
-            (res[MISC_TAB] !== undefined) ? switchTab(res[MISC_TAB]) : switchTab(TAB_DEFAULT_NUMBER);
-        }, onError);
-    }
+  function updateOptions(bookmarkItems) {
+    buildTree(bookmarkItems);
+    var gettingOptions = browser.storage.local.get(OPTIONS_ARRAY);
+    gettingOptions.then((res) => {
+      if (res[OPTIONS_FOLDER] !== undefined) {
+        setOption(document.querySelector(QUERY_FOLDER), res[OPTIONS_FOLDER]);
+      }
+      if (res[OPTIONS_OVERRIDE] !== undefined) document.querySelector(QUERY_OVERRIDE).checked = res[OPTIONS_OVERRIDE];
+      if (res[OPTIONS_ICON] !== undefined) document.querySelector(QUERY_ICON).checked = res[OPTIONS_ICON];
+      if (res[OPTIONS_INBOX] !== undefined) document.querySelector(QUERY_INBOX).checked = res[OPTIONS_INBOX];
+      if (res[OPTIONS_ADDTOTOP] !== undefined) document.querySelector(QUERY_ADDTOTOP).checked = res[OPTIONS_ADDTOTOP];
+      (res[MISC_TAB] !== undefined) ? switchTab(res[MISC_TAB]) : switchTab(TAB_DEFAULT_NUMBER);
+    }, onError);
+  }
 
-    var gettingTree = browser.bookmarks.getTree();
-    gettingTree.then(updateOptions, onError);
+  var gettingTree = browser.bookmarks.getTree();
+  gettingTree.then(updateOptions, onError);
 
 }
 
@@ -119,49 +119,49 @@ function restoreOptions() {
  * Adds an unbreakable space for indentation
  */
 function makeIndent(indentLength) {
-    return "\xA0\xA0".repeat(indentLength);
+  return "\xA0\xA0".repeat(indentLength);
 }
 
 /*
  * Builds the <select> options from the bookmarks tree
  */
 function buildItems(bookmarkItem, indent) {
-    if (!bookmarkItem.url) {
-        if (!bookmarkItem.title && indent === 0) {
-            // Root of the bookmark tree
-        } else {
-            var select = document.querySelector(QUERY_FOLDER);
-            var displayName;
-            if (!bookmarkItem.title) {
-                displayName = UNNAMED_FOLDER;
-            } else {
-                displayName = bookmarkItem.title;
-            }
-            var key = makeIndent(indent) + displayName;
-            select.options[select.options.length] = new Option(key, bookmarkItem.id);
-            indent++;
-        }
+  if (!bookmarkItem.url) {
+    if (!bookmarkItem.title && indent === 0) {
+      // Root of the bookmark tree
+    } else {
+      var select = document.querySelector(QUERY_FOLDER);
+      var displayName;
+      if (!bookmarkItem.title) {
+        displayName = UNNAMED_FOLDER;
+      } else {
+        displayName = bookmarkItem.title;
+      }
+      var key = makeIndent(indent) + displayName;
+      select.options[select.options.length] = new Option(key, bookmarkItem.id);
+      indent++;
     }
-    if (bookmarkItem.children) {
-        for (var child of bookmarkItem.children) {
-            buildItems(child, indent);
-        }
+  }
+  if (bookmarkItem.children) {
+    for (var child of bookmarkItem.children) {
+      buildItems(child, indent);
     }
-    indent--;
+  }
+  indent--;
 }
 
 /*
  * Builds the bookmarks tree
  */
 function buildTree(bookmarkItems) {
-    buildItems(bookmarkItems[0], 0);
+  buildItems(bookmarkItems[0], 0);
 }
 
 /*
  * Logs errors to the console
  */
 function onError(error) {
-    console.log(`An error occurred: ${error}`);
+  console.log(`An error occurred: ${error}`);
 }
 
 // Listen for loading of the options page
