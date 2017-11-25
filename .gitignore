@@ -1,2 +1,8 @@
+# IDE directories
 .idea/**
+
+# Dependency directories
+node_modules/
+
+# Local scripts
 *.bat
