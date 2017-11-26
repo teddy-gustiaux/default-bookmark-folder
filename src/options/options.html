@@ -31,7 +31,7 @@
                     <li class="item is-active tab_menu" data-tab="1">
                         <a>
                             <span class="icon is-small"><i class="fa fa-bookmark"></i></span>
-                            <span>Firefox Bookmark </span>
+                            <span>Firefox built-in bookmarking</span>
                         </a>
                     </li>
                     <li class="item tab_menu" data-tab="2">
@@ -59,12 +59,19 @@
 
                         <!-- OPTIONS TAB -->
                         <div class="container_item is-active" data-item="1">
-                            <h1 class="subtitle">New bookmarks location options</h1>
+                            <div class="notification">
+                                <p><strong>Important note:</strong></p>
+                                <p>Those settings <strong>only</strong> apply to the built-in bookmarking system of Firefox.
+                                    They allow you to select in which folder and in which position the new bookmarks will be added.
+                                    It only affect bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl-D).
+
+                                </p>
+                            </div>
                             <div class="field">
-                                <label class="label">Select the default bookmark folder:</label>
+                                <label for="builtin-folder" class="label">Select where new bookmarks will be added:</label>
                                 <div class="control has-icons-left">
                                     <div class="select">
-                                        <select id="folder">
+                                        <select id="builtin-folder">
                                             <option selected value="none">No folder selected (use Firefox's default bookmark location)</option>
                                         </select>
                                     </div>
@@ -72,17 +79,22 @@
                                         <i class="fa fa-folder"></i>
                                     </div>
                                 </div>
-                                <p class="help"><strong>Note:</strong> Firefox's default bookmark location is <i>Other Bookmarks</i>.</p>
+                                <p class="help">Note: Firefox's default bookmark location is <i>Other Bookmarks</i>.</p>
+                            </div>
+                            <div class="field">
+                                <div class="control b-checkbox is-info is-inline">
+                                    <input id="builtin-top" class="styled" checked type="checkbox">
+                                    <label for="builtin-top">Add new bookmarks to the top of the selected folder</label>
+                                    <p class="help">If disabled, new bookmarks will be added to the bottom of the selected folder</p>
+                                </div>
                             </div>
                         </div>
                         <!-- END OPTIONS TAB -->
 
                         <!-- OPTIONS TAB -->
                         <div class="container_item" data-item="2">
-                            <h1 class="subtitle">Quick bookmark icon options</h1>
                             <div class="notification">
-                                <p>This feature is <strong>optional</strong>.
-                                <p>It will add a quick bookmark icon in the address bar, to (un)bookmark a page with only one click.
+                                <p>This feature will add a quick bookmark icon in the address bar, to (un)bookmark a page with only one click.
                                 The icon is a round star icon in the address bar. If the current page is bookmarked, the icon color will change to red.
                                 Here are two screenshots to serve as examples: when the current page is not bookmarked and when it is.</p>
                                 <p><img src="img/Quick_bookmark_icon-Page_not_bookmarked.png">
@@ -90,48 +102,54 @@
                                 </p>
                             </div>
                             <div class="field">
-                                <p class="control">
-                                    <div class="b-checkbox is-info is-inline">
-                                        <input id="override" class="styled" checked type="checkbox">
-                                        <label for="override">Override default location</label>
-                                        <p class="help">This setting must be enabled to use the folder selected above!</p>
-                                    </div>
-                                 </p>
-                            </div>
-                            <div class="field">
-                                <p class="control">
-                                <div class="b-checkbox is-info is-inline">
-                                    <input id="addtotop" class="styled" checked type="checkbox">
-                                    <label for="addtotop">Add new bookmarks to the top of the selected folder</label>
-                                    <p class="help">If disabled (by default), new bookmarks will be added to the bottom of the selected folder</p>
-                                </div>
-                                </p>
-                            </div>
-                            <div class="field">
-                                <p class="control">
-                                <div class="b-checkbox is-info is-inline">
+                                <div class="control b-checkbox is-info is-inline">
                                     <input id="icon" class="styled" checked type="checkbox">
-                                    <label for="icon">Enable "quick bookmark" icon</label>
-                                    <p class="help">The icon only uses the new default location if the "override" setting is on</p>
-                                    <p class="help">It will use Firefox default bookmark location if the override is disabled.</p>
+                                    <label for="icon">Enable the quick bookmark icon</label>
                                 </div>
-                                </p>
+                            </div>
+                            <article class="message is-danger">
+                                <div class="message-header">
+                                    <p>Important note</p>
+                                </div>
+                                <div class="message-body">
+                                    <p>The settings below <strong>only</strong> apply to the quick bookmark icon!</p>
+                                </div>
+                            </article>
+                            <div class="field">
+                                <label for="icon-folder" class="label">Select where new bookmarks will be added:</label>
+                                <div class="control has-icons-left">
+                                    <div class="select">
+                                        <select id="icon-folder" disabled>
+                                            <option selected value="none">No folder selected (use Firefox's default bookmark location)</option>
+                                        </select>
+                                    </div>
+                                    <div class="icon is-small is-left">
+                                        <i class="fa fa-folder"></i>
+                                    </div>
+                                </div>
+                                <p class="help">Note: Firefox's default bookmark location is <i>Other Bookmarks</i>.</p>
                             </div>
                             <div class="field">
-                                <p class="control">
-                                <div class="b-checkbox is-info is-inline">
-                                    <input id="inbox" class="styled" checked type="checkbox">
-                                    <label for="inbox">Only show page as bookmarked if said bookmark is in the default folder</label>
-                                    <p class="help">This setting only applies if the dedicated bookmark icon has been enabled!</p>
+                                <div class="control b-checkbox is-info is-inline">
+                                    <input id="icon-top" class="styled" checked type="checkbox" disabled>
+                                    <label for="icon-top">Add new bookmarks to the top of the selected folder</label>
+                                    <p class="help">If disabled, new bookmarks will be added to the bottom of the selected folder</p>
                                 </div>
-                                </p>
                             </div>
                         </div>
                         <!-- END OPTIONS TAB -->
 
                         <!-- OPTIONS TAB -->
                         <div class="container_item" data-item="3">
-                            <h1 class="subtitle">More information about the add-on</h1>
+                            <h1 class="subtitle">If you enjoy the add-on, please give a positive review!</h1>
+                            <div class="notification">
+                                <p>If you want to report a bug or ask for a new feature, you can open an issue on GitHub or send me an email.</p>
+                            </div>
+                            <div class="field">
+                                <p><strong>Version:</strong> 1.2.4</p>
+                                <p><strong>Author:</strong> Teddy Gustiaux</p>
+                                <p><strong>License:</strong> MIT</p>
+                            </div>
                         </div>
                         <!-- END OPTIONS TAB -->
 

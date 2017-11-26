@@ -41,7 +41,7 @@ function switchTab (number) {
  * ================================================================================
  */
 
-const OPTIONS_FOLDER = 'folder'
+const OPTIONS_FOLDER = 'builtin-folder'
 const OPTIONS_OVERRIDE = 'override'
 const OPTIONS_ICON = 'icon'
 const OPTIONS_INBOX = 'inbox'
