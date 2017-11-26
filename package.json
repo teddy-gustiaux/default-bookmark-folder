@@ -5,7 +5,11 @@
   "main": "background.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint"
+    "eslint": "eslint ",
+    "lint": "web-ext lint --source-dir ./src/",
+    "start:firefox": "web-ext run --source-dir ./src/ --firefox=firefox --firefox-profile=dev --start-url about:debugging",
+    "start:nightly": "web-ext run --source-dir ./src/ --firefox=nightly --firefox-profile=nightly --start-url about:debugging",
+    "start:dev": "web-ext run --source-dir ./src/ --firefox=firefoxdeveloperedition --firefox-profile=dev --start-url about:debugging"
   },
   "repository": {
     "type": "git",
@@ -31,6 +35,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "web-ext": "^2.2.2"
   }
 }
