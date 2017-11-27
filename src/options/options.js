@@ -107,15 +107,19 @@ function restoreOptions () {
     buildTree(bookmarkItems, [QRY_FF_FOLDER, QRY_IC_FOLDER])
     let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
     gettingOptions.then((res) => {
-      // For Firefox built-in bookmarking
-      if (res[BUILTIN][FOLDER] !== undefined) setOption(document.querySelector(QRY_FF_FOLDER), res[BUILTIN][FOLDER])
-      if (res[BUILTIN][TOP] !== undefined) document.querySelector(QRY_FF_TOP).checked = res[BUILTIN][TOP]
-      // For quick bookmark icon
-      if (res[ICON][ENABLED] !== undefined) document.querySelector(QRY_IC_ICON).checked = res[ICON][ENABLED]
-      if (res[ICON][FOLDER] !== undefined) setOption(document.querySelector(QRY_IC_FOLDER), res[ICON][FOLDER])
-      if (res[ICON][TOP] !== undefined) document.querySelector(QRY_IC_TOP).checked = res[ICON][TOP]
-      if (res[ICON][INBOX] !== undefined) document.querySelector(QRY_IC_INBOX).checked = res[ICON][INBOX]
-      toggleIconOptions(res[ICON][ENABLED])
+      if (res.hasOwnProperty(BUILTIN) && res[BUILTIN] !== undefined) {
+        // For Firefox built-in bookmarking
+        if (res[BUILTIN][FOLDER] !== undefined) setOption(document.querySelector(QRY_FF_FOLDER), res[BUILTIN][FOLDER])
+        if (res[BUILTIN][TOP] !== undefined) document.querySelector(QRY_FF_TOP).checked = res[BUILTIN][TOP]
+      }
+      if (res.hasOwnProperty(ICON) && res[ICON] !== undefined) {
+        // For quick bookmark icon
+        if (res[ICON][ENABLED] !== undefined) document.querySelector(QRY_IC_ICON).checked = res[ICON][ENABLED]
+        if (res[ICON][FOLDER] !== undefined) setOption(document.querySelector(QRY_IC_FOLDER), res[ICON][FOLDER])
+        if (res[ICON][TOP] !== undefined) document.querySelector(QRY_IC_TOP).checked = res[ICON][TOP]
+        if (res[ICON][INBOX] !== undefined) document.querySelector(QRY_IC_INBOX).checked = res[ICON][INBOX]
+        toggleIconOptions(res[ICON][ENABLED])
+      }
       // For tab management
       res[MISC_TAB] !== undefined ? switchTab(res[MISC_TAB]) : switchTab(TAB_DEFAULT_NUMBER)
     }, onError)
