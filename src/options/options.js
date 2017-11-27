@@ -39,6 +39,8 @@ const DATA_TAB = 'data-tab'
 
 // Miscellaneous
 const UNNAMED_FOLDER = '[no name]'
+const VERSION = '#placeholder-version'
+const AUTHOR = '#placeholder-author'
 
 // Allow to retrieve all stored options at once
 const OPTIONS_ARRAY = [BUILTIN, ICON, MISC_TAB]
@@ -211,6 +213,21 @@ function switchTab (number) {
 
 /*
  * ================================================================================
+ * FUNCTIONS - MISCELLANEOUS
+ * ================================================================================
+ */
+
+/*
+ * Inserts data from the manifest into the options page
+ */
+function insertDataFromManifest () {
+  let manifest = browser.runtime.getManifest()
+  document.querySelector(VERSION).innerHTML = manifest.version
+  document.querySelector(AUTHOR).innerHTML = manifest.author
+}
+
+/*
+ * ================================================================================
  * LISTENERS
  * ================================================================================
  */
@@ -218,6 +235,7 @@ function switchTab (number) {
 // Listen for loading of the options page
 document.addEventListener('DOMContentLoaded', restoreOptions)
 document.addEventListener('DOMContentLoaded', tabManagement)
+document.addEventListener('DOMContentLoaded', insertDataFromManifest)
 
 // Listen for saving of the options page
 document.querySelector(TAB_CONTAINER).addEventListener('change', saveOptions)
