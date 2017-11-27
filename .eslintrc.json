@@ -6,6 +6,7 @@
   },
   "extends": "standard",
   "rules": {
-    "no-var": "error"
+    "no-var": "error",
+    "curly": "off"
   }
 }
