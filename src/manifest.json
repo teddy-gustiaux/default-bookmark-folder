@@ -26,12 +26,13 @@
   },
 
   "background": {
-    "scripts": ["default-bookmark-folder.js"]
+    "scripts": ["background.js"]
   },
 
   "options_ui": {
     "page": "options/options.html",
-    "browser_style": true
+    "browser_style": true,
+    "open_in_tab": true
   },
 
   "applications": {

@@ -1,0 +1,12 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "webextensions": true
+  },
+  "extends": "standard",
+  "rules": {
+    "no-var": "error",
+    "curly": "off"
+  }
+}

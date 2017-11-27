@@ -1,2 +1,8 @@
+# IDE directories
 .idea/**
-*.bat
+
+# Dependency directories
+node_modules/
+
+# Artifacts
+dist/*

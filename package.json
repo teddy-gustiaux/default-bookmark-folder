@@ -1,0 +1,42 @@
+{
+  "name": "default-bookmark-folder",
+  "version": "1.2.4",
+  "description": "WebExtension allowing you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon.",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint ",
+    "lint": "web-ext lint --source-dir ./src/",
+    "start:firefox": "web-ext run --source-dir ./src/ --firefox=firefox --firefox-profile=dev --start-url about:debugging",
+    "start:nightly": "web-ext run --source-dir ./src/ --firefox=nightly --firefox-profile=nightly --start-url about:debugging",
+    "start:dev": "web-ext run --source-dir ./src/ --firefox=firefoxdeveloperedition --firefox-profile=dev --start-url about:debugging",
+    "build": " web-ext build --source-dir ./src/ --overwrite-dest --artifacts-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teddy-gustiaux/default-bookmark-folder.git"
+  },
+  "keywords": [
+    "webextension",
+    "javascript",
+    "firefox",
+    "browser-extension",
+    "firefox-extension",
+    "bookmarks"
+  ],
+  "author": "Teddy Gustiaux",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teddy-gustiaux/default-bookmark-folder/issues"
+  },
+  "homepage": "https://github.com/teddy-gustiaux/default-bookmark-folder#readme",
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "web-ext": "^2.2.2"
+  }
+}

@@ -1,0 +1,16 @@
+body {
+  padding: 2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+#tab_container .container_item {
+  display: none;
+}
+
+#tab_container .container_item.is-active {
+  display: block;
+}
+
+.field, article {
+  margin-top: 2em;
+}
