@@ -83,7 +83,7 @@
                             </div>
                             <div class="field">
                                 <div class="control b-checkbox is-info is-inline">
-                                    <input id="builtin-top" class="styled" checked type="checkbox">
+                                    <input id="builtin-top" class="styled" type="checkbox">
                                     <label for="builtin-top">Add new bookmarks to the top of the selected folder</label>
                                     <p class="help">If disabled, new bookmarks will be added to the bottom of the selected folder</p>
                                 </div>
@@ -103,8 +103,8 @@
                             </div>
                             <div class="field">
                                 <div class="control b-checkbox is-info is-inline">
-                                    <input id="icon" class="styled" checked type="checkbox">
-                                    <label for="icon">Enable the quick bookmark icon</label>
+                                    <input id="icon-enabled" class="styled" type="checkbox">
+                                    <label for="icon-enabled">Enable the quick bookmark icon</label>
                                 </div>
                             </div>
                             <article class="message is-danger">
@@ -131,11 +131,21 @@
                             </div>
                             <div class="field">
                                 <div class="control b-checkbox is-info is-inline">
-                                    <input id="icon-top" class="styled" checked type="checkbox" disabled>
+                                    <input id="icon-top" class="styled" type="checkbox" disabled>
                                     <label for="icon-top">Add new bookmarks to the top of the selected folder</label>
                                     <p class="help">If disabled, new bookmarks will be added to the bottom of the selected folder</p>
                                 </div>
                             </div>
+                            <div class="field">
+                                <div class="b-checkbox is-info is-inline">
+                                    <input id="icon-inbox" class="styled" type="checkbox" disabled>
+                                    <label for="icon-inbox">Only show page as bookmarked if the bookmark is in the folder selected above</label>
+                                    <p class="help">If this setting is enabled, the quick bookmark icon will be red (i.e. the current page has been bookmarked)
+                                        only if the bookmark is located in the folder you have selected above.
+                                    </p>
+                                </div>
+                            </p>
+                        </div>
                         </div>
                         <!-- END OPTIONS TAB -->
 
