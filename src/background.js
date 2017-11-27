@@ -131,8 +131,7 @@ let currentTab
 let currentBookmark
 
 /*
- * Updates the browserAction icon to reflect whether the current page
- * is already bookmarked.
+ * Updates the browserAction icon to reflect whether the current page is already bookmarked
  */
 function updateIcon (iconEnabled) {
   if (iconEnabled === true) {
@@ -168,74 +167,127 @@ function updateIcon (iconEnabled) {
 /*
  * Add or remove the bookmark on the current page.
  */
-function toggleBookmark (tab) {
+function toggleBookmark () {
   if (currentBookmark) {
     browser.bookmarks.remove(currentBookmark.id)
   } else {
-    // Create the bookmark (will toggle the handleCreated listener callback function)
-    browser.bookmarks.create({title: currentTab.title, url: currentTab.url})
+    let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
+    gettingOptions.then((options) => {
+      let bookmarkTreeNode = {
+        title: currentTab.title,
+        url: currentTab.url
+      }
+      if (isIconFolderSet(options)) {
+        bookmarkTreeNode.parentId = options[ICON][FOLDER]
+      }
+      if (addIconToTop(options)) {
+        bookmarkTreeNode.index = 0
+      }
+      // Remove listener overriding the Firefox built-in bookmarking
+      browser.bookmarks.onCreated.removeListener(handleCreated)
+      // Create the bookmark
+      browser.bookmarks.create(bookmarkTreeNode).then(() => {
+        // Re-add the listener
+        browser.bookmarks.onCreated.addListener(handleCreated)
+      }, onError)
+    }, onError)
   }
 }
 
 /*
- * Switches currentTab and currentBookmark to reflect the currently active tab
+ * Checks if URL can be handle by the add-on
+ */
+function isValidURL (urlString) {
+  let valid = false
+  if (isSupportedProtocol(urlString) || isExtraProtocol(urlString)) valid = true
+  return valid
+}
+
+/*
+ * Checks if URL is using supported protocols
+ */
+function isSupportedProtocol (urlString) {
+  let supportedProtocols = ['https:', 'http:']
+  let url = document.createElement('a')
+  url.href = urlString
+  return supportedProtocols.indexOf(url.protocol) !== -1
+}
+
+/*
+* Checks if URL is using one of the extra supported protocols
+*/
+function isExtraProtocol (urlString) {
+  let extraProtocols = ['file:']
+  let url = document.createElement('a')
+  url.href = urlString
+  return extraProtocols.indexOf(url.protocol) !== -1
+}
+
+/*
+ * Triggers the update of the icon of the currently active tab
  */
 function updateActiveTab () {
-  function isSupportedProtocol (urlString) {
-    let supportedProtocols = ['https:', 'http:']
-    let url = document.createElement('a')
-    url.href = urlString
-    return supportedProtocols.indexOf(url.protocol) !== -1
-  }
-
-  function updateTab (tabs) {
-    let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
-    gettingOptions.then((options) => {
-      if (tabs[0]) {
-        currentTab = tabs[0]
-        if (isIconEnabled(options)) {
-          browser.pageAction.show(currentTab.id)
-          let searching
-          if (isSupportedProtocol(currentTab.url)) {
-            searching = browser.bookmarks.search({url: currentTab.url})
-          } else {
-            searching = browser.bookmarks.search(currentTab.url)
-          }
-          searching.then((bookmarks) => {
-            if (bookmarks.length === 1) {
-              currentBookmark = bookmarks[0]
-              // Only proceed if bookmark matches current tab address
-              if (currentBookmark.url === currentTab.url) {
-                if (isIconInboxEnabled(options)) {
-                  // Only keep current bookmark if it is in the default location
-                  if (options[ICON][FOLDER] === undefined || currentBookmark.parentId !== options[ICON][FOLDER]) {
-                    currentBookmark = undefined
-                  }
-                }
-              } else {
-                currentBookmark = undefined
-              }
-            } else if (bookmarks.length === 0) {
-              // No bookmarks
-              currentBookmark = undefined
-            } else if (bookmarks.length > 1) {
-              // Duplicate bookmarks
-              currentBookmark = undefined
-              browser.pageAction.hide(currentTab.id)
-            }
-            updateIcon(true)
-          }, onError)
-        } else {
-          currentBookmark = undefined
-          browser.pageAction.hide(currentTab.id)
-          updateIcon(false)
-        }
-      }
-    }, onError)
-  }
-
   let gettingActiveTab = browser.tabs.query({active: true, currentWindow: true})
   gettingActiveTab.then(updateTab, onError)
+}
+
+/*
+ * Hides the icon for the active tab
+ */
+function hideIcon () {
+  currentBookmark = undefined
+  browser.pageAction.hide(currentTab.id)
+  updateIcon(false)
+}
+
+/*
+ * Updates the icon of the currently active tab
+ */
+function updateTab (tabs) {
+  let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
+  gettingOptions.then((options) => {
+    if (tabs[0]) {
+      currentTab = tabs[0]
+      let currentURL = currentTab.url
+      if (!isValidURL(currentURL) || !isIconEnabled(options)) {
+        hideIcon()
+      } else {
+        // Icon is enabled
+        browser.pageAction.show(currentTab.id)
+        // Search for the bookmark
+        let searching
+        if (isSupportedProtocol(currentURL)) {
+          searching = browser.bookmarks.search({url: currentURL})
+        } else if (isExtraProtocol(currentURL)) {
+          searching = browser.bookmarks.search(currentURL)
+        }
+        searching.then((bookmarks) => {
+          if (bookmarks.length === 1) {
+            currentBookmark = bookmarks[0]
+            // Only proceed if bookmark matches current tab address
+            if (currentBookmark.url === currentTab.url) {
+              if (isIconInboxEnabled(options)) {
+                // Only keep current bookmark if it is in the default location
+                if (options[ICON][FOLDER] === undefined || currentBookmark.parentId !== options[ICON][FOLDER]) {
+                  currentBookmark = undefined
+                }
+              }
+            } else {
+              currentBookmark = undefined
+            }
+            updateIcon(true)
+          } else if (bookmarks.length === 0) {
+            // No bookmarks
+            currentBookmark = undefined
+            updateIcon(true)
+          } else if (bookmarks.length > 1) {
+            // Duplicate bookmarks (not managed)
+            hideIcon()
+          }
+        }, onError)
+      }
+    }
+  }, onError)
 }
 
 /*
@@ -246,25 +298,17 @@ function updateActiveTab () {
 
 // Listen for bookmarks being created
 browser.bookmarks.onCreated.addListener(handleCreated)
-
-// Listen for clicks on the button
-browser.pageAction.onClicked.addListener(toggleBookmark)
-
-// Listen for bookmarks being created
 browser.bookmarks.onCreated.addListener(updateActiveTab)
-
 // Listen for bookmarks being removed
 browser.bookmarks.onRemoved.addListener(updateActiveTab)
-
 // Listen for bookmarks being moved
 browser.bookmarks.onMoved.addListener(updateActiveTab)
-
+// Listen for clicks on the button
+browser.pageAction.onClicked.addListener(toggleBookmark)
 // Listen to tab URL changes
 browser.tabs.onUpdated.addListener(updateActiveTab)
-
 // Listen to tab switching
 browser.tabs.onActivated.addListener(updateActiveTab)
-
 // Listen for window switching
 browser.windows.onFocusChanged.addListener(updateActiveTab)
 
