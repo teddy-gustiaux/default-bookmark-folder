@@ -28,10 +28,17 @@ const TOP = 'top'
 const ENABLED = 'enabled'
 const INBOX = 'inbox'
 
-// Miscellaneous
-const UNNAMED_FOLDER = '[no name]'
+// List of tab management items
 const MISC_TAB = 'tab'
 const TAB_DEFAULT_NUMBER = 1
+const TAB_CONTAINER = '#tab_container'
+const TAB_MENU = '.tab_menu'
+const TAB_CONTAINER_ITEM = '.container_item'
+const DATA_ITEM = 'data-item'
+const DATA_TAB = 'data-tab'
+
+// Miscellaneous
+const UNNAMED_FOLDER = '[no name]'
 
 // Allow to retrieve all stored options at once
 const OPTIONS_ARRAY = [BUILTIN, ICON, MISC_TAB]
@@ -185,17 +192,17 @@ function tabManagement () {
 }
 
 function switchTab (number) {
-  let tabs = document.querySelectorAll('.tab_menu')
+  let tabs = document.querySelectorAll(TAB_MENU)
   Array.from(tabs).forEach(tabItem => {
     tabItem.classList.remove('is-active')
   })
-  document.querySelector("[data-tab='" + number + "']").classList.add('is-active')
+  document.querySelector('[' + DATA_TAB + "='" + number + "']").classList.add('is-active')
 
-  let containers = document.querySelectorAll('.container_item')
+  let containers = document.querySelectorAll(TAB_CONTAINER_ITEM)
   Array.from(containers).forEach(containerItem => {
     containerItem.classList.remove('is-active')
   })
-  document.querySelector("[data-item='" + number + "']").classList.add('is-active')
+  document.querySelector('[' + DATA_ITEM + "='" + number + "']").classList.add('is-active')
 
   browser.storage.local.set({
     tab: number
@@ -213,4 +220,4 @@ document.addEventListener('DOMContentLoaded', restoreOptions)
 document.addEventListener('DOMContentLoaded', tabManagement)
 
 // Listen for saving of the options page
-document.querySelector('#tab_container').addEventListener('change', saveOptions)
+document.querySelector(TAB_CONTAINER).addEventListener('change', saveOptions)
