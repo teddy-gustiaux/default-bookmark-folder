@@ -98,7 +98,6 @@ function onError (error) {
  */
 
 function handleInstalled (details) {
-  console.log(details)
   if (details.reason === 'install') {
     browser.runtime.openOptionsPage()
   } else if (details.reason === 'update') {
@@ -331,7 +330,7 @@ browser.tabs.onActivated.addListener(updateActiveTab)
 // Listen for window switching
 browser.windows.onFocusChanged.addListener(updateActiveTab)
 // Listen for add-on installation or update
-browser.runtime.onInstalled.addListener(handleInstalled);
+browser.runtime.onInstalled.addListener(handleInstalled)
 
 // Update when the extension loads initially
 updateActiveTab()
