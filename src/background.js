@@ -147,8 +147,7 @@ function updateIcon (iconEnabled) {
       tabId: currentTab.id
     })
     browser.pageAction.setTitle({
-      // Screen readers can see the title
-      title: currentBookmark ? 'Unbookmark it!' : 'Bookmark it!',
+      title: currentBookmark ? 'Remove this bookmark' : 'Quick bookmark this page',
       tabId: currentTab.id
     })
   } else {
@@ -160,8 +159,7 @@ function updateIcon (iconEnabled) {
       tabId: currentTab.id
     })
     browser.pageAction.setTitle({
-      // Screen readers can see the title
-      title: 'The icon is disabled. Enable it in the add-on settings.',
+      title: 'The quick bookmark icon is disabled',
       tabId: currentTab.id
     })
   }
