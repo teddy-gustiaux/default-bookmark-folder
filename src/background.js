@@ -4,15 +4,19 @@
  * ================================================================================
  */
 
-const OPTIONS_FOLDER = 'folder'
-const OPTIONS_OVERRIDE = 'override'
-const OPTIONS_ICON = 'icon'
-const OPTIONS_INBOX = 'inbox'
-const OPTIONS_ADDTOTOP = 'addtotop'
+// List of stored options properties
+const BUILTIN = 'builtin'
+const ICON = 'icon'
+const FOLDER = 'folder'
+const TOP = 'top'
+const ENABLED = 'enabled'
+const INBOX = 'inbox'
 
+// Miscellaneous
 const FOLDER_NONE = 'none'
 
-const OPTIONS_ARRAY = [OPTIONS_FOLDER, OPTIONS_OVERRIDE, OPTIONS_ICON, OPTIONS_INBOX, OPTIONS_ADDTOTOP]
+// Allow to retrieve all stored options at once
+const OPTIONS_ARRAY = [BUILTIN, ICON]
 
 /*
  * ================================================================================
@@ -21,48 +25,62 @@ const OPTIONS_ARRAY = [OPTIONS_FOLDER, OPTIONS_OVERRIDE, OPTIONS_ICON, OPTIONS_I
  */
 
 /*
- * Indicates if the override settings has been enabled and a folder selected
+ * Indicates if a folder selected has been selected to override Firefox built-in bookmarking
  */
-function isNewLocationSet (options) {
+function isBuiltinFolderSet (options) {
   let isSet = false
-  if (options.hasOwnProperty(OPTIONS_OVERRIDE) && options[OPTIONS_OVERRIDE] === true) {
-    if (options[OPTIONS_FOLDER] !== undefined && options[OPTIONS_FOLDER] !== FOLDER_NONE) {
-      isSet = true
-    }
+  let ff = options[BUILTIN]
+  if (ff.hasOwnProperty(FOLDER) && ff[FOLDER] !== undefined && ff[FOLDER] !== FOLDER_NONE) {
+    isSet = true
   }
   return isSet
 }
 
 /*
- * Indicates if the "quick bookmark" icon has been enabled
+ * Indicates if new bookmarks for Firefox built-in bookmarking should be added to the top of the folder
  */
-function quickBookmarkMode (options) {
+function addBuiltinToTop (options) {
   let isEnabled = false
-  if (options.hasOwnProperty(OPTIONS_ICON) && options[OPTIONS_ICON] === true) {
-    isEnabled = true
+  if (options[BUILTIN].hasOwnProperty(TOP) && options[BUILTIN][TOP] === true) isEnabled = true
+  return isEnabled
+}
+
+/*
+ * Indicates if the quick bookmark icon has been enabled
+ */
+function isIconEnabled (options) {
+  let isEnabled = false
+  if (options[ICON].hasOwnProperty(ENABLED) && options[ICON][ENABLED] === true) isEnabled = true
+  return isEnabled
+}
+
+/*
+ * Indicates if a folder selected has been selected for the quick icon bookmark
+ */
+function isIconFolderSet (options) {
+  let isSet = false
+  let ic = options[ICON]
+  if (ic.hasOwnProperty(FOLDER) && ic[FOLDER] !== undefined && ic[FOLDER] !== FOLDER_NONE) {
+    isSet = true
   }
+  return isSet
+}
+
+/*
+ * Indicates if new bookmarks for Firefox built-in bookmarking should be added to the top of the folder
+ */
+function addIconToTop (options) {
+  let isEnabled = false
+  if (options[ICON].hasOwnProperty(TOP) && options[ICON][TOP] === true) isEnabled = true
   return isEnabled
 }
 
 /*
  * Indicates if the "inbox mode" has been enabled
  */
-function inboxMode (options) {
+function isIconInboxEnabled (options) {
   let isEnabled = false
-  if (options.hasOwnProperty(OPTIONS_INBOX) && options[OPTIONS_INBOX] === true) {
-    isEnabled = true
-  }
-  return isEnabled
-}
-
-/*
- * Indicates if the "add to top of folder mode" has been enabled
- */
-function addToTopMode (options) {
-  let isEnabled = false
-  if (options.hasOwnProperty(OPTIONS_ADDTOTOP) && options[OPTIONS_ADDTOTOP] === true) {
-    isEnabled = true
-  }
+  if (options[ICON].hasOwnProperty(INBOX) && options[ICON][INBOX] === true) isEnabled = true
   return isEnabled
 }
 
@@ -80,7 +98,7 @@ function onError (error) {
  */
 
 /*
- * Moves the bookmark to the specified folder (if option activated)
+ * Moves the bookmark to the specified folder
  */
 function handleCreated (id, bookmarkInfo) {
   // Only process bookmarks (not folders or separators) with an actual URL
@@ -90,10 +108,10 @@ function handleCreated (id, bookmarkInfo) {
       gettingOptions.then((options) => {
         let bookmarkTreeNode = {}
 
-        if (isNewLocationSet(options)) {
-          bookmarkTreeNode.parentId = options[OPTIONS_FOLDER]
+        if (isBuiltinFolderSet(options)) {
+          bookmarkTreeNode.parentId = options[BUILTIN][FOLDER]
         }
-        if (addToTopMode(options)) {
+        if (addBuiltinToTop(options)) {
           bookmarkTreeNode.index = 0
         }
 
@@ -102,9 +120,6 @@ function handleCreated (id, bookmarkInfo) {
     }
   }
 }
-
-// Listen for bookmarks being created
-browser.bookmarks.onCreated.addListener(handleCreated)
 
 /*
  * ================================================================================
@@ -180,7 +195,7 @@ function updateActiveTab () {
     gettingOptions.then((options) => {
       if (tabs[0]) {
         currentTab = tabs[0]
-        if (quickBookmarkMode(options)) {
+        if (isIconEnabled(options)) {
           browser.pageAction.show(currentTab.id)
           let searching
           if (isSupportedProtocol(currentTab.url)) {
@@ -193,9 +208,9 @@ function updateActiveTab () {
               currentBookmark = bookmarks[0]
               // Only proceed if bookmark matches current tab address
               if (currentBookmark.url === currentTab.url) {
-                if (inboxMode(options)) {
+                if (isIconInboxEnabled(options)) {
                   // Only keep current bookmark if it is in the default location
-                  if (options[OPTIONS_FOLDER] === undefined || currentBookmark.parentId !== options[OPTIONS_FOLDER]) {
+                  if (options[ICON][FOLDER] === undefined || currentBookmark.parentId !== options[ICON][FOLDER]) {
                     currentBookmark = undefined
                   }
                 }
@@ -224,6 +239,15 @@ function updateActiveTab () {
   let gettingActiveTab = browser.tabs.query({active: true, currentWindow: true})
   gettingActiveTab.then(updateTab, onError)
 }
+
+/*
+ * ================================================================================
+ * LISTENERS
+ * ================================================================================
+ */
+
+// Listen for bookmarks being created
+browser.bookmarks.onCreated.addListener(handleCreated)
 
 // Listen for clicks on the button
 browser.pageAction.onClicked.addListener(toggleBookmark)
