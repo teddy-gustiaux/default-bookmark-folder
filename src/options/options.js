@@ -8,6 +8,7 @@
 const OPT_FF_FOLDER = 'builtin-folder'
 const OPT_FF_TOP = 'builtin-top'
 const OPT_IC_ICON = 'icon-enabled'
+const OPT_IC_SHORTCUT = 'icon-shortcut'
 const OPT_IC_FOLDER = 'icon-folder'
 const OPT_IC_TOP = 'icon-top'
 const OPT_IC_INBOX = 'icon-inbox'
@@ -16,6 +17,7 @@ const OPT_IC_INBOX = 'icon-inbox'
 const QRY_FF_FOLDER = '#' + OPT_FF_FOLDER
 const QRY_FF_TOP = '#' + OPT_FF_TOP
 const QRY_IC_ICON = '#' + OPT_IC_ICON
+const QRY_IC_SHORTCUT = '#' + OPT_IC_SHORTCUT
 const QRY_IC_FOLDER = '#' + OPT_IC_FOLDER
 const QRY_IC_TOP = '#' + OPT_IC_TOP
 const QRY_IC_INBOX = '#' + OPT_IC_INBOX
@@ -27,7 +29,8 @@ const FOLDER = 'folder'
 const TOP = 'top'
 const ENABLED = 'enabled'
 const INBOX = 'inbox'
-const NOTIF = 'updateNotification'
+const SHORTCUT = 'shortcut'
+const NOTIFICATION = 'updateNotification'
 
 // List of tab management items
 const MISC_TAB = 'tab'
@@ -47,7 +50,7 @@ const VERSION = '#placeholder-version'
 const AUTHOR = '#placeholder-author'
 
 // Allow to retrieve all stored options at once
-const OPTIONS_ARRAY = [BUILTIN, ICON, MISC_TAB, NOTIF]
+const OPTIONS_ARRAY = [BUILTIN, ICON, MISC_TAB, NOTIFICATION]
 
 /*
  * ================================================================================
@@ -94,6 +97,7 @@ function saveOptions () {
   let icon = {
     enabled: iconEnabled,
     folder: document.querySelector(QRY_IC_FOLDER).value,
+    shortcut: document.querySelector(QRY_IC_SHORTCUT).checked,
     top: document.querySelector(QRY_IC_TOP).checked,
     inbox: document.querySelector(QRY_IC_INBOX).checked
   }
@@ -119,6 +123,7 @@ function restoreOptions () {
       if (res.hasOwnProperty(ICON) && res[ICON] !== undefined) {
         // For quick bookmark icon
         if (res[ICON][ENABLED] !== undefined) document.querySelector(QRY_IC_ICON).checked = res[ICON][ENABLED]
+        if (res[ICON][SHORTCUT] !== undefined) document.querySelector(QRY_IC_SHORTCUT).checked = res[ICON][SHORTCUT]
         if (res[ICON][FOLDER] !== undefined) setOption(document.querySelector(QRY_IC_FOLDER), res[ICON][FOLDER])
         if (res[ICON][TOP] !== undefined) document.querySelector(QRY_IC_TOP).checked = res[ICON][TOP]
         if (res[ICON][INBOX] !== undefined) document.querySelector(QRY_IC_INBOX).checked = res[ICON][INBOX]
@@ -244,7 +249,7 @@ function closeWelcomeMessage () {
 function welcomeMessage () {
   let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
   gettingOptions.then((options) => {
-    if (!options.hasOwnProperty(NOTIF) || options[NOTIF] !== true) {
+    if (!options.hasOwnProperty(NOTIFICATION) || options[NOTIFICATION] !== true) {
       document.querySelector(CLOSE_WELCOME).addEventListener('click', closeWelcomeMessage)
       document.querySelector(DELETE_WELCOME).addEventListener('click', closeWelcomeMessage)
       document.querySelector(WELCOME).classList.add('is-active')

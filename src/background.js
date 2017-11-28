@@ -11,6 +11,7 @@ const FOLDER = 'folder'
 const TOP = 'top'
 const ENABLED = 'enabled'
 const INBOX = 'inbox'
+const SHORTCUT = 'shortcut'
 
 // Miscellaneous
 const FOLDER_NONE = 'none'
@@ -56,6 +57,18 @@ function isIconEnabled (options) {
   if (options.hasOwnProperty(ICON)) {
     let ic = options[ICON]
     if (ic.hasOwnProperty(ENABLED) && ic[ENABLED] === true) isEnabled = true
+  }
+  return isEnabled
+}
+
+/*
+ * Indicates if the quick bookmark icon has been enabled
+ */
+function isIconShortcutEnabled (options) {
+  let isEnabled = false
+  if (options.hasOwnProperty(ICON)) {
+    let ic = options[ICON]
+    if (ic.hasOwnProperty(SHORTCUT) && ic[SHORTCUT] === true) isEnabled = true
   }
   return isEnabled
 }
@@ -329,9 +342,12 @@ function updateTab (tabs) {
  */
 
 function handleCommands (command) {
-  if (command === 'quick-bookmark') {
-    if (canToggleQuickBookmark === true) toggleBookmark()
-  }
+  let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
+  gettingOptions.then((options) => {
+    if (command === 'quick-bookmark') {
+      if (canToggleQuickBookmark === true && isIconShortcutEnabled(options)) toggleBookmark()
+    }
+  }, onError)
 }
 
 /*
