@@ -35,6 +35,15 @@
     "open_in_tab": true
   },
 
+  "commands": {
+    "quick-bookmark": {
+      "suggested_key": {
+        "default": "Alt+Shift+D"
+      },
+      "description": "Shortcut to quickly bookmark the current page."
+    }
+  },
+
   "applications": {
     "gecko": {
       "id": "default-bookmark-folder@gustiaux.com",

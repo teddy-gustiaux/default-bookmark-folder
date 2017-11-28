@@ -29,9 +29,9 @@ const OPTIONS_ARRAY = [BUILTIN, ICON]
  */
 function isBuiltinFolderSet (options) {
   let isSet = false
-  let ff = options[BUILTIN]
-  if (ff.hasOwnProperty(FOLDER) && ff[FOLDER] !== undefined && ff[FOLDER] !== FOLDER_NONE) {
-    isSet = true
+  if (options.hasOwnProperty(BUILTIN)) {
+    let ff = options[BUILTIN]
+    if (ff.hasOwnProperty(FOLDER) && ff[FOLDER] !== undefined && ff[FOLDER] !== FOLDER_NONE) isSet = true
   }
   return isSet
 }
@@ -41,7 +41,10 @@ function isBuiltinFolderSet (options) {
  */
 function addBuiltinToTop (options) {
   let isEnabled = false
-  if (options[BUILTIN].hasOwnProperty(TOP) && options[BUILTIN][TOP] === true) isEnabled = true
+  if (options.hasOwnProperty(BUILTIN)) {
+    let ff = options[BUILTIN]
+    if (ff[BUILTIN].hasOwnProperty(TOP) && ff[TOP] === true) isEnabled = true
+  }
   return isEnabled
 }
 
@@ -50,7 +53,10 @@ function addBuiltinToTop (options) {
  */
 function isIconEnabled (options) {
   let isEnabled = false
-  if (options[ICON].hasOwnProperty(ENABLED) && options[ICON][ENABLED] === true) isEnabled = true
+  if (options.hasOwnProperty(ICON)) {
+    let ic = options[ICON]
+    if (ic.hasOwnProperty(ENABLED) && ic[ENABLED] === true) isEnabled = true
+  }
   return isEnabled
 }
 
@@ -59,9 +65,9 @@ function isIconEnabled (options) {
  */
 function isIconFolderSet (options) {
   let isSet = false
-  let ic = options[ICON]
-  if (ic.hasOwnProperty(FOLDER) && ic[FOLDER] !== undefined && ic[FOLDER] !== FOLDER_NONE) {
-    isSet = true
+  if (options.hasOwnProperty(ICON)) {
+    let ic = options[ICON]
+    if (ic.hasOwnProperty(FOLDER) && ic[FOLDER] !== undefined && ic[FOLDER] !== FOLDER_NONE) isSet = true
   }
   return isSet
 }
@@ -71,7 +77,10 @@ function isIconFolderSet (options) {
  */
 function addIconToTop (options) {
   let isEnabled = false
-  if (options[ICON].hasOwnProperty(TOP) && options[ICON][TOP] === true) isEnabled = true
+  if (options.hasOwnProperty(ICON)) {
+    let ic = options[ICON]
+    if (ic.hasOwnProperty(TOP) && ic[TOP] === true) isEnabled = true
+  }
   return isEnabled
 }
 
@@ -80,7 +89,10 @@ function addIconToTop (options) {
  */
 function isIconInboxEnabled (options) {
   let isEnabled = false
-  if (options[ICON].hasOwnProperty(INBOX) && options[ICON][INBOX] === true) isEnabled = true
+  if (options.hasOwnProperty(ICON)) {
+    let ic = options[ICON]
+    if (ic.hasOwnProperty(INBOX) && ic[INBOX] === true) isEnabled = true
+  }
   return isEnabled
 }
 
@@ -147,11 +159,13 @@ function handleCreated (id, bookmarkInfo) {
 
 let currentTab
 let currentBookmark
+let canToggleQuickBookmark
 
 /*
  * Updates the browserAction icon to reflect whether the current page is already bookmarked
  */
 function updateIcon (iconEnabled) {
+  canToggleQuickBookmark = iconEnabled
   if (iconEnabled === true) {
     browser.pageAction.setIcon({
       path: currentBookmark ? {
@@ -310,6 +324,18 @@ function updateTab (tabs) {
 
 /*
  * ================================================================================
+ * CREATING ANOTHER BOOKMARKING ICON
+ * ================================================================================
+ */
+
+function handleCommands (command) {
+  if (command === 'quick-bookmark') {
+    if (canToggleQuickBookmark === true) toggleBookmark()
+  }
+}
+
+/*
+ * ================================================================================
  * LISTENERS
  * ================================================================================
  */
@@ -331,6 +357,8 @@ browser.tabs.onActivated.addListener(updateActiveTab)
 browser.windows.onFocusChanged.addListener(updateActiveTab)
 // Listen for add-on installation or update
 browser.runtime.onInstalled.addListener(handleInstalled)
+// Listen for shortcuts
+browser.commands.onCommand.addListener(handleCommands)
 
 // Update when the extension loads initially
 updateActiveTab()
