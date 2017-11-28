@@ -43,7 +43,7 @@ function addBuiltinToTop (options) {
   let isEnabled = false
   if (options.hasOwnProperty(BUILTIN)) {
     let ff = options[BUILTIN]
-    if (ff[BUILTIN].hasOwnProperty(TOP) && ff[TOP] === true) isEnabled = true
+    if (ff.hasOwnProperty(TOP) && ff[TOP] === true) isEnabled = true
   }
   return isEnabled
 }
