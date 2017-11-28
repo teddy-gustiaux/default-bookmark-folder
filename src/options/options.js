@@ -27,6 +27,7 @@ const FOLDER = 'folder'
 const TOP = 'top'
 const ENABLED = 'enabled'
 const INBOX = 'inbox'
+const NOTIF = 'updateNotification'
 
 // List of tab management items
 const MISC_TAB = 'tab'
@@ -39,11 +40,14 @@ const DATA_TAB = 'data-tab'
 
 // Miscellaneous
 const UNNAMED_FOLDER = '[no name]'
+const WELCOME = '#welcome'
+const CLOSE_WELCOME = '#close-welcome'
+const DELETE_WELCOME = '#delete-welcome'
 const VERSION = '#placeholder-version'
 const AUTHOR = '#placeholder-author'
 
 // Allow to retrieve all stored options at once
-const OPTIONS_ARRAY = [BUILTIN, ICON, MISC_TAB]
+const OPTIONS_ARRAY = [BUILTIN, ICON, MISC_TAB, NOTIF]
 
 /*
  * ================================================================================
@@ -230,6 +234,24 @@ function insertDataFromManifest () {
   document.querySelector(AUTHOR).innerHTML = manifest.author
 }
 
+function closeWelcomeMessage () {
+  document.querySelector(WELCOME).classList.remove('is-active')
+  browser.storage.local.set({
+    updateNotification: true
+  }).then(null, onError)
+}
+
+function welcomeMessage () {
+  let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
+  gettingOptions.then((options) => {
+    if (!options.hasOwnProperty(NOTIF) || options[NOTIF] !== true) {
+      document.querySelector(CLOSE_WELCOME).addEventListener('click', closeWelcomeMessage)
+      document.querySelector(DELETE_WELCOME).addEventListener('click', closeWelcomeMessage)
+      document.querySelector(WELCOME).classList.add('is-active')
+    }
+  }, onError)
+}
+
 /*
  * ================================================================================
  * LISTENERS
@@ -240,6 +262,7 @@ function insertDataFromManifest () {
 document.addEventListener('DOMContentLoaded', restoreOptions)
 document.addEventListener('DOMContentLoaded', tabManagement)
 document.addEventListener('DOMContentLoaded', insertDataFromManifest)
+document.addEventListener('DOMContentLoaded', welcomeMessage)
 
 // Listen for saving of the options page
 document.querySelector(TAB_CONTAINER).addEventListener('change', saveOptions)

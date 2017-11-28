@@ -14,3 +14,7 @@ body {
 .field, article {
   margin-top: 2em;
 }
+
+.modal-card-body p {
+  margin-top: 2em;
+}
