@@ -59,14 +59,17 @@
 
                         <!-- OPTIONS TAB -->
                         <div class="container_item is-active" data-item="1">
-                            <div class="notification">
-                                <p><strong>Important note:</strong></p>
-                                <p>Those settings <strong>only</strong> apply to the built-in bookmarking system of Firefox.
-                                    They allow you to select in which folder and in which position the new bookmarks will be added.
-                                    It only affect bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl-D).
-
-                                </p>
-                            </div>
+                            <article class="message is-danger">
+                                <div class="message-header">
+                                    <p>Important note</p>
+                                </div>
+                                <div class="message-body">
+                                    <p>Those settings only apply to the built-in bookmarking system of Firefox.
+                                        They allow you to select in which folder (and in which position of this folder) the new bookmarks will be added.
+                                        It only affect bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl-D), or through the context menu.
+                                    </p>
+                                </div>
+                            </article>
                             <div class="field">
                                 <label for="builtin-folder" class="label">Select where new bookmarks will be added:</label>
                                 <div class="control has-icons-left">
@@ -118,7 +121,7 @@
                                     <p>Important note</p>
                                 </div>
                                 <div class="message-body">
-                                    <p>The settings below <strong>only</strong> apply to the quick bookmark icon!</p>
+                                    <p>The settings below only apply to the quick bookmark icon and shortcut.</p>
                                 </div>
                             </article>
                             <div class="field">
