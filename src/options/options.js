@@ -71,17 +71,23 @@ function setOption (selectElement, value) {
 }
 
 /*
- * Toggles quick bookmark icon options depending on the feature status
+ * Toggles quick bookmark icon or shortcut options depending on the feature status
  */
-function toggleIconOptions (iconEnabled) {
+function toggleIconOptions (iconEnabled, shortcutEnabled) {
   if (iconEnabled !== undefined && iconEnabled === true) {
     Array.from(document.querySelectorAll(':disabled')).forEach(item => {
       item.removeAttribute('disabled')
     })
   } else {
-    document.querySelector(QRY_IC_FOLDER).setAttribute('disabled', '')
-    document.querySelector(QRY_IC_TOP).setAttribute('disabled', '')
-    document.querySelector(QRY_IC_INBOX).setAttribute('disabled', '')
+    if (shortcutEnabled !== undefined && shortcutEnabled === true) {
+      document.querySelector(QRY_IC_FOLDER).removeAttribute('disabled')
+      document.querySelector(QRY_IC_TOP).removeAttribute('disabled')
+      document.querySelector(QRY_IC_INBOX).setAttribute('disabled', '')
+    } else {
+      document.querySelector(QRY_IC_FOLDER).setAttribute('disabled', '')
+      document.querySelector(QRY_IC_TOP).setAttribute('disabled', '')
+      document.querySelector(QRY_IC_INBOX).setAttribute('disabled', '')
+    }
   }
 }
 /*
@@ -89,7 +95,8 @@ function toggleIconOptions (iconEnabled) {
  */
 function saveOptions () {
   let iconEnabled = document.querySelector(QRY_IC_ICON).checked
-  toggleIconOptions(iconEnabled)
+  let shortcutEnabled = document.querySelector(QRY_IC_SHORTCUT).checked
+  toggleIconOptions(iconEnabled, shortcutEnabled)
   let firefoxBookmarking = {
     folder: document.querySelector(QRY_FF_FOLDER).value,
     top: document.querySelector(QRY_FF_TOP).checked
@@ -97,7 +104,7 @@ function saveOptions () {
   let icon = {
     enabled: iconEnabled,
     folder: document.querySelector(QRY_IC_FOLDER).value,
-    shortcut: document.querySelector(QRY_IC_SHORTCUT).checked,
+    shortcut: shortcutEnabled,
     top: document.querySelector(QRY_IC_TOP).checked,
     inbox: document.querySelector(QRY_IC_INBOX).checked
   }
@@ -127,7 +134,7 @@ function restoreOptions () {
         if (res[ICON][FOLDER] !== undefined) setOption(document.querySelector(QRY_IC_FOLDER), res[ICON][FOLDER])
         if (res[ICON][TOP] !== undefined) document.querySelector(QRY_IC_TOP).checked = res[ICON][TOP]
         if (res[ICON][INBOX] !== undefined) document.querySelector(QRY_IC_INBOX).checked = res[ICON][INBOX]
-        toggleIconOptions(res[ICON][ENABLED])
+        toggleIconOptions(res[ICON][ENABLED], res[ICON][SHORTCUT])
       }
       // For tab management
       res[MISC_TAB] !== undefined ? switchTab(res[MISC_TAB]) : switchTab(TAB_DEFAULT_NUMBER)
