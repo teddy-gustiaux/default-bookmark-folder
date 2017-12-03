@@ -40,7 +40,6 @@ function getOptions () {
 
 function updateStatus (context) {
   return new Promise((resolve, reject) => {
-    console.log(context)
     let currentURL = currentTab.url
     let searching
     if (isSupportedProtocol(currentURL)) {
@@ -69,7 +68,6 @@ function updateStatus (context) {
 
 function updateUI (context) {
   return new Promise((resolve, reject) => {
-    console.log(context)
     switch (context.status) {
       case ST_BOOKMARKED:
         if (isIconEnabled(context.options)) {
@@ -197,6 +195,7 @@ function handleInstalled (details) {
     let previousVersion = details.previousVersion
     if (previousVersion[0] === '1') {
       // Update from version 1.*
+      browser.storage.local.remove(['override', 'icon', 'inbox', 'addtotop'])
       browser.runtime.openOptionsPage()
     }
   }
