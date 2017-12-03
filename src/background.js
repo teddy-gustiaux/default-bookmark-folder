@@ -16,6 +16,11 @@ const SHORTCUT = 'shortcut'
 // Miscellaneous
 const FOLDER_NONE = 'none'
 
+// List of status
+const ST_BOOKMARKED = 100
+const ST_NOT_BOOKMARKED = 101
+const ST_MULTIPLE_BOOKMARKS = 102
+
 // Allow to retrieve all stored options at once
 const OPTIONS_ARRAY = [BUILTIN, ICON]
 
@@ -24,6 +29,69 @@ const OPTIONS_ARRAY = [BUILTIN, ICON]
  * UTILITIES
  * ================================================================================
  */
+
+function getOptions () {
+  return new Promise((resolve, reject) => {
+    browser.storage.local.get().then((options) => {
+      resolve({options: options})
+    }, onError)
+  })
+}
+
+function updateStatus (context) {
+  return new Promise((resolve, reject) => {
+    console.log(context)
+    let currentURL = currentTab.url
+    let searching
+    if (isSupportedProtocol(currentURL)) {
+      searching = browser.bookmarks.search({url: currentURL})
+    } else if (isExtraProtocol(currentURL)) {
+      searching = browser.bookmarks.search(currentURL)
+    }
+    searching.then((bookmarks) => {
+      if (bookmarks.length === 1) {
+        currentBookmark = bookmarks[0]
+        pageIsSupported = true
+        context.status = ST_BOOKMARKED
+        resolve(context)
+      } else if (bookmarks.length === 0) {
+        pageIsSupported = true
+        context.status = ST_NOT_BOOKMARKED
+        resolve(context)
+      } else if (bookmarks.length > 1) {
+        pageIsSupported = false
+        context.status = ST_MULTIPLE_BOOKMARKS
+        resolve(context)
+      }
+    }, onError)
+  })
+}
+
+function updateUI (context) {
+  return new Promise((resolve, reject) => {
+    console.log(context)
+    switch (context.status) {
+      case ST_BOOKMARKED:
+        if (isIconEnabled(context.options)) {
+          if (isIconInboxEnabled(context.options)) {
+            // Only keep current bookmark if it is in the default location
+            if (context.options[ICON][FOLDER] === undefined || currentBookmark.parentId !== context.options[ICON][FOLDER]) {
+              currentBookmark = undefined
+            }
+          }
+          showIcon()
+        }
+        break
+      case ST_NOT_BOOKMARKED:
+        currentBookmark = undefined
+        if (isIconEnabled(context.options)) showIcon()
+        break
+      case ST_MULTIPLE_BOOKMARKS:
+        hideIcon()
+        break
+    }
+  })
+}
 
 /*
  * Indicates if a folder selected has been selected to override Firefox built-in bookmarking
@@ -172,13 +240,12 @@ function handleCreated (id, bookmarkInfo) {
 
 let currentTab
 let currentBookmark
-let canToggleQuickBookmark
+let pageIsSupported
 
 /*
  * Updates the browserAction icon to reflect whether the current page is already bookmarked
  */
 function updateIcon (iconEnabled) {
-  canToggleQuickBookmark = iconEnabled
   if (iconEnabled === true) {
     browser.pageAction.setIcon({
       path: currentBookmark ? {
@@ -286,58 +353,33 @@ function hideIcon () {
 }
 
 /*
+ * Show the icon for the active tab
+ */
+function showIcon () {
+  browser.pageAction.show(currentTab.id)
+  updateIcon(true)
+}
+
+/*
  * Updates the icon of the currently active tab
  */
 function updateTab (tabs) {
-  let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
-  gettingOptions.then((options) => {
-    if (tabs[0]) {
-      currentTab = tabs[0]
-      let currentURL = currentTab.url
-      if (!isValidURL(currentURL) || !isIconEnabled(options)) {
-        hideIcon()
-      } else {
-        // Icon is enabled
-        browser.pageAction.show(currentTab.id)
-        // Search for the bookmark
-        let searching
-        if (isSupportedProtocol(currentURL)) {
-          searching = browser.bookmarks.search({url: currentURL})
-        } else if (isExtraProtocol(currentURL)) {
-          searching = browser.bookmarks.search(currentURL)
-        }
-        searching.then((bookmarks) => {
-          if (bookmarks.length === 1) {
-            currentBookmark = bookmarks[0]
-            // Only proceed if bookmark matches current tab address
-            if (currentBookmark.url === currentTab.url) {
-              if (isIconInboxEnabled(options)) {
-                // Only keep current bookmark if it is in the default location
-                if (options[ICON][FOLDER] === undefined || currentBookmark.parentId !== options[ICON][FOLDER]) {
-                  currentBookmark = undefined
-                }
-              }
-            } else {
-              currentBookmark = undefined
-            }
-            updateIcon(true)
-          } else if (bookmarks.length === 0) {
-            // No bookmarks
-            currentBookmark = undefined
-            updateIcon(true)
-          } else if (bookmarks.length > 1) {
-            // Duplicate bookmarks (not managed)
-            hideIcon()
-          }
-        }, onError)
-      }
+  if (tabs[0]) {
+    currentTab = tabs[0]
+    let currentURL = currentTab.url
+    if (!isValidURL(currentURL)) {
+      hideIcon()
+    } else {
+      getOptions()
+        .then(updateStatus)
+        .then(updateUI)
     }
-  }, onError)
+  }
 }
 
 /*
  * ================================================================================
- * CREATING ANOTHER BOOKMARKING ICON
+ * CREATING ANOTHER BOOKMARKING SHORTCUT
  * ================================================================================
  */
 
@@ -345,7 +387,7 @@ function handleCommands (command) {
   let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
   gettingOptions.then((options) => {
     if (command === 'quick-bookmark') {
-      if (canToggleQuickBookmark === true && isIconShortcutEnabled(options)) toggleBookmark()
+      if (pageIsSupported === true && isIconShortcutEnabled(options)) toggleBookmark()
     }
   }, onError)
 }
