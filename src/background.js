@@ -15,6 +15,7 @@ const SHORTCUT = 'shortcut'
 
 // Miscellaneous
 const FOLDER_NONE = 'none'
+const FIREFOX_DEFAULT_FOLDER = 'unfiled_____'
 
 // List of status
 const ST_BOOKMARKED = 100
@@ -214,19 +215,25 @@ function handleCreated (id, bookmarkInfo) {
   // Only process bookmarks (not folders or separators) with an actual URL
   if (bookmarkInfo.type === 'bookmark' && bookmarkInfo.hasOwnProperty('url')) {
     if (bookmarkInfo.url !== undefined && bookmarkInfo.url !== 'about:blank') {
-      let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
-      gettingOptions.then((options) => {
-        let bookmarkTreeNode = {}
-
-        if (isBuiltinFolderSet(options)) {
-          bookmarkTreeNode.parentId = options[BUILTIN][FOLDER]
-        }
-        if (addBuiltinToTop(options)) {
-          bookmarkTreeNode.index = 0
-        }
-
-        browser.bookmarks.move(id, bookmarkTreeNode)
-      }, onError)
+      if (isValidURL(bookmarkInfo.url)) {
+        let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
+        gettingOptions.then((options) => {
+          if (bookmarkInfo.hasOwnProperty('parentId') && bookmarkInfo.parentId === FIREFOX_DEFAULT_FOLDER) {
+            let bookmarkTreeNode = {}
+            if (isBuiltinFolderSet(options)) {
+              bookmarkTreeNode.parentId = options[BUILTIN][FOLDER]
+            } else {
+              bookmarkTreeNode.index = bookmarkInfo.index
+            }
+            if (addBuiltinToTop(options)) {
+              bookmarkTreeNode.index = 0
+            }
+            browser.bookmarks.move(id, bookmarkTreeNode)
+          } else {
+            // Bookmark created by an other mean that the browser bookmarking icon or shortcut
+          }
+        }, onError)
+      }
     }
   }
 }
