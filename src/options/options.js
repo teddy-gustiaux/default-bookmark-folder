@@ -242,8 +242,8 @@ function switchTab (number) {
  */
 function insertDataFromManifest () {
   let manifest = browser.runtime.getManifest()
-  document.querySelector(VERSION).innerHTML = manifest.version
-  document.querySelector(AUTHOR).innerHTML = manifest.author
+  document.querySelector(VERSION).textContent = manifest.version
+  document.querySelector(AUTHOR).textContent = manifest.author
 }
 
 function closeWelcomeMessage () {
