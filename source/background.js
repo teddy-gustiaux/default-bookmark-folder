@@ -12,11 +12,13 @@ const FOLDER = 'folder'
 const TOP = 'top'
 const ENABLED = 'enabled'
 const INBOX = 'inbox'
+const COLOR = 'color'
 const SHORTCUT = 'shortcut'
 
 // Miscellaneous
 const FOLDER_NONE = 'none'
 const FIREFOX_DEFAULT_FOLDER = 'unfiled_____'
+const ICON_DEFAULT_COLOR = 'red'
 
 // List of status
 const ST_BOOKMARKED = 100
@@ -79,7 +81,9 @@ function updateUI (context) {
               currentBookmark = undefined
             }
           }
-          showIcon()
+          let color = ICON_DEFAULT_COLOR
+          if (context.options[ICON][COLOR] !== undefined) color = context.options[ICON][COLOR]
+          showIcon(color)
         }
         break
       case ST_NOT_BOOKMARKED:
@@ -252,15 +256,15 @@ let pageIsSupported
 /*
  * Updates the browserAction icon to reflect whether the current page is already bookmarked
  */
-function updateIcon (iconEnabled) {
+function updateIcon (iconEnabled, color = 'red') {
   if (iconEnabled === true) {
     browser.pageAction.setIcon({
       path: currentBookmark ? {
-        32: 'icons/star/star-red-32.png',
-        64: 'icons/star/star-red-64.png',
-        128: 'icons/star/star-red-128.png',
-        256: 'icons/star/star-red-256.png',
-        512: 'icons/star/star-red-512.png'
+        32: `icons/star/star-${color}-32.png`,
+        64: `icons/star/star-${color}-64.png`,
+        128: `icons/star/star-${color}-128.png`,
+        256: `icons/star/star-${color}-256.png`,
+        512: `icons/star/star-${color}-512.png`
       } : {
         32: 'icons/empty/empty-32.png',
         64: 'icons/empty/empty-64.png',
@@ -371,9 +375,9 @@ function hideIcon () {
 /*
  * Show the icon for the active tab
  */
-function showIcon () {
+function showIcon (color = 'red') {
   browser.pageAction.show(currentTab.id)
-  updateIcon(true)
+  updateIcon(true, color)
 }
 
 /*

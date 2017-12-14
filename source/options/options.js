@@ -13,6 +13,7 @@ const OPT_IC_SHORTCUT = 'icon-shortcut'
 const OPT_IC_FOLDER = 'icon-folder'
 const OPT_IC_TOP = 'icon-top'
 const OPT_IC_INBOX = 'icon-inbox'
+const OPT_IC_COLOR = 'icon-color'
 
 // List of options query selectors
 const QRY_FF_FOLDER = '#' + OPT_FF_FOLDER
@@ -22,6 +23,7 @@ const QRY_IC_SHORTCUT = '#' + OPT_IC_SHORTCUT
 const QRY_IC_FOLDER = '#' + OPT_IC_FOLDER
 const QRY_IC_TOP = '#' + OPT_IC_TOP
 const QRY_IC_INBOX = '#' + OPT_IC_INBOX
+const QRY_IC_COLOR = '#' + OPT_IC_COLOR
 
 // List of stored options properties
 const BUILTIN = 'builtin'
@@ -30,6 +32,7 @@ const FOLDER = 'folder'
 const TOP = 'top'
 const ENABLED = 'enabled'
 const INBOX = 'inbox'
+const COLOR = 'color'
 const SHORTCUT = 'shortcut'
 const NOTIFICATION = 'updateNotification'
 
@@ -107,7 +110,8 @@ function saveOptions () {
     folder: document.querySelector(QRY_IC_FOLDER).value,
     shortcut: shortcutEnabled,
     top: document.querySelector(QRY_IC_TOP).checked,
-    inbox: document.querySelector(QRY_IC_INBOX).checked
+    inbox: document.querySelector(QRY_IC_INBOX).checked,
+    color: document.querySelector(QRY_IC_COLOR).value
   }
   browser.storage.local.set({
     builtin: firefoxBookmarking,
@@ -135,6 +139,7 @@ function restoreOptions () {
         if (res[ICON][FOLDER] !== undefined) setOption(document.querySelector(QRY_IC_FOLDER), res[ICON][FOLDER])
         if (res[ICON][TOP] !== undefined) document.querySelector(QRY_IC_TOP).checked = res[ICON][TOP]
         if (res[ICON][INBOX] !== undefined) document.querySelector(QRY_IC_INBOX).checked = res[ICON][INBOX]
+        if (res[ICON][COLOR] !== undefined) setOption(document.querySelector(QRY_IC_COLOR), res[ICON][COLOR])
         toggleIconOptions(res[ICON][ENABLED], res[ICON][SHORTCUT])
       }
       // For tab management

@@ -18,3 +18,8 @@ body {
 .modal-card-body p {
   margin-top: 2em;
 }
+
+.select-label {
+  display: block;
+  margin-bottom: 0.5em;
+}
