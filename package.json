@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "eslint ",
-    "lint": "web-ext lint --source-dir ./src/",
-    "start:firefox": "web-ext run --source-dir ./src/ --firefox=firefox --firefox-profile=dev --start-url about:debugging",
-    "start:nightly": "web-ext run --source-dir ./src/ --firefox=nightly --firefox-profile=nightly --start-url about:debugging",
-    "start:dev": "web-ext run --source-dir ./src/ --firefox=firefoxdeveloperedition --firefox-profile=dev --start-url about:debugging",
-    "build": " web-ext build --source-dir ./src/ --overwrite-dest --artifacts-dir ./dist"
+    "lint": "web-ext lint --source-dir ./source/",
+    "start:firefox": "web-ext run --source-dir ./source/ --firefox=firefox --firefox-profile=dev --start-url about:debugging",
+    "start:nightly": "web-ext run --source-dir ./source/ --firefox=nightly --firefox-profile=nightly --start-url about:debugging",
+    "start:dev": "web-ext run --source-dir ./source/ --firefox=firefoxdeveloperedition --firefox-profile=dev --start-url about:debugging",
+    "build": " web-ext build --source-dir ./source/ --overwrite-dest --artifacts-dir ./dist"
   },
   "repository": {
     "type": "git",
