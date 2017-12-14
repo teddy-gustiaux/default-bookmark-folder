@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 /*
  * ================================================================================
  * CONSTANTS
@@ -256,11 +256,17 @@ function updateIcon (iconEnabled) {
   if (iconEnabled === true) {
     browser.pageAction.setIcon({
       path: currentBookmark ? {
-        32: 'icons/star-button-32.png',
-        48: 'icons/star-button-48.png'
+        32: 'icons/star/star-red-32.png',
+        64: 'icons/star/star-red-64.png',
+        128: 'icons/star/star-red-128.png',
+        256: 'icons/star/star-red-256.png',
+        512: 'icons/star/star-red-512.png'
       } : {
-        32: 'icons/star-button-empty-32.png',
-        48: 'icons/star-button-empty-48.png'
+        32: 'icons/empty/empty-32.png',
+        64: 'icons/empty/empty-64.png',
+        128: 'icons/empty/empty-128.png',
+        256: 'icons/empty/empty-256.png',
+        512: 'icons/empty/empty-512.png'
       },
       tabId: currentTab.id
     })
@@ -271,8 +277,11 @@ function updateIcon (iconEnabled) {
   } else {
     browser.pageAction.setIcon({
       path: {
-        32: 'icons/cross-32.png',
-        48: 'icons/cross-48.png'
+        32: 'icons/cross/cross-32.png',
+        64: 'icons/cross/cross-64.png',
+        128: 'icons/cross/cross-128.png',
+        256: 'icons/cross/cross-256.png',
+        512: 'icons/cross/cross-512.png'
       },
       tabId: currentTab.id
     })

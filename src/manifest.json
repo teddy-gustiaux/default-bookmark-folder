@@ -15,7 +15,13 @@
   ],
 
   "page_action": {
-    "default_icon": "icons/cross-48.png",
+    "default_icon": {
+      "32": "icons/cross/cross-32.png",
+      "64": "icons/cross/cross-64.png",
+      "128": "icons/cross/cross-128.png",
+      "256": "icons/cross/cross-256.png",
+      "512": "icons/cross/cross-512.png"
+    },
     "default_title": "The icon is disabled. Enable it in the add-on settings.",
     "browser_style": true
   },
