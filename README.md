@@ -41,9 +41,9 @@ If the current page is bookmarked, the icon color will change to red.
 - [Cool Checboxes for Bulma.io](https://hunzaboy.github.io/Cool-Checkboxes-for-Bulma.io/)
 
 *Icons:*
-- Extension icon made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [Flaticon](https://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
-- Bookmark icon made by [Bogdan Rosu](https://www.flaticon.com/authors/bogdan-rosu) from [Flaticon](https://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
-- Cross icon made by [Eleonor Wang](https://www.flaticon.com/authors/eleonor-wang) from [Flaticon](https://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
+- [Extension icon](https://www.flaticon.com/free-icon/bookmark_150854) made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [Flaticon](https://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
+- [Bookmark icon](https://www.flaticon.com/free-icon/star-button_69468) made by [Bogdan Rosu](https://www.flaticon.com/authors/bogdan-rosu) from [Flaticon](https://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
+- [Cross icon](https://www.flaticon.com/free-icon/settings_128531) made by [Eleonor Wang](https://www.flaticon.com/authors/eleonor-wang) from [Flaticon](https://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
 
 ### License
 
