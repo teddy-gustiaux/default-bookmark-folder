@@ -23,3 +23,7 @@ body {
   display: block;
   margin-bottom: 0.5em;
 }
+
+.disabled-item {
+  opacity: 0.65;
+}

@@ -82,15 +82,25 @@ function toggleIconOptions (iconEnabled, shortcutEnabled) {
     Array.from(document.querySelectorAll(':disabled')).forEach(item => {
       item.removeAttribute('disabled')
     })
+    Array.from(document.querySelectorAll('.disabled-item')).forEach(item => {
+      item.classList.remove('disabled-item')
+    })
   } else {
     if (shortcutEnabled !== undefined && shortcutEnabled === true) {
       document.querySelector(QRY_IC_FOLDER).removeAttribute('disabled')
+      document.querySelector(`label[for=${OPT_IC_FOLDER}]`).classList.remove('disabled-item')
+      document.querySelector(QRY_IC_FOLDER).removeAttribute('disabled')
       document.querySelector(QRY_IC_TOP).removeAttribute('disabled')
       document.querySelector(QRY_IC_INBOX).setAttribute('disabled', '')
+      document.querySelector(QRY_IC_COLOR).setAttribute('disabled', '')
+      document.querySelector(`label[for="${OPT_IC_COLOR}"]`).classList.add('disabled-item')
     } else {
       document.querySelector(QRY_IC_FOLDER).setAttribute('disabled', '')
+      document.querySelector(`label[for=${OPT_IC_FOLDER}]`).classList.add('disabled-item')
       document.querySelector(QRY_IC_TOP).setAttribute('disabled', '')
       document.querySelector(QRY_IC_INBOX).setAttribute('disabled', '')
+      document.querySelector(QRY_IC_COLOR).setAttribute('disabled', '')
+      document.querySelector(`label[for=${OPT_IC_COLOR}]`).classList.add('disabled-item')
     }
   }
 }
