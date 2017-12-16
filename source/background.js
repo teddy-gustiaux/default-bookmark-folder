@@ -202,8 +202,10 @@ function handleInstalled (details) {
     if (previousVersion[0] === '1') {
       // Update from version 1.*
       browser.storage.local.remove(['override', 'icon', 'inbox', 'addtotop'])
-      browser.runtime.openOptionsPage()
     }
+    browser.storage.local.set({newRelease: true}).then(() => {
+      browser.runtime.openOptionsPage()
+    }, onError)
   }
 }
 

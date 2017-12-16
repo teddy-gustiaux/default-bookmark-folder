@@ -35,6 +35,7 @@ const INBOX = 'inbox'
 const COLOR = 'color'
 const SHORTCUT = 'shortcut'
 const NOTIFICATION = 'updateNotification'
+const NEW_RELEASE = 'newRelease'
 
 // List of tab management items
 const MISC_TAB = 'tab'
@@ -54,7 +55,7 @@ const VERSION = '#placeholder-version'
 const AUTHOR = '#placeholder-author'
 
 // Allow to retrieve all stored options at once
-const OPTIONS_ARRAY = [BUILTIN, ICON, MISC_TAB, NOTIFICATION]
+const OPTIONS_ARRAY = [BUILTIN, ICON, MISC_TAB, NOTIFICATION, NEW_RELEASE]
 
 /*
  * ================================================================================
@@ -272,6 +273,10 @@ function closeWelcomeMessage () {
 function welcomeMessage () {
   let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
   gettingOptions.then((options) => {
+    if (options.hasOwnProperty(NEW_RELEASE) && options[NEW_RELEASE] === true) {
+      switchTab(TAB_DEFAULT_NUMBER)
+      browser.storage.local.set({newRelease: false}).then(null, onError)
+    }
     if (!options.hasOwnProperty(NOTIFICATION) || options[NOTIFICATION] !== true) {
       document.querySelector(CLOSE_WELCOME).addEventListener('click', closeWelcomeMessage)
       document.querySelector(DELETE_WELCOME).addEventListener('click', closeWelcomeMessage)
