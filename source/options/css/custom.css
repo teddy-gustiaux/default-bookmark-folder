@@ -27,3 +27,18 @@ body {
 .disabled-item {
   opacity: 0.65;
 }
+
+.tabs.is-small-medium{
+  font-size: 1rem
+}
+
+.release p {
+  font-weight: bold;
+  margin-bottom: 0.25em;
+}
+
+.release ul, li {
+  margin-left: 0.75em;
+  list-style: disc;
+  font-size: 0.90rem
+}

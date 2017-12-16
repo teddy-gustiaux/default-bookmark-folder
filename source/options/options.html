@@ -26,21 +26,27 @@
             </div>
 
             <!-- MENU -->
-            <div class="tabs is-centered is-boxed is-medium" id="tab_header">
+            <div class="tabs is-boxed is-small-medium" id="tab_header">
                 <ul>
                     <li class="item is-active tab_menu" data-tab="1">
+                        <a>
+                            <span class="icon is-small"><i class="fa fa-code"></i></span>
+                            <span>Release notes</span>
+                        </a>
+                    </li>
+                    <li class="item tab_menu" data-tab="2">
                         <a>
                             <span class="icon is-small"><i class="fa fa-bookmark"></i></span>
                             <span>Firefox built-in bookmarking</span>
                         </a>
                     </li>
-                    <li class="item tab_menu" data-tab="2">
+                    <li class="item tab_menu" data-tab="3">
                         <a>
                             <span class="icon is-small"><i class="fa fa-star"></i></span>
                             <span>Quick bookmark icon</span>
                         </a>
                     </li>
-                    <li class="item tab_menu" data-tab="3">
+                    <li class="item tab_menu" data-tab="4">
                         <a>
                             <span class="icon is-small"><i class="fa fa-info"></i></span>
                             <span>About the add-on</span>
@@ -58,7 +64,20 @@
                     <div class="box" id="tab_container">
 
                         <!-- OPTIONS TAB -->
-                        <div class="container_item is-active" data-item="1">
+                        <div class="container_item release" data-item="1">
+                                <p>2.1.0</p>
+                                <ul>
+                                    <li>Fix: Tab drag and drop bookmarking and "Bookmark All Tabs..." features are now excluded from the overriding (GitHub issue #5)</li>
+                                    <li>New: Select the color of the quick bookmark icon (among a list) when the current page is bookmarked</li>
+                                    <li>New: Higher quality icons</li>
+                                    <li>New: Release notes tab in the options</li>
+                                    <li>New: Under the hood improvements</li>
+                                </ul>
+                        </div>
+                        <!-- END OPTIONS TAB -->
+
+                        <!-- OPTIONS TAB -->
+                        <div class="container_item is-active" data-item="2">
                             <article class="message is-danger">
                                 <div class="message-header">
                                     <p>Important note</p>
@@ -95,7 +114,7 @@
                         <!-- END OPTIONS TAB -->
 
                         <!-- OPTIONS TAB -->
-                        <div class="container_item" data-item="2">
+                        <div class="container_item" data-item="3">
                             <div class="notification">
                                 <p>This feature will add a quick bookmark icon in the address bar, to (un)bookmark a page with only one click.
                                 The icon is a round star icon in the address bar. If the current page is bookmarked, the icon color will change to red.
@@ -176,7 +195,7 @@
                         <!-- END OPTIONS TAB -->
 
                         <!-- OPTIONS TAB -->
-                        <div class="container_item" data-item="3">
+                        <div class="container_item" data-item="4">
                             <h1 class="subtitle">Feedback</h1>
                             <div class="field">
                                 <p>If you want to report a bug or ask for a new feature,
