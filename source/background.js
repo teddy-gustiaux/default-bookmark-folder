@@ -17,8 +17,10 @@ const SHORTCUT = 'shortcut'
 
 // Miscellaneous
 const FOLDER_NONE = 'none'
-const FIREFOX_DEFAULT_FOLDER = 'unfiled_____'
 const ICON_DEFAULT_COLOR = 'red'
+
+// Default bookmark folders ('unfiled' by default for all versions, 'menu' with shortcut/context menu on stable version)
+const FIREFOX_DEFAULT_FOLDERS = ['unfiled_____', 'menu________']
 
 // List of status
 const ST_BOOKMARKED = 100
@@ -225,7 +227,7 @@ function handleCreated (id, bookmarkInfo) {
       if (isValidURL(bookmarkInfo.url)) {
         let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
         gettingOptions.then((options) => {
-          if (bookmarkInfo.hasOwnProperty('parentId') && bookmarkInfo.parentId === FIREFOX_DEFAULT_FOLDER) {
+          if (bookmarkInfo.hasOwnProperty('parentId') && FIREFOX_DEFAULT_FOLDERS.includes(bookmarkInfo.parentId)) {
             let bookmarkTreeNode = {}
             if (isBuiltinFolderSet(options)) {
               bookmarkTreeNode.parentId = options[BUILTIN][FOLDER]
