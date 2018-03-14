@@ -87,11 +87,13 @@ function updateUI (context) {
           let color = ICON_DEFAULT_COLOR
           if (context.options[ICON][COLOR] !== undefined) color = context.options[ICON][COLOR]
           showIcon(color)
+        } else {
+          hideIcon()
         }
         break
       case ST_NOT_BOOKMARKED:
         currentBookmark = undefined
-        if (isIconEnabled(context.options)) showIcon()
+        isIconEnabled(context.options) ? showIcon() : hideIcon()
         break
       case ST_MULTIPLE_BOOKMARKS:
         hideIcon()
