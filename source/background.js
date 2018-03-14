@@ -7,6 +7,7 @@
 
 // List of stored options properties
 const BUILTIN = 'builtin'
+const ALLTABS = 'alltabs'
 const ICON = 'icon'
 const FOLDER = 'folder'
 const TOP = 'top'
@@ -28,7 +29,7 @@ const ST_NOT_BOOKMARKED = 101
 const ST_MULTIPLE_BOOKMARKS = 102
 
 // Allow to retrieve all stored options at once
-const OPTIONS_ARRAY = [BUILTIN, ICON]
+const OPTIONS_ARRAY = [BUILTIN, ALLTABS, ICON]
 
 /*
  * ================================================================================
@@ -100,7 +101,7 @@ function updateUI (context) {
 }
 
 /*
- * Indicates if a folder selected has been selected to override Firefox built-in bookmarking
+ * Indicates if a folder has been selected to override Firefox built-in bookmarking
  */
 function isBuiltinFolderSet (options) {
   let isSet = false
@@ -118,6 +119,30 @@ function addBuiltinToTop (options) {
   let isEnabled = false
   if (options.hasOwnProperty(BUILTIN)) {
     let ff = options[BUILTIN]
+    if (ff.hasOwnProperty(TOP) && ff[TOP] === true) isEnabled = true
+  }
+  return isEnabled
+}
+
+/*
+ * Indicates if a folder has been selected to override Firefox built-in all tabs bookmarking
+ */
+function isAllTabsFolderSet (options) {
+  let isSet = false
+  if (options.hasOwnProperty(ALLTABS)) {
+    let ff = options[ALLTABS]
+    if (ff.hasOwnProperty(FOLDER) && ff[FOLDER] !== undefined && ff[FOLDER] !== FOLDER_NONE) isSet = true
+  }
+  return isSet
+}
+
+/*
+ * Indicates if new folders for Firefox built-in all tabs bookmarking should be added to the top of the folder
+ */
+function addAllTabsToTop (options) {
+  let isEnabled = false
+  if (options.hasOwnProperty(ALLTABS)) {
+    let ff = options[ALLTABS]
     if (ff.hasOwnProperty(TOP) && ff[TOP] === true) isEnabled = true
   }
   return isEnabled
@@ -205,6 +230,17 @@ function isWebPage (bookmarkInfo) {
 }
 
 /*
+ * Indicates if a bookmark is a folder
+ */
+function isFolder (bookmarkInfo) {
+  if (bookmarkInfo.hasOwnProperty('type')) {
+    return (bookmarkInfo.type !== undefined && bookmarkInfo.type === 'folder')
+  } else {
+    return (bookmarkInfo.hasOwnProperty('children'))
+  }
+}
+
+/*
  * Logs errors to the console
  */
 function onError (error) {
@@ -242,7 +278,6 @@ function handleInstalled (details) {
  * Moves the bookmark to the specified folder
  */
 function handleCreated (id, bookmarkInfo) {
-  // Only process bookmarks (not folders or separators) with an actual URL
   if (isWebPage(bookmarkInfo)) {
     if (isValidURL(bookmarkInfo.url)) {
       let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
@@ -259,10 +294,28 @@ function handleCreated (id, bookmarkInfo) {
           }
           browser.bookmarks.move(id, bookmarkTreeNode)
         } else {
-          // Bookmark created by an other mean that the browser bookmarking icon or shortcut
+          // Bookmark created by an other mean
         }
       }, onError)
     }
+  } else if (isFolder(bookmarkInfo)) {
+    let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
+    gettingOptions.then((options) => {
+      if (bookmarkInfo.hasOwnProperty('parentId') && FIREFOX_DEFAULT_FOLDERS.includes(bookmarkInfo.parentId)) {
+        let bookmarkTreeNode = {}
+        if (isAllTabsFolderSet(options)) {
+          bookmarkTreeNode.parentId = options[ALLTABS][FOLDER]
+        } else {
+          bookmarkTreeNode.index = bookmarkInfo.index
+        }
+        if (addAllTabsToTop(options)) {
+          bookmarkTreeNode.index = 0
+        }
+        browser.bookmarks.move(id, bookmarkTreeNode)
+      } else {
+        // Bookmark created by an other mean
+      }
+    }, onError)
   }
 }
 

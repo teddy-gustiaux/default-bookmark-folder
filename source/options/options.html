@@ -116,6 +116,32 @@
                                     <p class="help">If disabled, new bookmarks will be added to the bottom of the selected folder</p>
                                 </div>
                             </div>
+                            <hr/>
+                            <div class="notification">
+                                <p>The setting below only applies when using the "Bookmark All Tabs..." feature of Firefox. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the open tabs. </p>
+                                </p>
+                            </div>
+                            <div class="field">
+                                <label for="alltabs-folder" class="label">Select where new "Bookmark All Tabs..." folders will be added:</label>
+                                <div class="control has-icons-left">
+                                    <div class="select">
+                                        <select id="alltabs-folder">
+                                            <option selected value="none">No folder selected (use Firefox's default bookmark location)</option>
+                                        </select>
+                                    </div>
+                                    <div class="icon is-small is-left">
+                                        <i class="fa fa-folder"></i>
+                                    </div>
+                                </div>
+                                <p class="help">Note: Firefox's default "Bookmark All Tabs..." folder location is <i>Bookmarks Menu</i>.</p>
+                            </div>
+                            <div class="field">
+                                <div class="control b-checkbox is-info is-inline">
+                                    <input id="alltabs-top" class="styled" type="checkbox">
+                                    <label for="alltabs-top">Add new "Bookmark All Tabs..." folders to the top of the selected folder</label>
+                                    <p class="help">If disabled, new folders will be added to the bottom of the selected folder</p>
+                                </div>
+                            </div>
                         </div>
                         <!-- END OPTIONS TAB -->
 

@@ -8,6 +8,8 @@
 // List of options IDs
 const OPT_FF_FOLDER = 'builtin-folder'
 const OPT_FF_TOP = 'builtin-top'
+const OPT_AT_FOLDER = 'alltabs-folder'
+const OPT_AT_TOP = 'alltabs-top'
 const OPT_IC_ICON = 'icon-enabled'
 const OPT_IC_SHORTCUT = 'icon-shortcut'
 const OPT_IC_FOLDER = 'icon-folder'
@@ -18,6 +20,8 @@ const OPT_IC_COLOR = 'icon-color'
 // List of options query selectors
 const QRY_FF_FOLDER = '#' + OPT_FF_FOLDER
 const QRY_FF_TOP = '#' + OPT_FF_TOP
+const QRY_AT_FOLDER = '#' + OPT_AT_FOLDER
+const QRY_AT_TOP = '#' + OPT_AT_TOP
 const QRY_IC_ICON = '#' + OPT_IC_ICON
 const QRY_IC_SHORTCUT = '#' + OPT_IC_SHORTCUT
 const QRY_IC_FOLDER = '#' + OPT_IC_FOLDER
@@ -27,6 +31,7 @@ const QRY_IC_COLOR = '#' + OPT_IC_COLOR
 
 // List of stored options properties
 const BUILTIN = 'builtin'
+const ALLTABS = 'alltabs'
 const ICON = 'icon'
 const FOLDER = 'folder'
 const TOP = 'top'
@@ -55,7 +60,7 @@ const VERSION = '#placeholder-version'
 const AUTHOR = '#placeholder-author'
 
 // Allow to retrieve all stored options at once
-const OPTIONS_ARRAY = [BUILTIN, ICON, MISC_TAB, NOTIFICATION, NEW_RELEASE]
+const OPTIONS_ARRAY = [BUILTIN, ALLTABS, ICON, MISC_TAB, NOTIFICATION, NEW_RELEASE]
 
 /*
  * ================================================================================
@@ -116,6 +121,10 @@ function saveOptions () {
     folder: document.querySelector(QRY_FF_FOLDER).value,
     top: document.querySelector(QRY_FF_TOP).checked
   }
+  let firefoxBookmarkingAllTabs = {
+    folder: document.querySelector(QRY_AT_FOLDER).value,
+    top: document.querySelector(QRY_AT_TOP).checked
+  }
   let icon = {
     enabled: iconEnabled,
     folder: document.querySelector(QRY_IC_FOLDER).value,
@@ -126,6 +135,7 @@ function saveOptions () {
   }
   browser.storage.local.set({
     builtin: firefoxBookmarking,
+    alltabs: firefoxBookmarkingAllTabs,
     icon: icon
   }).then(null, onError)
 }
@@ -135,13 +145,18 @@ function saveOptions () {
  */
 function restoreOptions () {
   function updateOptions (bookmarkItems) {
-    buildTree(bookmarkItems, [QRY_FF_FOLDER, QRY_IC_FOLDER])
+    buildTree(bookmarkItems, [QRY_FF_FOLDER, QRY_AT_FOLDER, QRY_IC_FOLDER])
     let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
     gettingOptions.then((res) => {
       if (res.hasOwnProperty(BUILTIN) && res[BUILTIN] !== undefined) {
         // For Firefox built-in bookmarking
         if (res[BUILTIN][FOLDER] !== undefined) setOption(document.querySelector(QRY_FF_FOLDER), res[BUILTIN][FOLDER])
         if (res[BUILTIN][TOP] !== undefined) document.querySelector(QRY_FF_TOP).checked = res[BUILTIN][TOP]
+      }
+      if (res.hasOwnProperty(ALLTABS) && res[ALLTABS] !== undefined) {
+        // For Firefox built-in all tabs bookmarking
+        if (res[ALLTABS][FOLDER] !== undefined) setOption(document.querySelector(QRY_AT_FOLDER), res[ALLTABS][FOLDER])
+        if (res[ALLTABS][TOP] !== undefined) document.querySelector(QRY_AT_TOP).checked = res[ALLTABS][TOP]
       }
       if (res.hasOwnProperty(ICON) && res[ICON] !== undefined) {
         // For quick bookmark icon
