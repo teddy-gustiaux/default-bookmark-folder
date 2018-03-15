@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Default Bookmark Folder Options</title>
-    <link rel="stylesheet" href="../vendor/css/font-awesome.min.css"/>
+    <script defer src="../vendor/js/fontawesome-all.min.js"></script>
     <link rel="stylesheet" href="../vendor/css/bulma.min.css"/>
-    <link rel="stylesheet" href="../vendor/css/bulma-radio-checkbox.min.css"/>
+    <link rel="stylesheet" href="../vendor/css/bulma-switch.min.css"/>
     <link rel="stylesheet" href="css/custom.css"/>
 </head>
 
@@ -29,25 +29,25 @@
                 <ul>
                     <li class="item is-active tab_menu" data-tab="1">
                         <a>
-                            <span class="icon is-small"><i class="fa fa-code"></i></span>
+                            <span class="icon is-small"><i class="fas fa-code"></i></span>
                             <span>Release notes</span>
                         </a>
                     </li>
                     <li class="item tab_menu" data-tab="2">
                         <a>
-                            <span class="icon is-small"><i class="fa fa-bookmark"></i></span>
+                            <span class="icon is-small"><i class="fas fa-bookmark"></i></span>
                             <span>Firefox built-in bookmarking</span>
                         </a>
                     </li>
                     <li class="item tab_menu" data-tab="3">
                         <a>
-                            <span class="icon is-small"><i class="fa fa-star"></i></span>
+                            <span class="icon is-small"><i class="fas fa-star"></i></span>
                             <span>Quick bookmark icon</span>
                         </a>
                     </li>
                     <li class="item tab_menu" data-tab="4">
                         <a>
-                            <span class="icon is-small"><i class="fa fa-info"></i></span>
+                            <span class="icon is-small"><i class="fas fa-info"></i></span>
                             <span>About the add-on</span>
                         </a>
                     </li>
@@ -104,19 +104,17 @@
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
-                                        <i class="fa fa-folder"></i>
+                                        <i class="fas fa-folder"></i>
                                     </div>
                                 </div>
                                 <p class="help">Note: Firefox's default bookmark location is <i>Other Bookmarks</i>.</p>
                             </div>
                             <div class="field">
-                                <div class="control b-checkbox is-info is-inline">
-                                    <input id="builtin-top" class="styled" type="checkbox">
-                                    <label for="builtin-top">Add new bookmarks to the top of the selected folder</label>
-                                    <p class="help">If disabled, new bookmarks will be added to the bottom of the selected folder</p>
-                                </div>
+                                <input class="switch is-rounded is-info" id="builtin-top" type="checkbox">
+                                <label for="builtin-top">Add new bookmarks to the top of the selected folder</label>
+                                <p class="help">If disabled, new bookmarks will be added to the bottom of the selected folder</p>
                             </div>
-                            <hr/>
+                            <hr class="divider"/>
                             <div class="notification">
                                 <p>The setting below only applies when using the "Bookmark All Tabs..." feature of Firefox. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the open tabs. </p>
                                 </p>
@@ -130,17 +128,15 @@
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
-                                        <i class="fa fa-folder"></i>
+                                        <i class="fas fa-folder"></i>
                                     </div>
                                 </div>
                                 <p class="help">Note: Firefox's default "Bookmark All Tabs..." folder location is <i>Bookmarks Menu</i>.</p>
                             </div>
                             <div class="field">
-                                <div class="control b-checkbox is-info is-inline">
-                                    <input id="alltabs-top" class="styled" type="checkbox">
-                                    <label for="alltabs-top">Add new "Bookmark All Tabs..." folders to the top of the selected folder</label>
-                                    <p class="help">If disabled, new folders will be added to the bottom of the selected folder</p>
-                                </div>
+                                <input id="alltabs-top" class="switch is-rounded is-info" type="checkbox">
+                                <label for="alltabs-top">Add new "Bookmark All Tabs..." folders to the top of the selected folder</label>
+                                <p class="help">If disabled, new folders will be added to the bottom of the selected folder</p>
                             </div>
                         </div>
                         <!-- END OPTIONS TAB -->
@@ -156,16 +152,12 @@
                                 </p>
                             </div>
                             <div class="field">
-                                <div class="control b-checkbox is-info is-inline">
-                                    <input id="icon-enabled" class="styled" type="checkbox">
-                                    <label for="icon-enabled">Enable the quick bookmark icon</label>
-                                </div>
+                                <input id="icon-enabled" class="switch is-rounded is-info" type="checkbox">
+                                <label for="icon-enabled">Enable the quick bookmark icon</label>
                             </div>
                             <div class="field">
-                                <div class="control b-checkbox is-info is-inline">
-                                    <input id="icon-shortcut" class="styled" type="checkbox">
-                                    <label for="icon-shortcut">Enable the quick bookmark shortcut (Alt+Shift+D)</label>
-                                </div>
+                                <input id="icon-shortcut" class="switch is-rounded is-info" type="checkbox">
+                                <label for="icon-shortcut">Enable the quick bookmark shortcut (Alt+Shift+D)</label>
                             </div>
                             <article class="message is-danger">
                                 <div class="message-header">
@@ -184,26 +176,22 @@
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
-                                        <i class="fa fa-folder"></i>
+                                        <i class="fas fa-folder"></i>
                                     </div>
                                 </div>
                                 <p class="help">Note: Firefox's default bookmark location is <i>Other Bookmarks</i>.</p>
                             </div>
                             <div class="field">
-                                <div class="control b-checkbox is-info is-inline">
-                                    <input id="icon-top" class="styled" type="checkbox" disabled>
-                                    <label for="icon-top">Add new bookmarks to the top of the selected folder</label>
-                                    <p class="help">If disabled, new bookmarks will be added to the bottom of the selected folder</p>
-                                </div>
+                                <input id="icon-top" class="switch is-rounded is-info" type="checkbox" disabled>
+                                <label for="icon-top">Add new bookmarks to the top of the selected folder</label>
+                                <p class="help">If disabled, new bookmarks will be added to the bottom of the selected folder</p>
                             </div>
                             <div class="field">
-                                <div class="b-checkbox is-info is-inline">
-                                    <input id="icon-inbox" class="styled" type="checkbox" disabled>
-                                    <label for="icon-inbox">Only show page as bookmarked if the bookmark is in the folder selected above</label>
-                                    <p class="help">If this setting is enabled, the quick bookmark icon will be red (i.e. the current page has been bookmarked)
-                                        only if the bookmark is located in the folder you have selected above
-                                    </p>
-                                </div>
+                                <input id="icon-inbox" class="switch is-rounded is-info" type="checkbox" disabled>
+                                <label for="icon-inbox">Only show page as bookmarked if the bookmark is in the folder selected above</label>
+                                <p class="help">If this setting is enabled, the quick bookmark icon will be red (i.e. the current page has been bookmarked)
+                                    only if the bookmark is located in the folder you have selected above
+                                </p>
                             </p>
                             </div>
                             <div class="field">
