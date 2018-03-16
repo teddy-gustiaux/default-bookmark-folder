@@ -19,7 +19,9 @@ This feature only affect bookmarks added through the built-in Firefox bookmark i
 
 *You can:*
 - Select where the new bookmarks will be added
-- Choose to add the new bookmarks to the top or the bottom of the selected folder 
+- Choose to add the new bookmarks to the top or the bottom of the selected folder
+- Select where the new folders of "Bookmark All Tabs..." will be added
+- Choose to add the new "Bookmark All Tabs..." folders to the top or the bottom of the selected folder
 
 **Quick bookmark icon:**
 
@@ -39,7 +41,7 @@ If the current page is bookmarked, the icon color will change to red.
 *Third-party libraries:*
 - [FontAwesome](http://fontawesome.io/)
 - [Bulma](https://bulma.io/)
-- [Cool Checboxes for Bulma.io](https://hunzaboy.github.io/Cool-Checkboxes-for-Bulma.io/)
+- [Bulma Switch Extension](https://github.com/Wikiki/bulma-switch)
 
 *Icons:*
 - [Extension icon](https://www.flaticon.com/free-icon/bookmark_150854) made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [Flaticon](https://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
