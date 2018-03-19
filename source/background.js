@@ -68,6 +68,8 @@ function updateStatus (context) {
         pageIsSupported = false
         context.status = ST_MULTIPLE_BOOKMARKS
         resolve(context)
+      } else {
+        pageIsSupported = false
       }
     }, onError)
   })
