@@ -77,8 +77,8 @@ function updateUI (context) {
   return new Promise((resolve, reject) => {
     switch (context.status) {
       case ST_BOOKMARKED:
-        if (isIconEnabled(context.options)) {
-          if (isIconInboxEnabled(context.options)) {
+        if (isOptionEnabled(context.options, ICON, ENABLED)) {
+          if (isOptionEnabled(context.options, ICON, INBOX)) {
             // Only keep current bookmark if it is in the default location
             if (context.options[ICON][FOLDER] === undefined || currentBookmark.parentId !== context.options[ICON][FOLDER]) {
               currentBookmark = undefined
@@ -93,7 +93,7 @@ function updateUI (context) {
         break
       case ST_NOT_BOOKMARKED:
         currentBookmark = undefined
-        isIconEnabled(context.options) ? showIcon() : hideIcon()
+        isOptionEnabled(context.options, ICON, ENABLED) ? showIcon() : hideIcon()
         break
       case ST_MULTIPLE_BOOKMARKS:
         hideIcon()
@@ -103,111 +103,27 @@ function updateUI (context) {
 }
 
 /*
- * Indicates if a folder has been selected to override Firefox built-in bookmarking
+ * Indicates a specific option has been enabled
  */
-function isBuiltinFolderSet (options) {
+function isOptionEnabled (options, optionCategory, optionName) {
+  let isEnabled = false
+  if (options.hasOwnProperty(optionCategory)) {
+    let ff = options[optionCategory]
+    if (ff.hasOwnProperty(optionName) && ff[optionName] === true) isEnabled = true
+  }
+  return isEnabled
+}
+
+/*
+ * Indicates if a folder has been selected to override the indicated category
+ */
+function isFolderSet (options, optionCategory) {
   let isSet = false
-  if (options.hasOwnProperty(BUILTIN)) {
-    let ff = options[BUILTIN]
+  if (options.hasOwnProperty(optionCategory)) {
+    let ff = options[optionCategory]
     if (ff.hasOwnProperty(FOLDER) && ff[FOLDER] !== undefined && ff[FOLDER] !== FOLDER_NONE) isSet = true
   }
   return isSet
-}
-
-/*
- * Indicates if new bookmarks for Firefox built-in bookmarking should be added to the top of the folder
- */
-function addBuiltinToTop (options) {
-  let isEnabled = false
-  if (options.hasOwnProperty(BUILTIN)) {
-    let ff = options[BUILTIN]
-    if (ff.hasOwnProperty(TOP) && ff[TOP] === true) isEnabled = true
-  }
-  return isEnabled
-}
-
-/*
- * Indicates if a folder has been selected to override Firefox built-in all tabs bookmarking
- */
-function isAllTabsFolderSet (options) {
-  let isSet = false
-  if (options.hasOwnProperty(ALLTABS)) {
-    let ff = options[ALLTABS]
-    if (ff.hasOwnProperty(FOLDER) && ff[FOLDER] !== undefined && ff[FOLDER] !== FOLDER_NONE) isSet = true
-  }
-  return isSet
-}
-
-/*
- * Indicates if new folders for Firefox built-in all tabs bookmarking should be added to the top of the folder
- */
-function addAllTabsToTop (options) {
-  let isEnabled = false
-  if (options.hasOwnProperty(ALLTABS)) {
-    let ff = options[ALLTABS]
-    if (ff.hasOwnProperty(TOP) && ff[TOP] === true) isEnabled = true
-  }
-  return isEnabled
-}
-
-/*
- * Indicates if the quick bookmark icon has been enabled
- */
-function isIconEnabled (options) {
-  let isEnabled = false
-  if (options.hasOwnProperty(ICON)) {
-    let ic = options[ICON]
-    if (ic.hasOwnProperty(ENABLED) && ic[ENABLED] === true) isEnabled = true
-  }
-  return isEnabled
-}
-
-/*
- * Indicates if the quick bookmark icon has been enabled
- */
-function isIconShortcutEnabled (options) {
-  let isEnabled = false
-  if (options.hasOwnProperty(ICON)) {
-    let ic = options[ICON]
-    if (ic.hasOwnProperty(SHORTCUT) && ic[SHORTCUT] === true) isEnabled = true
-  }
-  return isEnabled
-}
-
-/*
- * Indicates if a folder selected has been selected for the quick icon bookmark
- */
-function isIconFolderSet (options) {
-  let isSet = false
-  if (options.hasOwnProperty(ICON)) {
-    let ic = options[ICON]
-    if (ic.hasOwnProperty(FOLDER) && ic[FOLDER] !== undefined && ic[FOLDER] !== FOLDER_NONE) isSet = true
-  }
-  return isSet
-}
-
-/*
- * Indicates if new bookmarks for Firefox built-in bookmarking should be added to the top of the folder
- */
-function addIconToTop (options) {
-  let isEnabled = false
-  if (options.hasOwnProperty(ICON)) {
-    let ic = options[ICON]
-    if (ic.hasOwnProperty(TOP) && ic[TOP] === true) isEnabled = true
-  }
-  return isEnabled
-}
-
-/*
- * Indicates if the "inbox mode" has been enabled
- */
-function isIconInboxEnabled (options) {
-  let isEnabled = false
-  if (options.hasOwnProperty(ICON)) {
-    let ic = options[ICON]
-    if (ic.hasOwnProperty(INBOX) && ic[INBOX] === true) isEnabled = true
-  }
-  return isEnabled
 }
 
 /*
@@ -286,12 +202,12 @@ function handleCreated (id, bookmarkInfo) {
       gettingOptions.then((options) => {
         if (bookmarkInfo.hasOwnProperty('parentId') && FIREFOX_DEFAULT_FOLDERS.includes(bookmarkInfo.parentId)) {
           let bookmarkTreeNode = {}
-          if (isBuiltinFolderSet(options)) {
+          if (isFolderSet(options, BUILTIN)) {
             bookmarkTreeNode.parentId = options[BUILTIN][FOLDER]
           } else {
             bookmarkTreeNode.index = bookmarkInfo.index
           }
-          if (addBuiltinToTop(options)) {
+          if (isOptionEnabled(options, BUILTIN, TOP)) {
             bookmarkTreeNode.index = 0
           }
           browser.bookmarks.move(id, bookmarkTreeNode)
@@ -305,12 +221,12 @@ function handleCreated (id, bookmarkInfo) {
     gettingOptions.then((options) => {
       if (bookmarkInfo.hasOwnProperty('parentId') && FIREFOX_DEFAULT_FOLDERS.includes(bookmarkInfo.parentId)) {
         let bookmarkTreeNode = {}
-        if (isAllTabsFolderSet(options)) {
+        if (isFolderSet(options, ALLTABS)) {
           bookmarkTreeNode.parentId = options[ALLTABS][FOLDER]
         } else {
           bookmarkTreeNode.index = bookmarkInfo.index
         }
-        if (addAllTabsToTop(options)) {
+        if (isOptionEnabled(options, ALLTABS, TOP)) {
           bookmarkTreeNode.index = 0
         }
         browser.bookmarks.move(id, bookmarkTreeNode)
@@ -387,10 +303,10 @@ function toggleBookmark () {
         title: currentTab.title,
         url: currentTab.url
       }
-      if (isIconFolderSet(options)) {
+      if (isFolderSet(options, ICON)) {
         bookmarkTreeNode.parentId = options[ICON][FOLDER]
       }
-      if (addIconToTop(options)) {
+      if (isOptionEnabled(options, ICON, TOP)) {
         bookmarkTreeNode.index = 0
       }
       // Remove listener overriding the Firefox built-in bookmarking
@@ -485,7 +401,7 @@ function handleCommands (command) {
   let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
   gettingOptions.then((options) => {
     if (command === 'quick-bookmark') {
-      if (pageIsSupported === true && isIconShortcutEnabled(options)) toggleBookmark()
+      if (pageIsSupported === true && isOptionEnabled(options, ICON, SHORTCUT)) toggleBookmark()
     }
   }, onError)
 }
