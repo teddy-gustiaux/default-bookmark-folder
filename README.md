@@ -34,7 +34,11 @@ If the current page is bookmarked, the icon color will change to red.
 - Select where the new bookmarks will be added
 - Choose to add the new bookmarks to the top or the bottom of the selected folder
 - Choose to show the page as bookmarked (i.e. the icon color changes) if the bookmark is in the folder you selected
-- Select the color of the quick bookmark icon (among a list) when the current page is bookmarked (red by default) 
+- Select the color of the quick bookmark icon (among a list) when the current page is bookmarked (red by default)
+
+### Support
+
+If you want to report a bug or ask for a new feature, you can open an issue on [GitHub](https://github.com/teddy-gustiaux/default-bookmark-folder/issues). If you do not have an account, you can create one for free.
 
 ### Attribution
 
