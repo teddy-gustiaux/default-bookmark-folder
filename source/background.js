@@ -52,7 +52,7 @@ function updateStatus (context) {
     if (isSupportedProtocol(currentURL)) {
       searching = browser.bookmarks.search({url: currentURL})
     } else if (isExtraProtocol(currentURL)) {
-      searching = browser.bookmarks.search(currentURL)
+      searching = browser.bookmarks.search(decodeURIComponent(currentURL))
     }
     searching.then((bookmarks) => {
       if (bookmarks.length === 1) {
