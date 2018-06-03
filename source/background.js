@@ -352,11 +352,18 @@ function isExtraProtocol (urlString) {
 }
 
 /*
- * Triggers the update of the icon of the currently active tab
+ * Triggers the update of the icon of the currently active tab on events (except tab update)
  */
 function updateActiveTab () {
   let gettingActiveTab = browser.tabs.query({active: true, currentWindow: true})
   gettingActiveTab.then(updateTab, onError)
+}
+
+/*
+ * Triggers the update of the icon of the currently active tab when the tab itself is updated
+ */
+function handleUpdated(tabId, changeInfo, tabInfo) {
+  if (changeInfo.hasOwnProperty('status')) updateActiveTab()
 }
 
 /*
@@ -424,7 +431,7 @@ browser.bookmarks.onMoved.addListener(updateActiveTab)
 // Listen for clicks on the button
 browser.pageAction.onClicked.addListener(toggleBookmark)
 // Listen to tab URL changes
-browser.tabs.onUpdated.addListener(updateActiveTab)
+browser.tabs.onUpdated.addListener(handleUpdated)
 // Listen to tab switching
 browser.tabs.onActivated.addListener(updateActiveTab)
 // Listen for window switching
