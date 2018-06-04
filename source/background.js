@@ -345,6 +345,7 @@ function isSupportedProtocol (urlString) {
 * Checks if URL is using one of the extra supported protocols
 */
 function isExtraProtocol (urlString) {
+  if (currentTab.hasOwnProperty('isInReaderMode') && currentTab.isInReaderMode) return true
   let extraProtocols = ['file:']
   let url = document.createElement('a')
   url.href = urlString
@@ -352,18 +353,11 @@ function isExtraProtocol (urlString) {
 }
 
 /*
- * Triggers the update of the icon of the currently active tab on events (except tab update)
+ * Triggers the update of the icon of the currently active tab
  */
 function updateActiveTab () {
   let gettingActiveTab = browser.tabs.query({active: true, currentWindow: true})
   gettingActiveTab.then(updateTab, onError)
-}
-
-/*
- * Triggers the update of the icon of the currently active tab when the tab itself is updated
- */
-function handleUpdated(tabId, changeInfo, tabInfo) {
-  if (changeInfo.hasOwnProperty('status')) updateActiveTab()
 }
 
 /*
@@ -431,7 +425,7 @@ browser.bookmarks.onMoved.addListener(updateActiveTab)
 // Listen for clicks on the button
 browser.pageAction.onClicked.addListener(toggleBookmark)
 // Listen to tab URL changes
-browser.tabs.onUpdated.addListener(handleUpdated)
+browser.tabs.onUpdated.addListener(updateActiveTab)
 // Listen to tab switching
 browser.tabs.onActivated.addListener(updateActiveTab)
 // Listen for window switching
