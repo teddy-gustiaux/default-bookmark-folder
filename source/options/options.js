@@ -282,9 +282,10 @@ function insertDataFromManifest () {
  * Inserts data from the locales into the options page
  */
 function insertDataFromLocales () {
-  let elementsWithLocale = document.querySelectorAll('[id^=\'locale\']')
+  document.title = browser.i18n.getMessage('options_title')
+  let elementsWithLocale = document.querySelectorAll('[data-locale]')
   Array.from(elementsWithLocale).forEach(elementWithLocale => {
-    elementWithLocale.textContent = browser.i18n.getMessage(elementWithLocale.id.replace('locale-', ''))
+    elementWithLocale.textContent = browser.i18n.getMessage(elementWithLocale.dataset.locale)
   })
 }
 

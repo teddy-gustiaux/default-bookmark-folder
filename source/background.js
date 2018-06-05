@@ -271,7 +271,7 @@ function updateIcon (iconEnabled, color = 'red') {
       tabId: currentTab.id
     })
     browser.pageAction.setTitle({
-      title: currentBookmark ? browser.i18n.getMessage('remove-bookmark') : browser.i18n.getMessage('quick-bookmark-page'),
+      title: currentBookmark ? browser.i18n.getMessage('icon_remove_bookmark') : browser.i18n.getMessage('icon_quick_bookmark_page'),
       tabId: currentTab.id
     })
   } else {
@@ -286,7 +286,7 @@ function updateIcon (iconEnabled, color = 'red') {
       tabId: currentTab.id
     })
     browser.pageAction.setTitle({
-      title: browser.i18n.getMessage('quick-bookmark-disabled'),
+      title: browser.i18n.getMessage('icon_quick_bookmark_disabled'),
       tabId: currentTab.id
     })
   }
