@@ -278,6 +278,16 @@ function insertDataFromManifest () {
   document.querySelector(AUTHOR).textContent = manifest.author
 }
 
+/*
+ * Inserts data from the locales into the options page
+ */
+function insertDataFromLocales () {
+  let elementsWithLocale = document.querySelectorAll('[id^=\'locale\']')
+  Array.from(elementsWithLocale).forEach(elementWithLocale => {
+    elementWithLocale.textContent = browser.i18n.getMessage(elementWithLocale.id.replace('locale-', ''))
+  })
+}
+
 function closeWelcomeMessage () {
   document.querySelector(WELCOME).classList.remove('is-active')
   browser.storage.local.set({
@@ -310,6 +320,7 @@ function welcomeMessage () {
 document.addEventListener('DOMContentLoaded', restoreOptions)
 document.addEventListener('DOMContentLoaded', tabManagement)
 document.addEventListener('DOMContentLoaded', insertDataFromManifest)
+document.addEventListener('DOMContentLoaded', insertDataFromLocales)
 document.addEventListener('DOMContentLoaded', welcomeMessage)
 
 // Listen for saving of the options page

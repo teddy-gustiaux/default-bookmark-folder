@@ -1,0 +1,17 @@
+{
+  "thank-you": {
+    "message": "Thank you for using this add-on!"
+  },
+  "release-notes": {
+    "message": "Release notes"
+  },
+  "ff-built-in": {
+    "message": "Firefox built-in bookmarking"
+  },
+  "quick-bookmark": {
+    "message": "Quick bookmark icon"
+  },
+  "about": {
+    "message": "About the add-on"
+  }
+}

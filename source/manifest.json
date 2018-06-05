@@ -7,6 +7,8 @@
   "description": "Allows you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon.",
   "homepage_url": "https://github.com/teddy-gustiaux/default-bookmark-folder",
 
+  "default_locale": "en",
+
   "permissions": [
     "bookmarks",
     "activeTab",
