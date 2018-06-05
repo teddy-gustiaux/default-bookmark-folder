@@ -17,11 +17,9 @@
     <section class="section">
         <div class="container">
 
-            <h1 class="title">
-                Default Bookmark Folder Options
-            </h1>
+            <h1 class="title" data-locale="options_title"></h1>
 
-            <div id="locale-thank-you" class="notification"></div>
+            <div data-locale="options_thank_you" class="notification"></div>
 
             <!-- MENU -->
             <div class="tabs is-boxed is-small-medium" id="tab_header">
@@ -29,25 +27,25 @@
                     <li class="item is-active tab_menu" data-tab="1">
                         <a>
                             <span class="icon is-small"><i class="fas fa-code"></i></span>
-                            <span id="locale-release-notes"></span>
+                            <span data-locale="options_release_notes"></span>
                         </a>
                     </li>
                     <li class="item tab_menu" data-tab="2">
                         <a>
                             <span class="icon is-small"><i class="fas fa-bookmark"></i></span>
-                            <span id="locale-ff-built-in"></span>
+                            <span data-locale="options_ff_built_in"></span>
                         </a>
                     </li>
                     <li class="item tab_menu" data-tab="3">
                         <a>
                             <span class="icon is-small"><i class="fas fa-star"></i></span>
-                            <span id="locale-quick-bookmark-icon"></span>
+                            <span data-locale="options_quick_bookmark_icon"></span>
                         </a>
                     </li>
                     <li class="item tab_menu" data-tab="4">
                         <a>
                             <span class="icon is-small"><i class="fas fa-info"></i></span>
-                            <span id="locale-about"></span>
+                            <span data-locale="options_about"></span>
                         </a>
                     </li>
                 </ul>
@@ -65,32 +63,32 @@
                         <div class="container_item is-active release" data-item="1">
                                 <p>2.2.1</p>
                                 <ul>
-                                    <li>New: Add support for Firefox Reader Mode - requires version 58 or later (GitHub issue #22)</li>
-                                    <li>Fix: Quick bookmarking of local files</li>
+                                    <li data-locale="options_changelog_221_list_1"></li>
+                                    <li data-locale="options_changelog_221_list_2"></li>
                                 </ul>
                                 <p>2.2.0</p>
                                 <ul>
-                                    <li>New: Select the default folder for "Bookmark All Tabs..." feature (GitHub issue #13)</li>
-                                    <li>New: Code refactoring and upgrade of internal libraries</li>
-                                    <li>New: Small wording updates of the add-on options</li>
-                                    <li>Fix: Hide quick bookmark icon automatically if option is enabled and then disabled</li>
-                                    <li>Fix: Consistency of the quick bookmark shortcut behavior</li>
-                                    <li>Fix: Avast add-on reputation - fixed internally by Avast (GitHub issue #14)</li>
+                                    <li data-locale="options_changelog_220_list_1"></li>
+                                    <li data-locale="options_changelog_220_list_2"></li>
+                                    <li data-locale="options_changelog_220_list_3"></li>
+                                    <li data-locale="options_changelog_220_list_4"></li>
+                                    <li data-locale="options_changelog_220_list_5"></li>
+                                    <li data-locale="options_changelog_220_list_6"></li>
                                 </ul>
                                 <p>2.1.2</p>
                                 <ul>
-                                    <li>Fix: The built-in bookmarking features of the add-on now work normally on Firefox 56.x (GitHub issue #8)</li>
+                                    <li data-locale="options_changelog_212_list_1"></li>
                                 </ul>
                                 <p>2.1.1</p>
                                 <ul>
-                                    <li>Fix: The built-in shortcut and context menu bookmarking now use the defined location on Firefox stable version 57.x (GitHub issues #7 and #9)</li>
+                                    <li data-locale="options_changelog_211_list_1"></li>
                                 </ul>
                                 <p>2.1.0</p>
                                 <ul>
-                                    <li>Fix: Tab drag and drop bookmarking and "Bookmark All Tabs..." features are now excluded from the overriding and behave normally (GitHub issue #5)</li>
-                                    <li>New: Select the color of the quick bookmark icon (among a list) when the current page is bookmarked</li>
-                                    <li>New: Higher quality quick bookmark icons</li>
-                                    <li>New: Release notes tab in the options</li>
+                                    <li data-locale="options_changelog_210_list_1"></li>
+                                    <li data-locale="options_changelog_210_list_2"></li>
+                                    <li data-locale="options_changelog_210_list_3"></li>
+                                    <li data-locale="options_changelog_210_list_4"></li>
                                 </ul>
                         </div>
                         <!-- END OPTIONS TAB -->
@@ -99,57 +97,54 @@
                         <div class="container_item" data-item="2">
                             <article class="message is-danger">
                                 <div class="message-header">
-                                    <p>Important note</p>
+                                    <p data-locale="options_important_note"></p>
                                 </div>
                                 <div class="message-body">
-                                    <p>Those settings only apply to the built-in bookmarking system of Firefox.
-                                        They allow you to select in which folder (and in which position of this folder) the new bookmarks will be added.
-                                        It only affect bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), or through the context menu.
-                                    </p>
+                                    <p data-locale="options_ff_built_in_note">
                                 </div>
                             </article>
                             <div class="field">
-                                <label for="builtin-folder" class="label">Select where new bookmarks will be added:</label>
+                                <label for="builtin-folder" class="label" data-locale="options_ff_built_in_folder"></label>
                                 <div class="control has-icons-left">
                                     <div class="select">
                                         <select id="builtin-folder">
-                                            <option selected value="none">No folder selected (use Firefox's default bookmark location)</option>
+                                            <option selected value="none" data-locale="options_ff_built_in_folder_default"></option>
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
                                         <i class="fas fa-folder"></i>
                                     </div>
                                 </div>
-                                <p class="help">Note: Firefox's default bookmark location is <i>Other Bookmarks</i>.</p>
+                                <p class="help"><span data-locale="options_ff_built_in_folder_help_1"></span> <i data-locale="options_ff_built_in_folder_help_2"></i>.</p>
                             </div>
                             <div class="field">
                                 <input class="switch is-rounded is-info" id="builtin-top" type="checkbox">
-                                <label for="builtin-top">Add new bookmarks to the top of the selected folder</label>
-                                <p class="help">If disabled, new bookmarks will be added to the bottom of the selected folder</p>
+                                <label for="builtin-top" data-locale="options_ff_built_in_folder_top"></label>
+                                <p class="help" data-locale="options_ff_built_in_folder_top_help"></p>
                             </div>
                             <hr class="divider"/>
                             <div class="notification">
-                                <p>The setting below only applies when using the "Bookmark All Tabs..." feature of Firefox. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the open tabs. </p>
+                                <p data-locale="options_ff_built_in_folder_all_tabs_note"></p>
                                 </p>
                             </div>
                             <div class="field">
-                                <label for="alltabs-folder" class="label">Select where new "Bookmark All Tabs..." folders will be added:</label>
+                                <label for="alltabs-folder" class="label" data-locale="options_ff_built_in_folder_all_tabs"></label>
                                 <div class="control has-icons-left">
                                     <div class="select">
                                         <select id="alltabs-folder">
-                                            <option selected value="none">No folder selected (use Firefox's default bookmark location)</option>
+                                            <option selected value="none" data-locale="options_ff_built_in_folder_all_tabs_default"></option>
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
                                         <i class="fas fa-folder"></i>
                                     </div>
                                 </div>
-                                <p class="help">Note: Firefox's default "Bookmark All Tabs..." folder location is <i>Bookmarks Menu</i>.</p>
+                                <p class="help"><span data-locale="options_ff_built_in_folder_all_tabs_help_1"></span> <i data-locale="options_ff_built_in_folder_all_tabs_help_2"></i>.</p>
                             </div>
                             <div class="field">
                                 <input id="alltabs-top" class="switch is-rounded is-info" type="checkbox">
-                                <label for="alltabs-top">Add new "Bookmark All Tabs..." folders to the top of the selected folder</label>
-                                <p class="help">If disabled, new folders will be added to the bottom of the selected folder</p>
+                                <label for="alltabs-top" data-locale="options_ff_built_in_folder_all_tabs_top"></label>
+                                <p class="help" data-locale="options_ff_built_in_folder_all_tabs_top_help"></p>
                             </div>
                         </div>
                         <!-- END OPTIONS TAB -->
@@ -157,94 +152,88 @@
                         <!-- OPTIONS TAB -->
                         <div class="container_item" data-item="3">
                             <div class="notification">
-                                <p>This feature will add a quick bookmark icon in the address bar, to (un)bookmark a page with only one click.
-                                The icon is a round star icon in the address bar. If the current page is bookmarked, the icon color will change to red.
-                                Here are two screenshots to serve as examples: when the current page is not bookmarked and when it is.</p>
+                                <p data-locale="options_icon_explanation"></p>
                                 <p><img src="img/Quick_bookmark_icon-Page_not_bookmarked.png">
                                 <img src="img/Quick_bookmark_icon-Page_bookmarked.png">
                                 </p>
                             </div>
                             <div class="field">
                                 <input id="icon-enabled" class="switch is-rounded is-info" type="checkbox">
-                                <label for="icon-enabled">Enable the quick bookmark icon</label>
+                                <label for="icon-enabled" data-locale="options_icon_enable"></label>
                             </div>
                             <div class="field">
                                 <input id="icon-shortcut" class="switch is-rounded is-info" type="checkbox">
-                                <label for="icon-shortcut">Enable the quick bookmark shortcut (Alt+Shift+D)</label>
+                                <label for="icon-shortcut" data-locale="options_icon_enable_shortcut"></label>
                             </div>
                             <article class="message is-danger">
                                 <div class="message-header">
-                                    <p>Important note</p>
+                                    <p data-locale="options_important_note"></p>
                                 </div>
                                 <div class="message-body">
-                                    <p>The settings below only apply to the quick bookmark icon and shortcut.</p>
+                                    <p data-locale="options_icon_note"></p>
                                 </div>
                             </article>
                             <div class="field">
-                                <label for="icon-folder" class="label disabled-item">Select where new bookmarks will be added:</label>
+                                <label for="icon-folder" class="label disabled-item" data-locale="options_icon_folder">Select where new bookmarks will be added:</label>
                                 <div class="control has-icons-left">
                                     <div class="select">
                                         <select id="icon-folder" disabled>
-                                            <option selected value="none">No folder selected (use Firefox's default bookmark location)</option>
+                                            <option selected value="none" data-locale="options_icon_folder_default"></option>
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
                                         <i class="fas fa-folder"></i>
                                     </div>
                                 </div>
-                                <p class="help">Note: Firefox's default bookmark location is <i>Other Bookmarks</i>.</p>
+                                <p class="help"><span data-locale="options_icon_folder_help_1"></span> <i data-locale="options_icon_folder_help_2"></i>.</p>
                             </div>
                             <div class="field">
                                 <input id="icon-top" class="switch is-rounded is-info" type="checkbox" disabled>
-                                <label for="icon-top">Add new bookmarks to the top of the selected folder</label>
-                                <p class="help">If disabled, new bookmarks will be added to the bottom of the selected folder</p>
+                                <label for="icon-top" data-locale="options_icon_top"></label>
+                                <p class="help" data-locale="options_icon_top_help"></p>
                             </div>
                             <div class="field">
                                 <input id="icon-inbox" class="switch is-rounded is-info" type="checkbox" disabled>
-                                <label for="icon-inbox">Only show page as bookmarked if the bookmark is in the folder selected above</label>
-                                <p class="help">If this setting is enabled, the quick bookmark icon will be red (i.e. the current page has been bookmarked)
-                                    only if the bookmark is located in the folder you have selected above
-                                </p>
+                                <label for="icon-inbox" data-locale="options_icon_inbox"></label>
+                                <p class="help" data-locale="options_icon_inbox_help"></p>
                             </p>
                             </div>
                             <div class="field">
-                                <label for="icon-color" class="select-label disabled-item">Select the icon color when the current page is bookmarked:</label>
+                                <label for="icon-color" class="select-label disabled-item" data-locale="options_icon_color"></label>
                                 <div class="control">
                                     <div class="select">
                                         <select id="icon-color" disabled>
-                                            <option value="black">Black</option>
-                                            <option value="blue">Blue</option>
-                                            <option value="green">Green</option>
-                                            <option value="orange">Orange</option>
-                                            <option value="purple">Purple</option>
-                                            <option selected value="red">Red</option>
-                                            <option value="yellow">Yellow</option>
+                                            <option value="black" data-locale="options_color_black"></option>
+                                            <option value="blue" data-locale="options_color_blue"></option>
+                                            <option value="green" data-locale="options_color_green"></option>
+                                            <option value="orange" data-locale="options_color_orange"></option>
+                                            <option value="purple" data-locale="options_color_purple"></option>
+                                            <option selected value="red" data-locale="options_color_red"></option>
+                                            <option value="yellow" data-locale="options_color_yellow"></option>
                                         </select>
                                     </div>
                                 </div>
-                                <p class="help">By default, the icon color is red when the current page is bookmarked.</p>
+                                <p class="help" data-locale="options_icon_color_default"></p>
                             </div>
                         </div>
                         <!-- END OPTIONS TAB -->
 
                         <!-- OPTIONS TAB -->
                         <div class="container_item" data-item="4">
-                            <h1 class="subtitle">Feedback</h1>
+                            <h1 class="subtitle" data-locale="options_feedback"></h1>
                             <div class="field">
-                                <p>If you enjoy the add-on, please give it a positive <a href="https://addons.mozilla.org/en-US/firefox/addon/default-bookmark-folder/" target="_blank">review</a>!</p>
-                                <p>If you want to report a bug or ask for a new feature,
-                                    you can open an issue on <a href="https://github.com/teddy-gustiaux/default-bookmark-folder/issues" target="_blank">GitHub</a>. If you do not have an account, you can create one for free.
-                                </p>
+                                <p><span data-locale="options_please_review_1"></span> <a href="https://addons.mozilla.org/en-US/firefox/addon/default-bookmark-folder/" target="_blank" data-locale="options_please_review_2"></a>!</p>
+                                <p><span data-locale="options_bug_feature_1"></span> <a href="https://github.com/teddy-gustiaux/default-bookmark-folder/issues" target="_blank" data-locale="options_bug_feature_2"></a>. <span data-locale="options_bug_feature_3"></span></p>
                             </div>
                             <div class="field">
                                 <div>
-                                    <p class="is-inline"><strong>Version:</strong>&nbsp;</p><p class="is-inline" id="placeholder-version"></p>
+                                    <p class="is-inline"><strong data-locale="options_version"></strong>&nbsp;</p><p class="is-inline" id="placeholder-version"></p>
                                 </div>
                                 <div>
-                                    <p class="is-inline"><strong>Author:</strong>&nbsp;</p><p class="is-inline" id="placeholder-author"></p>
+                                    <p class="is-inline"><strong data-locale="options_author"></strong>&nbsp;</p><p class="is-inline" id="placeholder-author"></p>
                                 </div>
                                 <div>
-                                    <p><strong>License:</strong>&nbsp;MIT</p>
+                                    <p><strong class="options_license" data-locale="options_license"></strong>&nbsp;MIT</p>
                                 </div>
                             </div>
                         </div>
@@ -259,16 +248,16 @@
                 <div class="modal-background"></div>
                 <div class="modal-card">
                     <header class="modal-card-head">
-                        <p class="modal-card-title">Welcome!</p>
+                        <p class="modal-card-title" data-locale="welcome_title"></p>
                         <button class="delete" aria-label="close" id="delete-welcome"></button>
                     </header>
                     <section class="modal-card-body">
-                        <p>Thank you for installing this add-on.</p>
-                        <p>Please take a moment to configure it to fit your needs.</p>
-                        <p><em>This message will only be displayed once.</em></p>
+                        <p data-locale="welcome_thank_you"></p>
+                        <p data-locale="welcome_configure"></p>
+                        <p><em data-locale="welcome_message_display"></em></p>
                     </section>
                     <footer class="modal-card-foot">
-                        <button class="button is-success close-welcome" id="close-welcome">Got it!</button>
+                        <button class="button is-success close-welcome" data-locale="welcome_ok" id="close-welcome"></button>
                     </footer>
                 </div>
             </div>
