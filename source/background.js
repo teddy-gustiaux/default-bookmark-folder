@@ -271,7 +271,7 @@ function updateIcon (iconEnabled, color = 'red') {
       tabId: currentTab.id
     })
     browser.pageAction.setTitle({
-      title: currentBookmark ? 'Remove this bookmark' : 'Quick bookmark this page',
+      title: currentBookmark ? browser.i18n.getMessage('remove-bookmark') : browser.i18n.getMessage('quick-bookmark-page'),
       tabId: currentTab.id
     })
   } else {
@@ -286,7 +286,7 @@ function updateIcon (iconEnabled, color = 'red') {
       tabId: currentTab.id
     })
     browser.pageAction.setTitle({
-      title: 'The quick bookmark icon is disabled',
+      title: browser.i18n.getMessage('quick-bookmark-disabled'),
       tabId: currentTab.id
     })
   }

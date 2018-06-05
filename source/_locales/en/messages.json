@@ -1,4 +1,13 @@
 {
+  "remove-bookmark": {
+    "message": "Remove this bookmark"
+  },
+  "quick-bookmark-page": {
+    "message": "Quick bookmark this page"
+  },
+  "quick-bookmark-disabled": {
+    "message": "The quick bookmark icon is disabled"
+  },
   "thank-you": {
     "message": "Thank you for using this add-on!"
   },
@@ -8,7 +17,7 @@
   "ff-built-in": {
     "message": "Firefox built-in bookmarking"
   },
-  "quick-bookmark": {
+  "quick-bookmark-icon": {
     "message": "Quick bookmark icon"
   },
   "about": {
