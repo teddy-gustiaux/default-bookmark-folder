@@ -51,7 +51,7 @@
     "message": "New: Higher quality quick bookmark icons"
   },
   "options_changelog_210_list_4": {
-    "message": "New: Release notes tab in the options<"
+    "message": "New: Release notes tab in the options"
   },
   "options_changelog_211_list_1": {
     "message": "Fix: The built-in shortcut and context menu bookmarking now use the defined location on Firefox stable version 57.x (GitHub issues #7 and #9)"
@@ -168,7 +168,7 @@
     "message": "Select the icon color when the current page is bookmarked:"
   },
   "options_icon_color_default": {
-    "message": "By default, the icon color is red when the current page is bookmarked."
+    "message": "By default, the icon color is red when the current page is bookmarked"
   },
   "options_color_black": {
     "message": "Black"
