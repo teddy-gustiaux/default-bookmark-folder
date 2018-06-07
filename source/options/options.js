@@ -212,7 +212,6 @@ function buildItems (bookmarkItem, indent, selectors) {
       buildItems(child, indent, selectors)
     }
   }
-  indent--
 }
 
 /*
@@ -250,13 +249,13 @@ function switchTab (number) {
   Array.from(tabs).forEach(tabItem => {
     tabItem.classList.remove('is-active')
   })
-  document.querySelector('[' + DATA_TAB + "='" + number + "']").classList.add('is-active')
+  document.querySelector(`[${DATA_TAB}='${number}']`).classList.add('is-active')
 
   let containers = document.querySelectorAll(TAB_CONTAINER_ITEM)
   Array.from(containers).forEach(containerItem => {
     containerItem.classList.remove('is-active')
   })
-  document.querySelector('[' + DATA_ITEM + "='" + number + "']").classList.add('is-active')
+  document.querySelector(`[${DATA_ITEM}='${number}']`).classList.add('is-active')
 
   browser.storage.local.set({
     tab: number
@@ -265,18 +264,9 @@ function switchTab (number) {
 
 /*
  * ================================================================================
- * FUNCTIONS - MISCELLANEOUS
+ * FUNCTIONS - LANGUAGE AND DATA
  * ================================================================================
  */
-
-/*
- * Inserts data from the manifest into the options page
- */
-function insertDataFromManifest () {
-  let manifest = browser.runtime.getManifest()
-  document.querySelector(VERSION).textContent = manifest.version
-  document.querySelector(AUTHOR).textContent = manifest.author
-}
 
 /*
  * Inserts data from the locales into the options page
@@ -288,6 +278,21 @@ function insertDataFromLocales () {
     elementWithLocale.textContent = browser.i18n.getMessage(elementWithLocale.dataset.locale)
   })
 }
+
+/*
+ * Inserts data from the manifest into the options page
+ */
+function insertDataFromManifest () {
+  let manifest = browser.runtime.getManifest()
+  document.querySelector(VERSION).textContent = manifest.version
+  document.querySelector(AUTHOR).textContent = manifest.author
+}
+
+/*
+ * ================================================================================
+ * FUNCTIONS - MISCELLANEOUS
+ * ================================================================================
+ */
 
 function closeWelcomeMessage () {
   document.querySelector(WELCOME).classList.remove('is-active')
