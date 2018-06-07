@@ -2,6 +2,9 @@
   "icon_remove_bookmark": {
     "message": "Remove this bookmark"
   },
+  "icon_prevent_removal_bookmark": {
+    "message": "Bookmark removal prevention setting activated"
+  },
   "icon_quick_bookmark_page": {
     "message": "Quick bookmark this page"
   },
@@ -163,6 +166,12 @@
   },
   "options_icon_inbox_help": {
     "message": "If this setting is enabled, the quick bookmark icon will be colored (i.e. the current page has been bookmarked) only if the bookmark is located in the folder you have selected above"
+  },
+  "options_icon_prevent_removal": {
+    "message": "Prevent removal of bookmarks"
+  },
+  "options_icon_prevent_removal_help": {
+    "message": "If this setting is enabled, the quick bookmark icon will not be able to remove bookmarks (but can still create new ones)"
   },
   "options_icon_color": {
     "message": "Select the icon color when the current page is bookmarked:"

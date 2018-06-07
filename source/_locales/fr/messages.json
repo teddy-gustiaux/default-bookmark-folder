@@ -2,6 +2,9 @@
   "icon_remove_bookmark": {
     "message": "Supprimer ce marque-page"
   },
+  "icon_prevent_removal_bookmark": {
+    "message": "Paramètre de prévention de suppression de marque-pages activé"
+  },
   "icon_quick_bookmark_page": {
     "message": "Marquer rapidement cette page"
   },
@@ -163,6 +166,12 @@
   },
   "options_icon_inbox_help": {
     "message": "Si ce paramètre est activé, l'icône de marquage rapide ne sera colorée (indiquant que la page actuelle possède un marque-page), que si ce dernier est situé dans le dossier sélectionné précédemment"
+  },
+  "options_icon_prevent_removal": {
+    "message": "Empêcher la suppression des marque-pages"
+  },
+  "options_icon_prevent_removal_help": {
+    "message": "Si ce paramètre est activé, l'icône de marquage rapide ne pourra plus supprimer de marque-pages (mais pourra toujours en créer de nouveaux)"
   },
   "options_icon_color": {
     "message": "Sélectionner la couleur de l'icône quand la page actuelle possède un marque-page:"

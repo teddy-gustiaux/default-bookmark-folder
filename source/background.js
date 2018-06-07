@@ -13,6 +13,7 @@ const FOLDER = 'folder'
 const TOP = 'top'
 const ENABLED = 'enabled'
 const INBOX = 'inbox'
+const PREVENT_REMOVAL = 'preventRemoval'
 const COLOR = 'color'
 const SHORTCUT = 'shortcut'
 
@@ -88,7 +89,7 @@ function updateUI (context) {
           }
           let color = ICON_DEFAULT_COLOR
           if (context.options[ICON][COLOR] !== undefined) color = context.options[ICON][COLOR]
-          showIcon(color)
+          showIcon(color, isOptionEnabled(context.options, ICON, PREVENT_REMOVAL))
         } else {
           hideIcon()
         }
@@ -252,7 +253,7 @@ let pageIsSupported
 /*
  * Updates the browserAction icon to reflect whether the current page is already bookmarked
  */
-function updateIcon (iconEnabled, color = 'red') {
+function updateIcon (iconEnabled, color = 'red', preventRemoval = false) {
   if (iconEnabled === true) {
     browser.pageAction.setIcon({
       path: currentBookmark ? {
@@ -270,8 +271,14 @@ function updateIcon (iconEnabled, color = 'red') {
       },
       tabId: currentTab.id
     })
+    let title
+    if (currentBookmark) {
+      title = preventRemoval ? browser.i18n.getMessage('icon_prevent_removal_bookmark') : browser.i18n.getMessage('icon_remove_bookmark')
+    } else {
+      title = browser.i18n.getMessage('icon_quick_bookmark_page')
+    }
     browser.pageAction.setTitle({
-      title: currentBookmark ? browser.i18n.getMessage('icon_remove_bookmark') : browser.i18n.getMessage('icon_quick_bookmark_page'),
+      title: title,
       tabId: currentTab.id
     })
   } else {
@@ -296,11 +303,11 @@ function updateIcon (iconEnabled, color = 'red') {
  * Add or remove the bookmark on the current page.
  */
 function toggleBookmark () {
-  if (currentBookmark) {
-    browser.bookmarks.remove(currentBookmark.id)
-  } else {
-    let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
-    gettingOptions.then((options) => {
+  let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
+  gettingOptions.then((options) => {
+    if (currentBookmark) {
+      if (!isOptionEnabled(options, ICON, PREVENT_REMOVAL)) browser.bookmarks.remove(currentBookmark.id)
+    } else {
       let bookmarkTreeNode = {
         title: currentTab.title,
         url: currentTab.url
@@ -318,8 +325,8 @@ function toggleBookmark () {
         // Re-add the listener
         browser.bookmarks.onCreated.addListener(handleCreated)
       }, onError)
-    }, onError)
-  }
+    }
+  }, onError)
 }
 
 /*
@@ -372,9 +379,9 @@ function hideIcon () {
 /*
  * Show the icon for the active tab
  */
-function showIcon (color = 'red') {
+function showIcon (color = 'red', preventRemoval = false) {
   browser.pageAction.show(currentTab.id)
-  updateIcon(true, color)
+  updateIcon(true, color, preventRemoval)
 }
 
 /*
