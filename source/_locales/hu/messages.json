@@ -1,0 +1,242 @@
+{
+  "icon_remove_bookmark": {
+    "message": "Könyvjelzõ eltávolítása"
+  },
+  "icon_prevent_removal_bookmark": {
+    "message": "Könyvjelzõ eltávolítás megakadályozása aktiválva"
+  },
+  "icon_quick_bookmark_page": {
+    "message": "Lap gyors könyvjelzõzése"
+  },
+  "icon_quick_bookmark_disabled": {
+    "message": "A gyors könyvjelzõzés ikon tiltott"
+  },
+  "welcome_title": {
+    "message": "Üdvözöljük!"
+  },
+  "welcome_thank_you": {
+    "message": "Köszönjük, hogy a telepíti ezt a kiegészítõt!"
+  },
+  "welcome_configure": {
+    "message": "Szánjon rá egy pillanatot, hogy a saját igényeire szabja."
+  },
+  "welcome_message_display": {
+    "message": "Ez az üzenet csak egyszer lesz megjelenítve."
+  },
+  "welcome_ok": {
+    "message": "Megvan!"
+  },
+  "options_title": {
+    "message": "Alapértelmezett könyvjelzõmappa beállítások"
+  },
+  "options_thank_you": {
+    "message": "Köszönjük, hogy használja ezt a kiegészítõt!"
+  },
+  "options_release_notes": {
+    "message": "Kiadási megjegyzések"
+  },
+  "options_ff_built_in": {
+    "message": "A Firefox beépített könyvjelzõzése"
+  },
+  "options_quick_bookmark_icon": {
+    "message": "Gyors könyvjelzõzés ikon"
+  },
+  "options_about": {
+    "message": "A kiegészítõ névjegye"
+  },
+  "options_changelog_210_list_1": {
+    "message": "Javítás: Lapok húzd és ejtsd módon történõ könyvjelzõzése és „Összes lap könyvjelzõzése…” funkciók most már figyelmen kívül vannak hagyva a felülírásnál, és normálisan mûködnek (#5-ös GitHub bejelentés)"
+  },
+  "options_changelog_210_list_2": {
+    "message": "Új: A gyors könyvjelzõzés ikon színének kiválasztása (listából), ha a jelenlegi oldal könyvjelzõzésre kerül"
+  },
+  "options_changelog_210_list_3": {
+    "message": "Új: Magasabb minõségû könyvjelzõzés ikonok"
+  },
+  "options_changelog_210_list_4": {
+    "message": "Új: Kiadási megjegyzések lap a beállításokban"
+  },
+  "options_changelog_211_list_1": {
+    "message": "Javítás: A beépített gyorsbillentyû és környezeti menü könyvjelzõzés most már a megadott helyet használja a Firefox 57.x, stabil kiadásában (#7-es és #9-es GitHub bejelentés)"
+  },
+  "options_changelog_212_list_1": {
+    "message": "Javítás: A kiegészítõ beépített könyvjelzõzési funkciói most már normálisan mûködnek Firefox 56.x verziókon is (#8-as GitHub bejelentés)"
+  },
+  "options_changelog_220_list_1": {
+    "message": "Új: Alapértelmezett mappa választása „Összes lap könyvjelzõzése…” funkcióhoz (#13-as GitHub bejelentés)"
+  },
+  "options_changelog_220_list_2": {
+    "message": "Új: Kód refaktorálás és a belsõ programkönyvtárak frissítése"
+  },
+  "options_changelog_220_list_3": {
+    "message": "Új: Apró szövegezési frissítések a kiegészítõ beállításaiban"
+  },
+  "options_changelog_220_list_4": {
+    "message": "Javítás: Gyors könyvjelzõzés ikon automatikus elrejtése, ha a beállítás bekapcsolásra, majd kikapcsolása kerül"
+  },
+  "options_changelog_220_list_5": {
+    "message": "Javítás: A gyors könyvjelzõzés gyorsbillentyû konzisztens mûködése"
+  },
+  "options_changelog_220_list_6": {
+    "message": "Javítás: Avast kiegészítõ értékelés – az Avast belsõleg javította (#14-es GitHub probléma)"
+  },
+  "options_changelog_221_list_1": {
+    "message": "Új: Támogatás hozzáadása a Firefox Olvasó módjához – 58-as újabb verzió szükséges (#22-es GitHub bejelentés)"
+  },
+  "options_changelog_221_list_2": {
+    "message": "Javítás: Helyi fájlok gyors könyvjelzõzése"
+  },
+  "options_changelog_230_list_1": {
+    "message": "Új: Beállítás a gyors könyvjelzõzés visszavonás megakadályozására (#21-es GitHub bejelentés)"
+  },
+  "options_changelog_230_list_2": {
+    "message": "Új: Nemzetköziesítési támogatás (#10-es GitHub bejelentés)"
+  },
+  "options_changelog_230_list_3": {
+    "message": "Új: Francia fordítás hozzáadása"
+  },
+  "options_changelog_230_list_4": {
+    "message": "Új: Belsõ programkönyvtárak frissítése"
+  },
+  "options_important_note": {
+    "message": "Fontos megjegyzés"
+  },
+  "options_ff_built_in_note": {
+    "message": "Azok a beállítások csak a Firefox beépített könyvjelzõzési rendszerére vonatkoznak. Kiválaszthatja mely mappába (és milyen pozícióba) kerülnek az új könyvjelzõk. Ez csak a Firefox beépített könyvjelzõzési ikonjára és gyorsbillentyûjére vonatkozik (Ctrl+D), vagy a környezeti menüre."
+  },
+  "options_ff_built_in_folder": {
+    "message": "Válassza ki, hogy az új könyvjelzõk hova legyenek hozzáadva:"
+  },
+  "options_ff_built_in_folder_default": {
+    "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzõzési helyét használja)"
+  },
+  "options_ff_built_in_folder_help_1": {
+    "message": "Megjegyzés: A Firefox alapértelmezett könyvjelzõzési helye ez:"
+  },
+  "options_ff_built_in_folder_help_2": {
+    "message": "Egyéb könyvjelzõk"
+  },
+  "options_ff_built_in_folder_top": {
+    "message": "Új könyvjelzõk hozzáadása a kiválasztott mappa tetejéhez"
+  },
+  "options_ff_built_in_folder_top_help": {
+    "message": "Ha tiltott, akkor az új könyvjelzõk a kiválasztott mappa aljára kerülnek"
+  },
+  "options_ff_built_in_folder_all_tabs_note": {
+    "message": "A lenti beállítás csak akkor érvényes, ha a Firefox „Összes lap könyvjelzõzése…” funkcióját használja. Lehetõvé teszi a frissen létrehozott mappa alapértelmezett helyének felülbírálását, amely az összes nyitott mappa könyvjelzõjét tartalmazza."
+  },
+  "options_ff_built_in_folder_all_tabs": {
+    "message": "Válassza ki, hogy az „Összes lap könyvjelzõzése…” mappák hová lesznek hozzáadva:"
+  },
+  "options_ff_built_in_folder_all_tabs_default": {
+    "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzõzési helye)"
+  },
+  "options_ff_built_in_folder_all_tabs_help_1": {
+    "message": "Megjegyzés: A Firefox alapértelmezett „Összes lap könyvjelzõzése…” mappa helye:"
+  },
+  "options_ff_built_in_folder_all_tabs_help_2": {
+    "message": "Könyvjelzõk menü"
+  },
+  "options_ff_built_in_folder_all_tabs_top": {
+    "message": "Új „Összes lap könyvjelzõzése…” mappa hozzáadása a kiválasztott mappa tetejéhez"
+  },
+  "options_ff_built_in_folder_all_tabs_top_help": {
+    "message": "Ha tiltott, akkor az új mappák a kiválasztott mappa aljára kerülnek"
+  },
+  "options_icon_explanation": {
+    "message": "Ez a funkció egy gyors könyvjelzõzés ikont tesz a címsávhoz, a könyvjelzõzés (és megszüntetése) csak egy kattintás. Az ikon egy kör alakú csillag ikon a címsávban. Ha a jelenlegi oldal könyvjelzõzött, akkor az ikon a kiválasztott színre vált (alapértelmezetten piros). Itt van két képernyõkép példaként: egyiken a jelenlegi oldal nincs könyvjelzõzve, a másikon pedig igen."
+  },
+  "options_icon_enable": {
+    "message": "Gyors könyvjelzõzés ikon engedélyezése"
+  },
+  "options_icon_enable_shortcut": {
+    "message": "Gyors könyvjelzõzés gyorsbillentyû engedélyezése (Alt+Shift+D)"
+  },
+  "options_icon_note": {
+    "message": "A lenti beállítások csak a gyors könyvjelzõzés ikonra és gyorsbillentyûre érvényesek."
+  },
+  "options_icon_folder": {
+    "message": "Válassza ki, hogy az új könyvjelzõk hová kerüljenek:"
+  },
+  "options_icon_folder_default": {
+    "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzõzési helye)"
+  },
+  "options_icon_folder_help_1": {
+    "message": "Megjegyzés: A Firefox alapértelmezett könyvjelzõzési helye ez:"
+  },
+  "options_icon_folder_help_2": {
+    "message": "Más könyvjelzõk"
+  },
+  "options_icon_top": {
+    "message": "Új könyvjelzõk hozzáadása a kiválasztott mappa tetejéhez"
+  },
+  "options_icon_top_help": {
+    "message": "Ha tiltott, akkor az új könyvjelzõk a kiválasztott mappa aljára kerülnek"
+  },
+  "options_icon_inbox": {
+    "message": "Csak akkor jelenítse meg könyvjelzõzöttként az oldalt, ha a könyvjelzõ a fent kiválasztott mappában van"
+  },
+  "options_icon_inbox_help": {
+    "message": "Ha ez a beállítás engedélyezett, akkor és csak akkor lesz a gyors könyvjelzõzés ikon színezett (tehát akkor fog könyvjelzõzöttnek látszani a jelenlegi oldal), ha a könyvjelzõ a fent kiválasztott mappában található."
+  },
+  "options_icon_prevent_removal": {
+    "message": "Könyvjelzõk eltávolításának megakadályozása"
+  },
+  "options_icon_prevent_removal_help": {
+    "message": "Ha ez a beállítás engedélyezett, akkor a gyors könyvjelzõzés ikon nem lesz képes a könyvjelzõk eltávolítására (de újakat továbbra is létrehozhat)"
+  },
+  "options_icon_color": {
+    "message": "Válasz ki az ikonszínt, ha a jelenlegi oldal könyvjelzõzésre kerül:"
+  },
+  "options_icon_color_default": {
+    "message": "Alapértelmezetten az ikonszín vörös, ha a jelenlegi oldal könyvjelzõzésre kerül"
+  },
+  "options_color_black": {
+    "message": "Fekete"
+  },
+  "options_color_blue": {
+    "message": "Kék"
+  },
+  "options_color_green": {
+    "message": "Zöld"
+  },
+  "options_color_orange": {
+    "message": "Narancs"
+  },
+  "options_color_purple": {
+    "message": "Lila"
+  },
+  "options_color_red": {
+    "message": "Vörös"
+  },
+  "options_color_yellow": {
+    "message": "Sárga"
+  },
+  "options_feedback": {
+    "message": "Visszajelzés"
+  },
+  "options_please_review_1": {
+    "message": "Ha tetszik önnek ez a kiegészítõ, akkor kérjük adjon pozitív"
+  },
+  "options_please_review_2": {
+    "message": "értékelést"
+  },
+  "options_bug_feature_1": {
+    "message": "Ha hibát szeretne jelenteni, vagy új funkciót kérni, akkor nyithat egy új bejelentést a"
+  },
+  "options_bug_feature_2": {
+    "message": "GitHubon"
+  },
+  "options_bug_feature_3": {
+    "message": "Ha nincs fiókja, akkor ingyen létrehozhat egyet."
+  },
+  "options_version": {
+    "message": "Verzió:"
+  },
+  "options_author": {
+    "message": "Szerzõ:"
+  },
+  "options_license": {
+    "message": "Licenc:"
+  }
+}
