@@ -1,0 +1,242 @@
+{
+  "icon_remove_bookmark": {
+    "message": "Remove this bookmark"
+  },
+  "icon_prevent_removal_bookmark": {
+    "message": "Bookmark removal prevention setting activated"
+  },
+  "icon_quick_bookmark_page": {
+    "message": "Quick bookmark this page"
+  },
+  "icon_quick_bookmark_disabled": {
+    "message": "The quick bookmark icon is disabled"
+  },
+  "welcome_title": {
+    "message": "Welcome!"
+  },
+  "welcome_thank_you": {
+    "message": "Thank you for installing this add-on!"
+  },
+  "welcome_configure": {
+    "message": "Please take a moment to configure it to fit your needs."
+  },
+  "welcome_message_display": {
+    "message": "This message will only be displayed once."
+  },
+  "welcome_ok": {
+    "message": "Got it!"
+  },
+  "options_title": {
+    "message": "Default Bookmark Folder Options"
+  },
+  "options_thank_you": {
+    "message": "Thank you for using this add-on!"
+  },
+  "options_release_notes": {
+    "message": "Release notes"
+  },
+  "options_ff_built_in": {
+    "message": "Firefox built-in bookmarking"
+  },
+  "options_quick_bookmark_icon": {
+    "message": "Quick bookmark icon"
+  },
+  "options_about": {
+    "message": "About the add-on"
+  },
+  "options_changelog_210_list_1": {
+    "message": "Fix: Tab drag and drop bookmarking and \"Bookmark All Tabs...\" features are now excluded from the overriding and behave normally (GitHub issue #5)"
+  },
+  "options_changelog_210_list_2": {
+    "message": "New: Select the color of the quick bookmark icon (among a list) when the current page is bookmarked"
+  },
+  "options_changelog_210_list_3": {
+    "message": "New: Higher quality quick bookmark icons"
+  },
+  "options_changelog_210_list_4": {
+    "message": "New: Release notes tab in the options"
+  },
+  "options_changelog_211_list_1": {
+    "message": "Fix: The built-in shortcut and context menu bookmarking now use the defined location on Firefox stable version 57.x (GitHub issues #7 and #9)"
+  },
+  "options_changelog_212_list_1": {
+    "message": "Fix: The built-in bookmarking features of the add-on now work normally on Firefox 56.x (GitHub issue #8)"
+  },
+  "options_changelog_220_list_1": {
+    "message": "New: Select the default folder for \"Bookmark All Tabs...\" feature (GitHub issue #13)"
+  },
+  "options_changelog_220_list_2": {
+    "message": "New: Code refactoring and upgrade of internal libraries"
+  },
+  "options_changelog_220_list_3": {
+    "message": "New: Small wording updates of the add-on options"
+  },
+  "options_changelog_220_list_4": {
+    "message": "Fix: Hide quick bookmark icon automatically if option is enabled and then disabled"
+  },
+  "options_changelog_220_list_5": {
+    "message": "Fix: Consistency of the quick bookmark shortcut behavior"
+  },
+  "options_changelog_220_list_6": {
+    "message": "Fix: Avast add-on reputation - fixed internally by Avast (GitHub issue #14)"
+  },
+  "options_changelog_221_list_1": {
+    "message": "New: Add support for Firefox Reader Mode - requires version 58 or later (GitHub issue #22)"
+  },
+  "options_changelog_221_list_2": {
+    "message": "Fix: Quick bookmarking of local files"
+  },
+  "options_changelog_230_list_1": {
+    "message": "New: Add an option to prevent quick unbookmarking (GitHub issue #21)"
+  },
+  "options_changelog_230_list_2": {
+    "message": "New: Add internationalization support (GitHub issue #10)"
+  },
+  "options_changelog_230_list_3": {
+    "message": "New: Add French translation"
+  },
+  "options_changelog_230_list_4": {
+    "message": "New: Upgrade of internal libraries"
+  },
+  "options_important_note": {
+    "message": "Important note"
+  },
+  "options_ff_built_in_note": {
+    "message": "Those settings only apply to the built-in bookmarking system of Firefox. They allow you to select in which folder (and in which position of this folder) the new bookmarks will be added. It only affect bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), or through the context menu."
+  },
+  "options_ff_built_in_folder": {
+    "message": "Select where new bookmarks will be added:"
+  },
+  "options_ff_built_in_folder_default": {
+    "message": "No folder selected (use Firefox's default bookmark location)"
+  },
+  "options_ff_built_in_folder_help_1": {
+    "message": "Note: Firefox's default bookmark location is"
+  },
+  "options_ff_built_in_folder_help_2": {
+    "message": "Other Bookmarks"
+  },
+  "options_ff_built_in_folder_top": {
+    "message": "Add new bookmarks to the top of the selected folder"
+  },
+  "options_ff_built_in_folder_top_help": {
+    "message": "If disabled, new bookmarks will be added to the bottom of the selected folder"
+  },
+  "options_ff_built_in_folder_all_tabs_note": {
+    "message": "The setting below only applies when using the \"Bookmark All Tabs...\" feature of Firefox. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the open tabs."
+  },
+  "options_ff_built_in_folder_all_tabs": {
+    "message": "Select where new \"Bookmark All Tabs...\" folders will be added:"
+  },
+  "options_ff_built_in_folder_all_tabs_default": {
+    "message": "No folder selected (use Firefox's default bookmark location)"
+  },
+  "options_ff_built_in_folder_all_tabs_help_1": {
+    "message": "Note: Firefox's default \"Bookmark All Tabs...\" folder location is"
+  },
+  "options_ff_built_in_folder_all_tabs_help_2": {
+    "message": "Bookmarks Menu"
+  },
+  "options_ff_built_in_folder_all_tabs_top": {
+    "message": "Add new \"Bookmark All Tabs...\" folders to the top of the selected folder"
+  },
+  "options_ff_built_in_folder_all_tabs_top_help": {
+    "message": "If disabled, new folders will be added to the bottom of the selected folder"
+  },
+  "options_icon_explanation": {
+    "message": "This feature will add a quick bookmark icon in the address bar, to (un)bookmark a page with only one click. The icon is a round star icon in the address bar. If the current page is bookmarked, the icon color will change to the selected color (red by default). Here are two screenshots to serve as examples: when the current page is not bookmarked and when it is."
+  },
+  "options_icon_enable": {
+    "message": "Enable the quick bookmark icon"
+  },
+  "options_icon_enable_shortcut": {
+    "message": "Enable the quick bookmark shortcut (Alt+Shift+D)"
+  },
+  "options_icon_note": {
+    "message": "The settings below only apply to the quick bookmark icon and shortcut."
+  },
+  "options_icon_folder": {
+    "message": "Select where new bookmarks will be added:"
+  },
+  "options_icon_folder_default": {
+    "message": "No folder selected (use Firefox's default bookmark location)"
+  },
+  "options_icon_folder_help_1": {
+    "message": "Note: Firefox's default bookmark location is"
+  },
+  "options_icon_folder_help_2": {
+    "message": "Other Bookmarks"
+  },
+  "options_icon_top": {
+    "message": "Add new bookmarks to the top of the selected folder"
+  },
+  "options_icon_top_help": {
+    "message": "If disabled, new bookmarks will be added to the bottom of the selected folder"
+  },
+  "options_icon_inbox": {
+    "message": "Only show page as bookmarked if the bookmark is in the folder selected above"
+  },
+  "options_icon_inbox_help": {
+    "message": "If this setting is enabled, the quick bookmark icon will be colored (i.e. the current page has been bookmarked) only if the bookmark is located in the folder you have selected above"
+  },
+  "options_icon_prevent_removal": {
+    "message": "Prevent removal of bookmarks"
+  },
+  "options_icon_prevent_removal_help": {
+    "message": "If this setting is enabled, the quick bookmark icon will not be able to remove bookmarks (but can still create new ones)"
+  },
+  "options_icon_color": {
+    "message": "Select the icon color when the current page is bookmarked:"
+  },
+  "options_icon_color_default": {
+    "message": "By default, the icon color is red when the current page is bookmarked"
+  },
+  "options_color_black": {
+    "message": "Black"
+  },
+  "options_color_blue": {
+    "message": "Blue"
+  },
+  "options_color_green": {
+    "message": "Green"
+  },
+  "options_color_orange": {
+    "message": "Orange"
+  },
+  "options_color_purple": {
+    "message": "Purple"
+  },
+  "options_color_red": {
+    "message": "Red"
+  },
+  "options_color_yellow": {
+    "message": "Yellow"
+  },
+  "options_feedback": {
+    "message": "Feedback"
+  },
+  "options_please_review_1": {
+    "message": "If you enjoy the add-on, please give it a positive"
+  },
+  "options_please_review_2": {
+    "message": "review"
+  },
+  "options_bug_feature_1": {
+    "message": "If you want to report a bug or ask for a new feature, you can open an issue on"
+  },
+  "options_bug_feature_2": {
+    "message": "GitHub"
+  },
+  "options_bug_feature_3": {
+    "message": "If you do not have an account, you can create one for free."
+  },
+  "options_version": {
+    "message": "Version:"
+  },
+  "options_author": {
+    "message": "Author:"
+  },
+  "options_license": {
+    "message": "License:"
+  }
+}

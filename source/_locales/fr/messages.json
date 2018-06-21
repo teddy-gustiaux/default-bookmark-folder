@@ -1,0 +1,242 @@
+{
+  "icon_remove_bookmark": {
+    "message": "Supprimer ce marque-page"
+  },
+  "icon_prevent_removal_bookmark": {
+    "message": "Paramètre de prévention de suppression de marque-pages activé"
+  },
+  "icon_quick_bookmark_page": {
+    "message": "Marquer rapidement cette page"
+  },
+  "icon_quick_bookmark_disabled": {
+    "message": "L'icône de marquage rapide est désactivée"
+  },
+  "welcome_title": {
+    "message": "Bienvenue !"
+  },
+  "welcome_thank_you": {
+    "message": "Merci d'avoir installé cette extension !"
+  },
+  "welcome_configure": {
+    "message": "Merci de prendre quelques instants pour la configurer selon vos préférences."
+  },
+  "welcome_message_display": {
+    "message": "Ce message ne s'affichera qu'une seule fois."
+  },
+  "welcome_ok": {
+    "message": "OK !"
+  },
+  "options_title": {
+    "message": "Paramètres de Default Bookmark Folder"
+  },
+  "options_thank_you": {
+    "message": "Merci d'utiliser cette extension !"
+  },
+  "options_release_notes": {
+    "message": "Notes de version"
+  },
+  "options_ff_built_in": {
+    "message": "Marquage intégré à Firefox"
+  },
+  "options_quick_bookmark_icon": {
+    "message": "Icône de marquage rapide"
+  },
+  "options_about": {
+    "message": "À propos"
+  },
+  "options_changelog_210_list_1": {
+    "message": "Correction: le marquage d'onglets par glisser-déposer et la fonction \"Marquer tous les onglets...\" se comportent maintenant normalement (GitHub issue #5)"
+  },
+  "options_changelog_210_list_2": {
+    "message": "Ajout: sélection de la color de l'icône de marquage rapide (parmi une liste) quand la page actuelle possède un marque-page"
+  },
+  "options_changelog_210_list_3": {
+    "message": "Ajout: icônes de marquage rapide de meilleure qualité"
+  },
+  "options_changelog_210_list_4": {
+    "message": "Ajout: onglet dans les paramètres avec les notes de version"
+  },
+  "options_changelog_211_list_1": {
+    "message": "Correction: le marquage intégré et le menu contextuel utilisent le dossier spécifié dans Firefox version 57.x (GitHub issues #7 et #9)"
+  },
+  "options_changelog_212_list_1": {
+    "message": "Correction: le marquage intégré et l'extension fonctionnent normalement dans Firefox 56.x (GitHub issue #8)"
+  },
+  "options_changelog_220_list_1": {
+    "message": "Ajout: sélectionner le dossier par défaut pour la fonction \"Marquer tous les onglets...\" (GitHub issue #13)"
+  },
+  "options_changelog_220_list_2": {
+    "message": "Ajout: refactoring du code et mise à jour des librairies internes"
+  },
+  "options_changelog_220_list_3": {
+    "message": "Ajout: mise à jour des textes des préférences de l'extension"
+  },
+  "options_changelog_220_list_4": {
+    "message": "Correction: cacher l'icône de marquage rapide automatiquement si l'option est activée puis désactivée"
+  },
+  "options_changelog_220_list_5": {
+    "message": "Correction: le raccourci de marquage rapide se comporte de manière consistente"
+  },
+  "options_changelog_220_list_6": {
+    "message": "Correction: réputation de l'extension chez Avast - corrigé en interne par Avast (GitHub issue #14)"
+  },
+  "options_changelog_221_list_1": {
+    "message": "Ajout: support du mode lecture de Firefox - nécessite la version 58 ou ultérieure (GitHub issue #22)"
+  },
+  "options_changelog_221_list_2": {
+    "message": "Correction: marquage rapide des fichiers locaux"
+  },
+  "options_changelog_230_list_1": {
+    "message": "Ajout: option pour prévenir la suppression d'un marque-page via l'icône de marquage rapide (GitHub issue #21)"
+  },
+  "options_changelog_230_list_2": {
+    "message": "Ajout: support de l'internationalisation (GitHub issue #10)"
+  },
+  "options_changelog_230_list_3": {
+    "message": "Ajout: traduction française"
+  },
+  "options_changelog_230_list_4": {
+    "message": "Ajout: mise à jour des librairies internes"
+  },
+  "options_important_note": {
+    "message": "Note importante"
+  },
+  "options_ff_built_in_note": {
+    "message": "Ces paramètres ne s'appliquent qu'au système de marquage interne à Firefox. Ils vous permettent de sélectionner à quel endroit (et à quelle position) les nouveaux marque-pages sont ajoutés. Cela n'affecte que les marque-pages créés via l'icône de marquage ou le raccourci (Ctrl+D) intégrés de Firefox, ou via le menu contextuel."
+  },
+  "options_ff_built_in_folder": {
+    "message": "Sélectionner où les nouveaux marque-pages seront ajoutés :"
+  },
+  "options_ff_built_in_folder_default": {
+    "message": "Pas de dossier sélectionné (le dossier par défaut de Firefox sera utilisé)"
+  },
+  "options_ff_built_in_folder_help_1": {
+    "message": "Note : le dossier par défaut de Firefox pour les marque-pages est"
+  },
+  "options_ff_built_in_folder_help_2": {
+    "message": "Autres marque-pages"
+  },
+  "options_ff_built_in_folder_top": {
+    "message": "Ajouter les nouveaux marque-pages en haut du dossier sélectionné"
+  },
+  "options_ff_built_in_folder_top_help": {
+    "message": "Si désactivé, les nouveaux marque-pages seront ajoutés en bas du dossier sélectionné"
+  },
+  "options_ff_built_in_folder_all_tabs_note": {
+    "message": "Le paramètre ci-dessous ne s'applique qu'à la fonction \"Marquer tous les onglets...\" de Firefox. Il vous permet de choisir le dossier par défaut du dossier nouvellement créé, qui contient un marque-page pour chaque onglet ouvert."
+  },
+  "options_ff_built_in_folder_all_tabs": {
+    "message": "Sélectionner où les nouveaux dossiers pour \"Marquer tous les onglets...\" seront ajoutés :"
+  },
+  "options_ff_built_in_folder_all_tabs_default": {
+    "message": "Pas de dossier sélectionné (le dossier par défaut de Firefox sera utilisé)"
+  },
+  "options_ff_built_in_folder_all_tabs_help_1": {
+    "message": "Note : le dossier par défaut de Firefox pour les dossiers \"Marquer tous les onglets...\" est"
+  },
+  "options_ff_built_in_folder_all_tabs_help_2": {
+    "message": "Menu des marque-pages"
+  },
+  "options_ff_built_in_folder_all_tabs_top": {
+    "message": "Ajouter les nouveaux dossiers pour \"Marquer tous les onglets...\"  en haut du dossier sélectionné"
+  },
+  "options_ff_built_in_folder_all_tabs_top_help": {
+    "message": "Si désactivé, les nouveaux marque-pages seront ajoutés en bas du dossier sélectionné"
+  },
+  "options_icon_explanation": {
+    "message": "Cette fonctionnalité vous permet d'ajouter une icône de marquage rapide dans la barre d'adresse, pour ajouter ou supprimer un marque-page en un clic. L'icône est ronde, et répresente une étoile. Si la page actuelle possède un marque-page, la couleur de l'étoile changera pour la couleur choisie (rouge par défaut). Voilà deux captures d'écran pour illustrer les deux situations : quand la page actuelle ne possède pas un marque-page, et quand elle en possède un."
+  },
+  "options_icon_enable": {
+    "message": "Activer l'icône de marquage rapide"
+  },
+  "options_icon_enable_shortcut": {
+    "message": "Activer le raccourci de marquage rapide (Alt+Shift+D)"
+  },
+  "options_icon_note": {
+    "message": "Les paramètres ci-dessous ne s'appliquent qu'à l'icône et au raccourci de marquage rapide."
+  },
+  "options_icon_folder": {
+    "message": "Sélectionner où les nouveaux marque-pages seront ajoutés :"
+  },
+  "options_icon_folder_default": {
+    "message": "Pas de dossier sélectionné (le dossier par défaut de Firefox sera utilisé)"
+  },
+  "options_icon_folder_help_1": {
+    "message": "Note: le dossier par défaut de Firefox pour les marque-pages est"
+  },
+  "options_icon_folder_help_2": {
+    "message": "Autres marque-pages"
+  },
+  "options_icon_top": {
+    "message": "Ajouter les nouveaux marque-pages en haut du dossier sélectionné"
+  },
+  "options_icon_top_help": {
+    "message": "Si désactivé, les nouveaux marque-pages seront ajoutés en bas du dossier sélectionné"
+  },
+  "options_icon_inbox": {
+    "message": "Ne montrer la page comme possédant un marque-page que si celui-ci est dans le dossier sélectionné ci-dessus"
+  },
+  "options_icon_inbox_help": {
+    "message": "Si ce paramètre est activé, l'icône de marquage rapide ne sera colorée (indiquant que la page actuelle possède un marque-page), que si ce dernier est situé dans le dossier sélectionné précédemment"
+  },
+  "options_icon_prevent_removal": {
+    "message": "Empêcher la suppression des marque-pages"
+  },
+  "options_icon_prevent_removal_help": {
+    "message": "Si ce paramètre est activé, l'icône de marquage rapide ne pourra plus supprimer de marque-pages (mais pourra toujours en créer de nouveaux)"
+  },
+  "options_icon_color": {
+    "message": "Sélectionner la couleur de l'icône quand la page actuelle possède un marque-page:"
+  },
+  "options_icon_color_default": {
+    "message": "Par défaut, l'icône est rouge quand la page actuelle possède un marque-page"
+  },
+  "options_color_black": {
+    "message": "Noir"
+  },
+  "options_color_blue": {
+    "message": "Bleu"
+  },
+  "options_color_green": {
+    "message": "Vert"
+  },
+  "options_color_orange": {
+    "message": "Orange"
+  },
+  "options_color_purple": {
+    "message": "Violet"
+  },
+  "options_color_red": {
+    "message": "Rouge"
+  },
+  "options_color_yellow": {
+    "message": "Jaune"
+  },
+  "options_feedback": {
+    "message": "Commentaires"
+  },
+  "options_please_review_1": {
+    "message": "Si vous aimez cette extension, n'hésitez pas à lui donner une "
+  },
+  "options_please_review_2": {
+    "message": "note "
+  },
+  "options_bug_feature_1": {
+    "message": "Si vous voulez signaler un problème ou demander une nouvelle fonctionnalité, merci de le faire sur"
+  },
+  "options_bug_feature_2": {
+    "message": "GitHub"
+  },
+  "options_bug_feature_3": {
+    "message": "Si vous n'avez pas de compte, vous pouvez en créer un gratuitement."
+  },
+  "options_version": {
+    "message": "Version:"
+  },
+  "options_author": {
+    "message": "Auteur:"
+  },
+  "options_license": {
+    "message": "Licence:"
+  }
+}

@@ -15,6 +15,7 @@ const OPT_IC_SHORTCUT = 'icon-shortcut'
 const OPT_IC_FOLDER = 'icon-folder'
 const OPT_IC_TOP = 'icon-top'
 const OPT_IC_INBOX = 'icon-inbox'
+const OPT_IC_PREVENT_REMOVAL = 'icon-prevent-removal'
 const OPT_IC_COLOR = 'icon-color'
 
 // List of options query selectors
@@ -27,6 +28,7 @@ const QRY_IC_SHORTCUT = '#' + OPT_IC_SHORTCUT
 const QRY_IC_FOLDER = '#' + OPT_IC_FOLDER
 const QRY_IC_TOP = '#' + OPT_IC_TOP
 const QRY_IC_INBOX = '#' + OPT_IC_INBOX
+const QRY_IC_PREVENT_REMOVAL = '#' + OPT_IC_PREVENT_REMOVAL
 const QRY_IC_COLOR = '#' + OPT_IC_COLOR
 
 // List of stored options properties
@@ -37,6 +39,7 @@ const FOLDER = 'folder'
 const TOP = 'top'
 const ENABLED = 'enabled'
 const INBOX = 'inbox'
+const PREVENT_REMOVAL = 'preventRemoval'
 const COLOR = 'color'
 const SHORTCUT = 'shortcut'
 const NOTIFICATION = 'updateNotification'
@@ -98,6 +101,7 @@ function toggleIconOptions (iconEnabled, shortcutEnabled) {
       document.querySelector(QRY_IC_FOLDER).removeAttribute('disabled')
       document.querySelector(QRY_IC_TOP).removeAttribute('disabled')
       document.querySelector(QRY_IC_INBOX).setAttribute('disabled', '')
+      document.querySelector(QRY_IC_PREVENT_REMOVAL).setAttribute('disabled', '')
       document.querySelector(QRY_IC_COLOR).setAttribute('disabled', '')
       document.querySelector(`label[for="${OPT_IC_COLOR}"]`).classList.add('disabled-item')
     } else {
@@ -105,6 +109,7 @@ function toggleIconOptions (iconEnabled, shortcutEnabled) {
       document.querySelector(`label[for=${OPT_IC_FOLDER}]`).classList.add('disabled-item')
       document.querySelector(QRY_IC_TOP).setAttribute('disabled', '')
       document.querySelector(QRY_IC_INBOX).setAttribute('disabled', '')
+      document.querySelector(QRY_IC_PREVENT_REMOVAL).setAttribute('disabled', '')
       document.querySelector(QRY_IC_COLOR).setAttribute('disabled', '')
       document.querySelector(`label[for=${OPT_IC_COLOR}]`).classList.add('disabled-item')
     }
@@ -131,6 +136,7 @@ function saveOptions () {
     shortcut: shortcutEnabled,
     top: document.querySelector(QRY_IC_TOP).checked,
     inbox: document.querySelector(QRY_IC_INBOX).checked,
+    preventRemoval: document.querySelector(QRY_IC_PREVENT_REMOVAL).checked,
     color: document.querySelector(QRY_IC_COLOR).value
   }
   browser.storage.local.set({
@@ -165,6 +171,7 @@ function restoreOptions () {
         if (res[ICON][FOLDER] !== undefined) setOption(document.querySelector(QRY_IC_FOLDER), res[ICON][FOLDER])
         if (res[ICON][TOP] !== undefined) document.querySelector(QRY_IC_TOP).checked = res[ICON][TOP]
         if (res[ICON][INBOX] !== undefined) document.querySelector(QRY_IC_INBOX).checked = res[ICON][INBOX]
+        if (res[ICON][PREVENT_REMOVAL] !== undefined) document.querySelector(QRY_IC_PREVENT_REMOVAL).checked = res[ICON][PREVENT_REMOVAL]
         if (res[ICON][COLOR] !== undefined) setOption(document.querySelector(QRY_IC_COLOR), res[ICON][COLOR])
         toggleIconOptions(res[ICON][ENABLED], res[ICON][SHORTCUT])
       }
@@ -212,7 +219,6 @@ function buildItems (bookmarkItem, indent, selectors) {
       buildItems(child, indent, selectors)
     }
   }
-  indent--
 }
 
 /*
@@ -250,13 +256,13 @@ function switchTab (number) {
   Array.from(tabs).forEach(tabItem => {
     tabItem.classList.remove('is-active')
   })
-  document.querySelector('[' + DATA_TAB + "='" + number + "']").classList.add('is-active')
+  document.querySelector(`[${DATA_TAB}='${number}']`).classList.add('is-active')
 
   let containers = document.querySelectorAll(TAB_CONTAINER_ITEM)
   Array.from(containers).forEach(containerItem => {
     containerItem.classList.remove('is-active')
   })
-  document.querySelector('[' + DATA_ITEM + "='" + number + "']").classList.add('is-active')
+  document.querySelector(`[${DATA_ITEM}='${number}']`).classList.add('is-active')
 
   browser.storage.local.set({
     tab: number
@@ -265,9 +271,20 @@ function switchTab (number) {
 
 /*
  * ================================================================================
- * FUNCTIONS - MISCELLANEOUS
+ * FUNCTIONS - LANGUAGE AND DATA
  * ================================================================================
  */
+
+/*
+ * Inserts data from the locales into the options page
+ */
+function insertDataFromLocales () {
+  document.title = browser.i18n.getMessage('options_title')
+  let elementsWithLocale = document.querySelectorAll('[data-locale]')
+  Array.from(elementsWithLocale).forEach(elementWithLocale => {
+    elementWithLocale.textContent = browser.i18n.getMessage(elementWithLocale.dataset.locale)
+  })
+}
 
 /*
  * Inserts data from the manifest into the options page
@@ -277,6 +294,12 @@ function insertDataFromManifest () {
   document.querySelector(VERSION).textContent = manifest.version
   document.querySelector(AUTHOR).textContent = manifest.author
 }
+
+/*
+ * ================================================================================
+ * FUNCTIONS - MISCELLANEOUS
+ * ================================================================================
+ */
 
 function closeWelcomeMessage () {
   document.querySelector(WELCOME).classList.remove('is-active')
@@ -310,6 +333,7 @@ function welcomeMessage () {
 document.addEventListener('DOMContentLoaded', restoreOptions)
 document.addEventListener('DOMContentLoaded', tabManagement)
 document.addEventListener('DOMContentLoaded', insertDataFromManifest)
+document.addEventListener('DOMContentLoaded', insertDataFromLocales)
 document.addEventListener('DOMContentLoaded', welcomeMessage)
 
 // Listen for saving of the options page
