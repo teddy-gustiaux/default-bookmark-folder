@@ -44,6 +44,9 @@
   "options_about": {
     "message": "About the add-on"
   },
+  "options_release_open_changelog": {
+    "message": "Show the release notes when the add-on is updated"
+  },
   "options_changelog_210_list_1": {
     "message": "Fix: Tab drag and drop bookmarking and \"Bookmark All Tabs...\" features are now excluded from the overriding and behave normally (GitHub issue #5)"
   },

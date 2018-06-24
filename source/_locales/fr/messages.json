@@ -44,6 +44,9 @@
   "options_about": {
     "message": "À propos"
   },
+  "options_release_open_changelog": {
+    "message": "Montrer les notes de version quand l'extension est mise à jour"
+  },
   "options_changelog_210_list_1": {
     "message": "Correction: le marquage d’onglets par glisser-déposer et la fonction \"Marquer tous les onglets...\" se comportent maintenant normalement (GitHub issue #5)"
   },

@@ -6,6 +6,8 @@
  */
 
 // List of stored options properties
+const RELEASE = 'release'
+const OPEN_NOTES = 'openNotes'
 const BUILTIN = 'builtin'
 const ALLTABS = 'alltabs'
 const ICON = 'icon'
@@ -30,7 +32,7 @@ const ST_NOT_BOOKMARKED = 101
 const ST_MULTIPLE_BOOKMARKS = 102
 
 // Allow to retrieve all stored options at once
-const OPTIONS_ARRAY = [BUILTIN, ALLTABS, ICON]
+const OPTIONS_ARRAY = [RELEASE, BUILTIN, ALLTABS, ICON]
 
 /*
  * ================================================================================
@@ -183,8 +185,13 @@ function handleInstalled (details) {
       // Update from version 1.*
       browser.storage.local.remove(['override', 'icon', 'inbox', 'addtotop'])
     }
-    browser.storage.local.set({newRelease: true}).then(() => {
-      browser.runtime.openOptionsPage()
+    let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
+    gettingOptions.then((options) => {
+      if (isOptionEnabled(options, RELEASE, OPEN_NOTES)) {
+        browser.storage.local.set({newRelease: true}).then(() => {
+          browser.runtime.openOptionsPage()
+        }, onError)
+      }
     }, onError)
   }
 }

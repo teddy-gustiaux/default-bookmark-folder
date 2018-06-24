@@ -44,6 +44,9 @@
   "options_about": {
     "message": "A kiegészítõ névjegye"
   },
+  "options_release_open_changelog": {
+    "message": "Show the release notes when the add-on is updated"
+  },
   "options_changelog_210_list_1": {
     "message": "Javítás: Lapok húzd és ejtsd módon történõ könyvjelzõzése és „Összes lap könyvjelzõzése…” funkciók most már figyelmen kívül vannak hagyva a felülírásnál, és normálisan mûködnek (#5-ös GitHub bejelentés)"
   },

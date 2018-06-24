@@ -6,6 +6,7 @@
  */
 
 // List of options IDs
+const OPT_RN_OPEN_NOTES = 'release-open-changelog'
 const OPT_FF_FOLDER = 'builtin-folder'
 const OPT_FF_TOP = 'builtin-top'
 const OPT_AT_FOLDER = 'alltabs-folder'
@@ -19,6 +20,7 @@ const OPT_IC_PREVENT_REMOVAL = 'icon-prevent-removal'
 const OPT_IC_COLOR = 'icon-color'
 
 // List of options query selectors
+const QRY_RN_OPEN_NOTES = '#' + OPT_RN_OPEN_NOTES
 const QRY_FF_FOLDER = '#' + OPT_FF_FOLDER
 const QRY_FF_TOP = '#' + OPT_FF_TOP
 const QRY_AT_FOLDER = '#' + OPT_AT_FOLDER
@@ -32,6 +34,8 @@ const QRY_IC_PREVENT_REMOVAL = '#' + OPT_IC_PREVENT_REMOVAL
 const QRY_IC_COLOR = '#' + OPT_IC_COLOR
 
 // List of stored options properties
+const RELEASE = 'release'
+const OPEN_NOTES = 'openNotes'
 const BUILTIN = 'builtin'
 const ALLTABS = 'alltabs'
 const ICON = 'icon'
@@ -63,7 +67,7 @@ const VERSION = '#placeholder-version'
 const AUTHOR = '#placeholder-author'
 
 // Allow to retrieve all stored options at once
-const OPTIONS_ARRAY = [BUILTIN, ALLTABS, ICON, MISC_TAB, NOTIFICATION, NEW_RELEASE]
+const OPTIONS_ARRAY = [RELEASE, BUILTIN, ALLTABS, ICON, MISC_TAB, NOTIFICATION, NEW_RELEASE]
 
 /*
  * ================================================================================
@@ -122,6 +126,9 @@ function saveOptions () {
   let iconEnabled = document.querySelector(QRY_IC_ICON).checked
   let shortcutEnabled = document.querySelector(QRY_IC_SHORTCUT).checked
   toggleIconOptions(iconEnabled, shortcutEnabled)
+  let releaseOptions = {
+    openNotes: document.querySelector(QRY_RN_OPEN_NOTES).checked
+  }
   let firefoxBookmarking = {
     folder: document.querySelector(QRY_FF_FOLDER).value,
     top: document.querySelector(QRY_FF_TOP).checked
@@ -140,6 +147,7 @@ function saveOptions () {
     color: document.querySelector(QRY_IC_COLOR).value
   }
   browser.storage.local.set({
+    release: releaseOptions,
     builtin: firefoxBookmarking,
     alltabs: firefoxBookmarkingAllTabs,
     icon: icon
@@ -154,6 +162,10 @@ function restoreOptions () {
     buildTree(bookmarkItems, [QRY_FF_FOLDER, QRY_AT_FOLDER, QRY_IC_FOLDER])
     let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
     gettingOptions.then((res) => {
+      if (res.hasOwnProperty(RELEASE) && res[RELEASE] !== undefined) {
+        // For release options
+        if (res[RELEASE][OPEN_NOTES] !== undefined) document.querySelector(QRY_RN_OPEN_NOTES).checked = res[RELEASE][OPEN_NOTES]
+      }
       if (res.hasOwnProperty(BUILTIN) && res[BUILTIN] !== undefined) {
         // For Firefox built-in bookmarking
         if (res[BUILTIN][FOLDER] !== undefined) setOption(document.querySelector(QRY_FF_FOLDER), res[BUILTIN][FOLDER])

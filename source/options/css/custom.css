@@ -37,12 +37,12 @@ body {
   font-size: 1rem
 }
 
-.release p {
+.release {
   font-weight: bold;
   margin-bottom: 0.25em;
 }
 
-.release ul, li {
+.release-notes ul, li {
   margin-left: 0.75em;
   list-style: disc;
   font-size: 0.90rem
