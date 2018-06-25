@@ -101,6 +101,18 @@
   "options_changelog_230_list_4": {
     "message": "Ajout: mise à jour des librairies internes"
   },
+  "options_changelog_240_list_1": {
+    "message": "Ajout: option pour montrer (ou non) les notes de version lors d'une mise à jour de l'extension (GitHub issue #27)"
+  },
+  "options_changelog_240_list_2": {
+    "message": "Ajout: traduction hongroise(merci à @meskobalazs)"
+  },
+  "options_changelog_240_list_3": {
+    "message": "Ajout: amélioration de la traduction française (merci à @Machou)"
+  },
+  "options_changelog_240_list_4": {
+    "message": "Ajout: nouvelles résolutions pour les icônes"
+  },
   "options_important_note": {
     "message": "Note importante"
   },

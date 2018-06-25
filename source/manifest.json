@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Default Bookmark Folder",
   "author": "Teddy Gustiaux",
-  "version": "2.3.0",
+  "version": "2.4.0",
 
   "description": "Allows you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon.",
   "homepage_url": "https://github.com/teddy-gustiaux/default-bookmark-folder",

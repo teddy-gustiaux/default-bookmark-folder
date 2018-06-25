@@ -101,6 +101,18 @@
   "options_changelog_230_list_4": {
     "message": "Új: Belsõ programkönyvtárak frissítése"
   },
+  "options_changelog_240_list_1": {
+    "message": "New: Add an option to show (or not) release notes on add-on update (GitHub issue #27)"
+  },
+  "options_changelog_240_list_2": {
+    "message": "New: Add Hungarian translation (thanks to @meskobalazs)"
+  },
+  "options_changelog_240_list_3": {
+    "message": "New: Improvement of the French translation (thanks to @Machou)"
+  },
+  "options_changelog_240_list_4": {
+    "message": "New: Add new icon resolutions"
+  },
   "options_important_note": {
     "message": "Fontos megjegyzés"
   },
