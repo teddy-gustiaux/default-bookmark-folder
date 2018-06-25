@@ -264,17 +264,27 @@ function updateIcon (iconEnabled, color = 'red', preventRemoval = false) {
   if (iconEnabled === true) {
     browser.pageAction.setIcon({
       path: currentBookmark ? {
+        16: `icons/star/star-${color}-16.png`,
+        24: `icons/star/star-${color}-24.png`,
         32: `icons/star/star-${color}-32.png`,
+        48: `icons/star/star-${color}-48.png`,
         64: `icons/star/star-${color}-64.png`,
+        96: `icons/star/star-${color}-96.png`,
         128: `icons/star/star-${color}-128.png`,
         256: `icons/star/star-${color}-256.png`,
-        512: `icons/star/star-${color}-512.png`
+        512: `icons/star/star-${color}-512.png`,
+        1024: `icons/star/star-${color}-1024.png`
       } : {
+        16: 'icons/empty/empty-16.png',
+        24: 'icons/empty/empty-24.png',
         32: 'icons/empty/empty-32.png',
+        48: 'icons/empty/empty-48.png',
         64: 'icons/empty/empty-64.png',
+        96: 'icons/empty/empty-96.png',
         128: 'icons/empty/empty-128.png',
         256: 'icons/empty/empty-256.png',
-        512: 'icons/empty/empty-512.png'
+        512: 'icons/empty/empty-512.png',
+        1024: 'icons/empty/empty-1024.png'
       },
       tabId: currentTab.id
     })
@@ -291,11 +301,16 @@ function updateIcon (iconEnabled, color = 'red', preventRemoval = false) {
   } else {
     browser.pageAction.setIcon({
       path: {
+        16: 'icons/cross/cross-16.png',
+        24: 'icons/cross/cross-24.png',
         32: 'icons/cross/cross-32.png',
+        48: 'icons/cross/cross-48.png',
         64: 'icons/cross/cross-64.png',
+        96: 'icons/cross/cross-96.png',
         128: 'icons/cross/cross-128.png',
         256: 'icons/cross/cross-256.png',
-        512: 'icons/cross/cross-512.png'
+        512: 'icons/cross/cross-512.png',
+        1024: 'icons/cross/cross-1024.png'
       },
       tabId: currentTab.id
     })

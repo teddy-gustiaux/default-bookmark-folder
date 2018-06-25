@@ -18,19 +18,32 @@
 
   "page_action": {
     "default_icon": {
+      "16": "icons/cross/cross-16.png",
+      "24": "icons/cross/cross-24.png",
       "32": "icons/cross/cross-32.png",
+      "48": "icons/cross/cross-48.png",
       "64": "icons/cross/cross-64.png",
+      "96": "icons/cross/cross-96.png",
       "128": "icons/cross/cross-128.png",
       "256": "icons/cross/cross-256.png",
-      "512": "icons/cross/cross-512.png"
+      "512": "icons/cross/cross-512.png",
+      "1024": "icons/cross/cross-1024.png"
     },
     "default_title": "The icon is disabled. Enable it in the add-on settings.",
     "browser_style": true
   },
 
   "icons": {
-    "48": "icons/default-bookmark-folder-48.png",
-    "96": "icons/default-bookmark-folder-96.png"
+    "16": "icons/logo/default-bookmark-folder-16.png",
+    "24": "icons/logo/default-bookmark-folder-24.png",
+    "32": "icons/logo/default-bookmark-folder-32.png",
+    "48": "icons/logo/default-bookmark-folder-48.png",
+    "64": "icons/logo/default-bookmark-folder-64.png",
+    "96": "icons/logo/default-bookmark-folder-96.png",
+    "128": "icons/logo/default-bookmark-folder-128.png",
+    "256": "icons/logo/default-bookmark-folder-256.png",
+    "512": "icons/logo/default-bookmark-folder-512.png",
+    "1024": "icons/logo/default-bookmark-folder-1024.png"
   },
 
   "background": {
