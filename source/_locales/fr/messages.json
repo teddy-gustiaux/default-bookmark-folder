@@ -113,6 +113,9 @@
   "options_changelog_240_list_4": {
     "message": "Ajout: nouvelles résolutions pour les icônes"
   },
+  "options_changelog_241_list_1": {
+    "message": "Correction: Nouveaux dossiers déplacés vers le dossier sélectionné pour \"Marquer tous les onglets...\" (GitHub issue #30)"
+  },
   "options_important_note": {
     "message": "Note importante"
   },

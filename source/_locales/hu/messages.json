@@ -113,6 +113,9 @@
   "options_changelog_240_list_4": {
     "message": "New: Add new icon resolutions"
   },
+  "options_changelog_241_list_1": {
+    "message": "Fix: New folders moved to selected location for \"Bookmark All Tabs...\" (GitHub issue #30)"
+  },
   "options_important_note": {
     "message": "Fontos megjegyzés"
   },
