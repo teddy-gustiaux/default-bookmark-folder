@@ -25,6 +25,7 @@ const ICON_DEFAULT_COLOR = 'red'
 
 // Default bookmark folders ('unfiled' by default for all versions, 'menu' with shortcut/context menu on stable version)
 const FIREFOX_DEFAULT_FOLDERS = ['unfiled_____', 'menu________']
+const FIREFOX_DEFAULT_ALL_TABS_FOLDER_NAME = '[Folder Name]'
 
 // List of status
 const ST_BOOKMARKED = 100
@@ -226,7 +227,7 @@ function handleCreated (id, bookmarkInfo) {
         }
       }, onError)
     }
-  } else if (isFolder(bookmarkInfo)) {
+  } else if (isFolder(bookmarkInfo) && bookmarkInfo.title === FIREFOX_DEFAULT_ALL_TABS_FOLDER_NAME) {
     let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
     gettingOptions.then((options) => {
       if (bookmarkInfo.hasOwnProperty('parentId') && FIREFOX_DEFAULT_FOLDERS.includes(bookmarkInfo.parentId)) {
