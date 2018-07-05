@@ -13,6 +13,7 @@ const OPT_AT_FOLDER = 'alltabs-folder'
 const OPT_AT_TOP = 'alltabs-top'
 const OPT_IC_ICON = 'icon-enabled'
 const OPT_IC_SHORTCUT = 'icon-shortcut'
+const OPT_IC_CONTEXT_MENU = 'icon-context-menu'
 const OPT_IC_FOLDER = 'icon-folder'
 const OPT_IC_TOP = 'icon-top'
 const OPT_IC_INBOX = 'icon-inbox'
@@ -26,6 +27,7 @@ const QRY_FF_TOP = '#' + OPT_FF_TOP
 const QRY_AT_FOLDER = '#' + OPT_AT_FOLDER
 const QRY_AT_TOP = '#' + OPT_AT_TOP
 const QRY_IC_ICON = '#' + OPT_IC_ICON
+const QRY_IC_CONTEXT_MENU = '#' + OPT_IC_CONTEXT_MENU
 const QRY_IC_SHORTCUT = '#' + OPT_IC_SHORTCUT
 const QRY_IC_FOLDER = '#' + OPT_IC_FOLDER
 const QRY_IC_TOP = '#' + OPT_IC_TOP
@@ -46,6 +48,7 @@ const INBOX = 'inbox'
 const PREVENT_REMOVAL = 'preventRemoval'
 const COLOR = 'color'
 const SHORTCUT = 'shortcut'
+const CONTEXT_MENU = 'contextMenu'
 const NOTIFICATION = 'updateNotification'
 const NEW_RELEASE = 'newRelease'
 
@@ -88,9 +91,9 @@ function setOption (selectElement, value) {
 }
 
 /*
- * Toggles quick bookmark icon or shortcut options depending on the feature status
+ * Toggles quick bookmark icon, shortcut or context menu options depending on the feature status
  */
-function toggleIconOptions (iconEnabled, shortcutEnabled) {
+function toggleIconOptions (iconEnabled, shortcutEnabled, contextMenuEnabled) {
   if (iconEnabled !== undefined && iconEnabled === true) {
     Array.from(document.querySelectorAll(':disabled')).forEach(item => {
       item.removeAttribute('disabled')
@@ -99,7 +102,7 @@ function toggleIconOptions (iconEnabled, shortcutEnabled) {
       item.classList.remove('disabled-item')
     })
   } else {
-    if (shortcutEnabled !== undefined && shortcutEnabled === true) {
+    if ((shortcutEnabled !== undefined && shortcutEnabled === true) || (contextMenuEnabled !== undefined && contextMenuEnabled === true)) {
       document.querySelector(QRY_IC_FOLDER).removeAttribute('disabled')
       document.querySelector(`label[for=${OPT_IC_FOLDER}]`).classList.remove('disabled-item')
       document.querySelector(QRY_IC_FOLDER).removeAttribute('disabled')
@@ -125,7 +128,8 @@ function toggleIconOptions (iconEnabled, shortcutEnabled) {
 function saveOptions () {
   let iconEnabled = document.querySelector(QRY_IC_ICON).checked
   let shortcutEnabled = document.querySelector(QRY_IC_SHORTCUT).checked
-  toggleIconOptions(iconEnabled, shortcutEnabled)
+  let contextMenuEnabled = document.querySelector(QRY_IC_CONTEXT_MENU).checked
+  toggleIconOptions(iconEnabled, shortcutEnabled, contextMenuEnabled)
   let releaseOptions = {
     openNotes: document.querySelector(QRY_RN_OPEN_NOTES).checked
   }
@@ -141,6 +145,7 @@ function saveOptions () {
     enabled: iconEnabled,
     folder: document.querySelector(QRY_IC_FOLDER).value,
     shortcut: shortcutEnabled,
+    contextMenu: contextMenuEnabled,
     top: document.querySelector(QRY_IC_TOP).checked,
     inbox: document.querySelector(QRY_IC_INBOX).checked,
     preventRemoval: document.querySelector(QRY_IC_PREVENT_REMOVAL).checked,
@@ -180,12 +185,13 @@ function restoreOptions () {
         // For quick bookmark icon
         if (res[ICON][ENABLED] !== undefined) document.querySelector(QRY_IC_ICON).checked = res[ICON][ENABLED]
         if (res[ICON][SHORTCUT] !== undefined) document.querySelector(QRY_IC_SHORTCUT).checked = res[ICON][SHORTCUT]
+        if (res[ICON][CONTEXT_MENU] !== undefined) document.querySelector(QRY_IC_CONTEXT_MENU).checked = res[ICON][CONTEXT_MENU]
         if (res[ICON][FOLDER] !== undefined) setOption(document.querySelector(QRY_IC_FOLDER), res[ICON][FOLDER])
         if (res[ICON][TOP] !== undefined) document.querySelector(QRY_IC_TOP).checked = res[ICON][TOP]
         if (res[ICON][INBOX] !== undefined) document.querySelector(QRY_IC_INBOX).checked = res[ICON][INBOX]
         if (res[ICON][PREVENT_REMOVAL] !== undefined) document.querySelector(QRY_IC_PREVENT_REMOVAL).checked = res[ICON][PREVENT_REMOVAL]
         if (res[ICON][COLOR] !== undefined) setOption(document.querySelector(QRY_IC_COLOR), res[ICON][COLOR])
-        toggleIconOptions(res[ICON][ENABLED], res[ICON][SHORTCUT])
+        toggleIconOptions(res[ICON][ENABLED], res[ICON][SHORTCUT], res[ICON][CONTEXT_MENU])
       }
       // For tab management
       res[MISC_TAB] !== undefined ? switchTab(res[MISC_TAB]) : switchTab(TAB_DEFAULT_NUMBER)

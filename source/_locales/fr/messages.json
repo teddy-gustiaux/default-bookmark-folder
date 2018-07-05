@@ -170,6 +170,12 @@
   "options_icon_enable_shortcut": {
     "message": "Activer le raccourci de marquage rapide (Alt + Maj + D)"
   },
+  "options_icon_enable_context_menu": {
+    "message": "Activer le menu contextuel de marquage rapide"
+  },
+  "options_icon_enable_context_menu_help": {
+    "message": "Marquer rapidement via le menu contextuel d'une page ou d'un onglet, ou directement dans un dossier spécifique via son menu contextuel"
+  },
   "options_icon_note": {
     "message": "Les paramètres ci-dessous ne s’appliquent qu’à l’icône et au raccourci de marquage rapide."
   },

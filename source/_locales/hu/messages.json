@@ -170,6 +170,12 @@
   "options_icon_enable_shortcut": {
     "message": "Gyors könyvjelzõzés gyorsbillentyû engedélyezése (Alt+Shift+D)"
   },
+  "options_icon_enable_context_menu": {
+    "message": "Enable the quick bookmarking context menu"
+  },
+  "options_icon_enable_context_menu_help": {
+    "message": "Quickly bookmark via a page or tab context menu, or directly into a specific folder via its context menu"
+  },
   "options_icon_note": {
     "message": "A lenti beállítások csak a gyors könyvjelzõzés ikonra és gyorsbillentyûre érvényesek."
   },

@@ -170,6 +170,12 @@
   "options_icon_enable_shortcut": {
     "message": "Enable the quick bookmark shortcut (Alt+Shift+D)"
   },
+  "options_icon_enable_context_menu": {
+    "message": "Enable the quick bookmarking context menu"
+  },
+  "options_icon_enable_context_menu_help": {
+    "message": "Quickly bookmark via a page or tab context menu, or directly into a specific folder via its context menu"
+  },
   "options_icon_note": {
     "message": "The settings below only apply to the quick bookmark icon and shortcut."
   },
