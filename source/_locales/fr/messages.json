@@ -213,7 +213,7 @@
     "message": "Empêcher la suppression des marque-pages"
   },
   "options_icon_prevent_removal_help": {
-    "message": "Si ce paramètre est activé, l’icône de marquage rapide ne pourra plus supprimer de marque-pages (mais pourra toujours en créer de nouveaux)"
+    "message": "Si ce paramètre est activé, le système de marquage rapide (icône, raccourci et menu contextuel) ne pourra plus supprimer de marque-pages (mais pourra toujours en créer de nouveaux)"
   },
   "options_icon_color": {
     "message": "Sélectionner la couleur de l’icône quand la page actuelle possède un marque-page:"

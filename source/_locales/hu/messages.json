@@ -213,7 +213,7 @@
     "message": "Könyvjelzõk eltávolításának megakadályozása"
   },
   "options_icon_prevent_removal_help": {
-    "message": "Ha ez a beállítás engedélyezett, akkor a gyors könyvjelzõzés ikon nem lesz képes a könyvjelzõk eltávolítására (de újakat továbbra is létrehozhat)"
+    "message": "If this setting is enabled, the quick bookmarking system (icon, shortcut and context menu) will not be able to remove bookmarks (but can still create new ones)"
   },
   "options_icon_color": {
     "message": "Válasz ki az ikonszínt, ha a jelenlegi oldal könyvjelzõzésre kerül:"

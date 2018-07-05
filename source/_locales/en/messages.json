@@ -213,7 +213,7 @@
     "message": "Prevent removal of bookmarks"
   },
   "options_icon_prevent_removal_help": {
-    "message": "If this setting is enabled, the quick bookmark icon will not be able to remove bookmarks (but can still create new ones)"
+    "message": "If this setting is enabled, the quick bookmarking system (icon, shortcut and context menu) will not be able to remove bookmarks (but can still create new ones)"
   },
   "options_icon_color": {
     "message": "Select the icon color when the current page is bookmarked:"
