@@ -6,7 +6,7 @@
     "message": "Bookmark removal prevention setting activated"
   },
   "icon_quick_bookmark_page": {
-    "message": "Quick bookmark this page"
+    "message": "Quickly bookmark this page"
   },
   "icon_quick_bookmark_disabled": {
     "message": "The quick bookmark icon is disabled"
@@ -39,7 +39,7 @@
     "message": "Firefox built-in bookmarking"
   },
   "options_quick_bookmark_icon": {
-    "message": "Quick bookmark icon"
+    "message": "Quick bookmarking"
   },
   "options_about": {
     "message": "About the add-on"
@@ -171,13 +171,13 @@
     "message": "Enable the quick bookmark shortcut (Alt+Shift+D)"
   },
   "options_icon_enable_context_menu": {
-    "message": "Enable the quick bookmarking context menu"
+    "message": "Enable the quick bookmark context menu"
   },
   "options_icon_enable_context_menu_help": {
     "message": "Quickly bookmark via a page or tab context menu, or directly into a specific folder via its context menu"
   },
   "options_icon_note": {
-    "message": "The settings below only apply to the quick bookmark icon and shortcut."
+    "message": "The settings below only apply to the quick bookmarking feature."
   },
   "options_icon_folder": {
     "message": "Select where new bookmarks will be added:"

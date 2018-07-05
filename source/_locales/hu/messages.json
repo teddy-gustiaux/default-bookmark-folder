@@ -39,7 +39,7 @@
     "message": "A Firefox beépített könyvjelzõzése"
   },
   "options_quick_bookmark_icon": {
-    "message": "Gyors könyvjelzõzés ikon"
+    "message": "Gyors könyvjelzõzés"
   },
   "options_about": {
     "message": "A kiegészítõ névjegye"
@@ -171,13 +171,13 @@
     "message": "Gyors könyvjelzõzés gyorsbillentyû engedélyezése (Alt+Shift+D)"
   },
   "options_icon_enable_context_menu": {
-    "message": "Enable the quick bookmarking context menu"
+    "message": "Enable the quick bookmark context menu"
   },
   "options_icon_enable_context_menu_help": {
     "message": "Quickly bookmark via a page or tab context menu, or directly into a specific folder via its context menu"
   },
   "options_icon_note": {
-    "message": "A lenti beállítások csak a gyors könyvjelzõzés ikonra és gyorsbillentyûre érvényesek."
+    "message": "A lenti beállítások csak a Gyors könyvjelzõzés."
   },
   "options_icon_folder": {
     "message": "Válassza ki, hogy az új könyvjelzõk hová kerüljenek:"
