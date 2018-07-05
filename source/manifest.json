@@ -13,7 +13,8 @@
     "bookmarks",
     "activeTab",
     "tabs",
-    "storage"
+    "storage",
+    "menus"
   ],
 
   "page_action": {

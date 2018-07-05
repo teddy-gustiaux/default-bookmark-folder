@@ -18,6 +18,7 @@ const INBOX = 'inbox'
 const PREVENT_REMOVAL = 'preventRemoval'
 const COLOR = 'color'
 const SHORTCUT = 'shortcut'
+const CONTEXT_MENU = 'contextMenu'
 
 // Miscellaneous
 const FOLDER_NONE = 'none'
@@ -31,6 +32,10 @@ const FIREFOX_DEFAULT_ALL_TABS_FOLDER_NAME = '[Folder Name]'
 const ST_BOOKMARKED = 100
 const ST_NOT_BOOKMARKED = 101
 const ST_MULTIPLE_BOOKMARKS = 102
+
+// List of context menus
+const CM_PAGE = 'context_menu_page'
+const CM_BOOKMARK = 'context_menu_bookmark'
 
 // Allow to retrieve all stored options at once
 const OPTIONS_ARRAY = [RELEASE, BUILTIN, ALLTABS, ICON]
@@ -83,6 +88,7 @@ function updateUI (context) {
   return new Promise((resolve, reject) => {
     switch (context.status) {
       case ST_BOOKMARKED:
+        let preventRemoval = isOptionEnabled(context.options, ICON, PREVENT_REMOVAL)
         if (isOptionEnabled(context.options, ICON, ENABLED)) {
           if (isOptionEnabled(context.options, ICON, INBOX)) {
             // Only keep current bookmark if it is in the default location
@@ -92,17 +98,20 @@ function updateUI (context) {
           }
           let color = ICON_DEFAULT_COLOR
           if (context.options[ICON][COLOR] !== undefined) color = context.options[ICON][COLOR]
-          showIcon(color, isOptionEnabled(context.options, ICON, PREVENT_REMOVAL))
+          showIcon(color, preventRemoval)
         } else {
           hideIcon()
         }
+        isOptionEnabled(context.options, ICON, CONTEXT_MENU) ? updateContextMenus(true, preventRemoval) : updateContextMenus(false)
         break
       case ST_NOT_BOOKMARKED:
         currentBookmark = undefined
         isOptionEnabled(context.options, ICON, ENABLED) ? showIcon() : hideIcon()
+        isOptionEnabled(context.options, ICON, CONTEXT_MENU) ? updateContextMenus(true) : updateContextMenus(false)
         break
       case ST_MULTIPLE_BOOKMARKS:
         hideIcon()
+        updateContextMenus(false)
         break
     }
   })
@@ -416,6 +425,7 @@ function updateTab (tabs) {
     let currentURL = currentTab.url
     if (!isValidURL(currentURL)) {
       hideIcon()
+      updateContextMenus(false)
     } else {
       getOptions()
         .then(updateStatus)
@@ -437,6 +447,58 @@ function handleCommands (command) {
       if (pageIsSupported === true && isOptionEnabled(options, ICON, SHORTCUT)) toggleBookmark()
     }
   }, onError)
+}
+
+/*
+ * ================================================================================
+ * CONTEXT MENUS
+ * ================================================================================
+ */
+
+let contextMenuCreated
+
+function createContextMenus (preventRemoval) {
+  let title
+  if (currentBookmark) {
+    title = (preventRemoval === true) ? null : browser.i18n.getMessage('context_menu_remove_bookmark')
+  } else {
+    title = browser.i18n.getMessage('context_menu_quick_bookmark_page')
+  }
+  if (title !== null) {
+    browser.menus.create({
+      enabled: true,
+      id: CM_PAGE,
+      title: title,
+      command: '_execute_page_action',
+      contexts: ['page']
+    }, onCreated)
+    contextMenuCreated = true
+  }
+
+  function onCreated () {
+    if (browser.runtime.lastError) {
+      console.log('Error creating context menu item:' + browser.runtime.lastError)
+    }
+  }
+}
+
+function updateContextMenus (enabled, preventRemoval = false) {
+  if (enabled === true) {
+    if (contextMenuCreated === true) {
+      browser.menus.remove(CM_PAGE)
+      createContextMenus(preventRemoval)
+    } else {
+      createContextMenus(preventRemoval)
+    }
+  } else {
+    browser.menus.remove(CM_PAGE)
+    contextMenuCreated = false
+  }
+}
+
+function handleContextMenus (info, tab) {
+  console.log(info)
+  console.log(tab)
 }
 
 /*
@@ -464,6 +526,8 @@ browser.windows.onFocusChanged.addListener(updateActiveTab)
 browser.runtime.onInstalled.addListener(handleInstalled)
 // Listen for shortcuts
 browser.commands.onCommand.addListener(handleCommands)
+// Listen for context menu clicks
+browser.menus.onClicked.addListener(handleContextMenus)
 
 // Update when the extension loads initially
 updateActiveTab()

@@ -11,6 +11,12 @@
   "icon_quick_bookmark_disabled": {
     "message": "The quick bookmark icon is disabled"
   },
+  "context_menu_remove_bookmark": {
+    "message": "Remove the bookmark for this page"
+  },
+  "context_menu_quick_bookmark_page": {
+    "message": "Quickly bookmark this page"
+  },
   "welcome_title": {
     "message": "Welcome!"
   },
@@ -174,7 +180,7 @@
     "message": "Enable the quick bookmark context menu"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Quickly bookmark via a page or tab context menu, or directly into a specific folder via its context menu"
+    "message": "Quickly bookmark via the page context menu, or directly into a specific folder via its context menu"
   },
   "options_icon_note": {
     "message": "The settings below only apply to the quick bookmarking feature."
