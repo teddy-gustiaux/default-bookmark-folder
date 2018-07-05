@@ -102,16 +102,29 @@ function updateUI (context) {
         } else {
           hideIcon()
         }
-        isOptionEnabled(context.options, ICON, CONTEXT_MENU) ? updateContextMenus(true, preventRemoval) : updateContextMenus(false)
+        if (isOptionEnabled(context.options, ICON, CONTEXT_MENU)) {
+          updatePageContextMenu(true, preventRemoval)
+          updateBookmarkContextMenu(false)
+        } else {
+          updatePageContextMenu(false)
+          updateBookmarkContextMenu(false)
+        }
         break
       case ST_NOT_BOOKMARKED:
         currentBookmark = undefined
         isOptionEnabled(context.options, ICON, ENABLED) ? showIcon() : hideIcon()
-        isOptionEnabled(context.options, ICON, CONTEXT_MENU) ? updateContextMenus(true) : updateContextMenus(false)
+        if (isOptionEnabled(context.options, ICON, CONTEXT_MENU)) {
+          updatePageContextMenu(true)
+          updateBookmarkContextMenu(true)
+        } else {
+          updatePageContextMenu(false)
+          updateBookmarkContextMenu(false)
+        }
         break
       case ST_MULTIPLE_BOOKMARKS:
         hideIcon()
-        updateContextMenus(false)
+        updatePageContextMenu(false)
+        updateBookmarkContextMenu(false)
         break
     }
   })
@@ -425,7 +438,8 @@ function updateTab (tabs) {
     let currentURL = currentTab.url
     if (!isValidURL(currentURL)) {
       hideIcon()
-      updateContextMenus(false)
+      updatePageContextMenu(false)
+      updateBookmarkContextMenu(false)
     } else {
       getOptions()
         .then(updateStatus)
@@ -455,9 +469,16 @@ function handleCommands (command) {
  * ================================================================================
  */
 
-let contextMenuCreated
+let pageContextMenuCreated
+let bookmarkContextMenuCreated
 
-function createContextMenus (preventRemoval) {
+function onCreated () {
+  if (browser.runtime.lastError) {
+    console.log('Error creating context menu item:' + browser.runtime.lastError)
+  }
+}
+
+function createPageContextMenu (preventRemoval) {
   let title
   if (currentBookmark) {
     title = (preventRemoval === true) ? null : browser.i18n.getMessage('context_menu_remove_bookmark')
@@ -472,33 +493,77 @@ function createContextMenus (preventRemoval) {
       command: '_execute_page_action',
       contexts: ['page']
     }, onCreated)
-    contextMenuCreated = true
-  }
-
-  function onCreated () {
-    if (browser.runtime.lastError) {
-      console.log('Error creating context menu item:' + browser.runtime.lastError)
-    }
+    pageContextMenuCreated = true
   }
 }
 
-function updateContextMenus (enabled, preventRemoval = false) {
+function createBookmarkContextMenu () {
+  browser.menus.create({
+    enabled: true,
+    id: CM_BOOKMARK,
+    title: browser.i18n.getMessage('context_menu_quick_bookmark_bookmark'),
+    contexts: ['bookmark']
+  }, onCreated)
+  bookmarkContextMenuCreated = true
+}
+
+function updatePageContextMenu (enabled, preventRemoval = false) {
   if (enabled === true) {
-    if (contextMenuCreated === true) {
+    if (pageContextMenuCreated === true) {
       browser.menus.remove(CM_PAGE)
-      createContextMenus(preventRemoval)
+      createPageContextMenu(preventRemoval)
     } else {
-      createContextMenus(preventRemoval)
+      createPageContextMenu(preventRemoval)
     }
   } else {
     browser.menus.remove(CM_PAGE)
-    contextMenuCreated = false
+    pageContextMenuCreated = false
+  }
+}
+
+function updateBookmarkContextMenu (enabled) {
+  if (enabled === true) {
+    if (bookmarkContextMenuCreated === true) {
+      browser.menus.remove(CM_BOOKMARK)
+      createBookmarkContextMenu()
+    } else {
+      createBookmarkContextMenu()
+    }
+  } else {
+    browser.menus.remove(CM_BOOKMARK)
+    bookmarkContextMenuCreated = false
   }
 }
 
 function handleContextMenus (info, tab) {
-  console.log(info)
-  console.log(tab)
+  if (info.menuItemId === CM_BOOKMARK) {
+    let gettingBookmarks = browser.bookmarks.get(info.bookmarkId)
+    gettingBookmarks.then((bookmarks) => {
+      let clickedBookmark = bookmarks[0];
+      let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
+      gettingOptions.then((options) => {
+        let bookmarkTreeNode = {
+          title: currentTab.title,
+          url: currentTab.url
+        }
+        if (clickedBookmark.type === 'folder') {
+          bookmarkTreeNode.parentId = clickedBookmark.id
+        } else {
+          bookmarkTreeNode.parentId = clickedBookmark.parentId
+        }
+        if (isOptionEnabled(options, ICON, TOP)) {
+          bookmarkTreeNode.index = 0
+        }
+        // Remove listener overriding the Firefox built-in bookmarking
+        browser.bookmarks.onCreated.removeListener(handleCreated)
+        // Create the bookmark
+        browser.bookmarks.create(bookmarkTreeNode).then(() => {
+          // Re-add the listener
+          browser.bookmarks.onCreated.addListener(handleCreated)
+        }, onError)
+      }, onError)
+    }, onError)
+  }
 }
 
 /*

@@ -17,6 +17,9 @@
   "context_menu_quick_bookmark_page": {
     "message": "Quickly bookmark this page"
   },
+  "context_menu_quick_bookmark_bookmark": {
+    "message": "Quickly bookmark this page there"
+  },
   "welcome_title": {
     "message": "Üdvözöljük!"
   },

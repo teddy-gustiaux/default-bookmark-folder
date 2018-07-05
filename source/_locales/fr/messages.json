@@ -17,6 +17,9 @@
   "context_menu_quick_bookmark_page": {
     "message": "Marquer rapidement cette page"
   },
+  "context_menu_quick_bookmark_bookmark": {
+    "message": "Marquer rapidement cette page à cet endroit"
+  },
   "welcome_title": {
     "message": "Bienvenue !"
   },
