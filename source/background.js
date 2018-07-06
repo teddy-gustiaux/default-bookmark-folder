@@ -575,7 +575,7 @@ function handleContextMenus (info, tab) {
           title: currentTab.title,
           url: currentTab.url
         }
-        if (clickedBookmark.type === 'folder') {
+        if ((clickedBookmark.hasOwnProperty('type') && clickedBookmark.type === 'folder') || (clickedBookmark.url === undefined)) {
           bookmarkTreeNode.parentId = clickedBookmark.id
         } else {
           bookmarkTreeNode.parentId = clickedBookmark.parentId
