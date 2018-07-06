@@ -5,13 +5,13 @@
   "main": "background.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint ",
+    "eslint": "eslint ./source",
     "lint": "web-ext lint --source-dir ./source/",
     "start:firefox": "web-ext run --source-dir ./source/ --firefox=firefox --firefox-profile=dev --start-url about:debugging",
     "start:nightly": "web-ext run --source-dir ./source/ --firefox=nightly --firefox-profile=nightly --start-url about:debugging",
     "start:dev": "web-ext run --source-dir ./source/ --firefox=firefoxdeveloperedition --firefox-profile=dev --start-url about:debugging",
     "start:waterfox": "web-ext run --source-dir ./source/ --pre-install --firefox=\"C:\\Program Files\\Waterfox\\Waterfox.exe\" --start-url about:debugging",
-    "build": " web-ext build --source-dir ./source/ --overwrite-dest --artifacts-dir ./dist"
+    "build": "web-ext build --source-dir ./source/ --overwrite-dest --artifacts-dir ./dist"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",

@@ -568,7 +568,7 @@ function handleContextMenus (info, tab) {
   if (info.menuItemId === CM_BOOKMARK) {
     let gettingBookmarks = browser.bookmarks.get(info.bookmarkId)
     gettingBookmarks.then((bookmarks) => {
-      let clickedBookmark = bookmarks[0];
+      let clickedBookmark = bookmarks[0]
       let gettingOptions = browser.storage.local.get(OPTIONS_ARRAY)
       gettingOptions.then((options) => {
         let bookmarkTreeNode = {
