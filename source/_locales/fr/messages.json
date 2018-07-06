@@ -20,6 +20,9 @@
   "context_menu_quick_bookmark_bookmark": {
     "message": "Marquer rapidement cette page à cet endroit"
   },
+  "options_folder_last": {
+    "message": "Dernier dossier utilisé (par n'importe quelle méthode de marquage ou de rangement)"
+  },
   "welcome_title": {
     "message": "Bienvenue !"
   },

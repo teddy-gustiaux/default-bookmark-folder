@@ -20,6 +20,9 @@
   "context_menu_quick_bookmark_bookmark": {
     "message": "Quickly bookmark this page there"
   },
+  "options_folder_last": {
+    "message": "Last used folder (by any bookmarking or sorting method)"
+  },
   "welcome_title": {
     "message": "Üdvözöljük!"
   },

@@ -22,6 +22,7 @@ const CONTEXT_MENU = 'contextMenu'
 
 // Miscellaneous
 const FOLDER_NONE = 'none'
+const FOLDER_LAST_USED = 'last'
 const ICON_DEFAULT_COLOR = 'red'
 
 // Default bookmark folders ('unfiled' by default for all versions, 'menu' with shortcut/context menu on stable version)
@@ -39,6 +40,19 @@ const CM_BOOKMARK = 'context_menu_bookmark'
 
 // Allow to retrieve all stored options at once
 const OPTIONS_ARRAY = [RELEASE, BUILTIN, ALLTABS, ICON]
+
+/*
+ * ================================================================================
+ * GLOBAL VARIABLES
+ * ================================================================================
+ */
+
+let currentTab
+let currentBookmark
+let pageIsSupported
+let pageContextMenuCreated
+let bookmarkContextMenuCreated
+let lastUsedFolderId
 
 /*
  * ================================================================================
@@ -236,7 +250,11 @@ function handleCreated (id, bookmarkInfo) {
         if (bookmarkInfo.hasOwnProperty('parentId') && FIREFOX_DEFAULT_FOLDERS.includes(bookmarkInfo.parentId)) {
           let bookmarkTreeNode = {}
           if (isFolderSet(options, BUILTIN)) {
-            bookmarkTreeNode.parentId = options[BUILTIN][FOLDER]
+            if (options[BUILTIN][FOLDER] === FOLDER_LAST_USED) {
+              bookmarkTreeNode.parentId = lastUsedFolderId
+            } else {
+              bookmarkTreeNode.parentId = options[BUILTIN][FOLDER]
+            }
           } else {
             bookmarkTreeNode.index = bookmarkInfo.index
           }
@@ -244,6 +262,7 @@ function handleCreated (id, bookmarkInfo) {
             bookmarkTreeNode.index = 0
           }
           browser.bookmarks.move(id, bookmarkTreeNode)
+          lastUsedFolderId = bookmarkTreeNode.parentId
         } else {
           // Bookmark created by an other mean
         }
@@ -255,7 +274,11 @@ function handleCreated (id, bookmarkInfo) {
       if (bookmarkInfo.hasOwnProperty('parentId') && FIREFOX_DEFAULT_FOLDERS.includes(bookmarkInfo.parentId)) {
         let bookmarkTreeNode = {}
         if (isFolderSet(options, ALLTABS)) {
-          bookmarkTreeNode.parentId = options[ALLTABS][FOLDER]
+          if (options[ALLTABS][FOLDER] === FOLDER_LAST_USED) {
+            bookmarkTreeNode.parentId = lastUsedFolderId
+          } else {
+            bookmarkTreeNode.parentId = options[ALLTABS][FOLDER]
+          }
         } else {
           bookmarkTreeNode.index = bookmarkInfo.index
         }
@@ -263,6 +286,7 @@ function handleCreated (id, bookmarkInfo) {
           bookmarkTreeNode.index = 0
         }
         browser.bookmarks.move(id, bookmarkTreeNode)
+        lastUsedFolderId = bookmarkTreeNode.parentId
       } else {
         // Bookmark created by an other mean
       }
@@ -271,14 +295,17 @@ function handleCreated (id, bookmarkInfo) {
 }
 
 /*
+ * Updating the last used folder when a bookmark is moved
+ */
+function handleMoved (id, moveInfo) {
+  lastUsedFolderId = moveInfo.parentId
+}
+
+/*
  * ================================================================================
  * CREATING ANOTHER BOOKMARKING ICON
  * ================================================================================
  */
-
-let currentTab
-let currentBookmark
-let pageIsSupported
 
 /*
  * Updates the browserAction icon to reflect whether the current page is already bookmarked
@@ -358,7 +385,11 @@ function toggleBookmark () {
         url: currentTab.url
       }
       if (isFolderSet(options, ICON)) {
-        bookmarkTreeNode.parentId = options[ICON][FOLDER]
+        if (options[ICON][FOLDER] === FOLDER_LAST_USED) {
+          bookmarkTreeNode.parentId = lastUsedFolderId
+        } else {
+          bookmarkTreeNode.parentId = options[ICON][FOLDER]
+        }
       }
       if (isOptionEnabled(options, ICON, TOP)) {
         bookmarkTreeNode.index = 0
@@ -368,6 +399,7 @@ function toggleBookmark () {
       // Create the bookmark
       browser.bookmarks.create(bookmarkTreeNode).then(() => {
         // Re-add the listener
+        lastUsedFolderId = bookmarkTreeNode.parentId
         browser.bookmarks.onCreated.addListener(handleCreated)
       }, onError)
     }
@@ -469,9 +501,6 @@ function handleCommands (command) {
  * ================================================================================
  */
 
-let pageContextMenuCreated
-let bookmarkContextMenuCreated
-
 function onCreated () {
   if (browser.runtime.lastError) {
     console.log('Error creating context menu item:' + browser.runtime.lastError)
@@ -559,6 +588,7 @@ function handleContextMenus (info, tab) {
         // Create the bookmark
         browser.bookmarks.create(bookmarkTreeNode).then(() => {
           // Re-add the listener
+          lastUsedFolderId = bookmarkTreeNode.parentId
           browser.bookmarks.onCreated.addListener(handleCreated)
         }, onError)
       }, onError)
@@ -578,6 +608,7 @@ browser.bookmarks.onCreated.addListener(updateActiveTab)
 // Listen for bookmarks being removed
 browser.bookmarks.onRemoved.addListener(updateActiveTab)
 // Listen for bookmarks being moved
+browser.bookmarks.onMoved.addListener(handleMoved)
 browser.bookmarks.onMoved.addListener(updateActiveTab)
 // Listen for clicks on the button
 browser.pageAction.onClicked.addListener(toggleBookmark)
