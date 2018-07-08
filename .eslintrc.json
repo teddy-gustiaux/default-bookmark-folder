@@ -8,5 +8,37 @@
   "rules": {
     "no-var": "error",
     "curly": "off"
+  },
+  "globals": {
+    "RELEASE": false,
+    "OPEN_NOTES": false,
+    "BUILTIN": false,
+    "ALLTABS": false,
+    "ICON": false,
+    "FOLDER": false,
+    "TOP": false,
+    "ENABLED": false,
+    "INBOX": false,
+    "PREVENT_REMOVAL": false,
+    "COLOR": false,
+    "SHORTCUT": false,
+    "CONTEXT_MENU": false,
+    "FOLDER_NONE": false,
+    "FOLDER_LAST_USED": false,
+    "ICON_DEFAULT_COLOR": false,
+    "FIREFOX_DEFAULT_FOLDERS": false,
+    "FIREFOX_DEFAULT_ALL_TABS_FOLDER_NAME": false,
+    "ST_BOOKMARKED": false,
+    "ST_NOT_BOOKMARKED": false,
+    "ST_MULTIPLE_BOOKMARKS": false,
+    "CM_PAGE": false,
+    "CM_BOOKMARK": false,
+    "OPTIONS_ARRAY": false,
+    "currentTab": true,
+    "currentBookmark": true,
+    "pageIsSupported": true,
+    "pageContextMenuCreated": true,
+    "bookmarkContextMenuCreated": true,
+    "lastUsedFolderId": true
   }
 }
