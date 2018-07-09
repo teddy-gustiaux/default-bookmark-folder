@@ -1,13 +1,25 @@
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "webextensions": true
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2017
   },
-  "extends": "standard",
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "webextensions": true,
+    "mocha": true 
+  },
   "rules": {
-    "no-var": "error",
-    "curly": "off"
+    "strict": "off",
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "prettier/prettier": "error"
   },
   "globals": {
     "RELEASE": false,
