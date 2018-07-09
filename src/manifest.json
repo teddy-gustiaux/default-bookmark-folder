@@ -50,7 +50,13 @@
   "background": {
     "scripts": [
       "background/globals.js",
-      "background.js"
+      "background/lib/Utils.js",
+      "background/lib/Options.js",
+      "background/lib/WebPage.js",
+      "background/lib/PageAction.js",
+      "background/bookmarking/BuiltinBookmarking.js",
+      "background/bookmarking/QuickBookmarking.js",
+      "background/app.js"
     ]
   },
 
