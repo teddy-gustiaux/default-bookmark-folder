@@ -52,6 +52,7 @@
       "background/globals.js",
       "background/lib/Utils.js",
       "background/lib/Options.js",
+      "background/lib/Update.js",
       "background/lib/WebPage.js",
       "background/lib/PageAction.js",
       "background/bookmarking/BuiltinBookmarking.js",

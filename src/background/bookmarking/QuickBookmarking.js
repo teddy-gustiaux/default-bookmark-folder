@@ -7,24 +7,23 @@
  */
 
 class QuickBookmarking {
-
     constructor(webPage, options) {
         this._webPage = webPage;
         this._options = options;
     }
 
     _removeBookmarks() {
-        let bookmarksToRemove = this._webPage.bookmarks;
-        bookmarksToRemove.forEach((bookmark) => {
-            browser.bookmarks.remove(bookmark.id)
+        const bookmarksToRemove = this._webPage.bookmarks;
+        bookmarksToRemove.forEach(bookmark => {
+            browser.bookmarks.remove(bookmark.id);
         });
     }
 
     _createNode() {
-        let bookmarkTreeNode = {
+        const bookmarkTreeNode = {
             title: this._webPage.title,
-            url: this._webPage.url
-        }
+            url: this._webPage.url,
+        };
         if (this._options.isQuickFolderSet()) {
             if (this._options.isQuickFolderLastUsed()) {
                 // bookmarkTreeNode.parentId = lastUsedFolderId
@@ -36,7 +35,7 @@ class QuickBookmarking {
         return bookmarkTreeNode;
     }
 
-    _nodeIsValid(bookmarkTreeNode) {
+    static _nodeIsValid(bookmarkTreeNode) {
         let isValid = false;
         if (Object.keys(bookmarkTreeNode).length !== 0 && bookmarkTreeNode.constructor === Object) {
             if (
@@ -49,19 +48,19 @@ class QuickBookmarking {
         return isValid;
     }
 
-    _removeBookmarkCreationListener() {
-        browser.bookmarks.onCreated.removeListener(onBookmarksCreated)
+    static _removeBookmarkCreationListener() {
+        browser.bookmarks.onCreated.removeListener(onBookmarksCreated);
     }
 
-    _addBookmarkCreationListener() {
-        browser.bookmarks.onCreated.addListener(onBookmarksCreated)
+    static _addBookmarkCreationListener() {
+        browser.bookmarks.onCreated.addListener(onBookmarksCreated);
     }
 
     async toggle() {
         if (this._webPage.isBookmarked) {
             if (!this._options.isRemovalPreventionEnabled()) this._removeBookmarks();
         } else {
-            let bookmarkTreeNode = this._createNode();
+            const bookmarkTreeNode = this._createNode();
             if (this._nodeIsValid(bookmarkTreeNode)) {
                 this._removeBookmarkCreationListener();
                 await browser.bookmarks.create(bookmarkTreeNode);

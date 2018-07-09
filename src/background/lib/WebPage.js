@@ -7,7 +7,6 @@
  */
 
 class WebPage {
-
     constructor(id, url, title) {
         this._id = id;
         this._url = url;
@@ -80,18 +79,16 @@ class WebPage {
         } else {
             let bookmarks;
             if (Utils.isSupportedProtocol(this._url)) {
-                bookmarks = await browser.bookmarks.search({url: this._url});
+                bookmarks = await browser.bookmarks.search({ url: this._url });
             } else if (Utils.isExtraProtocol(this._url)) {
                 bookmarks = await browser.bookmarks.search(decodeURIComponent(this._url));
             }
             if (bookmarks.constructor !== Array) {
                 this._unsupportedPage();
+            } else if (bookmarks.length === 0) {
+                this._notBookmarkedPage();
             } else {
-                if (bookmarks.length === 0) {
-                    this._notBookmarkedPage();
-                } else {
-                    this.__bookmarkedPage(bookmarks);
-                }
+                this.__bookmarkedPage(bookmarks);
             }
         }
     }

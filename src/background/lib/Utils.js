@@ -70,22 +70,24 @@ class Utils {
     // Indicate if a bookmark object is a web page
     static bookmarkIsWebPage(bookmarkInfo) {
         let isWebPage = false;
-        if (Object.prototype.hasOwnProperty.call(bookmarkInfo, 'type')) {
-            if (bookmarkInfo.type === 'bookmark') isWebPage = true;
-        } else {
-            if (Object.prototype.hasOwnProperty.call(bookmarkInfo, 'url')) isWebPage = true;
-        }
+        if (
+            Object.prototype.hasOwnProperty.call(bookmarkInfo, 'type') &&
+            bookmarkInfo.type === 'bookmark'
+        ) {
+            isWebPage = true;
+        } else if (Object.prototype.hasOwnProperty.call(bookmarkInfo, 'url')) isWebPage = true;
         return isWebPage;
     }
 
     // Indicate if a bookmark object is a folder
     static bookmarkIsFolder(bookmarkInfo) {
         let isFolder = false;
-        if (Object.prototype.hasOwnProperty.call(bookmarkInfo, 'type')) {
-            if (bookmarkInfo.type === 'folder') isFolder = true;
-        } else {
-            if (!Object.prototype.hasOwnProperty.call(bookmarkInfo, 'url')) isFolder = true;
-        }
+        if (
+            Object.prototype.hasOwnProperty.call(bookmarkInfo, 'type') &&
+            bookmarkInfo.type === 'folder'
+        ) {
+            isFolder = true;
+        } else if (!Object.prototype.hasOwnProperty.call(bookmarkInfo, 'url')) isFolder = true;
         return isFolder;
     }
 }

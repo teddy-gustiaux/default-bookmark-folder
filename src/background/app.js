@@ -101,6 +101,16 @@ async function onShortcutUsed(command) {
     }
 }
 
+async function onAddonInstallation(details) {
+    const update = new Update(globalOptions);
+    if (details.reason === 'install') {
+        update.openOptionsPage();
+    } else if (details.reason === 'update') {
+        if (details.previousVersion[0] === '1') update.updateFromFirstVersion();
+        await update.displayReleaseNotes();
+    }
+}
+
 /*
  * =================================================================================================
  * LISTENERS
@@ -144,6 +154,12 @@ browser.pageAction.onClicked.addListener(onPageActionClick);
 // -------------------------------------------------------------------------------------------------
 // Listen for shortcuts
 browser.commands.onCommand.addListener(onShortcutUsed);
+
+// -------------------------------------------------------------------------------------------------
+// RUNTIME
+// -------------------------------------------------------------------------------------------------
+// Listen for add-on installation or update
+browser.runtime.onInstalled.addListener(onAddonInstallation);
 
 // -------------------------------------------------------------------------------------------------
 // STORAGE

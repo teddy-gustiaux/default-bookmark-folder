@@ -7,13 +7,12 @@
  */
 
 class BuiltinBookmarking {
-
     constructor(options) {
         this._options = options;
     }
 
     // Check if the bookmark has been created by an automatic built-in method
-    _isSystemCreated(bookmarkInfo) {
+    static _isSystemCreated(bookmarkInfo) {
         let isSystemCreated = false;
         if (
             Object.prototype.hasOwnProperty.call(bookmarkInfo, 'parentId') &&
@@ -24,12 +23,12 @@ class BuiltinBookmarking {
         return isSystemCreated;
     }
 
-    _isAllTabsSystemCreatedFolder(bookmarkInfo) {
+    static _isAllTabsSystemCreatedFolder(bookmarkInfo) {
         return bookmarkInfo.title === FIREFOX_DEFAULT_ALL_TABS_FOLDER_NAME;
     }
 
     _createMovingPropertiesForBookmark() {
-        let bookmarkTreeNode = {};
+        const bookmarkTreeNode = {};
         if (this._options.isBuiltinFolderSet()) {
             if (this._options.isBuiltinFolderLastUsed()) {
                 // bookmarkTreeNode.parentId = lastUsedFolderId
@@ -42,7 +41,7 @@ class BuiltinBookmarking {
     }
 
     _createMovingPropertiesForAllTabsFolder() {
-        let bookmarkTreeNode = {};
+        const bookmarkTreeNode = {};
         if (this._options.isAllTabsFolderSet()) {
             if (this._options.isAllTabsFolderLastUsed()) {
                 // bookmarkTreeNode.parentId = lastUsedFolderId
@@ -54,7 +53,7 @@ class BuiltinBookmarking {
         return bookmarkTreeNode;
     }
 
-    _nodeIsValidForMoving(bookmarkTreeNode) {
+    static _nodeIsValidForMoving(bookmarkTreeNode) {
         let isValid = false;
         if (Object.keys(bookmarkTreeNode).length !== 0 && bookmarkTreeNode.constructor === Object) {
             if (

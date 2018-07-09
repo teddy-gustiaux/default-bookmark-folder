@@ -71,7 +71,7 @@ class Options {
     }
 
     isBuiltinFolderLastUsed() {
-        return (this._options[BUILTIN][FOLDER] === FOLDER_LAST_USED);
+        return this._options[BUILTIN][FOLDER] === FOLDER_LAST_USED;
     }
 
     getBuiltinFolder() {
@@ -103,7 +103,7 @@ class Options {
     }
 
     isQuickFolderLastUsed() {
-        return (this._options[ICON][FOLDER] === FOLDER_LAST_USED);
+        return this._options[ICON][FOLDER] === FOLDER_LAST_USED;
     }
 
     getQuickFolder() {
@@ -137,7 +137,7 @@ class Options {
     }
 
     isAllTabsFolderLastUsed() {
-        return (this._options[ALLTABS][FOLDER] === FOLDER_LAST_USED);
+        return this._options[ALLTABS][FOLDER] === FOLDER_LAST_USED;
     }
 
     getAllTabsFolder() {
