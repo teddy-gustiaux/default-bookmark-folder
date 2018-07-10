@@ -26,7 +26,7 @@ class QuickBookmarking {
         };
         if (this._options.isQuickFolderSet()) {
             if (this._options.isQuickFolderLastUsed()) {
-                // bookmarkTreeNode.parentId = lastUsedFolderId
+                bookmarkTreeNode.parentId = this._options.getLastUsedFolder();
             } else {
                 bookmarkTreeNode.parentId = this._options.getQuickFolder();
             }
@@ -35,7 +35,7 @@ class QuickBookmarking {
         return bookmarkTreeNode;
     }
 
-    static _nodeIsValid(bookmarkTreeNode) {
+    _nodeIsValid(bookmarkTreeNode) {
         let isValid = false;
         if (Object.keys(bookmarkTreeNode).length !== 0 && bookmarkTreeNode.constructor === Object) {
             if (
@@ -48,11 +48,11 @@ class QuickBookmarking {
         return isValid;
     }
 
-    static _removeBookmarkCreationListener() {
+    _removeBookmarkCreationListener() {
         browser.bookmarks.onCreated.removeListener(onBookmarksCreated);
     }
 
-    static _addBookmarkCreationListener() {
+    _addBookmarkCreationListener() {
         browser.bookmarks.onCreated.addListener(onBookmarksCreated);
     }
 
@@ -65,7 +65,7 @@ class QuickBookmarking {
                 this._removeBookmarkCreationListener();
                 await browser.bookmarks.create(bookmarkTreeNode);
                 this._addBookmarkCreationListener();
-                // lastUsedFolderId = bookmarkTreeNode.parentId
+                await this._options.updateLastUsedFolder(bookmarkTreeNode.parentId);
             }
         }
     }

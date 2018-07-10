@@ -11,7 +11,7 @@ class Update {
         this._options = options;
     }
 
-    static openOptionsPage() {
+    openOptionsPage() {
         browser.runtime.openOptionsPage();
     }
 
@@ -23,7 +23,7 @@ class Update {
     }
 
     // Update from version 1.*
-    static updateFromFirstVersion() {
+    updateFromFirstVersion() {
         browser.storage.local.remove(['override', 'icon', 'inbox', 'addtotop']);
     }
 }

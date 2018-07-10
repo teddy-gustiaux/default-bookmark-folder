@@ -84,9 +84,14 @@ async function processUpdate() {
     updateInterface(globalWebPage, globalOptions);
 }
 
-function onBookmarksCreated(id, bookmarkInfo) {
+async function onBookmarksCreated(id, bookmarkInfo) {
     const builtinBookmarking = new BuiltinBookmarking(globalOptions);
-    builtinBookmarking.move(id, bookmarkInfo);
+    await builtinBookmarking.move(id, bookmarkInfo);
+}
+
+async function onBookmarksMoved(id, moveInfo) {
+    await globalOptions.updateLastUsedFolder(moveInfo.parentId);
+
 }
 
 async function onPageActionClick() {
@@ -141,6 +146,7 @@ browser.bookmarks.onCreated.addListener(processUpdate);
 // Listen for bookmarks being removed
 browser.bookmarks.onRemoved.addListener(processUpdate);
 // Listen for bookmarks being moved
+browser.bookmarks.onMoved.addListener(onBookmarksMoved)
 browser.bookmarks.onMoved.addListener(processUpdate);
 
 // -------------------------------------------------------------------------------------------------

@@ -12,7 +12,7 @@ class BuiltinBookmarking {
     }
 
     // Check if the bookmark has been created by an automatic built-in method
-    static _isSystemCreated(bookmarkInfo) {
+    _isSystemCreated(bookmarkInfo) {
         let isSystemCreated = false;
         if (
             Object.prototype.hasOwnProperty.call(bookmarkInfo, 'parentId') &&
@@ -23,7 +23,7 @@ class BuiltinBookmarking {
         return isSystemCreated;
     }
 
-    static _isAllTabsSystemCreatedFolder(bookmarkInfo) {
+    _isAllTabsSystemCreatedFolder(bookmarkInfo) {
         return bookmarkInfo.title === FIREFOX_DEFAULT_ALL_TABS_FOLDER_NAME;
     }
 
@@ -31,7 +31,7 @@ class BuiltinBookmarking {
         const bookmarkTreeNode = {};
         if (this._options.isBuiltinFolderSet()) {
             if (this._options.isBuiltinFolderLastUsed()) {
-                // bookmarkTreeNode.parentId = lastUsedFolderId
+                bookmarkTreeNode.parentId = this._options.getLastUsedFolder();
             } else {
                 bookmarkTreeNode.parentId = this._options.getBuiltinFolder();
             }
@@ -44,7 +44,7 @@ class BuiltinBookmarking {
         const bookmarkTreeNode = {};
         if (this._options.isAllTabsFolderSet()) {
             if (this._options.isAllTabsFolderLastUsed()) {
-                // bookmarkTreeNode.parentId = lastUsedFolderId
+                bookmarkTreeNode.parentId = this._options.getLastUsedFolder();
             } else {
                 bookmarkTreeNode.parentId = this._options.getAllTabsFolder();
             }
@@ -53,7 +53,7 @@ class BuiltinBookmarking {
         return bookmarkTreeNode;
     }
 
-    static _nodeIsValidForMoving(bookmarkTreeNode) {
+    _nodeIsValidForMoving(bookmarkTreeNode) {
         let isValid = false;
         if (Object.keys(bookmarkTreeNode).length !== 0 && bookmarkTreeNode.constructor === Object) {
             if (
@@ -66,7 +66,7 @@ class BuiltinBookmarking {
         return isValid;
     }
 
-    move(id, bookmarkInfo) {
+    async move(id, bookmarkInfo) {
         if (!this._isSystemCreated(bookmarkInfo)) return;
         let bookmarkTreeNode;
         if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
@@ -77,7 +77,7 @@ class BuiltinBookmarking {
         }
         if (this._nodeIsValidForMoving(bookmarkTreeNode)) {
             browser.bookmarks.move(id, bookmarkTreeNode);
-            // lastUsedFolderId = bookmarkTreeNode.parentId
+            await this._options.updateLastUsedFolder(bookmarkTreeNode.parentId);
         }
     }
 }

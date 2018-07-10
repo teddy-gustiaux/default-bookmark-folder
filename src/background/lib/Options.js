@@ -19,7 +19,7 @@ class Options {
     // GENERIC
     // -------------------------------------------------------------------------------------------------
 
-    // Indicate if a specific option has been enabled or not
+    // Indicate if an option has been enabled or not for a specific option category
     _isOptionEnabled(optionCategory, optionName) {
         let isEnabled = false;
         if (Object.prototype.hasOwnProperty.call(this._options, optionCategory)) {
@@ -34,14 +34,14 @@ class Options {
         return isEnabled;
     }
 
-    // Indicate if a folder has been set or not for a specific option category
-    _isFolderSet(optionCategory) {
+    // Indicate if an option has been set or not for a specific option category
+    _isOptionSet(optionCategory, optionName) {
         let isSet = false;
         if (Object.prototype.hasOwnProperty.call(this._options, optionCategory)) {
             const category = this._options[optionCategory];
             if (
-                Object.prototype.hasOwnProperty.call(category, FOLDER) &&
-                category[FOLDER] !== undefined
+                Object.prototype.hasOwnProperty.call(category, optionName) &&
+                typeof category[optionName] !== 'undefined'
             ) {
                 isSet = true;
             }
@@ -67,7 +67,7 @@ class Options {
     // -------------------------------------------------------------------------------------------------
 
     isBuiltinFolderSet() {
-        return this._isFolderSet(BUILTIN);
+        return this._isOptionSet(BUILTIN, FOLDER);
     }
 
     isBuiltinFolderLastUsed() {
@@ -99,7 +99,7 @@ class Options {
     }
 
     isQuickFolderSet() {
-        return this._isFolderSet(ICON);
+        return this._isOptionSet(ICON, FOLDER);
     }
 
     isQuickFolderLastUsed() {
@@ -123,8 +123,10 @@ class Options {
     }
 
     getIconColor() {
-        let color = this._options[ICON][COLOR];
-        if (typeof color === 'undefined') color = ICON_DEFAULT_COLOR;
+        let color = ICON_DEFAULT_COLOR;
+        if (this._isOptionSet(ICON, COLOR)) {
+           color = this._options[ICON][COLOR];
+        }
         return color;
     }
 
@@ -133,7 +135,7 @@ class Options {
     // -------------------------------------------------------------------------------------------------
 
     isAllTabsFolderSet() {
-        return this._isFolderSet(ALLTABS);
+        return this._isOptionSet(ALLTABS, FOLDER);
     }
 
     isAllTabsFolderLastUsed() {
@@ -146,5 +148,22 @@ class Options {
 
     addAllTabsBookmarksOnTop() {
         return this._isOptionEnabled(ALLTABS, TOP);
+    }
+
+    // -------------------------------------------------------------------------------------------------
+    // MISCELLANEOUS
+    // -------------------------------------------------------------------------------------------------
+
+    async updateLastUsedFolder(folderId) {
+        const object = { [LAST_USED_FOLDER]: folderId };
+        await browser.storage.local.set({ [MISC]: object });
+    }
+
+    getLastUsedFolder() {
+        let folderId = 'unfiled_____';
+        if (this._isOptionSet(MISC, LAST_USED_FOLDER)) {
+            folderId = this._options[MISC][LAST_USED_FOLDER];
+        }
+        return folderId;
     }
 }

@@ -8,10 +8,12 @@
 
 // List of stored options properties
 const RELEASE = 'release';
-const OPEN_NOTES = 'openNotes';
 const BUILTIN = 'builtin';
 const ALLTABS = 'alltabs';
 const ICON = 'icon';
+const MISC = 'miscellaneous';
+
+const OPEN_NOTES = 'openNotes';
 const FOLDER = 'folder';
 const TOP = 'top';
 const ENABLED = 'enabled';
@@ -20,6 +22,7 @@ const PREVENT_REMOVAL = 'preventRemoval';
 const COLOR = 'color';
 const SHORTCUT = 'shortcut';
 const CONTEXT_MENU = 'contextMenu';
+const LAST_USED_FOLDER = 'lastUsedFolderId';
 
 // Miscellaneous
 const FOLDER_NONE = 'none';
@@ -59,4 +62,3 @@ let globalOptions = null;
 
 let pageContextMenuCreated;
 let bookmarkContextMenuCreated;
-let lastUsedFolderId;
