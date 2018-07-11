@@ -48,30 +48,9 @@ async function getNewEnvironment(previousWebPage, newlyActiveTab) {
 }
 
 function updateInterface(webPage, options) {
-    if (options.isIconEnabled()) {
-        if (webPage.isSupported) {
-            if (webPage.isBookmarked) {
-                if (options.isInboxModeEnabled()) {
-                    // TODO: manage inbox mode (including multiple bookmarks)
-                } else {
-                    PageAction.enableBookmarked(
-                        webPage.id,
-                        options.getIconColor(),
-                        options.isRemovalPreventionEnabled(),
-                    );
-                }
-            } else {
-                PageAction.enableNotBookmarked(webPage.id);
-            }
-        } else {
-            // TODO: create not supported page use case
-            PageAction.disable(webPage.id);
-            PageAction.hide(webPage.id);
-        }
-    } else {
-        PageAction.disable(webPage.id);
-        PageAction.hide(webPage.id);
-    }
+    const userInterface = new Interface(webPage, options);
+    userInterface.updatePageAction();
+    userInterface.updateContextMenus();
 }
 
 async function processUpdate() {
@@ -91,7 +70,6 @@ async function onBookmarksCreated(id, bookmarkInfo) {
 
 async function onBookmarksMoved(id, moveInfo) {
     await globalOptions.updateLastUsedFolder(moveInfo.parentId);
-
 }
 
 async function onPageActionClick() {
@@ -103,6 +81,13 @@ async function onShortcutUsed(command) {
     if (command === QUICK_BOOOKMARKING_COMMAND) {
         const quickBookmarking = new QuickBookmarking(globalWebPage, globalOptions);
         await quickBookmarking.shortcutToggle();
+    }
+}
+
+async function onContextMenuClick(info, tab) {
+    if (info.menuItemId === CM_BOOKMARK) {
+        const quickBookmarking = new QuickBookmarking(globalWebPage, globalOptions);
+        await quickBookmarking.bookmarkHereViaContextMenu(info);
     }
 }
 
@@ -146,7 +131,7 @@ browser.bookmarks.onCreated.addListener(processUpdate);
 // Listen for bookmarks being removed
 browser.bookmarks.onRemoved.addListener(processUpdate);
 // Listen for bookmarks being moved
-browser.bookmarks.onMoved.addListener(onBookmarksMoved)
+browser.bookmarks.onMoved.addListener(onBookmarksMoved);
 browser.bookmarks.onMoved.addListener(processUpdate);
 
 // -------------------------------------------------------------------------------------------------
@@ -160,6 +145,12 @@ browser.pageAction.onClicked.addListener(onPageActionClick);
 // -------------------------------------------------------------------------------------------------
 // Listen for shortcuts
 browser.commands.onCommand.addListener(onShortcutUsed);
+
+// -------------------------------------------------------------------------------------------------
+// MENUS
+// -------------------------------------------------------------------------------------------------
+// Listen for context menu clickk
+browser.menus.onClicked.addListener(onContextMenuClick);
 
 // -------------------------------------------------------------------------------------------------
 // RUNTIME

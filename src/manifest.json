@@ -50,11 +50,13 @@
   "background": {
     "scripts": [
       "background/globals.js",
-      "background/lib/Utils.js",
-      "background/lib/Options.js",
-      "background/lib/Update.js",
-      "background/lib/WebPage.js",
-      "background/lib/PageAction.js",
+      "background/utils/Utils.js",
+      "background/utils/PageAction.js",
+      "background/utils/ContextMenus.js",
+      "background/components/Options.js",
+      "background/components/Update.js",
+      "background/components/WebPage.js",
+      "background/components/Interface.js",
       "background/bookmarking/BuiltinBookmarking.js",
       "background/bookmarking/QuickBookmarking.js",
       "background/app.js"

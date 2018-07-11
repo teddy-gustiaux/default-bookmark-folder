@@ -59,6 +59,3 @@ const ICON_SIZES = [16, 24, 32, 48, 64, 96, 128, 256, 512, 1024];
 let globalWebPage = null;
 // eslint-disable-next-line prefer-const
 let globalOptions = null;
-
-let pageContextMenuCreated;
-let bookmarkContextMenuCreated;

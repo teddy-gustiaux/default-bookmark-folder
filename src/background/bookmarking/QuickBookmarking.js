@@ -73,4 +73,31 @@ class QuickBookmarking {
     async shortcutToggle() {
         if (this._options.isShortcutEnabled() && this._webPage.isSupported) await this.toggle();
     }
+
+    _createBookmarkHereNode(clickedBookmark) {
+        const bookmarkTreeNode = {
+            title: this._webPage.title,
+            url: this._webPage.url,
+        };
+        if (Utils.bookmarkIsFolder(clickedBookmark)) {
+            bookmarkTreeNode.parentId = clickedBookmark.id;
+        } else {
+            bookmarkTreeNode.parentId = clickedBookmark.parentId;
+        }
+        if (this._options.addQuickBookmarksOnTop()) bookmarkTreeNode.index = 0;
+        return bookmarkTreeNode;
+    }
+
+    async bookmarkHereViaContextMenu(clickData) {
+        if (this._options.areContextMenusEnabled() && this._webPage.isSupported) {
+            const bookmarks = await browser.bookmarks.get(clickData.bookmarkId);
+            const bookmarkTreeNode = this._createBookmarkHereNode(bookmarks[0]);
+            if (this._nodeIsValid(bookmarkTreeNode)) {
+                this._removeBookmarkCreationListener();
+                await browser.bookmarks.create(bookmarkTreeNode);
+                this._addBookmarkCreationListener();
+                await this._options.updateLastUsedFolder(bookmarkTreeNode.parentId);
+            }
+        }
+    }
 }

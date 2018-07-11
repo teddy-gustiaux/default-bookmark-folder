@@ -125,7 +125,7 @@ class Options {
     getIconColor() {
         let color = ICON_DEFAULT_COLOR;
         if (this._isOptionSet(ICON, COLOR)) {
-           color = this._options[ICON][COLOR];
+            color = this._options[ICON][COLOR];
         }
         return color;
     }
