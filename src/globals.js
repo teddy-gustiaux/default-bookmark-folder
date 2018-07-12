@@ -23,6 +23,7 @@ const COLOR = 'color';
 const SHORTCUT = 'shortcut';
 const CONTEXT_MENU = 'contextMenu';
 const LAST_USED_FOLDER = 'lastUsedFolderId';
+const NEW_RELEASE = 'newRelease'
 
 // Miscellaneous
 const FOLDER_NONE = 'none';
@@ -42,9 +43,6 @@ const ST_MULTIPLE_BOOKMARKS = 102;
 // List of context menus
 const CM_PAGE = 'context_menu_page';
 const CM_BOOKMARK = 'context_menu_bookmark';
-
-// Allow to retrieve all stored options at once
-const OPTIONS_ARRAY = [RELEASE, BUILTIN, ALLTABS, ICON];
 
 // Icon sizes
 const ICON_SIZES = [16, 24, 32, 48, 64, 96, 128, 256, 512, 1024];

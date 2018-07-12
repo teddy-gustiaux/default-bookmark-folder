@@ -17,7 +17,7 @@ class Update {
 
     async displayReleaseNotes() {
         if (this._options.isDisplayReleaseNotesEnabled()) {
-            await browser.storage.local.set({ newRelease: true });
+            await browser.storage.local.set({ [NEW_RELEASE]: true });
             this.openOptionsPage();
         }
     }
