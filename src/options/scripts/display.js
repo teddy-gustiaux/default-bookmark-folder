@@ -10,6 +10,33 @@
 // DATA
 // -------------------------------------------------------------------------------------------------
 
+// Build the <select> options from the bookmarks tree
+function buildItems(bookmarkItem, indent, selectors) {
+    // TODO: better check of existing properties
+    let indentProgress = indent;
+    if (bookmarkIsFolder(bookmarkItem)) {
+        if (bookmarkItem.title || indent !== 0) {
+            const displayName = !bookmarkItem.title ? UNNAMED_FOLDER : bookmarkItem.title;
+            const key = makeIndent(indent) + displayName;
+            Array.from(selectors).forEach(selector => {
+                const select = document.querySelector(selector);
+                select.options[select.options.length] = new Option(key, bookmarkItem.id);
+            });
+            indentProgress += 1;
+        }
+    }
+    if (bookmarkItem.children) {
+        Array.from(bookmarkItem.children).forEach(child =>
+            buildItems(child, indentProgress, selectors),
+        );
+    }
+}
+
+// Build the bookmarks tree
+function buildTree(bookmarkItems, selectors) {
+    buildItems(bookmarkItems[0], 0, selectors);
+}
+
 // Insert data from the locales into the options page
 function insertDataFromLocales() {
     document.title = browser.i18n.getMessage('options_title');
@@ -31,6 +58,7 @@ function insertDataFromManifest() {
 // -------------------------------------------------------------------------------------------------
 
 function switchTab(number) {
+    console.log(number)
     const tabs = document.querySelectorAll(TAB_MENU);
     Array.from(tabs).forEach(tabItem => {
         tabItem.classList.remove('is-active');
@@ -41,5 +69,53 @@ function switchTab(number) {
         containerItem.classList.remove('is-active');
     });
     document.querySelector(`[${DATA_ITEM}='${number}']`).classList.add('is-active');
-    browser.storage.local.set({ [MISC_TAB]: number });
+    browser.storage.local.set({ [TAB]: number });
+}
+
+// -------------------------------------------------------------------------------------------------
+// OPTIONS
+// -------------------------------------------------------------------------------------------------
+
+// Set the selection option in a <select> element
+function setSelectOption(selector, value) {
+    const selectElement = document.querySelector(selector);
+    return [...selectElement.options].some((option, index) => {
+        if (option.value === value) {
+            selectElement.selectedIndex = index;
+            return true;
+        }
+        return false;
+    });
+}
+
+// Set the value of a specific option
+function setOptionValue(selector, value) {
+    const element = document.querySelector(selector);
+    if (typeof value === 'boolean') element.checked = value;
+    if (typeof value === 'string') setSelectOption(selector, value);
+}
+
+// Toggles quick bookmark icon, shortcut or context menu options depending on the feature status
+function toggleIconOptions(options) {
+    if (isOptionEnabled(options, ICON, ENABLED)) {
+        enableAllItemsAndLabels();
+    } else if (
+        isOptionEnabled(options, ICON, SHORTCUT) ||
+        isOptionEnabled(options, ICON, CONTEXT_MENU)
+    ) {
+        const itemsToEnable = [FOLDER, TOP, PREVENT_REMOVAL];
+        const itemLabelsToEnable = [FOLDER];
+        itemsToEnable.map(element => enableItem(buildSelector(ICON, element)));
+        itemLabelsToEnable.map(element => enableItemLabel(buildSelector(ICON, element)));
+
+        const itemsToDisable = [INBOX, COLOR];
+        const itemLabelsToDisable = [COLOR];
+        itemsToDisable.map(element => disableItem(buildSelector(ICON, element)));
+        itemLabelsToDisable.map(element => disableItemLabel(buildSelector(ICON, element)));
+    } else {
+        const itemsToDisable = [FOLDER, TOP, INBOX, PREVENT_REMOVAL, COLOR];
+        const itemLabelsToDisable = [FOLDER, COLOR];
+        itemsToDisable.map(element => disableItem(buildSelector(ICON, element)));
+        itemLabelsToDisable.map(element => disableItemLabel(buildSelector(ICON, element)));
+    }
 }

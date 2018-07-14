@@ -6,13 +6,16 @@
  * =================================================================================================
  */
 
-// List of stored options properties
+// List of stored options keys
 const RELEASE = 'release';
 const BUILTIN = 'builtin';
 const ALLTABS = 'alltabs';
 const ICON = 'icon';
 const MISC = 'miscellaneous';
-
+const NEW_RELEASE = 'newRelease'
+const NOTIFICATION = 'updateNotification';
+const TAB = 'tab';
+// List of stored options properties
 const OPEN_NOTES = 'openNotes';
 const FOLDER = 'folder';
 const TOP = 'top';
@@ -23,7 +26,6 @@ const COLOR = 'color';
 const SHORTCUT = 'shortcut';
 const CONTEXT_MENU = 'contextMenu';
 const LAST_USED_FOLDER = 'lastUsedFolderId';
-const NEW_RELEASE = 'newRelease'
 
 // Miscellaneous
 const FOLDER_NONE = 'none';
