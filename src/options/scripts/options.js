@@ -24,9 +24,9 @@ async function restoreOptions() {
                 }
             });
         }
-    })
+    });
     toggleIconOptions(options);
-    (typeof options[TAB] !== 'undefined') ? switchTab(options[TAB]) : switchTab(TAB_DEFAULT_NUMBER);
+    typeof options[TAB] !== 'undefined' ? switchTab(options[TAB]) : switchTab(TAB_DEFAULT_NUMBER);
 }
 
 // Save the options
@@ -57,7 +57,7 @@ function tabManagement() {
  */
 
 // Listen for loading of the options page
-document.addEventListener('DOMContentLoaded', welcomeMessage); // TODO: check
+document.addEventListener('DOMContentLoaded', welcomeMessage);
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.addEventListener('DOMContentLoaded', insertData);
 document.addEventListener('DOMContentLoaded', tabManagement);

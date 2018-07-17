@@ -8,14 +8,12 @@
 
 class ContextMenus {
     static _createBookmarkContextMenu() {
-        browser.menus.create(
-            {
-                enabled: true,
-                id: CM_BOOKMARK,
-                title: browser.i18n.getMessage('context_menu_quick_bookmark_bookmark'),
-                contexts: ['bookmark'],
-            }
-        );
+        browser.menus.create({
+            enabled: true,
+            id: CM_BOOKMARK,
+            title: browser.i18n.getMessage('context_menu_quick_bookmark_bookmark'),
+            contexts: ['bookmark'],
+        });
     }
 
     static removeBookmarkContextMenu() {

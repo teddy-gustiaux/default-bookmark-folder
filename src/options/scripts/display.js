@@ -12,10 +12,9 @@
 
 // Build the <select> options from the bookmarks tree
 function buildItems(bookmarkItem, indent, selectors) {
-    // TODO: better check of existing properties
     let indentProgress = indent;
     if (bookmarkIsFolder(bookmarkItem)) {
-        if (bookmarkItem.title || indent !== 0) {
+        if (Object.prototype.hasOwnProperty.call(bookmarkItem, 'title') || indent !== 0) {
             const displayName = !bookmarkItem.title ? UNNAMED_FOLDER : bookmarkItem.title;
             const key = makeIndent(indent) + displayName;
             Array.from(selectors).forEach(selector => {
@@ -25,7 +24,10 @@ function buildItems(bookmarkItem, indent, selectors) {
             indentProgress += 1;
         }
     }
-    if (bookmarkItem.children) {
+    if (
+        Object.prototype.hasOwnProperty.call(bookmarkItem, 'children') &&
+        bookmarkItem.children.length !== 0
+    ) {
         Array.from(bookmarkItem.children).forEach(child =>
             buildItems(child, indentProgress, selectors),
         );
@@ -58,7 +60,6 @@ function insertDataFromManifest() {
 // -------------------------------------------------------------------------------------------------
 
 function switchTab(number) {
-    console.log(number)
     const tabs = document.querySelectorAll(TAB_MENU);
     Array.from(tabs).forEach(tabItem => {
         tabItem.classList.remove('is-active');
@@ -95,6 +96,12 @@ function setOptionValue(selector, value) {
     if (typeof value === 'string') setSelectOption(selector, value);
 }
 
+function toggleFeatures(on, items, itemLabels) {
+    const fn = on === true ? enableItem : disableItem;
+    items.map(element => fn(buildSelector(ICON, element)));
+    itemLabels.map(element => fn(buildSelector(ICON, element)));
+}
+
 // Toggles quick bookmark icon, shortcut or context menu options depending on the feature status
 function toggleIconOptions(options) {
     if (isOptionEnabled(options, ICON, ENABLED)) {
@@ -105,17 +112,13 @@ function toggleIconOptions(options) {
     ) {
         const itemsToEnable = [FOLDER, TOP, PREVENT_REMOVAL];
         const itemLabelsToEnable = [FOLDER];
-        itemsToEnable.map(element => enableItem(buildSelector(ICON, element)));
-        itemLabelsToEnable.map(element => enableItemLabel(buildSelector(ICON, element)));
-
+        toggleFeatures(true, itemsToEnable, itemLabelsToEnable);
         const itemsToDisable = [INBOX, COLOR];
         const itemLabelsToDisable = [COLOR];
-        itemsToDisable.map(element => disableItem(buildSelector(ICON, element)));
-        itemLabelsToDisable.map(element => disableItemLabel(buildSelector(ICON, element)));
+        toggleFeatures(false, itemsToDisable, itemLabelsToDisable);
     } else {
         const itemsToDisable = [FOLDER, TOP, INBOX, PREVENT_REMOVAL, COLOR];
         const itemLabelsToDisable = [FOLDER, COLOR];
-        itemsToDisable.map(element => disableItem(buildSelector(ICON, element)));
-        itemLabelsToDisable.map(element => disableItemLabel(buildSelector(ICON, element)));
+        toggleFeatures(false, itemsToDisable, itemLabelsToDisable);
     }
 }
