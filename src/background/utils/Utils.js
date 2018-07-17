@@ -90,4 +90,16 @@ class Utils {
         } else if (!Object.prototype.hasOwnProperty.call(bookmarkInfo, 'url')) isFolder = true;
         return isFolder;
     }
+
+    // Indicate if the provided bookmarks are all in the specified folder
+    static allBookmarksAreInFolder(folderId, bookmarks) {
+        let result = true;
+        const filtered = bookmarks.filter(
+            bookmark =>
+                !Object.prototype.hasOwnProperty.call(bookmark, 'parentId') ||
+                bookmark.parentId !== folderId,
+        );
+        if (filtered.length > 0) result = false;
+        return result;
+    }
 }
