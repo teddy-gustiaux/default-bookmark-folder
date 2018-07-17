@@ -25,8 +25,10 @@ async function restoreOptions() {
             });
         }
     });
+
     toggleIconOptions(options);
-    typeof options[TAB] !== 'undefined' ? switchTab(options[TAB]) : switchTab(TAB_DEFAULT_NUMBER);
+    const tabNumber = typeof options[TAB] !== 'undefined' ? options[TAB] : TAB_DEFAULT_NUMBER;
+    switchTab(tabNumber);
 }
 
 // Save the options
@@ -44,6 +46,7 @@ function insertData() {
 function tabManagement() {
     const menuTabs = document.querySelectorAll(TAB_MENU);
     Array.from(menuTabs).forEach(link => {
+        // eslint-disable-next-line func-names
         link.addEventListener('click', function() {
             switchTab(this.dataset.tab);
         });

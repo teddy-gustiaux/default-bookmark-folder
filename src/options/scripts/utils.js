@@ -69,10 +69,10 @@ function isOptionEnabled(options, optionCategory, optionName) {
 // Get the set value of a specific option
 function getOptionValue(selector, type) {
     const element = document.querySelector(selector);
-    let value;
-    if (type === 'boolean') value = element.checked;
-    if (type === 'string') value = element.value;
-    return value;
+    let result;
+    if (type === 'boolean') result = element.checked;
+    if (type === 'string') result = element.value;
+    return element;
 }
 
 // Get all extension settings from the DOM

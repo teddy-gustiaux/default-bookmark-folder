@@ -44,6 +44,7 @@ function insertDataFromLocales() {
     document.title = browser.i18n.getMessage('options_title');
     const elementsWithLocale = document.querySelectorAll('[data-locale]');
     Array.from(elementsWithLocale).forEach(elementWithLocale => {
+        // eslint-disable-next-line no-param-reassign
         elementWithLocale.textContent = browser.i18n.getMessage(elementWithLocale.dataset.locale);
     });
 }

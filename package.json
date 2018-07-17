@@ -5,7 +5,8 @@
   "main": "background.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint ./src",
+    "eslint": "eslint",
+    "eslint:src": "eslint src/**/*.js",
     "lint": "web-ext lint --source-dir ./src/",
     "start:firefox": "web-ext run --source-dir ./src/ --firefox=firefox --firefox-profile=dev --start-url about:debugging",
     "start:nightly": "web-ext run --source-dir ./src/ --firefox=nightly --firefox-profile=nightly --start-url about:debugging",
