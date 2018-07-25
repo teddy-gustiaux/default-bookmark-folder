@@ -12,6 +12,7 @@
     "start:nightly": "web-ext run --source-dir ./src/ --firefox=nightly --firefox-profile=nightly --start-url about:debugging",
     "start:dev": "web-ext run --source-dir ./src/ --firefox=firefoxdeveloperedition --firefox-profile=dev --start-url about:debugging",
     "start:waterfox": "web-ext run --source-dir ./src/ --pre-install --firefox=\"C:\\Program Files\\Waterfox\\Waterfox.exe\" --start-url about:debugging",
+    "karma": "karma start",
     "build": "web-ext build --source-dir ./src/ --overwrite-dest --artifacts-dir ./dist"
   },
   "repository": {
@@ -33,13 +34,21 @@
   },
   "homepage": "https://github.com/teddy-gustiaux/default-bookmark-folder#readme",
   "devDependencies": {
+    "chai": "^4.1.2",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-prettier": "^2.6.1",
+    "karma": "^2.0.5",
+    "karma-chai": "^0.1.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-htmlfile-reporter": "^0.3.5",
+    "karma-mocha": "^1.3.0",
+    "karma-requirejs": "^1.1.0",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7",
+    "requirejs": "^2.3.5",
     "web-ext": "^2.7.0"
   }
 }
