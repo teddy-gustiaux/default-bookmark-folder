@@ -6,3 +6,7 @@ node_modules/
 
 # Artifacts
 dist/*
+
+# Karma
+karma
+coverage
