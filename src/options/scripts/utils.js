@@ -102,7 +102,12 @@ function bookmarkIsFolder(bookmarkInfo) {
         bookmarkInfo.type === 'folder'
     ) {
         isFolder = true;
-    } else if (!Object.prototype.hasOwnProperty.call(bookmarkInfo, 'url')) isFolder = true;
+    } else if (
+        !Object.prototype.hasOwnProperty.call(bookmarkInfo, 'url') ||
+        bookmarkInfo.url === null ||
+        bookmarkInfo.url === undefined
+    )
+        isFolder = true;
     return isFolder;
 }
 

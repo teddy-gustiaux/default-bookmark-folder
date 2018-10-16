@@ -75,7 +75,12 @@ class Utils {
             bookmarkInfo.type === 'bookmark'
         ) {
             isWebPage = true;
-        } else if (Object.prototype.hasOwnProperty.call(bookmarkInfo, 'url')) isWebPage = true;
+        } else if (
+            Object.prototype.hasOwnProperty.call(bookmarkInfo, 'url') &&
+            bookmarkInfo.url !== null &&
+            bookmarkInfo.url !== undefined
+        )
+            isWebPage = true;
         return isWebPage;
     }
 
@@ -87,7 +92,12 @@ class Utils {
             bookmarkInfo.type === 'folder'
         ) {
             isFolder = true;
-        } else if (!Object.prototype.hasOwnProperty.call(bookmarkInfo, 'url')) isFolder = true;
+        } else if (
+            !Object.prototype.hasOwnProperty.call(bookmarkInfo, 'url') ||
+            bookmarkInfo.url === null ||
+            bookmarkInfo.url === undefined
+        )
+            isFolder = true;
         return isFolder;
     }
 
