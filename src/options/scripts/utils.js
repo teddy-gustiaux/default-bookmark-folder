@@ -72,7 +72,7 @@ function getOptionValue(selector, type) {
     let result;
     if (type === 'boolean') result = element.checked;
     if (type === 'string') result = element.value;
-    return element;
+    return result;
 }
 
 // Get all extension settings from the DOM
