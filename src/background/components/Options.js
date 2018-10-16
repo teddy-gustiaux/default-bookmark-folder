@@ -45,6 +45,8 @@ class Options {
             ) {
                 isSet = true;
             }
+            // Specific case for no folder selected for quick bookmarked
+            if (category[optionName] === FOLDER_NONE) isSet = false;
         }
         return isSet;
     }
