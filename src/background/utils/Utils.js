@@ -36,8 +36,7 @@ class Utils {
     // Check if provided URL is using supported protocols
     static isSupportedProtocol(urlString) {
         const supportedProtocols = ['https:', 'http:'];
-        const url = document.createElement('a');
-        url.href = urlString;
+        const url = new URL(urlString);
         return supportedProtocols.indexOf(url.protocol) !== -1;
     }
 
@@ -51,8 +50,7 @@ class Utils {
             return true;
         }
         const extraProtocols = ['file:'];
-        const url = document.createElement('a');
-        url.href = urlString;
+        const url = new URL(urlString);
         return extraProtocols.indexOf(url.protocol) !== -1;
     }
 
