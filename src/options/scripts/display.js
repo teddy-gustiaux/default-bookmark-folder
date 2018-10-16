@@ -13,7 +13,7 @@
 // Build the <select> options from the bookmarks tree
 function buildItems(bookmarkItem, indent, selectors) {
     let indentProgress = indent;
-    if (bookmarkIsFolder(bookmarkItem)) {
+    if (bookmarkIsFolder(bookmarkItem) && bookmarkItem.id !== FIREFOX_ROOT_BOOKMARK_FOLDER) {
         if (Object.prototype.hasOwnProperty.call(bookmarkItem, 'title') || indent !== 0) {
             const displayName = !bookmarkItem.title ? UNNAMED_FOLDER : bookmarkItem.title;
             const key = makeIndent(indent) + displayName;

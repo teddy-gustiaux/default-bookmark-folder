@@ -36,6 +36,7 @@ const QUICK_BOOOKMARKING_COMMAND = 'quick-bookmark';
 // Default bookmark folders ('unfiled' by default for all versions, 'menu' with shortcut/context menu on stable version)
 const FIREFOX_DEFAULT_FOLDERS = ['unfiled_____', 'menu________'];
 const FIREFOX_DEFAULT_ALL_TABS_FOLDER_NAME = '[Folder Name]';
+const FIREFOX_ROOT_BOOKMARK_FOLDER = 'root________';
 
 // List of status
 const ST_BOOKMARKED = 100;
