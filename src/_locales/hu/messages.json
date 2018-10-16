@@ -209,12 +209,6 @@
   "options_icon_top_help": {
     "message": "Ha tiltott, akkor az új könyvjelzõk a kiválasztott mappa aljára kerülnek"
   },
-  "options_icon_inbox": {
-    "message": "Csak akkor jelenítse meg könyvjelzõzöttként az oldalt, ha a könyvjelzõ a fent kiválasztott mappában van"
-  },
-  "options_icon_inbox_help": {
-    "message": "Ha ez a beállítás engedélyezett, akkor és csak akkor lesz a gyors könyvjelzõzés ikon színezett (tehát akkor fog könyvjelzõzöttnek látszani a jelenlegi oldal), ha a könyvjelzõ a fent kiválasztott mappában található."
-  },
   "options_icon_prevent_removal": {
     "message": "Könyvjelzõk eltávolításának megakadályozása"
   },

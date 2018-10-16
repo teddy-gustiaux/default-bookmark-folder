@@ -209,12 +209,6 @@
   "options_icon_top_help": {
     "message": "If disabled, new bookmarks will be added to the bottom of the selected folder"
   },
-  "options_icon_inbox": {
-    "message": "Only show page as bookmarked if the bookmark is in the folder selected above"
-  },
-  "options_icon_inbox_help": {
-    "message": "If this setting is enabled, the quick bookmark icon will be colored (i.e. the current page has been bookmarked) only if the bookmark is located in the folder you have selected above"
-  },
   "options_icon_prevent_removal": {
     "message": "Prevent removal of bookmarks"
   },

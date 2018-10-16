@@ -114,10 +114,6 @@ class Options {
         return this._isOptionEnabled(ICON, TOP);
     }
 
-    isInboxModeEnabled() {
-        return this._isOptionEnabled(ICON, INBOX);
-    }
-
     isRemovalPreventionEnabled() {
         return this._isOptionEnabled(ICON, PREVENT_REMOVAL);
     }

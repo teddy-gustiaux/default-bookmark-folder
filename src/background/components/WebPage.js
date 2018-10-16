@@ -66,7 +66,7 @@ class WebPage {
     }
 
     // Set values for a page supported by the extension and bookmarked
-    __bookmarkedPage(bookmarks) {
+    _bookmarkedPage(bookmarks) {
         this._isBookmarked = true;
         this._numberOfBookmarks = bookmarks.length;
         this._bookmarks = bookmarks;
@@ -88,7 +88,7 @@ class WebPage {
             } else if (bookmarks.length === 0) {
                 this._notBookmarkedPage();
             } else {
-                this.__bookmarkedPage(bookmarks);
+                this._bookmarkedPage(bookmarks);
             }
         }
     }
