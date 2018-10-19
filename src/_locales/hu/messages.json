@@ -128,6 +128,18 @@
   "options_changelog_241_list_1": {
     "message": "Fix: New folders moved to selected location for \"Bookmark All Tabs...\" (GitHub issue #30)"
   },
+  "options_changelog_250_list_1": {
+    "message": "New: Add an option to bookmark to last used folder for all modes (GitHub issues #19 and #29)"
+  },
+  "options_changelog_250_list_2": {
+    "message": "New: Add context menu quick bookmarking in web pages and bookmark toolbar (GitHub issue #20)"
+  },
+  "options_changelog_250_list_3": {
+    "message": "New: The quick bookmark icon supports multiple bookmarks removal (in the same way Firefox does)"
+  },
+  "options_changelog_250_list_4": {
+    "message": "New: Source code refactoring"
+  },
   "options_important_note": {
     "message": "Fontos megjegyzés"
   },

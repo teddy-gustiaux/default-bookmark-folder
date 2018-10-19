@@ -117,7 +117,7 @@
     "message": "Ajout: option pour montrer (ou non) les notes de version lors d'une mise à jour de l'extension (GitHub issue #27)"
   },
   "options_changelog_240_list_2": {
-    "message": "Ajout: traduction hongroise(merci à @meskobalazs)"
+    "message": "Ajout: traduction hongroise (merci à @meskobalazs)"
   },
   "options_changelog_240_list_3": {
     "message": "Ajout: amélioration de la traduction française (merci à @Machou)"
@@ -127,6 +127,18 @@
   },
   "options_changelog_241_list_1": {
     "message": "Correction: Nouveaux dossiers déplacés vers le dossier sélectionné pour \"Marquer tous les onglets...\" (GitHub issue #30)"
+  },
+  "options_changelog_250_list_1": {
+    "message": "Ajout: option pour créer un marque-page dans le dernier dossier utilisé pour tous les modes (GitHub issues #19 et #29)"
+  },
+  "options_changelog_250_list_2": {
+    "message": "Ajout: menu contextuel pour marquage rapide dans les pages web et la barre de favoris (GitHub issue #20)"
+  },
+  "options_changelog_250_list_3": {
+    "message": "Ajout: l’icône de marquage rapide supporte la suppression de multiple marque-pages (de la même manière que Firefox)"
+  },
+  "options_changelog_250_list_4": {
+    "message": "Ajout: Refactoring du code source"
   },
   "options_important_note": {
     "message": "Note importante"
