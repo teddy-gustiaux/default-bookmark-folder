@@ -93,7 +93,7 @@ function setSelectOption(selector, value) {
 // Set the value of a specific option
 function setOptionValue(selector, value) {
     const element = document.querySelector(selector);
-    if (typeof value === 'boolean') element.checked = value;
+    if (typeof value === 'boolean' && element) element.checked = value;
     if (typeof value === 'string') setSelectOption(selector, value);
 }
 
