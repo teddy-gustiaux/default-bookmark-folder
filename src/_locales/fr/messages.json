@@ -21,7 +21,7 @@
     "message": "Marquer rapidement cette page à cet endroit"
   },
   "options_folder_last": {
-    "message": "Dernier dossier utilisé (par n'importe quelle méthode de marquage ou de rangement)"
+    "message": "Dernier dossier utilisé (par n’importe quelle méthode de marquage ou de rangement)"
   },
   "welcome_title": {
     "message": "Bienvenue !"
@@ -57,7 +57,7 @@
     "message": "À propos"
   },
   "options_release_open_changelog": {
-    "message": "Montrer les notes de version quand l'extension est mise à jour"
+    "message": "Montrer les notes de version quand l’extension est mise à jour"
   },
   "options_changelog_210_list_1": {
     "message": "Correction: le marquage d’onglets par glisser-déposer et la fonction \"Marquer tous les onglets...\" se comportent maintenant normalement (GitHub issue #5)"
@@ -114,7 +114,7 @@
     "message": "Ajout: mise à jour des librairies internes"
   },
   "options_changelog_240_list_1": {
-    "message": "Ajout: option pour montrer (ou non) les notes de version lors d'une mise à jour de l'extension (GitHub issue #27)"
+    "message": "Ajout: option pour montrer (ou non) les notes de version lors d’une mise à jour de l’extension (GitHub issue #27)"
   },
   "options_changelog_240_list_2": {
     "message": "Ajout: traduction hongroise (merci à @meskobalazs)"
@@ -139,6 +139,9 @@
   },
   "options_changelog_250_list_4": {
     "message": "Ajout: Refactoring du code source"
+  },
+  "options_changelog_250_list_5": {
+    "message": "Suppression: Option montrant la page comme possédant un marque-page que si celui-ci est dans le dossier défini (pour l’icône de marquage rapide seulement)"
   },
   "options_important_note": {
     "message": "Note importante"
@@ -198,7 +201,7 @@
     "message": "Activer le menu contextuel de marquage rapide"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Marquer rapidement via le menu contextuel d'une page, ou directement dans un dossier spécifique via son menu contextuel"
+    "message": "Marquer rapidement via le menu contextuel d’une page, ou directement dans un dossier spécifique via son menu contextuel"
   },
   "options_icon_note": {
     "message": "Les paramètres ci-dessous ne s’appliquent qu’au système de marquage rapide."

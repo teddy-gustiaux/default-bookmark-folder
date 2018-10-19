@@ -140,6 +140,9 @@
   "options_changelog_250_list_4": {
     "message": "New: Source code refactoring"
   },
+  "options_changelog_250_list_5": {
+    "message": "Remove: Option to show page as bookmarked only if the bookmark is in the defined folder (when using quick bookmark icon)"
+  },
   "options_important_note": {
     "message": "Fontos megjegyzés"
   },
