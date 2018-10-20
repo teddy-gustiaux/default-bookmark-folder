@@ -98,9 +98,10 @@ function setOptionValue(selector, value) {
 }
 
 function toggleFeatures(on, items, itemLabels) {
-    const fn = on === true ? enableItem : disableItem;
-    items.map(element => fn(buildSelector(ICON, element)));
-    itemLabels.map(element => fn(buildSelector(ICON, element)));
+    const fnForItems = on === true ? enableItem : disableItem;
+    const fnForLabels = on === true ? enableItemLabel : disableItemLabel;
+    items.map(element => fnForItems(buildSelector(ICON, element)));
+    itemLabels.map(element => fnForLabels(buildSelector(ICON, element)));
 }
 
 // Toggles quick bookmark icon, shortcut or context menu options depending on the feature status
