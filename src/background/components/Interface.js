@@ -7,9 +7,11 @@
  */
 
 class Interface {
-    constructor(webPage, options) {
+    constructor(webPage, options, firefoxVersion) {
         this._webPage = webPage;
         this._options = options;
+        this._firefoxVersion = firefoxVersion;
+        this._isBookmarkContextMenuSupported = firefoxVersion >= '59';
     }
 
     updatePageAction() {
@@ -42,13 +44,13 @@ class Interface {
                 } else {
                     ContextMenus.updatePageContextMenuAsNotBookmarked();
                 }
-                ContextMenus.updateBookmarkContextMenu();
+                if (this._isBookmarkContextMenuSupported) ContextMenus.updateBookmarkContextMenu();
             } else {
-                ContextMenus.removeBookmarkContextMenu();
+                if (this._isBookmarkContextMenuSupported) ContextMenus.removeBookmarkContextMenu();
                 ContextMenus.removePageContextMenu();
             }
         } else {
-            ContextMenus.removeBookmarkContextMenu();
+            if (this._isBookmarkContextMenuSupported) ContextMenus.removeBookmarkContextMenu();
             ContextMenus.removePageContextMenu();
         }
     }

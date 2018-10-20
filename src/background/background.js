@@ -39,8 +39,8 @@ async function getNewEnvironment(previousWebPage, newlyActiveTab) {
     return currentWebPage;
 }
 
-function updateInterface(webPage, options) {
-    const userInterface = new Interface(webPage, options);
+function updateInterface(webPage, options, version) {
+    const userInterface = new Interface(webPage, options, version);
     userInterface.updatePageAction();
     userInterface.updateContextMenus();
 }
@@ -51,8 +51,10 @@ async function processUpdate() {
     // Update the extension environment
     const newlyActiveTab = await Utils.getActiveTab();
     globalWebPage = await getNewEnvironment(globalWebPage, newlyActiveTab);
+    // Get Firefox version
+    const version = await Utils.getFirefoxMainVersion();
     // Update the extension interface
-    updateInterface(globalWebPage, globalOptions);
+    updateInterface(globalWebPage, globalOptions, version);
 }
 
 async function onBookmarksCreated(id, bookmarkInfo) {
@@ -103,8 +105,14 @@ async function onAddonInstallation(details) {
 // TABS
 // -------------------------------------------------------------------------------------------------
 
-// Listen to tab URL changes
-browser.tabs.onUpdated.addListener(processUpdate, { properties: ['status', 'title'] });
+// Listen to tab URL changes (if version supports it, limit to necessary events)
+try {
+    browser.tabs.onUpdated.addListener(processUpdate, { properties: ['status', 'title'] });
+} catch (error) {
+    if (error.message.includes('Incorrect argument types for tabs.onUpdated')) {
+        browser.tabs.onUpdated.addListener(processUpdate);
+    }
+}
 // Listen to tab activation and tab switching
 browser.tabs.onActivated.addListener(processUpdate);
 

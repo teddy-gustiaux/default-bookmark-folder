@@ -110,4 +110,14 @@ class Utils {
         if (filtered.length > 0) result = false;
         return result;
     }
+
+    // -------------------------------------------------------------------------------------------------
+    // FIREFOX
+    // -------------------------------------------------------------------------------------------------
+
+    // Get Firefox main version number
+    static async getFirefoxMainVersion() {
+        const info = await browser.runtime.getBrowserInfo();
+        return info.version.split('.')[0];
+    }
 }
