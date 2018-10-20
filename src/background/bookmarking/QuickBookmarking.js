@@ -100,4 +100,10 @@ class QuickBookmarking {
             }
         }
     }
+
+    async bookmarkToggleViaPageContextMenu(clickData) {
+        if (this._options.areContextMenusEnabled() && this._webPage.isSupported) {
+            await this.toggle();
+        }
+    }
 }

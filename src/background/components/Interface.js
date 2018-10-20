@@ -40,7 +40,9 @@ class Interface {
         if (this._options.areContextMenusEnabled()) {
             if (this._webPage.isSupported) {
                 if (this._webPage.isBookmarked) {
-                    ContextMenus.updatePageContextMenuAsBookmarked();
+                    ContextMenus.updatePageContextMenuAsBookmarked(
+                        this._options.isRemovalPreventionEnabled(),
+                    );
                 } else {
                     ContextMenus.updatePageContextMenuAsNotBookmarked();
                 }

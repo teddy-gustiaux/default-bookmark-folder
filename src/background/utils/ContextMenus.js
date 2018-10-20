@@ -30,7 +30,6 @@ class ContextMenus {
             enabled: true,
             id: CM_PAGE,
             title,
-            command: '_execute_page_action',
             contexts: ['page'],
         });
     }

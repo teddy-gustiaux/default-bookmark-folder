@@ -79,9 +79,11 @@ async function onShortcutUsed(command) {
 }
 
 async function onContextMenuClick(info, tab) {
+    const quickBookmarking = new QuickBookmarking(globalWebPage, globalOptions);
     if (info.menuItemId === CM_BOOKMARK) {
-        const quickBookmarking = new QuickBookmarking(globalWebPage, globalOptions);
         await quickBookmarking.bookmarkHereViaContextMenu(info);
+    } else if (info.menuItemId === CM_PAGE) {
+        await quickBookmarking.bookmarkToggleViaPageContextMenu(info);
     }
 }
 
