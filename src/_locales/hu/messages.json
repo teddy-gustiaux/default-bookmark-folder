@@ -201,7 +201,7 @@
     "message": "Enable the quick bookmark context menu"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Quickly bookmark via the page context menu, or directly into a specific folder via its context menu"
+    "message": "Quickly bookmark via the page context menu, or directly into a specific folder via its context menu (requires Firefox 59+)"
   },
   "options_icon_note": {
     "message": "A lenti beállítások csak a Gyors könyvjelzõzés."

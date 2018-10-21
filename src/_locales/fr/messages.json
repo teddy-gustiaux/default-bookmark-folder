@@ -201,7 +201,7 @@
     "message": "Activer le menu contextuel de marquage rapide"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Marquer rapidement via le menu contextuel d’une page, ou directement dans un dossier spécifique via son menu contextuel"
+    "message": "Marquer rapidement via le menu contextuel d’une page, ou directement dans un dossier spécifique via son menu contextuel (requiert Firefox 59+)"
   },
   "options_icon_note": {
     "message": "Les paramètres ci-dessous ne s’appliquent qu’au système de marquage rapide."
