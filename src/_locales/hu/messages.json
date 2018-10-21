@@ -1,6 +1,6 @@
 {
   "icon_remove_bookmark": {
-    "message": "Könyvjelzõ eltávolítása"
+    "message": "Remove the bookmark(s) for this page"
   },
   "icon_prevent_removal_bookmark": {
     "message": "Könyvjelzõ eltávolítás megakadályozása aktiválva"
@@ -12,7 +12,7 @@
     "message": "A gyors könyvjelzõzés ikon tiltott"
   },
   "context_menu_remove_bookmark": {
-    "message": "Remove the bookmark for this page"
+    "message": "Remove the bookmark(s) for this page"
   },
   "context_menu_quick_bookmark_page": {
     "message": "Quickly bookmark this page"

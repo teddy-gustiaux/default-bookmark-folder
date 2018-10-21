@@ -1,6 +1,6 @@
 {
   "icon_remove_bookmark": {
-    "message": "Supprimer ce marque-page"
+    "message": "Supprimer le(s) marque-page(s) pour cette page"
   },
   "icon_prevent_removal_bookmark": {
     "message": "Paramètre de prévention de suppression de marque-pages activé"
@@ -12,7 +12,7 @@
     "message": "L’icône de marquage rapide est désactivée"
   },
   "context_menu_remove_bookmark": {
-    "message": "Supprimer le marque-page pour cette page"
+    "message": "Supprimer le(s) marque-page(s) pour cette page"
   },
   "context_menu_quick_bookmark_page": {
     "message": "Marquer rapidement cette page"

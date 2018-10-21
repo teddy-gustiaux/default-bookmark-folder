@@ -1,6 +1,6 @@
 {
   "icon_remove_bookmark": {
-    "message": "Remove this bookmark"
+    "message": "Remove the bookmark(s) for this page"
   },
   "icon_prevent_removal_bookmark": {
     "message": "Bookmark removal prevention setting activated"
@@ -12,7 +12,7 @@
     "message": "The quick bookmark icon is disabled"
   },
   "context_menu_remove_bookmark": {
-    "message": "Remove the bookmark for this page"
+    "message": "Remove the bookmark(s) for this page"
   },
   "context_menu_quick_bookmark_page": {
     "message": "Quickly bookmark this page"
