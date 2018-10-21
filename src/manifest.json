@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Default Bookmark Folder",
   "author": "Teddy Gustiaux",
-  "version": "2.4.1",
+  "version": "2.5.0",
 
   "description": "Allows you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon.",
   "homepage_url": "https://github.com/teddy-gustiaux/default-bookmark-folder",
@@ -13,7 +13,8 @@
     "bookmarks",
     "activeTab",
     "tabs",
-    "storage"
+    "storage",
+    "menus"
   ],
 
   "page_action": {
@@ -47,7 +48,19 @@
   },
 
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [
+      "globals.js",
+      "background/utils/Utils.js",
+      "background/utils/PageAction.js",
+      "background/utils/ContextMenus.js",
+      "background/components/Options.js",
+      "background/components/Update.js",
+      "background/components/WebPage.js",
+      "background/components/Interface.js",
+      "background/bookmarking/BuiltinBookmarking.js",
+      "background/bookmarking/QuickBookmarking.js",
+      "background/background.js"
+    ]
   },
 
   "options_ui": {

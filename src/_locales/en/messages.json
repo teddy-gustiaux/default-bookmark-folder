@@ -1,15 +1,27 @@
 {
   "icon_remove_bookmark": {
-    "message": "Remove this bookmark"
+    "message": "Remove the bookmark(s) for this page"
   },
   "icon_prevent_removal_bookmark": {
     "message": "Bookmark removal prevention setting activated"
   },
   "icon_quick_bookmark_page": {
-    "message": "Quick bookmark this page"
+    "message": "Quickly bookmark this page"
   },
   "icon_quick_bookmark_disabled": {
     "message": "The quick bookmark icon is disabled"
+  },
+  "context_menu_remove_bookmark": {
+    "message": "Remove the bookmark(s) for this page"
+  },
+  "context_menu_quick_bookmark_page": {
+    "message": "Quickly bookmark this page"
+  },
+  "context_menu_quick_bookmark_bookmark": {
+    "message": "Quickly bookmark this page there"
+  },
+  "options_folder_last": {
+    "message": "Last used folder (by any bookmarking or sorting method)"
   },
   "welcome_title": {
     "message": "Welcome!"
@@ -39,7 +51,7 @@
     "message": "Firefox built-in bookmarking"
   },
   "options_quick_bookmark_icon": {
-    "message": "Quick bookmark icon"
+    "message": "Quick bookmarking"
   },
   "options_about": {
     "message": "About the add-on"
@@ -116,6 +128,21 @@
   "options_changelog_241_list_1": {
     "message": "Fix: New folders moved to selected location for \"Bookmark All Tabs...\" (GitHub issue #30)"
   },
+  "options_changelog_250_list_1": {
+    "message": "New: Add an option to bookmark to last used folder for all modes (GitHub issues #19 and #29)"
+  },
+  "options_changelog_250_list_2": {
+    "message": "New: Add context menu quick bookmarking in web pages and bookmark toolbar (GitHub issue #20)"
+  },
+  "options_changelog_250_list_3": {
+    "message": "New: The quick bookmark icon supports multiple bookmarks removal (in the same way Firefox does)"
+  },
+  "options_changelog_250_list_4": {
+    "message": "New: Internal code refactoring"
+  },
+  "options_changelog_250_list_5": {
+    "message": "Remove: Option to show page as bookmarked only if the bookmark is in the defined folder (when using quick bookmark icon)"
+  },
   "options_important_note": {
     "message": "Important note"
   },
@@ -170,8 +197,14 @@
   "options_icon_enable_shortcut": {
     "message": "Enable the quick bookmark shortcut (Alt+Shift+D)"
   },
+  "options_icon_enable_context_menu": {
+    "message": "Enable the quick bookmark context menu"
+  },
+  "options_icon_enable_context_menu_help": {
+    "message": "Quickly bookmark via the page context menu, or directly into a specific folder via its context menu (requires Firefox 59+)"
+  },
   "options_icon_note": {
-    "message": "The settings below only apply to the quick bookmark icon and shortcut."
+    "message": "The settings below only apply to the quick bookmarking feature."
   },
   "options_icon_folder": {
     "message": "Select where new bookmarks will be added:"
@@ -191,17 +224,11 @@
   "options_icon_top_help": {
     "message": "If disabled, new bookmarks will be added to the bottom of the selected folder"
   },
-  "options_icon_inbox": {
-    "message": "Only show page as bookmarked if the bookmark is in the folder selected above"
-  },
-  "options_icon_inbox_help": {
-    "message": "If this setting is enabled, the quick bookmark icon will be colored (i.e. the current page has been bookmarked) only if the bookmark is located in the folder you have selected above"
-  },
   "options_icon_prevent_removal": {
     "message": "Prevent removal of bookmarks"
   },
   "options_icon_prevent_removal_help": {
-    "message": "If this setting is enabled, the quick bookmark icon will not be able to remove bookmarks (but can still create new ones)"
+    "message": "If this setting is enabled, the quick bookmarking system (icon, shortcut and context menu) will not be able to remove bookmarks (but can still create new ones)"
   },
   "options_icon_color": {
     "message": "Select the icon color when the current page is bookmarked:"

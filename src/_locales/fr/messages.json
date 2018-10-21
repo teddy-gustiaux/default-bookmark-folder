@@ -1,6 +1,6 @@
 {
   "icon_remove_bookmark": {
-    "message": "Supprimer ce marque-page"
+    "message": "Supprimer le(s) marque-page(s) pour cette page"
   },
   "icon_prevent_removal_bookmark": {
     "message": "Paramètre de prévention de suppression de marque-pages activé"
@@ -10,6 +10,18 @@
   },
   "icon_quick_bookmark_disabled": {
     "message": "L’icône de marquage rapide est désactivée"
+  },
+  "context_menu_remove_bookmark": {
+    "message": "Supprimer le(s) marque-page(s) pour cette page"
+  },
+  "context_menu_quick_bookmark_page": {
+    "message": "Marquer rapidement cette page"
+  },
+  "context_menu_quick_bookmark_bookmark": {
+    "message": "Marquer rapidement cette page à cet endroit"
+  },
+  "options_folder_last": {
+    "message": "Dernier dossier utilisé (par n’importe quelle méthode de marquage ou de rangement)"
   },
   "welcome_title": {
     "message": "Bienvenue !"
@@ -39,13 +51,13 @@
     "message": "Marquage intégré à Firefox"
   },
   "options_quick_bookmark_icon": {
-    "message": "Icône de marquage rapide"
+    "message": "Marquage rapide"
   },
   "options_about": {
     "message": "À propos"
   },
   "options_release_open_changelog": {
-    "message": "Montrer les notes de version quand l'extension est mise à jour"
+    "message": "Montrer les notes de version quand l’extension est mise à jour"
   },
   "options_changelog_210_list_1": {
     "message": "Correction: le marquage d’onglets par glisser-déposer et la fonction \"Marquer tous les onglets...\" se comportent maintenant normalement (GitHub issue #5)"
@@ -102,10 +114,10 @@
     "message": "Ajout: mise à jour des librairies internes"
   },
   "options_changelog_240_list_1": {
-    "message": "Ajout: option pour montrer (ou non) les notes de version lors d'une mise à jour de l'extension (GitHub issue #27)"
+    "message": "Ajout: option pour montrer (ou non) les notes de version lors d’une mise à jour de l’extension (GitHub issue #27)"
   },
   "options_changelog_240_list_2": {
-    "message": "Ajout: traduction hongroise(merci à @meskobalazs)"
+    "message": "Ajout: traduction hongroise (merci à @meskobalazs)"
   },
   "options_changelog_240_list_3": {
     "message": "Ajout: amélioration de la traduction française (merci à @Machou)"
@@ -115,6 +127,21 @@
   },
   "options_changelog_241_list_1": {
     "message": "Correction: Nouveaux dossiers déplacés vers le dossier sélectionné pour \"Marquer tous les onglets...\" (GitHub issue #30)"
+  },
+  "options_changelog_250_list_1": {
+    "message": "Ajout: option pour créer un marque-page dans le dernier dossier utilisé pour tous les modes (GitHub issues #19 et #29)"
+  },
+  "options_changelog_250_list_2": {
+    "message": "Ajout: menu contextuel pour marquage rapide dans les pages web et la barre de favoris (GitHub issue #20)"
+  },
+  "options_changelog_250_list_3": {
+    "message": "Ajout: l’icône de marquage rapide supporte la suppression de multiple marque-pages (de la même manière que Firefox)"
+  },
+  "options_changelog_250_list_4": {
+    "message": "Ajout: Refactoring du code source"
+  },
+  "options_changelog_250_list_5": {
+    "message": "Suppression: Option montrant la page comme possédant un marque-page que si celui-ci est dans le dossier défini (pour l’icône de marquage rapide seulement)"
   },
   "options_important_note": {
     "message": "Note importante"
@@ -170,8 +197,14 @@
   "options_icon_enable_shortcut": {
     "message": "Activer le raccourci de marquage rapide (Alt + Maj + D)"
   },
+  "options_icon_enable_context_menu": {
+    "message": "Activer le menu contextuel de marquage rapide"
+  },
+  "options_icon_enable_context_menu_help": {
+    "message": "Marquer rapidement via le menu contextuel d’une page, ou directement dans un dossier spécifique via son menu contextuel (requiert Firefox 59+)"
+  },
   "options_icon_note": {
-    "message": "Les paramètres ci-dessous ne s’appliquent qu’à l’icône et au raccourci de marquage rapide."
+    "message": "Les paramètres ci-dessous ne s’appliquent qu’au système de marquage rapide."
   },
   "options_icon_folder": {
     "message": "Sélectionner où les nouveaux marque-pages seront ajoutés :"
@@ -191,17 +224,11 @@
   "options_icon_top_help": {
     "message": "Si désactivé, les nouveaux marque-pages seront ajoutés en bas du dossier sélectionné"
   },
-  "options_icon_inbox": {
-    "message": "Ne montrer la page comme possédant un marque-page que si celui-ci est dans le dossier sélectionné ci-dessus"
-  },
-  "options_icon_inbox_help": {
-    "message": "Si ce paramètre est activé, l’icône de marquage rapide ne sera colorée (indiquant que la page actuelle possède un marque-page), que si ce dernier est situé dans le dossier sélectionné précédemment"
-  },
   "options_icon_prevent_removal": {
     "message": "Empêcher la suppression des marque-pages"
   },
   "options_icon_prevent_removal_help": {
-    "message": "Si ce paramètre est activé, l’icône de marquage rapide ne pourra plus supprimer de marque-pages (mais pourra toujours en créer de nouveaux)"
+    "message": "Si ce paramètre est activé, le système de marquage rapide (icône, raccourci et menu contextuel) ne pourra plus supprimer de marque-pages (mais pourra toujours en créer de nouveaux)"
   },
   "options_icon_color": {
     "message": "Sélectionner la couleur de l’icône quand la page actuelle possède un marque-page:"
