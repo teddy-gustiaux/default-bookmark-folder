@@ -224,6 +224,12 @@
   "options_icon_top_help": {
     "message": "Si désactivé, les nouveaux marque-pages seront ajoutés en bas du dossier sélectionné"
   },
+  "options_icon_inbox": {
+    "message": "Ne montrer la page comme possédant un marque-page que si tous ceux de cette page sont dans le dossier sélectionné ci-dessus"
+  },
+  "options_icon_inbox_help": {
+    "message": "Si ce paramètre est activé, l’icône de marquage rapide ne sera colorée (indiquant que la page actuelle possède un marque-page), que si tous ceux de cette page sont dans le dossier situé dans le dossier sélectionné précédemment"
+  },
   "options_icon_prevent_removal": {
     "message": "Empêcher la suppression des marque-pages"
   },

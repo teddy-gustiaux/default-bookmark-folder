@@ -224,6 +224,12 @@
   "options_icon_top_help": {
     "message": "Ha tiltott, akkor az új könyvjelzõk a kiválasztott mappa aljára kerülnek"
   },
+  "options_icon_inbox": {
+    "message": "Only show page as bookmarked if all the bookmarks of this page are in the folder selected above"
+  },
+  "options_icon_inbox_help": {
+    "message": "If this setting is enabled, the quick bookmark icon will be colored (i.e. the current page has been bookmarked) only if all the bookmarks of this page are located in the folder you have selected above"
+  },
   "options_icon_prevent_removal": {
     "message": "Könyvjelzõk eltávolításának megakadályozása"
   },

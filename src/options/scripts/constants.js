@@ -26,6 +26,7 @@ const OPTIONS_BOILERPLATE = {
         [FOLDER]: 'string',
         [TOP]: 'boolean',
         [PREVENT_REMOVAL]: 'boolean',
+        [INBOX]: 'boolean',
         [COLOR]: 'string',
     },
     [MISC]: {
@@ -55,6 +56,7 @@ const OPTIONS_IDS = {
         [CONTEXT_MENU]: 'icon-context-menu',
         [FOLDER]: 'icon-folder',
         [TOP]: 'icon-top',
+        [INBOX]: 'icon-inbox',
         [PREVENT_REMOVAL]: 'icon-prevent-removal',
         [COLOR]: 'icon-color',
     },

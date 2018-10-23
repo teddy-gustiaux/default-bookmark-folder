@@ -115,11 +115,11 @@ function toggleIconOptions(options) {
         const itemsToEnable = [FOLDER, TOP, PREVENT_REMOVAL];
         const itemLabelsToEnable = [FOLDER];
         toggleFeatures(true, itemsToEnable, itemLabelsToEnable);
-        const itemsToDisable = [COLOR];
+        const itemsToDisable = [INBOX, COLOR];
         const itemLabelsToDisable = [COLOR];
         toggleFeatures(false, itemsToDisable, itemLabelsToDisable);
     } else {
-        const itemsToDisable = [FOLDER, TOP, PREVENT_REMOVAL, COLOR];
+        const itemsToDisable = [FOLDER, TOP, INBOX, PREVENT_REMOVAL, COLOR];
         const itemLabelsToDisable = [FOLDER, COLOR];
         toggleFeatures(false, itemsToDisable, itemLabelsToDisable);
     }

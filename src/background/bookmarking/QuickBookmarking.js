@@ -56,17 +56,34 @@ class QuickBookmarking {
         browser.bookmarks.onCreated.addListener(onBookmarksCreated);
     }
 
+    async _createBookmarkFromIcon() {
+        const bookmarkTreeNode = this._createNode();
+        if (this._nodeIsValid(bookmarkTreeNode)) {
+            this._removeBookmarkCreationListener();
+            await browser.bookmarks.create(bookmarkTreeNode);
+            this._addBookmarkCreationListener();
+            await this._options.updateLastUsedFolder(bookmarkTreeNode.parentId);
+        }
+    }
+
     async toggle() {
         if (this._webPage.isBookmarked) {
-            if (!this._options.isRemovalPreventionEnabled()) this._removeBookmarks();
-        } else {
-            const bookmarkTreeNode = this._createNode();
-            if (this._nodeIsValid(bookmarkTreeNode)) {
-                this._removeBookmarkCreationListener();
-                await browser.bookmarks.create(bookmarkTreeNode);
-                this._addBookmarkCreationListener();
-                await this._options.updateLastUsedFolder(bookmarkTreeNode.parentId);
+            if (this._options.isInboxModeEnabled()) {
+                if (
+                    Utils.allBookmarksAreInFolder(
+                        this._options.getQuickFolder(),
+                        this._webPage.bookmarks,
+                    )
+                ) {
+                    if (!this._options.isRemovalPreventionEnabled()) this._removeBookmarks();
+                } else {
+                    await this._createBookmarkFromIcon();
+                }
+            } else {
+                if (!this._options.isRemovalPreventionEnabled()) this._removeBookmarks();
             }
+        } else {
+            await this._createBookmarkFromIcon();
         }
     }
 
