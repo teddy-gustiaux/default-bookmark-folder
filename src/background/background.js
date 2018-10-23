@@ -151,7 +151,7 @@ browser.commands.onCommand.addListener(onShortcutUsed);
 // -------------------------------------------------------------------------------------------------
 // MENUS
 // -------------------------------------------------------------------------------------------------
-// Listen for context menu clickk
+// Listen for context menu click
 browser.menus.onClicked.addListener(onContextMenuClick);
 
 // -------------------------------------------------------------------------------------------------

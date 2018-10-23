@@ -1,4 +1,4 @@
-# Default bookmark folder
+# Default Bookmark Folder
 
 [![Mozilla Add-on](https://img.shields.io/amo/users/default-bookmark-folder.svg?style=flat-square)](https://addons.mozilla.org/en-US/firefox/addon/default-bookmark-folder/)
 [![Mozilla Add-on](https://img.shields.io/amo/rating/default-bookmark-folder.svg?style=flat-square)](https://addons.mozilla.org/en-US/firefox/addon/default-bookmark-folder/)
@@ -15,7 +15,7 @@
 
 **Firefox built-in bookmarking:**
 
-This feature only affect bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), or through the context menu.
+This feature only affects bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), through the context menu or via the bookmarks menu.
 
 *You can:*
 - Select where the new bookmarks will be added
@@ -33,7 +33,7 @@ If the current page is bookmarked, the icon color will change to red.
 - Enable the quick bookmark shortcut (Alt+Shift+D)
 - Select where the new bookmarks will be added
 - Choose to add the new bookmarks to the top or the bottom of the selected folder
-- Choose to show the page as bookmarked (i.e. the icon color changes) if the bookmark is in the folder you selected
+- Choose to show the page as bookmarked (i.e. the icon color changes) only if all the bookmarks of this page are in the folder you selected
 - Select the color of the quick bookmark icon (among a list) when the current page is bookmarked (red by default)
 
 ### Support
@@ -43,7 +43,6 @@ If you want to report a bug or ask for a new feature, you can open an issue on [
 ### Attribution
 
 *Third-party libraries:*
-- [FontAwesome](http://fontawesome.io/)
 - [Bulma](https://bulma.io/)
 - [Bulma Switch Extension](https://github.com/Wikiki/bulma-switch)
 

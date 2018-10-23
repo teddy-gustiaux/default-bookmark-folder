@@ -147,7 +147,7 @@
     "message": "Fontos megjegyzés"
   },
   "options_ff_built_in_note": {
-    "message": "Azok a beállítások csak a Firefox beépített könyvjelzõzési rendszerére vonatkoznak. Kiválaszthatja mely mappába (és milyen pozícióba) kerülnek az új könyvjelzõk. Ez csak a Firefox beépített könyvjelzõzési ikonjára és gyorsbillentyûjére vonatkozik (Ctrl+D), vagy a környezeti menüre."
+    "message": "Those settings only apply to the built-in bookmarking system of Firefox. They allow you to select in which folder (and in which position of this folder) the new bookmarks will be added. It only affects bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), through the context menu or via the bookmarks menu."
   },
   "options_ff_built_in_folder": {
     "message": "Válassza ki, hogy az új könyvjelzõk hova legyenek hozzáadva:"
