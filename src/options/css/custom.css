@@ -47,3 +47,8 @@ body {
   list-style: disc;
   font-size: 0.90rem
 }
+
+.tab-icon {
+  font-size: 1.4rem;
+  margin-right: 0.2em !important;
+}
