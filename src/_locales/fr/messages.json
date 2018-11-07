@@ -141,13 +141,22 @@
     "message": "Ajout: Refactoring du code source"
   },
   "options_changelog_250_list_5": {
-    "message": "Suppression: Option montrant la page comme possédant un marque-page que si celui-ci est dans le dossier défini (pour l’icône de marquage rapide seulement)"
+    "message": "Suppression: Option montrant la page comme possédant un marque-page seulement si celui-ci est dans le dossier défini (pour l’icône de marquage rapide seulement)"
+  },
+  "options_changelog_260_list_1": {
+    "message": "Ajout: Option montrant la page comme possédant un marque-page seulement si tous sont dans le dossier défini (pour l’icône de marquage rapide seulement) (GitHub issue #38)"
+  },
+  "options_changelog_260_list_2": {
+    "message": "Ajout: Favicon pour la page des options (GitHub issue #40)"
+  },
+  "options_changelog_260_list_3": {
+    "message": "Correction: Remplacement de Font Awesome par des caractères Unicode (GitHub issue #39)"
   },
   "options_important_note": {
     "message": "Note importante"
   },
   "options_ff_built_in_note": {
-    "message": "Ces paramètres ne s’appliquent qu’au système de marquage interne à Firefox. Ils vous permettent de sélectionner à quel endroit (et à quelle position) les nouveaux marque-pages sont ajoutés. Cela n’affecte que les marque-pages créés via l’icône de marquage ou le raccourci (Ctrl+D) intégrés de Firefox, ou via le menu contextuel."
+    "message": "Ces paramètres ne s’appliquent qu’au système de marquage interne à Firefox. Ils vous permettent de sélectionner à quel endroit (et à quelle position) les nouveaux marque-pages sont ajoutés. Cela n’affecte que les marque-pages créés via l’icône de marquage ou le raccourci (Ctrl+D) intégrés de Firefox, via le menu contextuel ou via le menu des marque-pages."
   },
   "options_ff_built_in_folder": {
     "message": "Sélectionner où les nouveaux marque-pages seront ajoutés :"
@@ -223,6 +232,12 @@
   },
   "options_icon_top_help": {
     "message": "Si désactivé, les nouveaux marque-pages seront ajoutés en bas du dossier sélectionné"
+  },
+  "options_icon_inbox": {
+    "message": "Ne montrer la page comme possédant un marque-page que si tous ceux de cette page sont dans le dossier sélectionné ci-dessus"
+  },
+  "options_icon_inbox_help": {
+    "message": "Si ce paramètre est activé, l’icône de marquage rapide ne sera colorée (indiquant que la page actuelle possède un marque-page), seulement si tous ceux de cette page sont dans le dossier situé dans le dossier sélectionné précédemment"
   },
   "options_icon_prevent_removal": {
     "message": "Empêcher la suppression des marque-pages"

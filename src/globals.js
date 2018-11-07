@@ -20,6 +20,7 @@ const OPEN_NOTES = 'openNotes';
 const FOLDER = 'folder';
 const TOP = 'top';
 const ENABLED = 'enabled';
+const INBOX = 'inbox';
 const PREVENT_REMOVAL = 'preventRemoval';
 const COLOR = 'color';
 const SHORTCUT = 'shortcut';
