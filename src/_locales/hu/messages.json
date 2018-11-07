@@ -143,6 +143,15 @@
   "options_changelog_250_list_5": {
     "message": "Remove: Option to show page as bookmarked only if the bookmark is in the defined folder (when using quick bookmark icon)"
   },
+  "options_changelog_260_list_1": {
+    "message": "New: Add back the option to show page as bookmarked only if all the bookmarks are in the defined folder (when using quick bookmark icon) (GitHub issue #38)"
+  },
+  "options_changelog_260_list_2": {
+    "message": "New: Add favicon to the options page (GitHub issue #40)"
+  },
+  "options_changelog_260_list_3": {
+    "message": "Fix: Replace Font Awesome dependency by Unicode characters (GitHub issue #39)"
+  },
   "options_important_note": {
     "message": "Fontos megjegyzés"
   },
