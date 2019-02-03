@@ -49,7 +49,7 @@ class Utils {
         ) {
             return true;
         }
-        const extraProtocols = ['file:', 'about:'];
+        const extraProtocols = ['file:', 'about:', 'moz-extension:'];
         const url = new URL(urlString);
         return extraProtocols.indexOf(url.protocol) !== -1;
     }
