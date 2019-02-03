@@ -1,0 +1,314 @@
+{
+  "icon_remove_bookmark": {
+    "message": "Удалить все закладки этой страницы"
+  },
+  "icon_prevent_removal_bookmark": {
+    "message": "Активирована настройка защиты закладок от удаления"
+  },
+  "icon_quick_bookmark_page": {
+    "message": "Добавить быструю закладку"
+  },
+  "icon_quick_bookmark_disabled": {
+    "message": "Иконка быстрых закладок отключена"
+  },
+  "context_menu_remove_bookmark": {
+    "message": "Удалить все закладки этой страницы"
+  },
+  "context_menu_quick_bookmark_page": {
+    "message": "Добавить быструю закладку"
+  },
+  "context_menu_quick_bookmark_bookmark": {
+    "message": "Добавить быструю закладку"
+  },
+  "options_folder_last": {
+    "message": "Последняя использованная папка (при добавлении закладок или их сортировке)"
+  },
+  "welcome_title": {
+    "message": "Добро пожаловать!"
+  },
+  "welcome_thank_you": {
+    "message": "Благодарим вас за установку этого расширения!"
+  },
+  "welcome_configure": {
+    "message": "Пожалуйста, уделите немножко времени чтобы настроить его в соответствии со своими предпочтениями."
+  },
+  "welcome_message_display": {
+    "message": "Данное сообщение появляется только один раз."
+  },
+  "welcome_ok": {
+    "message": "Понятно!"
+  },
+  "options_title": {
+    "message": "Настройки Default Bookmark Folder"
+  },
+  "options_thank_you": {
+    "message": "Спасибо что используете это расширение!"
+  },
+  "options_release_notes": {
+    "message": "Примечания к релизам"
+  },
+  "options_ff_built_in": {
+    "message": "Встроенная (в Firefox) система закладок"
+  },
+  "options_quick_bookmark_icon": {
+    "message": "Быстрые закладки"
+  },
+  "options_about": {
+    "message": "Об этом расширении"
+  },
+  "options_release_open_changelog": {
+    "message": "Показывать примечания к релизам при каждом обновлении расширения"
+  },
+  "options_changelog_210_list_1": {
+    "message": "Fix: Tab drag and drop bookmarking and \"Bookmark All Tabs...\" features are now excluded from the overriding and behave normally (GitHub issue #5)"
+  },
+  "options_changelog_210_list_2": {
+    "message": "New: Select the color of the quick bookmark icon (among a list) when the current page is bookmarked"
+  },
+  "options_changelog_210_list_3": {
+    "message": "New: Higher quality quick bookmark icons"
+  },
+  "options_changelog_210_list_4": {
+    "message": "New: Release notes tab in the options"
+  },
+  "options_changelog_211_list_1": {
+    "message": "Fix: The built-in shortcut and context menu bookmarking now use the defined location on Firefox stable version 57.x (GitHub issues #7 and #9)"
+  },
+  "options_changelog_212_list_1": {
+    "message": "Fix: The built-in bookmarking features of the add-on now work normally on Firefox 56.x (GitHub issue #8)"
+  },
+  "options_changelog_220_list_1": {
+    "message": "New: Select the default folder for \"Bookmark All Tabs...\" feature (GitHub issue #13)"
+  },
+  "options_changelog_220_list_2": {
+    "message": "New: Code refactoring and upgrade of internal libraries"
+  },
+  "options_changelog_220_list_3": {
+    "message": "New: Small wording updates of the add-on options"
+  },
+  "options_changelog_220_list_4": {
+    "message": "Fix: Hide quick bookmark icon automatically if option is enabled and then disabled"
+  },
+  "options_changelog_220_list_5": {
+    "message": "Fix: Consistency of the quick bookmark shortcut behavior"
+  },
+  "options_changelog_220_list_6": {
+    "message": "Fix: Avast add-on reputation - fixed internally by Avast (GitHub issue #14)"
+  },
+  "options_changelog_221_list_1": {
+    "message": "New: Add support for Firefox Reader Mode - requires version 58 or later (GitHub issue #22)"
+  },
+  "options_changelog_221_list_2": {
+    "message": "Fix: Quick bookmarking of local files"
+  },
+  "options_changelog_230_list_1": {
+    "message": "New: Add an option to prevent quick unbookmarking (GitHub issue #21)"
+  },
+  "options_changelog_230_list_2": {
+    "message": "New: Add internationalization support (GitHub issue #10)"
+  },
+  "options_changelog_230_list_3": {
+    "message": "New: Add French translation"
+  },
+  "options_changelog_230_list_4": {
+    "message": "New: Upgrade of internal libraries"
+  },
+  "options_changelog_240_list_1": {
+    "message": "New: Add an option to show (or not) release notes on add-on update (GitHub issue #27)"
+  },
+  "options_changelog_240_list_2": {
+    "message": "New: Add Hungarian translation (thanks to @meskobalazs)"
+  },
+  "options_changelog_240_list_3": {
+    "message": "New: Improvement of the French translation (thanks to @Machou)"
+  },
+  "options_changelog_240_list_4": {
+    "message": "New: Add new icon resolutions"
+  },
+  "options_changelog_241_list_1": {
+    "message": "Fix: New folders moved to selected location for \"Bookmark All Tabs...\" (GitHub issue #30)"
+  },
+  "options_changelog_250_list_1": {
+    "message": "New: Add an option to bookmark to last used folder for all modes (GitHub issues #19 and #29)"
+  },
+  "options_changelog_250_list_2": {
+    "message": "New: Add context menu quick bookmarking in web pages and bookmark toolbar (GitHub issue #20)"
+  },
+  "options_changelog_250_list_3": {
+    "message": "New: The quick bookmark icon supports multiple bookmarks removal (in the same way Firefox does)"
+  },
+  "options_changelog_250_list_4": {
+    "message": "New: Internal code refactoring"
+  },
+  "options_changelog_250_list_5": {
+    "message": "Remove: Option to show page as bookmarked only if the bookmark is in the defined folder (when using quick bookmark icon)"
+  },
+  "options_changelog_260_list_1": {
+    "message": "New: Add back the option to show page as bookmarked only if all the bookmarks are in the defined folder (when using quick bookmark icon) (GitHub issue #38)"
+  },
+  "options_changelog_260_list_2": {
+    "message": "New: Add favicon to the options page (GitHub issue #40)"
+  },
+  "options_changelog_260_list_3": {
+    "message": "Fix: Replace Font Awesome dependency by Unicode characters (GitHub issue #39)"
+  },
+  "options_important_note": {
+    "message": "Важно"
+  },
+  "options_ff_built_in_note": {
+    "message": "Эти настройки применяются только к встроенной (в Firefox) системе закладок. Они позволяют выбрать папку (и позицию внутри неё) куда будут добавляться новые закладки. Это затронет только закладки, добавляемые через встроенные в Firefox элементы управления: иконку закладок, горячие клавиши (Ctrl+D), кнопка и пункты в контекстных меню или меню закладок."
+  },
+  "options_ff_built_in_folder": {
+    "message": "Выберите куда будут добавляться новые закладки:"
+  },
+  "options_ff_built_in_folder_default": {
+    "message": "Папка не выбрана (Firefox использует расположение по умолчанию)"
+  },
+  "options_ff_built_in_folder_help_1": {
+    "message": "Обратите внимание: по умолчанию для этих целей Firefox использует"
+  },
+  "options_ff_built_in_folder_help_2": {
+    "message": "Другие закладки"
+  },
+  "options_ff_built_in_folder_top": {
+    "message": "Добавлять новые закладки на первую позицию (внутри выбранной папки)"
+  },
+  "options_ff_built_in_folder_top_help": {
+    "message": "Если эта настройка отключена, новые закладки будут добавляться после уже имеющихся элементов (в выбранной папке)"
+  },
+  "options_ff_built_in_folder_all_tabs_note": {
+    "message": "Настройки ниже, применимы только к функции Firefox \"Добавить вкладки в закладки..\". Они позволят вам изменить расположение, в котором будет создаваться новая папка, содержащая закладки для каждой из открытых вкладок."
+  },
+  "options_ff_built_in_folder_all_tabs": {
+    "message": "Выберите куда по команде \"Добавить вкладки в закладки...\" будет добавляться новая папка:"
+  },
+  "options_ff_built_in_folder_all_tabs_default": {
+    "message": "Папка не выбрана (Firefox использует расположение по умолчанию)"
+  },
+  "options_ff_built_in_folder_all_tabs_help_1": {
+    "message": "Обратите внимание: по умолчанию для этих целей Firefox использует"
+  },
+  "options_ff_built_in_folder_all_tabs_help_2": {
+    "message": "Меню закладок"
+  },
+  "options_ff_built_in_folder_all_tabs_top": {
+    "message": "Добавлять новую папку на первую позицию (внутри выбранной папки)"
+  },
+  "options_ff_built_in_folder_all_tabs_top_help": {
+    "message": "Если эта настройка отключена, новая папка будет добавляться после уже имеющихся элементов (в выбранной папке)"
+  },
+  "options_icon_explanation": {
+    "message": "Эта функция добавляет в адресную строку иконку быстрых закладок, позволяющую добавить страницы в закладки или удалить её одним кликом. Иконка представляет собою круг (со звездою в центре). Если текущая страница уже есть в закладках, иконка будет окрашена в выбранный цвет (по умолчанию - красный). Для примера, вот два скриншота: на первом текущая страница не добавлена в закладки, а на втором - добавлена."
+  },
+  "options_icon_enable": {
+    "message": "Добавить иконку быстрых закладок в адресную строку"
+  },
+  "options_icon_enable_shortcut": {
+    "message": "Использовать горячие клавиши для быстрых закладок (Alt+Shift+D)"
+  },
+  "options_icon_enable_context_menu": {
+    "message": "Добавить пункт быстрых закладок в контекстное меню"
+  },
+  "options_icon_enable_context_menu_help": {
+    "message": "Позволяет добавлять быстрые закладки через контекстное меню страницы, или напрямую в выбранную папку через её контекстное меню (требуется Firefox 59+)"
+  },
+  "options_icon_note": {
+    "message": "Настройки ниже, применимы только к функциям быстрых закладок."
+  },
+  "options_icon_folder": {
+    "message": "Выберите куда будут добавляться новые закладки:"
+  },
+  "options_icon_folder_default": {
+    "message": "Папка не выбрана (используется расположение по умолчанию)"
+  },
+  "options_icon_folder_help_1": {
+    "message": "Обратите внимание: по умолчанию для этих целей используются"
+  },
+  "options_icon_folder_help_2": {
+    "message": "Другие закладки"
+  },
+  "options_icon_top": {
+    "message": "Добавлять новые закладки на первую позицию (внутри выбранной папки)"
+  },
+  "options_icon_top_help": {
+    "message": "Если эта настройка отключена, новые закладки будут добавляться после уже имеющихся элементов (в выбранной папке)"
+  },
+  "options_icon_inbox": {
+    "message": "Показывать, что страница добавлена в закладки только если все её закладки находятся в папке, выбранной выше"
+  },
+  "options_icon_inbox_help": {
+    "message": "Если эта настройка активирована, иконка быстрых закладок будет менять цвет (показывая, что текущая страница уже добавлена в закладки) только если все закладки этой страницы находятся в папке которую вы выбрали выше"
+  },
+  "options_icon_prevent_removal": {
+    "message": "Защита от удаления закладок"
+  },
+  "options_icon_prevent_removal_help": {
+    "message": "Если эта настройка активирована, система быстрых закладок (иконка, горячие клавиши и контекстное меню) не сможет удалять закладки (но по-прежнему сможет добавлять новые)"
+  },
+  "options_icon_color": {
+    "message": "Выберите цвет иконки для страниц уже добавленных в закладки:"
+  },
+  "options_icon_color_default": {
+    "message": "По умолчанию иконка становится красной, если страница уже добавлена в закладки"
+  },
+  "options_color_black": {
+    "message": "Чёрный"
+  },
+  "options_color_blue": {
+    "message": "Синий"
+  },
+  "options_color_green": {
+    "message": "Зелёный"
+  },
+  "options_color_orange": {
+    "message": "Оранжевый"
+  },
+  "options_color_purple": {
+    "message": "Сиреневый"
+  },
+  "options_color_red": {
+    "message": "Красный"
+  },
+  "options_color_yellow": {
+    "message": "Жёлтый"
+  },
+  "options_feedback": {
+    "message": "Обратная связь"
+  },
+  "options_please_review_1": {
+    "message": "Если вам нравится это расширение, пожалуйста оставьте о нём хороший"
+  },
+  "options_please_review_2": {
+    "message": "отзыв"
+  },
+  "options_bug_feature_1": {
+    "message": "Если вы хотите сообщить об ошибке или попросить добавить новую функцию, вы можете создать тему на"
+  },
+  "options_bug_feature_2": {
+    "message": "GitHub"
+  },
+  "options_bug_feature_3": {
+    "message": "Если у вас нет учётной записи на GitHub, вы всегда можете создать её совершенно бесплатно."
+  },
+  "options_version": {
+    "message": "Версия:"
+  },
+  "options_author": {
+    "message": "Автор:"
+  },
+  "options_license": {
+    "message": "Лицензия:"
+  },
+  "popup_quick_bookmarking_folder_title": {
+    "message": "Quick bookmarking to folder"
+  },
+  "popup_quick_bookmarking_folder_info": {
+    "message": "Search and select a folder to bookmark the current page into it."
+  },
+  "popup_quick_bookmarking_folder_search": {
+    "message": "Search folders..."
+  },
+  "popup_quick_bookmarking_folder_not_found": {
+    "message": "No matching folders were found."
+  }
+}
