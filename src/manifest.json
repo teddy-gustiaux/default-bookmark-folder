@@ -4,7 +4,7 @@
   "author": "Teddy Gustiaux",
   "version": "2.6.0",
 
-  "description": "Allows you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon.",
+  "description": "__MSG_manifest_extension_description__",
   "homepage_url": "https://github.com/teddy-gustiaux/default-bookmark-folder",
 
   "default_locale": "en",
@@ -30,7 +30,7 @@
       "512": "icons/cross/cross-512.png",
       "1024": "icons/cross/cross-1024.png"
     },
-    "default_title": "The icon is disabled. Enable it in the add-on settings.",
+    "default_title": "__MSG_manifest_page_action_default_title__",
     "browser_style": true
   },
 
@@ -48,7 +48,7 @@
         "size": 32
       }
     ],
-    "default_title": "Quick bookmarking to folder",
+    "default_title": "__MSG_manifest_browser_action_default_title__",
     "default_popup": "popup/popup.html",
     "browser_style": true
   },
@@ -94,13 +94,13 @@
       "suggested_key": {
         "default": "Alt+Shift+D"
       },
-      "description": "Shortcut to quickly bookmark the current page."
+      "description": "__MSG_manifest_shortcut_quick_bookmark_description__"
     },
     "_execute_browser_action": {
       "suggested_key": {
         "default": "Alt+Shift+M"
       },
-      "description": "Shortcut to open the quick bookmarking to folder dialog."
+      "description": "__MSG_manifest_shortcut_browser_action_description__"
     }
   },
 

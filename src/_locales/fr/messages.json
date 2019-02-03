@@ -1,4 +1,19 @@
 {
+  "manifest_extension_description": {
+    "message": "Allows you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon."
+  },
+  "manifest_page_action_default_title": {
+    "message": "The icon is disabled. Enable it in the add-on settings."
+  },
+  "manifest_browser_action_default_title": {
+    "message": "Quick bookmarking to folder"
+  },
+  "manifest_shortcut_quick_bookmark_description": {
+    "message": "Shortcut to quickly bookmark the current page."
+  },
+  "manifest_shortcut_browser_action_description": {
+    "message": "Shortcut to open the quick bookmarking to folder dialog."
+  },
   "icon_remove_bookmark": {
     "message": "Supprimer le(s) marque-page(s) pour cette page"
   },
