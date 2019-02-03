@@ -57,7 +57,7 @@ class Utils {
     // Check if provided URL can be supported by the add-on
     static async isSupportedURL(urlString) {
         if (Utils.isSupportedProtocol(urlString)) return true;
-        return await Utils.isExtraProtocol(urlString);
+        return Utils.isExtraProtocol(urlString);
     }
 
     // -------------------------------------------------------------------------------------------------

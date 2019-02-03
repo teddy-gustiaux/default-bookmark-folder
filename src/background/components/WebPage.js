@@ -68,7 +68,7 @@ class WebPage {
 
     async determineSupportedStatus() {
         const isSupported = await Utils.isSupportedURL(this._url);
-        (isSupported === true) ? this._isSupported = true : this._isSupported = false;
+        this._isSupported = isSupported === true;
     }
 
     // Check if current page is supported and search for bookmarks if it is the case
