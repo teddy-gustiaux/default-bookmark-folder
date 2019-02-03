@@ -16,3 +16,8 @@
 ## Cross icon
 
 - Default: <span style="color:#f9a825">#f9a825</span>
+
+## Browser action icon
+
+- For dark text: <span style="color:#bebebe">#bebebe</span>
+- For light text: <span style="color:#5a5b5c">#5a5b5c</span>

@@ -73,4 +73,12 @@ class Interface {
             ContextMenus.removePageContextMenu();
         }
     }
+
+    updateBrowserAction() {
+        if (this._webPage.isSupported) {
+            BrowserAction.enable(this._webPage.id);
+        } else {
+            BrowserAction.disable(this._webPage.id);
+        }
+    }
 }

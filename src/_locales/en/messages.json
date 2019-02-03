@@ -298,5 +298,17 @@
   },
   "options_license": {
     "message": "License:"
+  },
+  "popup_quick_bookmarking_folder_title": {
+    "message": "Quick bookmarking to folder"
+  },
+  "popup_quick_bookmarking_folder_info": {
+    "message": "Search and select a folder to bookmark the current page into it."
+  },
+  "popup_quick_bookmarking_folder_search": {
+    "message": "Search folders..."
+  },
+  "popup_quick_bookmarking_folder_not_found": {
+    "message": "No matching folders were found."
   }
 }

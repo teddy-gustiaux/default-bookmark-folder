@@ -43,6 +43,7 @@ async function getNewEnvironment(previousWebPage, newlyActiveTab) {
 function updateInterface(webPage, options, version) {
     const userInterface = new Interface(webPage, options, version);
     userInterface.updatePageAction();
+    userInterface.updateBrowserAction();
     userInterface.updateContextMenus();
 }
 

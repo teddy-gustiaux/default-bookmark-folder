@@ -1,0 +1,45 @@
+body {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    font-family: "Open Sans", sans-serif;
+    width: 90%;
+}
+
+.search-info {
+    font-style: italic;
+}
+
+#search-input {
+    border-radius: 25px;
+    border: 5px solid #e1e1e1;
+    padding: 20px; 
+    height: 15px;  
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+#not-found {
+    display: none;
+    font-weight: 600;
+}
+
+#search-results {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+#search-results li a {
+    display: block;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 1px solid #e1e1e1;
+    margin-top: -1px;
+    padding: 1rem;
+}
+
+#search-results li a:hover:not(.header) {
+    background-color: #e1e1e1;
+}

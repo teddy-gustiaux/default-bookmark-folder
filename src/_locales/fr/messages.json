@@ -298,5 +298,17 @@
   },
   "options_license": {
     "message": "Licence:"
+  },
+  "popup_quick_bookmarking_folder_title": {
+    "message": "Marque-page rapide dans un dossier"
+  },
+  "popup_quick_bookmarking_folder_info": {
+    "message": "Rechercher et sélectionner un dossier pour créer un marque-page dans ce dernier."
+  },
+  "popup_quick_bookmarking_folder_search": {
+    "message": "Rechercher des dossiers..."
+  },
+  "popup_quick_bookmarking_folder_not_found": {
+    "message": "Aucun dossier correspondant n’a été trouvé."
   }
 }

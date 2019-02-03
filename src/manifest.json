@@ -34,6 +34,25 @@
     "browser_style": true
   },
 
+  "browser_action": {
+    "default_icon": "icons/browser-action/icon-for-light-text.svg",
+    "theme_icons": [
+      {
+        "light": "icons/browser-action/icon-for-light-text.svg",
+        "dark": "icons/browser-action/icon-for-dark-text.svg",
+        "size": 16
+      },
+      {
+        "light": "icons/browser-action/icon-for-light-text.svg",
+        "dark": "icons/browser-action/icon-for-dark-text.svg",
+        "size": 32
+      }
+    ],
+    "default_title": "Quick bookmarking to folder",
+    "default_popup": "popup/popup.html",
+    "browser_style": true
+  },
+
   "icons": {
     "16": "icons/logo/default-bookmark-folder-16.png",
     "24": "icons/logo/default-bookmark-folder-24.png",
@@ -51,6 +70,7 @@
     "scripts": [
       "globals.js",
       "background/utils/Utils.js",
+      "background/utils/BrowserAction.js",
       "background/utils/PageAction.js",
       "background/utils/ContextMenus.js",
       "background/components/Options.js",
@@ -75,6 +95,12 @@
         "default": "Alt+Shift+D"
       },
       "description": "Shortcut to quickly bookmark the current page."
+    },
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+M"
+      },
+      "description": "Shortcut to open the quick bookmarking to folder dialog."
     }
   },
 
