@@ -14,6 +14,8 @@
     "test": "karma start karma.conf.js",
     "test:all": "karma start karma.conf.js",
     "test:watch": "karma start karma.conf.js --auto-watch --no-single-run",
+    "deps:outdated": "ncu",
+    "deps:update": "ncu --upgrade",
     "webext:lint": "web-ext lint --source-dir ./src/",
     "webext:build": "web-ext build --source-dir ./src/ --overwrite-dest --artifacts-dir ./dist"
   },
