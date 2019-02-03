@@ -31,6 +31,7 @@ async function getNewEnvironment(previousWebPage, newlyActiveTab) {
     // Checking if URL or title have changed
     if (previousWebPage === null || newURL !== previousWebPage.url) {
         currentWebPage = new WebPage(newlyActiveTab.id, newURL, newTitle);
+        await currentWebPage.determineSupportedStatus();
     } else {
         currentWebPage = previousWebPage;
         if (newTitle !== previousWebPage.title) currentWebPage.title = newTitle;
