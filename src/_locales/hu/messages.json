@@ -11,9 +11,6 @@
   "manifest_shortcut_quick_bookmark_description": {
     "message": "Shortcut to quickly bookmark the current page."
   },
-  "manifest_shortcut_browser_action_description": {
-    "message": "Shortcut to open the quick bookmarking to folder dialog."
-  },
   "icon_remove_bookmark": {
     "message": "Remove the bookmark(s) for this page"
   },

@@ -48,7 +48,6 @@
         "size": 32
       }
     ],
-    "default_title": "__MSG_manifest_browser_action_default_title__",
     "default_popup": "popup/popup.html",
     "browser_style": true
   },

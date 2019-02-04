@@ -143,11 +143,14 @@ async function popupOpened() {
     searchInput.addEventListener('keyup', performSearch);
     // Focus on the search field
     searchInput.focus();
+    // Listeners for banner buttons
+    const settingsButton = document.getElementById('open-settings');
+    settingsButton.addEventListener('click', () => browser.runtime.openOptionsPage());
 }
 
 /*
  * =================================================================================================
- * POPUP IS OPENED
+ * LISTENERS
  * =================================================================================================
  */
 document.addEventListener('DOMContentLoaded', insertDataFromLocales);

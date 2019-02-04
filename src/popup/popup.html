@@ -8,14 +8,24 @@
     </head>
 
     <body>
-        <h1 data-locale="popup_quick_bookmarking_folder_title"></h1>
-        <div>
-            <p class="search-info" data-locale="popup_quick_bookmarking_folder_info"></p>
-            <input type="text" id="search-input" placeholder="" data-locale="popup_quick_bookmarking_folder_search">
+        <div class='banner'>
+            <div class='content'>
+                <button id='open-settings'>
+                    <img id="test" src="../icons/browser-action/settings.svg">
+                    <span>Settings</span>
+                </button>
+            </div>
         </div>
-        <div>
-            <p id="not-found" data-locale="popup_quick_bookmarking_folder_not_found"></p>
-            <ul id="search-results"></ul>
+        <div class='content'>
+            <h1 data-locale="popup_quick_bookmarking_folder_title"></h1>
+            <div>
+                <p class="search-info" data-locale="popup_quick_bookmarking_folder_info"></p>
+                <input type="text" id="search-input" placeholder="" data-locale="popup_quick_bookmarking_folder_search">
+            </div>
+            <div>
+                <p id="not-found" data-locale="popup_quick_bookmarking_folder_not_found"></p>
+                <ul id="search-results"></ul>
+            </div>
         </div>
     </body>
 
