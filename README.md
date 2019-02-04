@@ -36,6 +36,11 @@ If the current page is bookmarked, the icon color will change to red.
 - Choose to show the page as bookmarked (i.e. the icon color changes) only if all the bookmarks of this page are in the folder you selected
 - Select the color of the quick bookmark icon (among a list) when the current page is bookmarked (red by default)
 
+**Quick bookmarking to folder:**
+
+Access this feature via the extension browser action (toolbar icon).
+It will allow you to search and select a specific folder within your bookmarks to quickly bookmark the current page into it.
+
 ### Support
 
 If you want to report a bug or ask for a new feature, you can open an issue on [GitHub](https://github.com/teddy-gustiaux/default-bookmark-folder/issues). If you do not have an account, you can create one for free.
