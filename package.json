@@ -17,7 +17,8 @@
     "deps:outdated": "ncu",
     "deps:update": "ncu --upgrade",
     "webext:lint": "web-ext lint --source-dir ./src/",
-    "webext:build": "web-ext build --source-dir ./src/ --overwrite-dest --artifacts-dir ./dist"
+    "webext:build": "web-ext build --source-dir ./src/ --overwrite-dest --artifacts-dir ./dist",
+    "webext:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
   "homepage": "https://github.com/teddy-gustiaux/default-bookmark-folder#readme",
   "devDependencies": {
     "chai": "4.2.0",
+    "conventional-changelog-cli": "2.0.11",
     "dirty-chai": "2.0.1",
     "eslint": "5.13.0",
     "eslint-config-airbnb-base": "13.1.0",
