@@ -38,7 +38,8 @@ If the current page is bookmarked, the icon color will change to red.
 
 **Quick bookmarking to folder:**
 
-Access this feature via the extension browser action (toolbar icon).
+Access this feature via the extension browser action (toolbar icon) or via its dedicated shortcut (Alt+Shift+M).
+
 It will allow you to search and select a specific folder within your bookmarks to quickly bookmark the current page into it.
 
 ### Support
