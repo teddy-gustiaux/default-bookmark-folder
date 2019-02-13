@@ -5,18 +5,31 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate the [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
-Starting with 2.7.0 and 
+# [2.7.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.6.0...v2.7.0) (2019-02-13)
+
+### Bug Fixes
+
+* bug preventing to determine the supported status of the page ([378769a](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/378769a))
+
+### Features
+
+* add a browserAction (toolbar icon) ([7f0e34e](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/7f0e34e)), closes [#18](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/18) [#11](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/11)
+* add top banner to popup (with button to access the settings) ([91c6023](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/91c6023))
+* support 'about:' and 'moz-extension:' pages ([8e893f9](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/8e893f9))
+* changelog is now accessible on GitHub ([866da8a](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/866da8a))
+* add translation capabilities to the manifest ([b7954a9](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/b7954a9))
+* add Russian translation (thanks to @Neytrino-OnLine, close [#46](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/46)) ([b37c9b8](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/b37c9b8))
 
 # [2.6.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.5.0...v2.6.0) (2018-11-07)
+
+### Bug Fixes
+
+* replace Font Awesome dependency by Unicode characters (GitHub issue #39)
 
 ### Features
 
 * add back the option to show page as bookmarked only if all the bookmarks are in the defined folder (when using quick bookmark icon) (GitHub issue #38)
 * add favicon to the options page (GitHub issue #40)
-
-### Bug Fixes
-
-* replace Font Awesome dependency by Unicode characters (GitHub issue #39)
 
 # [2.5.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.3.0...v2.4.0) (2018-10-21)
 
@@ -57,27 +70,27 @@ Starting with 2.7.0 and
 
 ## [2.2.1](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.2.0...v2.2.1) (2018-06-04)
 
-### Features
-
-* add support for Firefox Reader Mode - requires version 58 or later (GitHub issue #22)
-
 ### Bug Fixes
 
 * quick bookmarking of local files
 
-# [2.2.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.1.2...v2.2.0) (2018-03-19)
-
 ### Features
 
-* select the default folder for "Bookmark All Tabs..." feature (GitHub issue #13)
-* code refactoring and upgrade of internal libraries
-* small wording updates of the add-on options
+* add support for Firefox Reader Mode - requires version 58 or later (GitHub issue #22)
+
+# [2.2.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.1.2...v2.2.0) (2018-03-19)
 
 ### Bug Fixes
 
 * hide quick bookmark icon automatically if option is enabled and then disabled
 * consistency of the quick bookmark shortcut behavior
 * avast add-on reputation - fixed internally by Avast (GitHub issue #14)
+
+### Features
+
+* select the default folder for "Bookmark All Tabs..." feature (GitHub issue #13)
+* code refactoring and upgrade of internal libraries
+* small wording updates of the add-on options
 
 ## [2.1.2](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.1.1...v2.1.2) (2017-12-23)
 
@@ -93,17 +106,21 @@ Starting with 2.7.0 and
 
 # [2.1.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.0.0...v2.1.0) (2017-12-16)
 
+### Bug Fixes
+
+* tab drag and drop bookmarking and "Bookmark All Tabs..." features are now excluded from the overriding and behave normally (GitHub issue #5)
+
 ### Features
 
 * select the color of the quick bookmark icon (among a list) when the current page is bookmarked
 * higher quality quick bookmark icons
 * release notes tab in the options
 
+# [2.0.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v1.2.4...v2.0.0) (2017-12-03)
+
 ### Bug Fixes
 
-* tab drag and drop bookmarking and "Bookmark All Tabs..." features are now excluded from the overriding and behave normally (GitHub issue #5)
-
-# [2.0.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v1.2.4...v2.0.0) (2017-12-03)
+* GitHub issue #3 (links to local files do not work properly)
 
 ### Features
 
@@ -112,19 +129,15 @@ Starting with 2.7.0 and
 * the quick bookmarking feature now has a dedicated shortcut (Alt+Shift+D)
 * the settings are now save automatically on change
 
-### Bug Fixes
-
-* GitHub issue #3 (links to local files do not work properly)
-
 ## [1.2.4](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v1.2.3...v1.2.4) (2017-11-16)
-
-### Features
-
-* bookmarks can now be added to the top of the selected location if desired
 
 ### Bug Fixes
 
 * code improvements and bug fixes
+
+### Features
+
+* bookmarks can now be added to the top of the selected location if desired
 
 ## [1.2.3](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v1.2.2...v1.2.3) (2017-11-16)
 
@@ -140,14 +153,14 @@ Starting with 2.7.0 and
 
 ## [1.2.1](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v1.1...v1.2.1) (2017-11-05)
 
-### Features
-
-* orange cross indicator for disabled "quick bookmark" icon (for Nightly users)
-
 ### Bug Fixes
 
 * GitHub issue #1: the configuration is now saved locally (settings might need to be set again)
 * avoid moving manually created folders
+* 
+### Features
+
+* orange cross indicator for disabled "quick bookmark" icon (for Nightly users)
 
 # [1.1.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v1.0...v1.1) (2017-11-03)
 
