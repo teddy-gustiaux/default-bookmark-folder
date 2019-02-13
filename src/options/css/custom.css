@@ -37,18 +37,15 @@ body {
   font-size: 1rem
 }
 
-.release {
-  font-weight: bold;
-  margin-bottom: 0.25em;
-}
-
-.release-notes ul, li {
-  margin-left: 0.75em;
-  list-style: disc;
-  font-size: 0.90rem
-}
-
 .tab-icon {
   font-size: 1.4rem;
   margin-right: 0.2em !important;
+}
+
+.release-info {
+  margin-right: 0.8rem;
+}
+
+.release-info:after {
+  content: "\00A0\2197";
 }

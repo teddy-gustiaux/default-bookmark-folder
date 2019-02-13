@@ -71,98 +71,14 @@
   "options_release_open_changelog": {
     "message": "Montrer les notes de version quand l’extension est mise à jour"
   },
-  "options_changelog_210_list_1": {
-    "message": "Correction: le marquage d’onglets par glisser-déposer et la fonction \"Marquer tous les onglets...\" se comportent maintenant normalement (GitHub issue #5)"
+  "options_release_changelog_github": {
+    "message": "Les notes de versions sont maintenant consultables sur GitHub."
   },
-  "options_changelog_210_list_2": {
-    "message": "Ajout: sélection de la color de l’icône de marquage rapide (parmi une liste) quand la page actuelle possède un marque-page"
+  "options_release_latest_changelog": {
+    "message": "Accéder aux dernières notes de versions"
   },
-  "options_changelog_210_list_3": {
-    "message": "Ajout: icônes de marquage rapide de meilleure qualité"
-  },
-  "options_changelog_210_list_4": {
-    "message": "Ajout: onglet dans les paramètres avec les notes de version"
-  },
-  "options_changelog_211_list_1": {
-    "message": "Correction: le marquage intégré et le menu contextuel utilisent le dossier spécifié dans Firefox version 57.x (GitHub issues #7 et #9)"
-  },
-  "options_changelog_212_list_1": {
-    "message": "Correction: le marquage intégré et l’extension fonctionnent normalement dans Firefox 56.x (GitHub issue #8)"
-  },
-  "options_changelog_220_list_1": {
-    "message": "Ajout: sélectionner le dossier par défaut pour la fonction \"Marquer tous les onglets...\" (GitHub issue #13)"
-  },
-  "options_changelog_220_list_2": {
-    "message": "Ajout: refactoring du code et mise à jour des librairies internes"
-  },
-  "options_changelog_220_list_3": {
-    "message": "Ajout: mise à jour des textes des préférences de l’extension"
-  },
-  "options_changelog_220_list_4": {
-    "message": "Correction: cacher l’icône de marquage rapide automatiquement si l’option est activée puis désactivée"
-  },
-  "options_changelog_220_list_5": {
-    "message": "Correction: le raccourci de marquage rapide se comporte de manière consistente"
-  },
-  "options_changelog_220_list_6": {
-    "message": "Correction: réputation de l’extension chez Avast - corrigé en interne par Avast (GitHub issue #14)"
-  },
-  "options_changelog_221_list_1": {
-    "message": "Ajout: support du mode lecture de Firefox - nécessite la version 58 ou ultérieure (GitHub issue #22)"
-  },
-  "options_changelog_221_list_2": {
-    "message": "Correction: marquage rapide des fichiers locaux"
-  },
-  "options_changelog_230_list_1": {
-    "message": "Ajout: option pour prévenir la suppression d’un marque-page via l’icône de marquage rapide (GitHub issue #21)"
-  },
-  "options_changelog_230_list_2": {
-    "message": "Ajout: support de l’internationalisation (GitHub issue #10)"
-  },
-  "options_changelog_230_list_3": {
-    "message": "Ajout: traduction française"
-  },
-  "options_changelog_230_list_4": {
-    "message": "Ajout: mise à jour des librairies internes"
-  },
-  "options_changelog_240_list_1": {
-    "message": "Ajout: option pour montrer (ou non) les notes de version lors d’une mise à jour de l’extension (GitHub issue #27)"
-  },
-  "options_changelog_240_list_2": {
-    "message": "Ajout: traduction hongroise (merci à @meskobalazs)"
-  },
-  "options_changelog_240_list_3": {
-    "message": "Ajout: amélioration de la traduction française (merci à @Machou)"
-  },
-  "options_changelog_240_list_4": {
-    "message": "Ajout: nouvelles résolutions pour les icônes"
-  },
-  "options_changelog_241_list_1": {
-    "message": "Correction: Nouveaux dossiers déplacés vers le dossier sélectionné pour \"Marquer tous les onglets...\" (GitHub issue #30)"
-  },
-  "options_changelog_250_list_1": {
-    "message": "Ajout: option pour créer un marque-page dans le dernier dossier utilisé pour tous les modes (GitHub issues #19 et #29)"
-  },
-  "options_changelog_250_list_2": {
-    "message": "Ajout: menu contextuel pour marquage rapide dans les pages web et la barre de favoris (GitHub issue #20)"
-  },
-  "options_changelog_250_list_3": {
-    "message": "Ajout: l’icône de marquage rapide supporte la suppression de multiple marque-pages (de la même manière que Firefox)"
-  },
-  "options_changelog_250_list_4": {
-    "message": "Ajout: Refactoring du code source"
-  },
-  "options_changelog_250_list_5": {
-    "message": "Suppression: Option montrant la page comme possédant un marque-page seulement si celui-ci est dans le dossier défini (pour l’icône de marquage rapide seulement)"
-  },
-  "options_changelog_260_list_1": {
-    "message": "Ajout: Option montrant la page comme possédant un marque-page seulement si tous sont dans le dossier défini (pour l’icône de marquage rapide seulement) (GitHub issue #38)"
-  },
-  "options_changelog_260_list_2": {
-    "message": "Ajout: Favicon pour la page des options (GitHub issue #40)"
-  },
-  "options_changelog_260_list_3": {
-    "message": "Correction: Remplacement de Font Awesome par des caractères Unicode (GitHub issue #39)"
+  "options_release_full_changelog": {
+    "message": "Accéder à l’ensemble des notes de versions"
   },
   "options_important_note": {
     "message": "Note importante"
