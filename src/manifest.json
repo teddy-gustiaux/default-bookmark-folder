@@ -2,9 +2,9 @@
   "manifest_version": 2,
   "name": "Default Bookmark Folder",
   "author": "Teddy Gustiaux",
-  "version": "2.6.0",
+  "version": "2.7.0",
 
-  "description": "Allows you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon.",
+  "description": "__MSG_manifest_extension_description__",
   "homepage_url": "https://github.com/teddy-gustiaux/default-bookmark-folder",
 
   "default_locale": "en",
@@ -30,7 +30,25 @@
       "512": "icons/cross/cross-512.png",
       "1024": "icons/cross/cross-1024.png"
     },
-    "default_title": "The icon is disabled. Enable it in the add-on settings.",
+    "default_title": "__MSG_manifest_page_action_default_title__",
+    "browser_style": true
+  },
+
+  "browser_action": {
+    "default_icon": "icons/browser-action/icon-for-light-text.svg",
+    "theme_icons": [
+      {
+        "light": "icons/browser-action/icon-for-light-text.svg",
+        "dark": "icons/browser-action/icon-for-dark-text.svg",
+        "size": 16
+      },
+      {
+        "light": "icons/browser-action/icon-for-light-text.svg",
+        "dark": "icons/browser-action/icon-for-dark-text.svg",
+        "size": 32
+      }
+    ],
+    "default_popup": "popup/popup.html",
     "browser_style": true
   },
 
@@ -51,6 +69,7 @@
     "scripts": [
       "globals.js",
       "background/utils/Utils.js",
+      "background/utils/BrowserAction.js",
       "background/utils/PageAction.js",
       "background/utils/ContextMenus.js",
       "background/components/Options.js",
@@ -74,7 +93,13 @@
       "suggested_key": {
         "default": "Alt+Shift+D"
       },
-      "description": "Shortcut to quickly bookmark the current page."
+      "description": "__MSG_manifest_shortcut_quick_bookmark_description__"
+    },
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+M"
+      },
+      "description": "__MSG_manifest_shortcut_browser_action_description__"
     }
   },
 

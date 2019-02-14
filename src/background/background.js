@@ -31,6 +31,7 @@ async function getNewEnvironment(previousWebPage, newlyActiveTab) {
     // Checking if URL or title have changed
     if (previousWebPage === null || newURL !== previousWebPage.url) {
         currentWebPage = new WebPage(newlyActiveTab.id, newURL, newTitle);
+        await currentWebPage.determineSupportedStatus();
     } else {
         currentWebPage = previousWebPage;
         if (newTitle !== previousWebPage.title) currentWebPage.title = newTitle;
@@ -42,6 +43,7 @@ async function getNewEnvironment(previousWebPage, newlyActiveTab) {
 function updateInterface(webPage, options, version) {
     const userInterface = new Interface(webPage, options, version);
     userInterface.updatePageAction();
+    userInterface.updateBrowserAction();
     userInterface.updateContextMenus();
 }
 

@@ -49,16 +49,15 @@ class Utils {
         ) {
             return true;
         }
-        const extraProtocols = ['file:'];
+        const extraProtocols = ['file:', 'about:', 'moz-extension:'];
         const url = new URL(urlString);
         return extraProtocols.indexOf(url.protocol) !== -1;
     }
 
     // Check if provided URL can be supported by the add-on
-    static isSupportedURL(urlString) {
-        let valid = false;
-        if (Utils.isSupportedProtocol(urlString) || Utils.isExtraProtocol(urlString)) valid = true;
-        return valid;
+    static async isSupportedURL(urlString) {
+        if (Utils.isSupportedProtocol(urlString)) return true;
+        return Utils.isExtraProtocol(urlString);
     }
 
     // -------------------------------------------------------------------------------------------------

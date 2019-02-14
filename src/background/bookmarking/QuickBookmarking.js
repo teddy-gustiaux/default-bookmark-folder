@@ -79,9 +79,7 @@ class QuickBookmarking {
                 } else {
                     await this._createBookmarkFromIcon();
                 }
-            } else {
-                if (!this._options.isRemovalPreventionEnabled()) this._removeBookmarks();
-            }
+            } else if (!this._options.isRemovalPreventionEnabled()) this._removeBookmarks();
         } else {
             await this._createBookmarkFromIcon();
         }

@@ -18,6 +18,7 @@
   },
   "rules": {
     "strict": "off",
+    "linebreak-style": "off",
     "no-undef": "off",
     "no-unused-vars": "off",
     "class-methods-use-this": "off",

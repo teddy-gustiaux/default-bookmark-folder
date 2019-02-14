@@ -11,12 +11,6 @@ class WebPage {
         this._id = id;
         this._url = url;
         this._title = title;
-
-        if (Utils.isSupportedURL(this._url)) {
-            this._isSupported = true;
-        } else {
-            this._isSupported = false;
-        }
     }
 
     get id() {
@@ -70,6 +64,11 @@ class WebPage {
         this._isBookmarked = true;
         this._numberOfBookmarks = bookmarks.length;
         this._bookmarks = bookmarks;
+    }
+
+    async determineSupportedStatus() {
+        const isSupported = await Utils.isSupportedURL(this._url);
+        this._isSupported = isSupported === true;
     }
 
     // Check if current page is supported and search for bookmarks if it is the case

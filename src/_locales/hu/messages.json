@@ -1,4 +1,16 @@
 {
+  "manifest_extension_description": {
+    "message": "Allows you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon."
+  },
+  "manifest_page_action_default_title": {
+    "message": "The icon is disabled. Enable it in the add-on settings."
+  },
+  "manifest_browser_action_default_title": {
+    "message": "Quick bookmarking to folder"
+  },
+  "manifest_shortcut_quick_bookmark_description": {
+    "message": "Shortcut to quickly bookmark the current page."
+  },
   "icon_remove_bookmark": {
     "message": "Remove the bookmark(s) for this page"
   },
@@ -59,98 +71,14 @@
   "options_release_open_changelog": {
     "message": "Show the release notes when the add-on is updated"
   },
-  "options_changelog_210_list_1": {
-    "message": "Javítás: Lapok húzd és ejtsd módon történõ könyvjelzõzése és „Összes lap könyvjelzõzése…” funkciók most már figyelmen kívül vannak hagyva a felülírásnál, és normálisan mûködnek (#5-ös GitHub bejelentés)"
+  "options_release_changelog_github": {
+    "message": "The release notes of the add-on are now accessible on GitHub."
   },
-  "options_changelog_210_list_2": {
-    "message": "Új: A gyors könyvjelzõzés ikon színének kiválasztása (listából), ha a jelenlegi oldal könyvjelzõzésre kerül"
+  "options_release_latest_changelog": {
+    "message": "Access the latest release notes"
   },
-  "options_changelog_210_list_3": {
-    "message": "Új: Magasabb minõségû könyvjelzõzés ikonok"
-  },
-  "options_changelog_210_list_4": {
-    "message": "Új: Kiadási megjegyzések lap a beállításokban"
-  },
-  "options_changelog_211_list_1": {
-    "message": "Javítás: A beépített gyorsbillentyû és környezeti menü könyvjelzõzés most már a megadott helyet használja a Firefox 57.x, stabil kiadásában (#7-es és #9-es GitHub bejelentés)"
-  },
-  "options_changelog_212_list_1": {
-    "message": "Javítás: A kiegészítõ beépített könyvjelzõzési funkciói most már normálisan mûködnek Firefox 56.x verziókon is (#8-as GitHub bejelentés)"
-  },
-  "options_changelog_220_list_1": {
-    "message": "Új: Alapértelmezett mappa választása „Összes lap könyvjelzõzése…” funkcióhoz (#13-as GitHub bejelentés)"
-  },
-  "options_changelog_220_list_2": {
-    "message": "Új: Kód refaktorálás és a belsõ programkönyvtárak frissítése"
-  },
-  "options_changelog_220_list_3": {
-    "message": "Új: Apró szövegezési frissítések a kiegészítõ beállításaiban"
-  },
-  "options_changelog_220_list_4": {
-    "message": "Javítás: Gyors könyvjelzõzés ikon automatikus elrejtése, ha a beállítás bekapcsolásra, majd kikapcsolása kerül"
-  },
-  "options_changelog_220_list_5": {
-    "message": "Javítás: A gyors könyvjelzõzés gyorsbillentyû konzisztens mûködése"
-  },
-  "options_changelog_220_list_6": {
-    "message": "Javítás: Avast kiegészítõ értékelés – az Avast belsõleg javította (#14-es GitHub probléma)"
-  },
-  "options_changelog_221_list_1": {
-    "message": "Új: Támogatás hozzáadása a Firefox Olvasó módjához – 58-as újabb verzió szükséges (#22-es GitHub bejelentés)"
-  },
-  "options_changelog_221_list_2": {
-    "message": "Javítás: Helyi fájlok gyors könyvjelzõzése"
-  },
-  "options_changelog_230_list_1": {
-    "message": "Új: Beállítás a gyors könyvjelzõzés visszavonás megakadályozására (#21-es GitHub bejelentés)"
-  },
-  "options_changelog_230_list_2": {
-    "message": "Új: Nemzetköziesítési támogatás (#10-es GitHub bejelentés)"
-  },
-  "options_changelog_230_list_3": {
-    "message": "Új: Francia fordítás hozzáadása"
-  },
-  "options_changelog_230_list_4": {
-    "message": "Új: Belsõ programkönyvtárak frissítése"
-  },
-  "options_changelog_240_list_1": {
-    "message": "New: Add an option to show (or not) release notes on add-on update (GitHub issue #27)"
-  },
-  "options_changelog_240_list_2": {
-    "message": "New: Add Hungarian translation (thanks to @meskobalazs)"
-  },
-  "options_changelog_240_list_3": {
-    "message": "New: Improvement of the French translation (thanks to @Machou)"
-  },
-  "options_changelog_240_list_4": {
-    "message": "New: Add new icon resolutions"
-  },
-  "options_changelog_241_list_1": {
-    "message": "Fix: New folders moved to selected location for \"Bookmark All Tabs...\" (GitHub issue #30)"
-  },
-  "options_changelog_250_list_1": {
-    "message": "New: Add an option to bookmark to last used folder for all modes (GitHub issues #19 and #29)"
-  },
-  "options_changelog_250_list_2": {
-    "message": "New: Add context menu quick bookmarking in web pages and bookmark toolbar (GitHub issue #20)"
-  },
-  "options_changelog_250_list_3": {
-    "message": "New: The quick bookmark icon supports multiple bookmarks removal (in the same way Firefox does)"
-  },
-  "options_changelog_250_list_4": {
-    "message": "New: Source code refactoring"
-  },
-  "options_changelog_250_list_5": {
-    "message": "Remove: Option to show page as bookmarked only if the bookmark is in the defined folder (when using quick bookmark icon)"
-  },
-  "options_changelog_260_list_1": {
-    "message": "New: Add back the option to show page as bookmarked only if all the bookmarks are in the defined folder (when using quick bookmark icon) (GitHub issue #38)"
-  },
-  "options_changelog_260_list_2": {
-    "message": "New: Add favicon to the options page (GitHub issue #40)"
-  },
-  "options_changelog_260_list_3": {
-    "message": "Fix: Replace Font Awesome dependency by Unicode characters (GitHub issue #39)"
+  "options_release_full_changelog": {
+    "message": "Access the full changelog"
   },
   "options_important_note": {
     "message": "Fontos megjegyzés"
@@ -298,5 +226,17 @@
   },
   "options_license": {
     "message": "Licenc:"
+  },
+  "popup_quick_bookmarking_folder_title": {
+    "message": "Quick bookmarking to folder"
+  },
+  "popup_quick_bookmarking_folder_info": {
+    "message": "Search and select a folder to bookmark the current page into it."
+  },
+  "popup_quick_bookmarking_folder_search": {
+    "message": "Search folders..."
+  },
+  "popup_quick_bookmarking_folder_not_found": {
+    "message": "No matching folders were found."
   }
 }
