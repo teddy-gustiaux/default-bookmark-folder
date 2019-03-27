@@ -26,6 +26,8 @@ function buildItems(bookmarkItem, indent) {
                 title: !bookmarkItem.title ? UNNAMED_FOLDER : bookmarkItem.title,
                 id: bookmarkItem.id,
             };
+            const getParentBookmark = browser.bookmarks.get(bookmarkItem.parentId);
+
             gobalBookmarkFolderTreeInformation.push(folderInformation);
             indentProgress += 1;
         }
