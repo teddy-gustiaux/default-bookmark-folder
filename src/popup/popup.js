@@ -27,6 +27,9 @@ function buildItems(bookmarkItem, indent) {
                 id: bookmarkItem.id,
             };
             const getParentBookmark = browser.bookmarks.get(bookmarkItem.parentId);
+            getParentBookmark.then((bookmark) => {
+                folderInformation.parentTitle = bookmark[0].title;
+            }),
 
             gobalBookmarkFolderTreeInformation.push(folderInformation);
             indentProgress += 1;
