@@ -104,7 +104,7 @@ function performSearch(input) {
             results.forEach(result => {
                 const node = document.createElement('li');
                 const link = document.createElement('a');
-                const textnode = document.createTextNode(result.title);
+                const textnode = document.createTextNode(`${result.parentTitle}/${result.title}`);
                 link.appendChild(textnode);
                 link.dataset.folderId = result.id;
                 node.appendChild(link);
