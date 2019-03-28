@@ -104,8 +104,12 @@ function performSearch(input) {
             results.forEach(result => {
                 const node = document.createElement('li');
                 const link = document.createElement('a');
-                const textnode = document.createTextNode(`${result.parentTitle}/${result.title}`);
-                link.appendChild(textnode);
+                const folder = document.createElement('strong');
+                const folderParentTitle = document.createTextNode(result.parentTitle + '/');
+                const folderTitle = document.createTextNode(result.title);
+                folder.appendChild(folderTitle);
+                link.appendChild(folderParentTitle);
+                link.appendChild(folder);
                 link.dataset.folderId = result.id;
                 node.appendChild(link);
                 node.addEventListener('click', saveBookmarkTo);
