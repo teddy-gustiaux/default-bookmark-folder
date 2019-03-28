@@ -29,7 +29,7 @@ function buildItems(bookmarkItem, indent) {
             const getParentBookmark = browser.bookmarks.get(bookmarkItem.parentId);
             getParentBookmark.then((bookmark) => {
                 folderInformation.parentTitle = bookmark[0].title;
-            }),
+            });
 
             globalBookmarkFolderTreeInformation.push(folderInformation);
             indentProgress += 1;
