@@ -6,7 +6,7 @@
  * =================================================================================================
  */
 
-const gobalBookmarkFolderTreeInformation = [];
+const globalBookmarkFolderTreeInformation = [];
 
 /*
  * =================================================================================================
@@ -31,7 +31,7 @@ function buildItems(bookmarkItem, indent) {
                 folderInformation.parentTitle = bookmark[0].title;
             }),
 
-            gobalBookmarkFolderTreeInformation.push(folderInformation);
+            globalBookmarkFolderTreeInformation.push(folderInformation);
             indentProgress += 1;
         }
     }
@@ -95,7 +95,7 @@ function performSearch(input) {
     // Perform search based on user input
     const searchFilter = input.originalTarget.value.toLowerCase();
     if (searchFilter.length > 0) {
-        const results = gobalBookmarkFolderTreeInformation.filter(bookmarkFolder =>
+        const results = globalBookmarkFolderTreeInformation.filter(bookmarkFolder =>
             bookmarkFolder.title.toLowerCase().includes(searchFilter),
         );
         // Add each result to the displayed list or display information message
