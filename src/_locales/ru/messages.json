@@ -231,12 +231,12 @@
     "message": "Quick bookmarking to folder"
   },
   "popup_quick_bookmarking_folder_info": {
-    "message": "Search and select a folder to bookmark the current page into it."
+    "message": "Найдите и выберите папку в которую вы хотите добавить закладку на текущую страницу."
   },
   "popup_quick_bookmarking_folder_search": {
-    "message": "Search folders..."
+    "message": "Поиск папок..."
   },
   "popup_quick_bookmarking_folder_not_found": {
-    "message": "No matching folders were found."
+    "message": "Папок с такими именами не найдено."
   }
 }
