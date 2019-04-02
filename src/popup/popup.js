@@ -6,7 +6,7 @@
  * =================================================================================================
  */
 
-const gobalBookmarkFolderTreeInformation = [];
+const globalBookmarkFolderTreeInformation = [];
 
 /*
  * =================================================================================================
@@ -26,7 +26,12 @@ function buildItems(bookmarkItem, indent) {
                 title: !bookmarkItem.title ? UNNAMED_FOLDER : bookmarkItem.title,
                 id: bookmarkItem.id,
             };
-            gobalBookmarkFolderTreeInformation.push(folderInformation);
+            const getParentBookmark = browser.bookmarks.get(bookmarkItem.parentId);
+            getParentBookmark.then((bookmark) => {
+                folderInformation.parentTitle = bookmark[0].title;
+            });
+
+            globalBookmarkFolderTreeInformation.push(folderInformation);
             indentProgress += 1;
         }
     }
@@ -90,7 +95,7 @@ function performSearch(input) {
     // Perform search based on user input
     const searchFilter = input.originalTarget.value.toLowerCase();
     if (searchFilter.length > 0) {
-        const results = gobalBookmarkFolderTreeInformation.filter(bookmarkFolder =>
+        const results = globalBookmarkFolderTreeInformation.filter(bookmarkFolder =>
             bookmarkFolder.title.toLowerCase().includes(searchFilter),
         );
         // Add each result to the displayed list or display information message
@@ -99,8 +104,12 @@ function performSearch(input) {
             results.forEach(result => {
                 const node = document.createElement('li');
                 const link = document.createElement('a');
-                const textnode = document.createTextNode(result.title);
-                link.appendChild(textnode);
+                const folder = document.createElement('strong');
+                const folderParentTitle = document.createTextNode(result.parentTitle + '/');
+                const folderTitle = document.createTextNode(result.title);
+                folder.appendChild(folderTitle);
+                link.appendChild(folderParentTitle);
+                link.appendChild(folder);
                 link.dataset.folderId = result.id;
                 node.appendChild(link);
                 node.addEventListener('click', saveBookmarkTo);
