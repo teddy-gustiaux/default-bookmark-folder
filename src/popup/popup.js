@@ -18,7 +18,7 @@ const globalBookmarkFolderTreeInformation = [];
 // BOOKMARK TREE MANIPULATION
 // -------------------------------------------------------------------------------------------------
 
-function buildItems(bookmarkItem, indent) {
+async function buildItems(bookmarkItem, indent) {
     let indentProgress = indent;
     if (Utils.bookmarkIsFolder(bookmarkItem) && bookmarkItem.id !== FIREFOX_ROOT_BOOKMARK_FOLDER) {
         if (Object.prototype.hasOwnProperty.call(bookmarkItem, 'title') || indent !== 0) {
@@ -26,10 +26,8 @@ function buildItems(bookmarkItem, indent) {
                 title: !bookmarkItem.title ? UNNAMED_FOLDER : bookmarkItem.title,
                 id: bookmarkItem.id,
             };
-            const getParentBookmark = browser.bookmarks.get(bookmarkItem.parentId);
-            getParentBookmark.then((bookmark) => {
-                folderInformation.parentTitle = bookmark[0].title;
-            });
+            const parentBookmarkInfo = await browser.bookmarks.get(bookmarkItem.parentId);
+            folderInformation.parentTitle = parentBookmarkInfo[0].title;
 
             globalBookmarkFolderTreeInformation.push(folderInformation);
             indentProgress += 1;
@@ -105,7 +103,7 @@ function performSearch(input) {
                 const node = document.createElement('li');
                 const link = document.createElement('a');
                 const folder = document.createElement('strong');
-                const folderParentTitle = document.createTextNode(result.parentTitle + '/');
+                const folderParentTitle = document.createTextNode(`${result.parentTitle}/`);
                 const folderTitle = document.createTextNode(result.title);
                 folder.appendChild(folderTitle);
                 link.appendChild(folderParentTitle);
@@ -146,7 +144,7 @@ function insertDataFromLocales() {
 async function popupOpened() {
     // Build the list of bookmark folders
     const bookmarkTree = await browser.bookmarks.getTree();
-    buildTree(bookmarkTree);
+    await buildTree(bookmarkTree);
     // Listen for search input key strokes
     const searchInput = document.getElementById('search-input');
     searchInput.addEventListener('keyup', performSearch);
