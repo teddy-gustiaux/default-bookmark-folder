@@ -5,6 +5,13 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate the [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
+# [2.8.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.7.0...v2.8.0) (2019-04-13)
+
+### Features
+
+* update Russian translation (thanks to @Neytrino-OnLine) ([119764b](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/119764b))
+* display the parent folder's title when searching (thanks to @JagdCake) ([129c8db](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/129c8db))
+
 # [2.7.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.6.0...v2.7.0) (2019-02-13)
 
 ### Bug Fixes
@@ -157,7 +164,7 @@ Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/
 
 * GitHub issue #1: the configuration is now saved locally (settings might need to be set again)
 * avoid moving manually created folders
-* 
+
 ### Features
 
 * orange cross indicator for disabled "quick bookmark" icon (for Nightly users)
