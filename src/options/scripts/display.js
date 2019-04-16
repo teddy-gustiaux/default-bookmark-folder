@@ -124,3 +124,10 @@ function toggleIconOptions(options) {
         toggleFeatures(false, itemsToDisable, itemLabelsToDisable);
     }
 }
+
+function toggleTheme(options) {
+    const checked = !!isOptionEnabled(options, THEME, DARK_THEME_ENABLED);
+    const theme = checked === true ? 'dark' : 'light';
+    document.querySelector(THEME_SWITCH).checked = checked;
+    document.documentElement.setAttribute('data-theme', theme);
+}

@@ -8,6 +8,9 @@
 
 // Boilerplate of all add-on options
 const OPTIONS_BOILERPLATE = {
+    [THEME]: {
+        [DARK_THEME_ENABLED]: 'boolean',
+    },
     [RELEASE]: {
         [OPEN_NOTES]: 'boolean',
     },
@@ -39,6 +42,9 @@ const OPTIONS_BOILERPLATE = {
 
 // List of all add-on options IDs for selection
 const OPTIONS_IDS = {
+    [THEME]: {
+        [DARK_THEME_ENABLED]: 'theme-switch',
+    },
     [RELEASE]: {
         [OPEN_NOTES]: 'release-open-changelog',
     },
@@ -64,13 +70,14 @@ const OPTIONS_IDS = {
 
 // List of tab management items
 const TAB_DEFAULT_NUMBER = 1;
-const TAB_CONTAINER = '#tab_container';
 const TAB_MENU = '.tab_menu';
 const TAB_CONTAINER_ITEM = '.container_item';
 const DATA_ITEM = 'data-item';
 const DATA_TAB = 'data-tab';
 
 // Miscellaneous
+const CONTENT_WRAPPER = '#content-wrapper';
+const THEME_SWITCH = '#theme-switch';
 const UNNAMED_FOLDER = '[no name]';
 const WELCOME = '#welcome';
 const CLOSE_WELCOME = '#close-welcome';

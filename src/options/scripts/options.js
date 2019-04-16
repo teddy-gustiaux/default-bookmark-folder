@@ -27,6 +27,7 @@ async function restoreOptions() {
     });
 
     toggleIconOptions(options);
+    toggleTheme(options);
     const tabNumber = typeof options[TAB] !== 'undefined' ? options[TAB] : TAB_DEFAULT_NUMBER;
     switchTab(tabNumber);
 }
@@ -53,6 +54,14 @@ function tabManagement() {
     });
 }
 
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+}
+
 /*
  * =================================================================================================
  * LISTENERS
@@ -65,4 +74,6 @@ document.addEventListener('DOMContentLoaded', restoreOptions);
 document.addEventListener('DOMContentLoaded', insertData);
 document.addEventListener('DOMContentLoaded', tabManagement);
 // Listen for saving of the options page
-document.querySelector(TAB_CONTAINER).addEventListener('change', saveOptions);
+document.querySelector(CONTENT_WRAPPER).addEventListener('change', saveOptions);
+// Listen for change of theme
+document.querySelector(THEME_SWITCH).addEventListener('change', switchTheme);

@@ -13,12 +13,28 @@
 
 <body>
 
-    <section class="section">
+    <section class="section" id="content-wrapper">
         <div class="container">
 
-            <h1 class="title" data-locale="options_title"></h1>
+            <!--  COLUMN TITLE + THEME -->
+            <div class="columns">
+                <div class="column is-four-fifths">
+                    <h1 class="title" data-locale="options_title"></h1>
+                </div>
+                <div class="column is-one-fifth">
+                    <div class="theme-switch-wrapper">
+                        <span class="theme-switch-icon theme-switch-icon-left">&#9728;</span>
+                        <input id="theme-switch" class="switch is-rounded is-info" type="checkbox">
+                        <label for="theme-switch"></label>
+                        <span class="theme-switch-icon">&#9790;</span>
+                    </div>
+                </div>
+            </div>
+            <!--  END COLUMN TITLE + THEME -->
 
-            <div data-locale="options_thank_you" class="notification"></div>
+            <!-- GLOBAL NOTIFICATION -->
+            <div data-locale="options_thank_you" class="notification notification-global"></div>
+            <!-- END GLOBAL NOTIFICATION -->
 
             <!-- MENU -->
             <div class="tabs is-boxed is-small-medium" id="tab_header">
