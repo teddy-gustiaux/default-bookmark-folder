@@ -80,9 +80,6 @@
   "options_release_full_changelog": {
     "message": "Access the full changelog"
   },
-  "options_important_note": {
-    "message": "Important note"
-  },
   "options_ff_built_in_note": {
     "message": "Those settings only apply to the built-in bookmarking system of Firefox. They allow you to select in which folder (and in which position of this folder) the new bookmarks will be added. It only affects bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), through the context menu or via the bookmarks menu."
   },

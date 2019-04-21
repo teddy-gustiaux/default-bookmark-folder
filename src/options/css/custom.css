@@ -6,8 +6,8 @@
     --bg-color-alternate: #f5f5f5;
     --bg-color-notification: var(--bg-color-alternate);
     --bg-color-notification-global:  var(--bg-color-alternate);
-    --bg-color-box:  var(--bg-color);
-    --theme-switch-color: #ffa7c4;
+    --bg-color-box: var(--bg-color);
+    --article-border-color: #dbdbdb;
 }
 
 [data-theme="dark"] {
@@ -17,9 +17,9 @@
     --bg-color: #2d2d2d;
     --bg-color-alternate: #4a4a4a;
     --bg-color-notification: var(--bg-color-alternate);
-    --bg-color-notification-global:  var(--bg-color-alternate);
-    --bg-color-box:  var(--bg-alternate);
-    --theme-switch-color: #ffa7c4;
+    --bg-color-notification-global: var(--bg-color-alternate);
+    --bg-color-box: var(--bg-alternate);
+    --article-border-color: #dbdbdb;
 }
 
 html {
@@ -54,6 +54,15 @@ a:hover {
 
 .notification.notification-global {
     background-color: var(--bg-color-notification-global);
+}
+
+.message {
+    background-color: var(--bg-color-alternate);
+}
+
+.message-body {
+    border-color: var(--article-border-color);
+    color: var(--font-color);
 }
 
 #tab_container .container_item {
