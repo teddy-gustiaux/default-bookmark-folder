@@ -70,8 +70,8 @@ const OPTIONS_IDS = {
 
 // List of tab management items
 const TAB_DEFAULT_NUMBER = 1;
-const TAB_MENU = '.tab_menu';
-const TAB_CONTAINER_ITEM = '.container_item';
+const TAB_MENU = '.tab-menu';
+const TAB_CONTAINER_ITEM = '.container-item';
 const DATA_ITEM = 'data-item';
 const DATA_TAB = 'data-tab';
 

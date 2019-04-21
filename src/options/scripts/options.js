@@ -55,6 +55,27 @@ function tabManagement() {
     });
 }
 
+function mobileMenuManagement() {
+    // Get all "navbar-burger" elements
+    const navbarBurgers = Array.prototype.slice.call(
+        document.querySelectorAll('.navbar-burger'),
+        0,
+    );
+    // Check if there are any navbar burgers
+    if (navbarBurgers.length > 0) {
+        // Add a click event on each of them
+        navbarBurgers.forEach(navbarBurger => {
+            navbarBurger.addEventListener('click', () => {
+                // Get the target from the "data-target" attribute
+                const target = document.getElementById(navbarBurger.dataset.target);
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                navbarBurger.classList.toggle('is-active');
+                target.classList.toggle('is-active');
+            });
+        });
+    }
+}
+
 function switchTheme(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
@@ -74,6 +95,7 @@ document.addEventListener('DOMContentLoaded', welcomeMessage);
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.addEventListener('DOMContentLoaded', insertData);
 document.addEventListener('DOMContentLoaded', tabManagement);
+document.addEventListener('DOMContentLoaded', mobileMenuManagement);
 // Listen for saving of the options page
 document.querySelector(CONTENT_WRAPPER).addEventListener('change', saveOptions);
 // Listen for change of theme

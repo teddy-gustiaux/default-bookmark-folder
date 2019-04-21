@@ -74,11 +74,8 @@
   "options_release_changelog_github": {
     "message": "Les notes de versions sont maintenant consultables sur GitHub."
   },
-  "options_release_latest_changelog": {
-    "message": "Accéder aux dernières notes de versions"
-  },
   "options_release_full_changelog": {
-    "message": "Accéder à l’ensemble des notes de versions"
+    "message": "Accéder aux notes de versions"
   },
   "options_ff_built_in_note": {
     "message": "Ces paramètres ne s’appliquent qu’au système de marquage interne à Firefox. Ils vous permettent de sélectionner à quel endroit (et à quelle position) les nouveaux marque-pages sont ajoutés. Cela n’affecte que les marque-pages créés via l’icône de marquage ou le raccourci (Ctrl+D) intégrés de Firefox, via le menu contextuel ou via le menu des marque-pages."

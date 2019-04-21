@@ -66,7 +66,7 @@
     "message": "Quick bookmarking"
   },
   "options_about": {
-    "message": "About the add-on"
+    "message": "About"
   },
   "options_release_open_changelog": {
     "message": "Show the release notes when the add-on is updated"
@@ -74,11 +74,8 @@
   "options_release_changelog_github": {
     "message": "The release notes of the add-on are now accessible on GitHub."
   },
-  "options_release_latest_changelog": {
-    "message": "Access the latest release notes"
-  },
   "options_release_full_changelog": {
-    "message": "Access the full changelog"
+    "message": "Access the changelog"
   },
   "options_ff_built_in_note": {
     "message": "Those settings only apply to the built-in bookmarking system of Firefox. They allow you to select in which folder (and in which position of this folder) the new bookmarks will be added. It only affects bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), through the context menu or via the bookmarks menu."
