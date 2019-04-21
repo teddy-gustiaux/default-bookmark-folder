@@ -2,7 +2,7 @@
 name: Improvement request
 about: 'Suggest an improvement for an existing aspect of this project '
 title: ''
-labels: type/enhancement
+labels: ''
 assignees: teddy-gustiaux
 
 ---
