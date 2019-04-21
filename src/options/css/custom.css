@@ -126,10 +126,6 @@ a:hover {
     margin-right: 0.8rem;
 }
 
-.release-info:after {
-    content: "\00A0\2197";
-}
-
 .select select {
     background-color: var(--bg-color);
     color: var(--font-color);
@@ -143,12 +139,14 @@ a:hover {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     color: white;
+    fill: white;
 }
 
 .button.is-link.is-outlined {
     background-color: transparent;
     border-color: var(--primary-color);
     color: var(--primary-color);
+    fill: var(--primary-color);
 }
 
 .select:not(.is-multiple):not(.is-loading)::after {
@@ -159,6 +157,34 @@ a:hover {
     border-color: var(--font-color);
 }
 
+
+/* ======================== */
+/* ====== SVG icons ======= */
+/* ======================== */
+
+.svg-icon-tab {
+    fill: var(--font-color);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.svg-icon-link {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.svg-icon-theme-switch svg {
+    fill: var(--font-color);
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.svg-icon-dropdown {
+    fill: var(--font-color);
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
 /* ======================== */
 /* ===== Theme switch ===== */
 /* ======================== */
@@ -167,17 +193,15 @@ a:hover {
     padding-left: 3.5rem;
 }
 
-.theme-switch-icon {
-    font-size: 1.6rem;
- }
-.theme-switch-icon.theme-switch-icon-left {
+.theme-switch-icon-left {
     padding-right: 0.3rem;
 }
 
 .theme-switch-wrapper {
-    float:right; clear:right;
+    float:right;
+    clear:right;
 }
 
-.switch[type="checkbox"] + label {
-    padding-top: 0.45rem;
+.theme-switch-wrapper .switch[type="checkbox"] + label {
+    padding-top: 0.7rem;
 }

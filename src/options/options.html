@@ -23,10 +23,10 @@
                 </div>
                 <div class="column is-one-fifth">
                     <div class="theme-switch-wrapper">
-                        <span class="theme-switch-icon theme-switch-icon-left">&#9728;</span>
+                        <span class="theme-switch-icon-left svg-icon-theme-switch" data-svg="img/icons/sun.svg"></span>
                         <input id="theme-switch" class="switch is-rounded is-info" type="checkbox">
                         <label for="theme-switch"></label>
-                        <span class="theme-switch-icon">&#9790;</span>
+                        <span class="svg-icon-theme-switch" data-svg="img/icons/moon.svg"></span>
                     </div>
                 </div>
             </div>
@@ -41,25 +41,29 @@
                 <ul>
                     <li class="item is-active tab_menu" data-tab="1">
                         <a>
-                            <span class="icon is-small tab-icon">&#10100;&#10101;</span>
+                            <span class="svg-icon-tab" data-svg="img/icons/code.svg"></span>
+                            <span>&nbsp;</span>
                             <span data-locale="options_release_notes"></span>
                         </a>
                     </li>
                     <li class="item tab_menu" data-tab="2">
                         <a>
-                            <span class="icon is-small tab-icon">&#9873;</span>
+                            <span class="svg-icon-tab" data-svg="img/icons/bookmark.svg"></span>
+                            <span>&nbsp;</span>
                             <span data-locale="options_ff_built_in"></span>
                         </a>
                     </li>
                     <li class="item tab_menu" data-tab="3">
                         <a>
-                            <span class="icon is-small tab-icon">&#128970;</span>
+                            <span class="svg-icon-tab" data-svg="img/icons/star.svg"></span>
+                            <span>&nbsp;</span>
                             <span data-locale="options_quick_bookmark_icon"></span>
                         </a>
                     </li>
                     <li class="item tab_menu" data-tab="4">
                         <a>
-                            <span class="icon is-small tab-icon">&#8505;</span>
+                            <span class="svg-icon-tab" data-svg="img/icons/about.svg"></span>
+                            <span>&nbsp;</span>
                             <span data-locale="options_about"></span>
                         </a>
                     </li>
@@ -85,10 +89,16 @@
                                 <p data-locale="options_release_changelog_github"></p>
                             </div>
                             <div class="field">
-                                <a class="button is-link is-outlined release-info" data-locale="options_release_latest_changelog"
-                                href="https://github.com/teddy-gustiaux/default-bookmark-folder/releases/latest" target="_blank"></a>
-                                <a class="button is-link is-outlined release-info" data-locale="options_release_full_changelog"
-                                href="https://github.com/teddy-gustiaux/default-bookmark-folder/blob/master/CHANGELOG.md" target="_blank"></a>
+                                <a class="button is-link is-outlined release-info" href="https://github.com/teddy-gustiaux/default-bookmark-folder/releases/latest" target="_blank">
+                                    <span data-locale="options_release_latest_changelog"></span>
+                                    <span>&nbsp;</span>
+                                    <span class="svg-icon-link" data-svg="img/icons/external-link.svg"></span>
+                                </a>
+                                <a class="button is-link is-outlined release-info" href="https://github.com/teddy-gustiaux/default-bookmark-folder/blob/master/CHANGELOG.md" target="_blank">
+                                    <span data-locale="options_release_full_changelog"></span>
+                                    <span>&nbsp;</span>
+                                    <span class="svg-icon-link" data-svg="img/icons/external-link.svg"></span>
+                                </a>
                             </div>
                         </div>
                         <!-- END OPTIONS TAB -->
@@ -113,7 +123,7 @@
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
-                                        &#128447;
+                                        <span class="svg-icon-dropdown" data-svg="img/icons/folder.svg"></span>
                                     </div>
                                 </div>
                                 <p class="help"><span data-locale="options_ff_built_in_folder_help_1"></span> <i data-locale="options_ff_built_in_folder_help_2"></i>.</p>
@@ -137,7 +147,7 @@
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
-                                        &#128447;
+                                        <span class="svg-icon-dropdown" data-svg="img/icons/folder.svg"></span>
                                     </div>
                                 </div>
                                 <p class="help"><span data-locale="options_ff_built_in_folder_all_tabs_help_1"></span> <i data-locale="options_ff_built_in_folder_all_tabs_help_2"></i>.</p>
@@ -191,7 +201,7 @@
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
-                                        &#128447;
+                                        <span class="svg-icon-dropdown" data-svg="img/icons/folder.svg"></span>
                                     </div>
                                 </div>
                                 <p class="help"><span data-locale="options_icon_folder_help_1"></span> <i data-locale="options_icon_folder_help_2"></i>.</p>

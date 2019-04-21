@@ -41,6 +41,7 @@ function saveOptions() {
 
 function insertData() {
     insertDataFromLocales();
+    insertSvgIcons();
     insertDataFromManifest();
 }
 
