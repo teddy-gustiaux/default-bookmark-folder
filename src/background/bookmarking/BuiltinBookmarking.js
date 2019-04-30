@@ -72,6 +72,7 @@ class BuiltinBookmarking {
 
     async move(id, bookmarkInfo) {
         if (!this._isSystemCreated(bookmarkInfo)) return;
+        if (Utils.bookmarkIsSeparator(bookmarkInfo)) return;
         let bookmarkTreeNode;
         if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
             bookmarkTreeNode = this._createMovingPropertiesForBookmark();
