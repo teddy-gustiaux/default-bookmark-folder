@@ -56,6 +56,17 @@ function insertDataFromManifest() {
     document.querySelector(AUTHOR).textContent = manifest.author;
 }
 
+// Inserts SVG icons inline
+function insertSvgIcons() {
+    const elementsWithSvgIcon = document.querySelectorAll('[data-svg]');
+    Array.from(elementsWithSvgIcon).forEach(async elementWithSvgIcon => {
+        const svgUrl = browser.runtime.getURL(`options/${elementWithSvgIcon.dataset.svg}`);
+        const response = await fetch(svgUrl);
+        const data = await response.text();
+        elementWithSvgIcon.insertAdjacentHTML('afterbegin', data);
+    });
+}
+
 // -------------------------------------------------------------------------------------------------
 // TABS
 // -------------------------------------------------------------------------------------------------
@@ -123,4 +134,11 @@ function toggleIconOptions(options) {
         const itemLabelsToDisable = [FOLDER, COLOR];
         toggleFeatures(false, itemsToDisable, itemLabelsToDisable);
     }
+}
+
+function toggleTheme(options) {
+    const checked = !!isOptionEnabled(options, THEME, DARK_THEME_ENABLED);
+    const theme = checked === true ? 'dark' : 'light';
+    document.querySelector(THEME_SWITCH).checked = checked;
+    document.documentElement.setAttribute('data-theme', theme);
 }
