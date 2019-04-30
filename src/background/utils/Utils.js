@@ -64,6 +64,18 @@ class Utils {
     // BOOKMARKS
     // -------------------------------------------------------------------------------------------------
 
+    // Indicate if a bookmark object is a separator
+    static bookmarkIsSeparator(bookmarkInfo) {
+        let isSeparator = false;
+        if (
+            Object.prototype.hasOwnProperty.call(bookmarkInfo, 'type') &&
+            bookmarkInfo.type === 'separator'
+        ) {
+            isSeparator = true;
+        }
+        return isSeparator;
+    }
+
     // Indicate if a bookmark object is a web page
     static bookmarkIsWebPage(bookmarkInfo) {
         let isWebPage = false;
