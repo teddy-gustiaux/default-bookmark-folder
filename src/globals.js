@@ -7,6 +7,7 @@
  */
 
 // List of stored options keys
+const THEME = 'theme';
 const RELEASE = 'release';
 const BUILTIN = 'builtin';
 const ALLTABS = 'alltabs';
@@ -16,6 +17,7 @@ const NEW_RELEASE = 'newRelease';
 const NOTIFICATION = 'updateNotification';
 const TAB = 'tab';
 // List of stored options properties
+const DARK_THEME_ENABLED = 'darkThemeEnabled';
 const OPEN_NOTES = 'openNotes';
 const FOLDER = 'folder';
 const TOP = 'top';

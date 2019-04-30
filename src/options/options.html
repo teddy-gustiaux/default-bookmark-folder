@@ -11,45 +11,73 @@
     <link rel="icon" href="img/favicon.ico">
 </head>
 
-<body>
+<body id="content-wrapper">
+
+    <!-- MENU -->
+    <nav class="navbar is-light has-shadow is-spaced" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://addons.mozilla.org/firefox/addon/default-bookmark-folder/" target="_blank">
+                <p class="subtitle is-3" id="navbar-title">Default Bookmark Folder</p>
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item tab-menu" data-tab="1">
+                    <span class="svg-icon-tab baseline" data-svg="img/icons/code.svg"></span>
+                    <span>&nbsp;</span>
+                    <span data-locale="options_release_notes"></span>
+                </a>
+                <a class="navbar-item tab-menu baseline" data-tab="2">
+                    <span class="svg-icon-tab" data-svg="img/icons/bookmark.svg"></span>
+                    <span>&nbsp;</span>
+                    <span data-locale="options_ff_built_in"></span>
+                </a>
+                <a class="navbar-item tab-menu baseline" data-tab="3">
+                    <span class="svg-icon-tab" data-svg="img/icons/star.svg"></span>
+                    <span>&nbsp;</span>
+                    <span data-locale="options_quick_bookmark_icon"></span>
+                </a>
+                <a class="navbar-item tab-menu baseline" data-tab="4">
+                    <span class="svg-icon-tab" data-svg="img/icons/about.svg"></span>
+                    <span>&nbsp;</span>
+                    <span data-locale="options_about"></span>
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="theme-switch-wrapper">
+                        <span class="theme-switch-icon-left svg-icon-theme-switch" data-svg="img/icons/sun.svg"></span>
+                        <input id="theme-switch" class="switch is-rounded is-info" type="checkbox">
+                        <label for="theme-switch"></label>
+                        <span class="svg-icon-theme-switch" data-svg="img/icons/moon.svg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END MENU -->
 
     <section class="section">
         <div class="container">
 
-            <h1 class="title" data-locale="options_title"></h1>
-
-            <div data-locale="options_thank_you" class="notification"></div>
-
-            <!-- MENU -->
-            <div class="tabs is-boxed is-small-medium" id="tab_header">
-                <ul>
-                    <li class="item is-active tab_menu" data-tab="1">
-                        <a>
-                            <span class="icon is-small tab-icon">&#10100;&#10101;</span>
-                            <span data-locale="options_release_notes"></span>
-                        </a>
-                    </li>
-                    <li class="item tab_menu" data-tab="2">
-                        <a>
-                            <span class="icon is-small tab-icon">&#9873;</span>
-                            <span data-locale="options_ff_built_in"></span>
-                        </a>
-                    </li>
-                    <li class="item tab_menu" data-tab="3">
-                        <a>
-                            <span class="icon is-small tab-icon">&#128970;</span>
-                            <span data-locale="options_quick_bookmark_icon"></span>
-                        </a>
-                    </li>
-                    <li class="item tab_menu" data-tab="4">
-                        <a>
-                            <span class="icon is-small tab-icon">&#8505;</span>
-                            <span data-locale="options_about"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- END MENU -->
+            <!-- GLOBAL NOTIFICATION -->
+            <!--
+                If you want to display a generic global notfication (compatible with dark theme)
+                <div data-locale="options_thank_you" class="notification notification-global is-link"></div>
+            -->
+            <!--
+                If you want to display a colored global notfication (compatible with dark theme)
+                <div data-locale="options_thank_you" class="notification is-link"></div>
+            -->
+            <!-- END GLOBAL NOTIFICATION -->
 
             <!--  COLUMNS -->
             <div class="columns">
@@ -59,7 +87,7 @@
                     <div class="box" id="tab_container">
 
                         <!-- OPTIONS TAB -->
-                        <div class="container_item is-active release-notes" data-item="1">
+                        <div class="container-item is-active release-notes" data-item="1">
                             <div class="field">
                                 <input id="release-open-changelog" class="switch is-rounded is-info" type="checkbox">
                                 <label for="release-open-changelog" data-locale="options_release_open_changelog"></label>
@@ -69,20 +97,18 @@
                                 <p data-locale="options_release_changelog_github"></p>
                             </div>
                             <div class="field">
-                                <a class="button is-link is-outlined release-info" data-locale="options_release_latest_changelog"
-                                href="https://github.com/teddy-gustiaux/default-bookmark-folder/releases/latest" target="_blank"></a>
-                                <a class="button is-link is-outlined release-info" data-locale="options_release_full_changelog"
-                                href="https://github.com/teddy-gustiaux/default-bookmark-folder/blob/master/CHANGELOG.md" target="_blank"></a>
+                                <a class="button is-link is-outlined release-info" href="https://github.com/teddy-gustiaux/default-bookmark-folder/blob/master/CHANGELOG.md" target="_blank">
+                                    <span data-locale="options_release_full_changelog"></span>
+                                    <span>&nbsp;</span>
+                                    <span class="svg-icon-link" data-svg="img/icons/external-link.svg"></span>
+                                </a>
                             </div>
                         </div>
                         <!-- END OPTIONS TAB -->
 
                         <!-- OPTIONS TAB -->
-                        <div class="container_item" data-item="2">
-                            <article class="message is-danger">
-                                <div class="message-header">
-                                    <p data-locale="options_important_note"></p>
-                                </div>
+                        <div class="container-item" data-item="2">
+                            <article class="message">
                                 <div class="message-body">
                                     <p data-locale="options_ff_built_in_note">
                                 </div>
@@ -97,7 +123,7 @@
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
-                                        &#128447;
+                                        <span class="svg-icon-dropdown" data-svg="img/icons/folder.svg"></span>
                                     </div>
                                 </div>
                                 <p class="help"><span data-locale="options_ff_built_in_folder_help_1"></span> <i data-locale="options_ff_built_in_folder_help_2"></i>.</p>
@@ -108,9 +134,11 @@
                                 <p class="help" data-locale="options_ff_built_in_folder_top_help"></p>
                             </div>
                             <hr class="divider"/>
-                            <div class="notification">
-                                <p data-locale="options_ff_built_in_folder_all_tabs_note"></p>
-                            </div>
+                            <article class="message">
+                                <div class="message-body">
+                                    <p data-locale="options_ff_built_in_folder_all_tabs_note">
+                                </div>
+                            </article>
                             <div class="field">
                                 <label for="alltabs-folder" class="label" data-locale="options_ff_built_in_folder_all_tabs"></label>
                                 <div class="control has-icons-left">
@@ -121,7 +149,7 @@
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
-                                        &#128447;
+                                        <span class="svg-icon-dropdown" data-svg="img/icons/folder.svg"></span>
                                     </div>
                                 </div>
                                 <p class="help"><span data-locale="options_ff_built_in_folder_all_tabs_help_1"></span> <i data-locale="options_ff_built_in_folder_all_tabs_help_2"></i>.</p>
@@ -135,13 +163,15 @@
                         <!-- END OPTIONS TAB -->
 
                         <!-- OPTIONS TAB -->
-                        <div class="container_item" data-item="3">
-                            <div class="notification">
-                                <p data-locale="options_icon_explanation"></p>
-                                <p><img src="img/Quick_bookmark_icon-Page_not_bookmarked.png">
-                                <img src="img/Quick_bookmark_icon-Page_bookmarked.png">
-                                </p>
-                            </div>
+                        <div class="container-item" data-item="3">
+                            <article class="message">
+                                <div class="message-body">
+                                    <p data-locale="options_icon_explanation"></p>
+                                    <p><img src="img/Quick_bookmark_icon-Page_not_bookmarked.png">
+                                    <img src="img/Quick_bookmark_icon-Page_bookmarked.png">
+                                    </p>
+                                </div>
+                            </article>
                             <div class="field">
                                 <input id="icon-enabled" class="switch is-rounded is-info" type="checkbox">
                                 <label for="icon-enabled" data-locale="options_icon_enable"></label>
@@ -157,10 +187,7 @@
                                 <p class="help" data-locale="options_icon_enable_context_menu_help"></p>
                             </div>
                             <hr class="divider"/>
-                            <article class="message is-danger">
-                                <div class="message-header">
-                                    <p data-locale="options_important_note"></p>
-                                </div>
+                            <article class="message">
                                 <div class="message-body">
                                     <p data-locale="options_icon_note"></p>
                                 </div>
@@ -175,7 +202,7 @@
                                         </select>
                                     </div>
                                     <div class="icon is-small is-left">
-                                        &#128447;
+                                        <span class="svg-icon-dropdown" data-svg="img/icons/folder.svg"></span>
                                     </div>
                                 </div>
                                 <p class="help"><span data-locale="options_icon_folder_help_1"></span> <i data-locale="options_icon_folder_help_2"></i>.</p>
@@ -216,7 +243,7 @@
                         <!-- END OPTIONS TAB -->
 
                         <!-- OPTIONS TAB -->
-                        <div class="container_item" data-item="4">
+                        <div class="container-item" data-item="4">
                             <h1 class="subtitle" data-locale="options_feedback"></h1>
                             <div class="field">
                                 <p><span data-locale="options_please_review_1"></span> <a href="https://addons.mozilla.org/en-US/firefox/addon/default-bookmark-folder/" target="_blank" data-locale="options_please_review_2"></a>!</p>
