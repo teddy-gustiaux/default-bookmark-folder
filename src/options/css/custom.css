@@ -259,6 +259,31 @@ hr {
 }
 
 /* ======================== */
+/* MODAL                    */
+/* ======================== */
+
+.modal-card-head, .modal-card-foot {
+    background-color: var(--bg-color-alternate);
+}
+
+.modal-card-head {
+    border-bottom: 1px solid var(--bg-color-box-shadow);
+}
+
+.modal-card-foot {
+    border-top: 1px solid var(--bg-color-box-shadow);
+}
+
+.modal-card-title {
+    color: var(--font-color);
+}
+
+.modal-card-body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+/* ======================== */
 /* MEDIA QUERIES            */
 /* ======================== */
 
