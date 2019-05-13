@@ -23,8 +23,12 @@ class BuiltinBookmarking {
         return isSystemCreated;
     }
 
+    // The default name template is "[Folder Name]", but is language-specific
     _isAllTabsSystemCreatedFolder(bookmarkInfo) {
-        return bookmarkInfo.title === FIREFOX_DEFAULT_ALL_TABS_FOLDER_NAME;
+        if (bookmarkInfo.title.length < 3) return false;
+        const firstLetter = bookmarkInfo.title[0];
+        const lastLetter = bookmarkInfo.title[bookmarkInfo.title.length - 1];
+        return firstLetter === '[' && lastLetter === ']';
     }
 
     _createMovingPropertiesForBookmark() {
@@ -68,6 +72,7 @@ class BuiltinBookmarking {
 
     async move(id, bookmarkInfo) {
         if (!this._isSystemCreated(bookmarkInfo)) return;
+        if (Utils.bookmarkIsSeparator(bookmarkInfo)) return;
         let bookmarkTreeNode;
         if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
             bookmarkTreeNode = this._createMovingPropertiesForBookmark();
