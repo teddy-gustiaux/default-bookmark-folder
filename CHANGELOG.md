@@ -5,6 +5,23 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate the [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
+# [2.9.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.8.0...v2.9.0) (2019-05-14)
+
+### Features
+
+* add dark theme to the add-on settings ([8a6c001](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/8a6c001))
+* add dark theme to welcome message ([46a5a40](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/46a5a40))
+
+### Bug Fixes
+
+* bookmarking tabs not working properly in non-English UI (close [#56](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/56)) ([4d9daf7](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/4d9daf7))
+* hide the global notification as it does not give useful information ([742c265](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/742c265))
+* insert SVG icons by creating proper elements ([d38313c](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/d38313c))
+* make the options page responsive and improve dark theme ([b18961a](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/b18961a))
+* new separator always added to default location (close [#44](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/44)) ([5609cae](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/5609cae))
+* replace red notification block by regular information message ([7c91801](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/7c91801))
+* use SVG icons instead of Unicode characters ([0134689](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/0134689))
+
 # [2.8.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.7.0...v2.8.0) (2019-04-13)
 
 ### Features
