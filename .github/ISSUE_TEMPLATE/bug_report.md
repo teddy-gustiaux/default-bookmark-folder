@@ -28,6 +28,7 @@ A clear and concise description of what you expected to happen.
 <!-- Please choose a Firefox edition among the list -->
 - Firefox edition: Firefox (regular edition) / Developer Edition / Beta / Nightly / Other (please specify)
 - Firefox version:
+- Firefox language: English / Other (please specify)
 <!-- Please choose a platform among the list -->
 - Platform: Windows / macOS / Linux / Other (please specify)
 - Platform version:

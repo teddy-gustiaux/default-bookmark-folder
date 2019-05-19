@@ -58,12 +58,17 @@ function insertDataFromManifest() {
 
 // Inserts SVG icons inline
 function insertSvgIcons() {
+    const parser = new DOMParser();
     const elementsWithSvgIcon = document.querySelectorAll('[data-svg]');
     Array.from(elementsWithSvgIcon).forEach(async elementWithSvgIcon => {
         const svgUrl = browser.runtime.getURL(`options/${elementWithSvgIcon.dataset.svg}`);
         const response = await fetch(svgUrl);
-        const data = await response.text();
-        elementWithSvgIcon.insertAdjacentHTML('afterbegin', data);
+        const responseData = await response.text();
+        const svgImageElement = parser.parseFromString(responseData, 'image/svg+xml');
+        const svgInline = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svgInline.setAttribute('viewBox', svgImageElement.firstChild.getAttribute('viewBox'));
+        Array.from(svgImageElement.children).forEach(child => svgInline.appendChild(child));
+        elementWithSvgIcon.appendChild(svgInline);
     });
 }
 

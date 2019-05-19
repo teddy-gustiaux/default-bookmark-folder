@@ -81,7 +81,7 @@ module.exports = config => {
             includeAllSources: true,
             reporters: [
                 { type: 'html', subdir: 'report-html' },
-                { type: 'text', subdir: 'report-text'},
+                { type: 'text', subdir: 'report-text' },
             ],
         },
         // web server port
