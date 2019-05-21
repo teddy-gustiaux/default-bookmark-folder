@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate the [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
+# [2.10.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.9.0...v2.10.0) (2019-05-21)
+
+### Features
+
+* add support for "chrome://" URLs ([97a0a52](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/97a0a52))
+
 # [2.9.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.8.0...v2.9.0) (2019-05-14)
 
 ### Features
