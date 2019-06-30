@@ -29,22 +29,17 @@
 
         <div id="navbar-menu" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item tab-menu" data-tab="1">
-                    <span class="svg-icon-tab baseline" data-svg="img/icons/code.svg"></span>
-                    <span>&nbsp;</span>
-                    <span data-locale="options_release_notes"></span>
-                </a>
-                <a class="navbar-item tab-menu baseline" data-tab="2">
+                <a class="navbar-item tab-menu baseline" data-tab="1">
                     <span class="svg-icon-tab" data-svg="img/icons/bookmark.svg"></span>
                     <span>&nbsp;</span>
                     <span data-locale="options_ff_built_in"></span>
                 </a>
-                <a class="navbar-item tab-menu baseline" data-tab="3">
+                <a class="navbar-item tab-menu baseline" data-tab="2">
                     <span class="svg-icon-tab" data-svg="img/icons/star.svg"></span>
                     <span>&nbsp;</span>
                     <span data-locale="options_quick_bookmark_icon"></span>
                 </a>
-                <a class="navbar-item tab-menu baseline" data-tab="4">
+                <a class="navbar-item tab-menu baseline" data-tab="3">
                     <span class="svg-icon-tab" data-svg="img/icons/about.svg"></span>
                     <span>&nbsp;</span>
                     <span data-locale="options_about"></span>
@@ -70,11 +65,11 @@
 
             <!-- GLOBAL NOTIFICATION -->
             <!--
-                If you want to display a generic global notfication (compatible with dark theme)
+                If you want to display a generic global notification (compatible with dark theme)
                 <div data-locale="options_thank_you" class="notification notification-global is-link"></div>
             -->
             <!--
-                If you want to display a colored global notfication (compatible with dark theme)
+                If you want to display a colored global notification (compatible with dark theme)
                 <div data-locale="options_thank_you" class="notification is-link"></div>
             -->
             <!-- END GLOBAL NOTIFICATION -->
@@ -87,27 +82,7 @@
                     <div class="box" id="tab_container">
 
                         <!-- OPTIONS TAB -->
-                        <div class="container-item is-active release-notes" data-item="1">
-                            <div class="field">
-                                <input id="release-open-changelog" class="switch is-rounded is-info" type="checkbox">
-                                <label for="release-open-changelog" data-locale="options_release_open_changelog"></label>
-                            </div>
-                            <hr class="divider"/>
-                            <div class="field">
-                                <p data-locale="options_release_changelog_github"></p>
-                            </div>
-                            <div class="field">
-                                <a class="button is-link is-outlined release-info" href="https://github.com/teddy-gustiaux/default-bookmark-folder/blob/master/CHANGELOG.md" target="_blank">
-                                    <span data-locale="options_release_full_changelog"></span>
-                                    <span>&nbsp;</span>
-                                    <span class="svg-icon-link" data-svg="img/icons/external-link.svg"></span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END OPTIONS TAB -->
-
-                        <!-- OPTIONS TAB -->
-                        <div class="container-item" data-item="2">
+                        <div class="container-item" data-item="1">
                             <article class="message">
                                 <div class="message-body">
                                     <p data-locale="options_ff_built_in_note">
@@ -163,7 +138,7 @@
                         <!-- END OPTIONS TAB -->
 
                         <!-- OPTIONS TAB -->
-                        <div class="container-item" data-item="3">
+                        <div class="container-item" data-item="2">
                             <article class="message">
                                 <div class="message-body">
                                     <p data-locale="options_icon_explanation"></p>
@@ -243,7 +218,23 @@
                         <!-- END OPTIONS TAB -->
 
                         <!-- OPTIONS TAB -->
-                        <div class="container-item" data-item="4">
+                        <div class="container-item" data-item="3">
+                            <h1 class="subtitle" data-locale="options_release_notes"></h1>
+                            <div class="field">
+                                <input id="release-open-changelog" class="switch is-rounded is-info" type="checkbox">
+                                <label for="release-open-changelog" data-locale="options_release_open_changelog"></label>
+                            </div>
+                            <div class="field">
+                                <p data-locale="options_release_changelog_github"></p>
+                            </div>
+                            <div class="field">
+                                <a class="button is-link is-outlined release-info" href="https://github.com/teddy-gustiaux/default-bookmark-folder/blob/master/CHANGELOG.md" target="_blank">
+                                    <span data-locale="options_release_full_changelog"></span>
+                                    <span>&nbsp;</span>
+                                    <span class="svg-icon-link" data-svg="img/icons/external-link.svg"></span>
+                                </a>
+                            </div>
+                            <hr class="divider"/>
                             <h1 class="subtitle" data-locale="options_feedback"></h1>
                             <div class="field">
                                 <p><span data-locale="options_please_review_1"></span> <a href="https://addons.mozilla.org/en-US/firefox/addon/default-bookmark-folder/" target="_blank" data-locale="options_please_review_2"></a>!</p>

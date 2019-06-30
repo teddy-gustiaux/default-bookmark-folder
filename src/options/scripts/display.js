@@ -77,17 +77,18 @@ function insertSvgIcons() {
 // -------------------------------------------------------------------------------------------------
 
 function switchTab(number) {
+    const tabNumber = number < 1 || number > 3 ? TAB_DEFAULT_NUMBER : number;
     const tabs = document.querySelectorAll(TAB_MENU);
     Array.from(tabs).forEach(tabItem => {
         tabItem.classList.remove('is-active');
     });
-    document.querySelector(`[${DATA_TAB}='${number}']`).classList.add('is-active');
+    document.querySelector(`[${DATA_TAB}='${tabNumber}']`).classList.add('is-active');
     const containers = document.querySelectorAll(TAB_CONTAINER_ITEM);
     Array.from(containers).forEach(containerItem => {
         containerItem.classList.remove('is-active');
     });
-    document.querySelector(`[${DATA_ITEM}='${number}']`).classList.add('is-active');
-    browser.storage.local.set({ [TAB]: number });
+    document.querySelector(`[${DATA_ITEM}='${tabNumber}']`).classList.add('is-active');
+    browser.storage.local.set({ [TAB]: tabNumber });
 }
 
 // -------------------------------------------------------------------------------------------------
