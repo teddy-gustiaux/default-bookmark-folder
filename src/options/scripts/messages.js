@@ -14,13 +14,6 @@ function closeWelcomeMessage() {
 async function welcomeMessage() {
     const options = await getOptions();
     if (
-        Object.prototype.hasOwnProperty.call(options, NEW_RELEASE) &&
-        options[NEW_RELEASE] === true
-    ) {
-        switchTab(TAB_DEFAULT_NUMBER);
-        browser.storage.local.set({ [NEW_RELEASE]: false });
-    }
-    if (
         !Object.prototype.hasOwnProperty.call(options, NOTIFICATION) ||
         options[NOTIFICATION] !== true
     ) {

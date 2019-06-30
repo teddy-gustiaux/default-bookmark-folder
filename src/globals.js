@@ -13,7 +13,6 @@ const BUILTIN = 'builtin';
 const ALLTABS = 'alltabs';
 const ICON = 'icon';
 const MISC = 'miscellaneous';
-const NEW_RELEASE = 'newRelease';
 const NOTIFICATION = 'updateNotification';
 const TAB = 'tab';
 // List of stored options properties

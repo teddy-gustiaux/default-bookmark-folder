@@ -69,10 +69,10 @@
     "message": "About"
   },
   "options_release_open_changelog": {
-    "message": "Show the release notes when the add-on is updated"
+    "message": "Show the release notes on GitHub when the add-on is updated"
   },
   "options_release_changelog_github": {
-    "message": "The release notes of the add-on are now accessible on GitHub."
+    "message": "The release notes of the add-on are accessible on GitHub (in English only)."
   },
   "options_release_full_changelog": {
     "message": "Access the changelog"

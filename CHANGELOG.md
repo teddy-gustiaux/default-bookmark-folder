@@ -2,8 +2,12 @@
 
 All notable changes to this project are documented in this file.
 
+> 🛈 No longer want to see this page when the add-on is updated?
+>
+> Go to the add-on settings, and uncheck the option *`Show the release notes on GitHub when the add-on is updated`* in the `About` section.
+
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate the [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
+Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate this [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
 # [2.10.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.9.0...v2.10.0) (2019-05-21)
 
