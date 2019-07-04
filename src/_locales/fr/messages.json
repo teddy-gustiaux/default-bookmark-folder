@@ -78,7 +78,7 @@
     "message": "Accéder aux notes de versions"
   },
   "options_ff_built_in_note": {
-    "message": "Ces paramètres ne s’appliquent qu’au système de marquage interne à Firefox. Ils vous permettent de sélectionner à quel endroit (et à quelle position) les nouveaux marque-pages sont ajoutés. Cela n’affecte que les marque-pages créés via l’icône de marquage ou le raccourci (Ctrl+D) intégrés de Firefox, via le menu contextuel ou via le menu des marque-pages."
+    "message": "Les paramètres ci-dessous ne s’appliquent qu’au système de marquage interne à Firefox. Ils vous permettent de sélectionner à quel endroit (et à quelle position) les nouveaux marque-pages sont ajoutés. Cela n’affecte que les marque-pages créés via l’icône de marquage ou le raccourci (Ctrl+D) intégrés de Firefox, via le menu contextuel ou via le menu des marque-pages."
   },
   "options_ff_built_in_folder": {
     "message": "Sélectionner où les nouveaux marque-pages seront ajoutés :"
@@ -99,22 +99,22 @@
     "message": "Si désactivé, les nouveaux marque-pages seront ajoutés en bas du dossier sélectionné"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "Le paramètre ci-dessous ne s’applique qu’à la fonction \"Marquer tous les onglets...\" de Firefox. Il vous permet de choisir le dossier par défaut du dossier nouvellement créé, qui contient un marque-page pour chaque onglet ouvert."
+    "message": "Les paramètres ci-dessous ne s’applique qu’aux fonctionnalités permettant de marquer les onglets sélectionnés ou de \"Marquer tous les onglets...\" ouverts de Firefox. Ils vous permettent de choisir le dossier (et la position) par défaut du dossier nouvellement créé, qui contient un marque-page pour chaque onglet sélectionné ou ouvert (suivant la fonctionnalité utilisée)."
   },
   "options_ff_built_in_folder_all_tabs": {
-    "message": "Sélectionner où les nouveaux dossiers pour \"Marquer tous les onglets...\" seront ajoutés :"
+    "message": "Sélectionner où les nouveaux dossiers d’onglets marqués seront ajoutés :"
   },
   "options_ff_built_in_folder_all_tabs_default": {
     "message": "Pas de dossier sélectionné (le dossier par défaut de Firefox sera utilisé)"
   },
   "options_ff_built_in_folder_all_tabs_help_1": {
-    "message": "Note : le dossier par défaut de Firefox pour les dossiers \"Marquer tous les onglets...\" est"
+    "message": "Note : le dossier par défaut de Firefox pour les dossiers d’onglets marqués est"
   },
   "options_ff_built_in_folder_all_tabs_help_2": {
     "message": "Menu des marque-pages"
   },
   "options_ff_built_in_folder_all_tabs_top": {
-    "message": "Ajouter les nouveaux dossiers pour \"Marquer tous les onglets...\"  en haut du dossier sélectionné"
+    "message": "Ajouter les nouveaux dossiers d’onglets marqués en haut du dossier sélectionné"
   },
   "options_ff_built_in_folder_all_tabs_top_help": {
     "message": "Si désactivé, les nouveaux marque-pages seront ajoutés en bas du dossier sélectionné"

@@ -99,25 +99,25 @@
     "message": "Если эта настройка отключена, новые закладки будут добавляться после уже имеющихся элементов (в выбранной папке)"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "Настройки ниже, применимы только к функции Firefox \"Добавить вкладки в закладки..\". Они позволят вам изменить расположение, в котором будет создаваться новая папка, содержащая закладки для каждой из открытых вкладок."
+    "message": "The settings below only apply when bookmarking multiple selected tabs at once or when using the \"Bookmark All Tabs...\" feature for all open tabs. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected or open tabs (depending on the feature), as well as the position of the folder in this location."
   },
   "options_ff_built_in_folder_all_tabs": {
-    "message": "Выберите куда по команде \"Добавить вкладки в закладки...\" будет добавляться новая папка:"
+    "message": "Select where new folders of bookmarked tabs will be added:"
   },
   "options_ff_built_in_folder_all_tabs_default": {
     "message": "Папка не выбрана (Firefox использует расположение по умолчанию)"
   },
   "options_ff_built_in_folder_all_tabs_help_1": {
-    "message": "Обратите внимание: по умолчанию для этих целей Firefox использует"
+    "message": "Note: Firefox's default location for folders of bookmarked tabs is"
   },
   "options_ff_built_in_folder_all_tabs_help_2": {
     "message": "Меню закладок"
   },
   "options_ff_built_in_folder_all_tabs_top": {
-    "message": "Добавлять новую папку на первую позицию (внутри выбранной папки)"
+    "message": "Add new folders of bookmarked tabs to the top of the selected folder"
   },
   "options_ff_built_in_folder_all_tabs_top_help": {
-    "message": "Если эта настройка отключена, новая папка будет добавляться после уже имеющихся элементов (в выбранной папке)"
+    "message": "If disabled, new folders of bookmarked tabs will be added to the bottom of the selected folder"
   },
   "options_icon_explanation": {
     "message": "Эта функция добавляет в адресную строку иконку быстрых закладок, позволяющую добавить страницы в закладки или удалить её одним кликом. Иконка представляет собою круг (со звездою в центре). Если текущая страница уже есть в закладках, иконка будет окрашена в выбранный цвет (по умолчанию - красный). Для примера, вот два скриншота: на первом текущая страница не добавлена в закладки, а на втором - добавлена."

@@ -78,7 +78,7 @@
     "message": "Access the changelog"
   },
   "options_ff_built_in_note": {
-    "message": "Those settings only apply to the built-in bookmarking system of Firefox. They allow you to select in which folder (and in which position of this folder) the new bookmarks will be added. It only affects bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), through the context menu or via the bookmarks menu."
+    "message": "The settings below only apply to the built-in bookmarking system of Firefox. They allow you to select in which folder (and in which position of this folder) the new bookmarks will be added. It only affects bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), through the context menu or via the bookmarks menu."
   },
   "options_ff_built_in_folder": {
     "message": "Select where new bookmarks will be added:"
@@ -99,25 +99,25 @@
     "message": "If disabled, new bookmarks will be added to the bottom of the selected folder"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "The setting below only applies when using the \"Bookmark All Tabs...\" feature of Firefox. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the open tabs."
+    "message": "The settings below only apply when bookmarking multiple selected tabs at once or when using the \"Bookmark All Tabs...\" feature for all open tabs. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected or open tabs (depending on the feature), as well as the position of the folder in this location."
   },
   "options_ff_built_in_folder_all_tabs": {
-    "message": "Select where new \"Bookmark All Tabs...\" folders will be added:"
+    "message": "Select where new folders of bookmarked tabs will be added:"
   },
   "options_ff_built_in_folder_all_tabs_default": {
     "message": "No folder selected (use Firefox's default bookmark location)"
   },
   "options_ff_built_in_folder_all_tabs_help_1": {
-    "message": "Note: Firefox's default \"Bookmark All Tabs...\" folder location is"
+    "message": "Note: Firefox's default location for folders of bookmarked tabs is"
   },
   "options_ff_built_in_folder_all_tabs_help_2": {
     "message": "Bookmarks Menu"
   },
   "options_ff_built_in_folder_all_tabs_top": {
-    "message": "Add new \"Bookmark All Tabs...\" folders to the top of the selected folder"
+    "message": "Add new folders of bookmarked tabs to the top of the selected folder"
   },
   "options_ff_built_in_folder_all_tabs_top_help": {
-    "message": "If disabled, new folders will be added to the bottom of the selected folder"
+    "message": "If disabled, new folders of bookmarked tabs will be added to the bottom of the selected folder"
   },
   "options_icon_explanation": {
     "message": "This feature will add a quick bookmark icon in the address bar, to (un)bookmark a page with only one click. The icon is a round star icon in the address bar. If the current page is bookmarked, the icon color will change to the selected color (red by default). Here are two screenshots to serve as examples: when the current page is not bookmarked and when it is."
