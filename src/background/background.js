@@ -90,11 +90,13 @@ async function onContextMenuClick(info, tab) {
 }
 
 async function onAddonInstallation(details) {
+    globalOptions = await getNewOptions(globalOptions);
     const update = new Update(globalOptions);
     if (details.reason === 'install') {
         update.openOptionsPage();
     } else if (details.reason === 'update') {
         if (details.previousVersion[0] === '1') update.updateFromFirstVersion();
+        if (details.previousVersion === '2.10.0') update.updateRemovedNewReleaseOption();
         await update.displayReleaseNotes();
     }
 }

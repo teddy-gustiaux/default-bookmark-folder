@@ -69,16 +69,16 @@
     "message": "About"
   },
   "options_release_open_changelog": {
-    "message": "Show the release notes when the add-on is updated"
+    "message": "Show the release notes on GitHub when the add-on is updated"
   },
   "options_release_changelog_github": {
-    "message": "The release notes of the add-on are now accessible on GitHub."
+    "message": "The release notes of the add-on are accessible on GitHub (in English only)."
   },
   "options_release_full_changelog": {
     "message": "Access the changelog"
   },
   "options_ff_built_in_note": {
-    "message": "Those settings only apply to the built-in bookmarking system of Firefox. They allow you to select in which folder (and in which position of this folder) the new bookmarks will be added. It only affects bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), through the context menu or via the bookmarks menu."
+    "message": "The settings below only apply to the built-in bookmarking system of Firefox. They allow you to select in which folder (and in which position of this folder) the new bookmarks will be added. It only affects bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), through the context menu or via the bookmarks menu."
   },
   "options_ff_built_in_folder": {
     "message": "Válassza ki, hogy az új könyvjelzõk hova legyenek hozzáadva:"
@@ -99,25 +99,25 @@
     "message": "Ha tiltott, akkor az új könyvjelzõk a kiválasztott mappa aljára kerülnek"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "A lenti beállítás csak akkor érvényes, ha a Firefox „Összes lap könyvjelzõzése…” funkcióját használja. Lehetõvé teszi a frissen létrehozott mappa alapértelmezett helyének felülbírálását, amely az összes nyitott mappa könyvjelzõjét tartalmazza."
+    "message": "The settings below only apply when bookmarking multiple selected tabs at once or when using the \"Bookmark All Tabs...\" feature for all open tabs. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected or open tabs (depending on the feature), as well as the position of the folder in this location."
   },
   "options_ff_built_in_folder_all_tabs": {
-    "message": "Válassza ki, hogy az „Összes lap könyvjelzõzése…” mappák hová lesznek hozzáadva:"
+    "message": "Select where new folders of bookmarked tabs will be added:"
   },
   "options_ff_built_in_folder_all_tabs_default": {
     "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzõzési helye)"
   },
   "options_ff_built_in_folder_all_tabs_help_1": {
-    "message": "Megjegyzés: A Firefox alapértelmezett „Összes lap könyvjelzõzése…” mappa helye:"
+    "message": "Note: Firefox's default location for folders of bookmarked tabs is"
   },
   "options_ff_built_in_folder_all_tabs_help_2": {
     "message": "Könyvjelzõk menü"
   },
   "options_ff_built_in_folder_all_tabs_top": {
-    "message": "Új „Összes lap könyvjelzõzése…” mappa hozzáadása a kiválasztott mappa tetejéhez"
+    "message": "Add new folders of bookmarked tabs to the top of the selected folder"
   },
   "options_ff_built_in_folder_all_tabs_top_help": {
-    "message": "Ha tiltott, akkor az új mappák a kiválasztott mappa aljára kerülnek"
+    "message": "If disabled, new folders of bookmarked tabs will be added to the bottom of the selected folder"
   },
   "options_icon_explanation": {
     "message": "Ez a funkció egy gyors könyvjelzõzés ikont tesz a címsávhoz, a könyvjelzõzés (és megszüntetése) csak egy kattintás. Az ikon egy kör alakú csillag ikon a címsávban. Ha a jelenlegi oldal könyvjelzõzött, akkor az ikon a kiválasztott színre vált (alapértelmezetten piros). Itt van két képernyõkép példaként: egyiken a jelenlegi oldal nincs könyvjelzõzve, a másikon pedig igen."

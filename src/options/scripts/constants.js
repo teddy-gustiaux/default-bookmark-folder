@@ -35,9 +35,8 @@ const OPTIONS_BOILERPLATE = {
     [MISC]: {
         [LAST_USED_FOLDER]: 'string',
     },
-    [NOTIFICATION]: 'boolean', // Welcome message diplayed (at least once)
+    [NOTIFICATION]: 'boolean', // Welcome message displayed (at least once)
     [TAB]: 'integer',
-    [NEW_RELEASE]: 'boolean', // This is a new version
 };
 
 // List of all add-on options IDs for selection
