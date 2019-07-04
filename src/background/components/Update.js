@@ -11,6 +11,10 @@ class Update {
         this._options = options;
     }
 
+    async openOptionsPage() {
+        return browser.runtime.openOptionsPage();
+    }
+
     async openChangelogPage() {
         return browser.tabs.create({
             url:
