@@ -21,9 +21,9 @@ This feature only affects bookmarks added through the built-in Firefox bookmark 
 - Select where the new bookmarks will be added
 - Choose to add the new bookmarks to the top or the bottom of the selected folder
 - Choose to add the new bookmarks to the last used folder (by any bookmarking or sorting method)
-- Select where the new folders of "Bookmark All Tabs..." will be added
-- Choose to add the new "Bookmark All Tabs..." folders to the top or the bottom of the selected folder
-- Choose to add the new "Bookmark All Tabs..." folders to the last used folder (by any bookmarking or sorting method)
+- Select where the new folders of bookmarked tabs will be added (when bookmarking multiple selected tabs or using "Bookmark All Tabs...")
+- Choose to add the new folders of bookmarked tabs to the top or the bottom of the selected folder
+- Choose to add the new folders of bookmarked tabs to the last used folder (by any bookmarking or sorting method)
 
 **Quick bookmark icon:**
 
