@@ -20,8 +20,10 @@ This feature only affects bookmarks added through the built-in Firefox bookmark 
 *You can:*
 - Select where the new bookmarks will be added
 - Choose to add the new bookmarks to the top or the bottom of the selected folder
-- Select where the new folders of "Bookmark All Tabs..." will be added
-- Choose to add the new "Bookmark All Tabs..." folders to the top or the bottom of the selected folder
+- Choose to add the new bookmarks to the last used folder (by any bookmarking or sorting method)
+- Select where the new folders of bookmarked tabs will be added (when bookmarking multiple selected tabs or using "Bookmark All Tabs...")
+- Choose to add the new folders of bookmarked tabs to the top or the bottom of the selected folder
+- Choose to add the new folders of bookmarked tabs to the last used folder (by any bookmarking or sorting method)
 
 **Quick bookmark icon:**
 
@@ -33,6 +35,7 @@ If the current page is bookmarked, the icon color will change to red.
 - Enable the quick bookmark shortcut (Alt+Shift+D)
 - Select where the new bookmarks will be added
 - Choose to add the new bookmarks to the top or the bottom of the selected folder
+- Choose to add the new bookmarks to the last used folder (by any bookmarking or sorting method)
 - Choose to show the page as bookmarked (i.e. the icon color changes) only if all the bookmarks of this page are in the folder you selected
 - Select the color of the quick bookmark icon (among a list) when the current page is bookmarked (red by default)
 

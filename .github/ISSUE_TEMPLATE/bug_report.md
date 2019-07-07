@@ -30,8 +30,8 @@ A clear and concise description of what you expected to happen.
 - Firefox version:
 - Firefox language: English / Other (please specify)
 <!-- Please choose a platform among the list -->
-- Platform: Windows / macOS / Linux / Other (please specify)
-- Platform version:
+- Platform/OS: Windows / macOS / Linux / Other (please specify)
+- Platform/OS version:
 
 ## Screenshots
 If applicable, add screenshots to help explain your problem.
