@@ -38,6 +38,9 @@ const QUICK_BOOOKMARKING_COMMAND = 'quick-bookmark';
 const FIREFOX_DEFAULT_FOLDERS = ['unfiled_____', 'menu________'];
 const FIREFOX_ROOT_BOOKMARK_FOLDER = 'root________';
 
+// Default bookmark URL if manually created without changes via the "New Bookmark..." context menu
+const FIREFOX_BOOKMARK_DEFAULT_MANUAL_URL = 'about:blank';
+
 // List of status
 const ST_BOOKMARKED = 100;
 const ST_NOT_BOOKMARKED = 101;

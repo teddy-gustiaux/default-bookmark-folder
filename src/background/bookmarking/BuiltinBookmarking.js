@@ -16,7 +16,8 @@ class BuiltinBookmarking {
         let isSystemCreated = false;
         if (
             Object.prototype.hasOwnProperty.call(bookmarkInfo, 'parentId') &&
-            FIREFOX_DEFAULT_FOLDERS.includes(bookmarkInfo.parentId)
+            FIREFOX_DEFAULT_FOLDERS.includes(bookmarkInfo.parentId) &&
+            bookmarkInfo.url !== FIREFOX_BOOKMARK_DEFAULT_MANUAL_URL
         ) {
             isSystemCreated = true;
         }
