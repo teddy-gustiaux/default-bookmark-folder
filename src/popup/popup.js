@@ -75,6 +75,11 @@ async function saveBookmarkTo(info) {
         const currentOptions = new Options(extensionsSettings);
         await currentOptions.updateLastUsedFolder(bookmarkTreeNode.parentId);
         window.close();
+    } else {
+        const errorMessage = document.getElementById('save-error');
+        errorMessage.style.display = 'block';
+        const displayedResults = document.getElementById('search-results');
+        displayedResults.className = 'disabled';
     }
 }
 
@@ -86,6 +91,8 @@ function performSearch(input) {
     // Empty the list of results
     const message = document.getElementById('not-found');
     message.style.display = 'none';
+    const errorMessage = document.getElementById('save-error');
+    errorMessage.style.display = 'none';
     const displayedResults = document.getElementById('search-results');
     while (displayedResults.firstChild) {
         displayedResults.removeChild(displayedResults.firstChild);

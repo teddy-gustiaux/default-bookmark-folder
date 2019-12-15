@@ -232,5 +232,8 @@
   },
   "popup_quick_bookmarking_folder_not_found": {
     "message": "Aucun dossier correspondant n’a été trouvé."
+  },
+  "popup_quick_bookmarking_folder_save_error": {
+    "message": "Une erreur s’est produite lors de la tentative de création du marque-page."
   }
 }
