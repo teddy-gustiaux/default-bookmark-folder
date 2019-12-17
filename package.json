@@ -44,7 +44,7 @@
     "@babel/preset-env": "7.7.6",
     "babel-plugin-istanbul": "5.2.0",
     "chai": "4.2.0",
-    "conventional-changelog-cli": "2.0.28",
+    "conventional-changelog-cli": "2.0.31",
     "dirty-chai": "2.0.1",
     "eslint": "6.7.2",
     "eslint-config-airbnb-base": "14.0.0",
