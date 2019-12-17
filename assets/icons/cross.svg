@@ -1,14 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 44.5 44.7" style="enable-background:new 0 0 44.5 44.7;" xml:space="preserve">
-<style type="text/css">
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 44 43.999999"
+   xml:space="preserve"
+   sodipodi:docname="cross.svg"
+   width="44"
+   height="44"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:export-filename="D:\Development\GitHub\default-bookmark-folder\assets\icons\cross-1024.png"
+   inkscape:export-xdpi="2234.1819"
+   inkscape:export-ydpi="2234.1819"><metadata
+   id="metadata11"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
+   id="defs9" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1647"
+   inkscape:window-height="1008"
+   id="namedview7"
+   showgrid="false"
+   inkscape:zoom="21.118568"
+   inkscape:cx="11.890918"
+   inkscape:cy="18.978076"
+   inkscape:window-x="264"
+   inkscape:window-y="0"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="Layer_1" />
+<style
+   type="text/css"
+   id="style2">
 	.st0{fill:#F9A825;}
 </style>
-<path class="st0" d="M22.2,0.4c-12.2,0-22,9.8-22,22s9.8,22,22,22s22-9.8,22-22S34.4,0.4,22.2,0.4z M25.4,22.8l7.5,7.5
-	c0.2,0.2,0.3,0.5,0.3,0.7s-0.1,0.5-0.3,0.7l-1.4,1.4c-0.2,0.2-0.5,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-7.5-7.5
-	c-0.2-0.2-0.5-0.2-0.7,0l-7.5,7.5c-0.2,0.2-0.5,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3l-1.4-1.4c-0.2-0.2-0.3-0.5-0.3-0.7
-	s0.1-0.5,0.3-0.7l7.5-7.5c0.2-0.2,0.2-0.5,0-0.7l-7.5-7.5c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5,0.3-0.7l1.4-1.4
-	c0.2-0.2,0.5-0.3,0.7-0.3s0.5,0.1,0.7,0.3l7.5,7.5c0.2,0.2,0.5,0.2,0.7,0l7.5-7.5c0.2-0.2,0.5-0.3,0.7-0.3c0.3,0,0.5,0.1,0.7,0.3
-	l1.4,1.4c0.2,0.2,0.3,0.5,0.3,0.7s-0.1,0.5-0.3,0.7l-7.5,7.5C25.2,22.2,25.2,22.6,25.4,22.8z"/>
+<path
+   class="st0"
+   d="M 22,0 C 9.8,0 0,9.8 0,22 0,34.2 9.8,44 22,44 34.2,44 44,34.2 44,22 44,9.8 34.2,0 22,0 Z m 3.2,22.4 7.5,7.5 c 0.2,0.2 0.3,0.5 0.3,0.7 0,0.2 -0.1,0.5 -0.3,0.7 l -1.4,1.4 C 31.1,32.9 30.8,33 30.6,33 30.3,33 30.1,32.9 29.9,32.7 L 22.4,25.2 C 22.2,25 21.9,25 21.7,25.2 l -7.5,7.5 C 14,32.9 13.7,33 13.5,33 13.2,33 13,32.9 12.8,32.7 l -1.4,-1.4 c -0.2,-0.2 -0.3,-0.5 -0.3,-0.7 0,-0.2 0.1,-0.5 0.3,-0.7 l 7.5,-7.5 c 0.2,-0.2 0.2,-0.5 0,-0.7 l -7.5,-7.5 c -0.2,-0.2 -0.3,-0.5 -0.3,-0.7 0,-0.2 0.1,-0.5 0.3,-0.7 l 1.4,-1.4 c 0.2,-0.2 0.5,-0.3 0.7,-0.3 0.2,0 0.5,0.1 0.7,0.3 l 7.5,7.5 c 0.2,0.2 0.5,0.2 0.7,0 l 7.5,-7.5 c 0.2,-0.2 0.5,-0.3 0.7,-0.3 0.3,0 0.5,0.1 0.7,0.3 l 1.4,1.4 c 0.2,0.2 0.3,0.5 0.3,0.7 0,0.2 -0.1,0.5 -0.3,0.7 l -7.5,7.5 c -0.2,0.1 -0.2,0.5 0,0.7 z"
+   id="path4"
+   inkscape:connector-curvature="0"
+   style="fill:#f9a825" />
 </svg>
