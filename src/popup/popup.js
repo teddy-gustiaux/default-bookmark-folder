@@ -41,8 +41,8 @@ async function buildItems(bookmarkItem, indent) {
     }
 }
 
-function buildTree(bookmarkItems) {
-    buildItems(bookmarkItems[0], 0);
+async function buildTree(bookmarkItems) {
+    await buildItems(bookmarkItems[0], 0);
 }
 
 // -------------------------------------------------------------------------------------------------
@@ -54,7 +54,9 @@ function nodeIsValid(bookmarkTreeNode) {
     if (Object.keys(bookmarkTreeNode).length !== 0 && bookmarkTreeNode.constructor === Object) {
         if (
             Object.prototype.hasOwnProperty.call(bookmarkTreeNode, 'url') &&
-            typeof bookmarkTreeNode.url !== 'undefined'
+            typeof bookmarkTreeNode.url !== 'undefined' &&
+            Object.prototype.hasOwnProperty.call(bookmarkTreeNode, 'parentId') &&
+            typeof bookmarkTreeNode.parentId !== 'undefined'
         ) {
             isValid = true;
         }
@@ -63,11 +65,13 @@ function nodeIsValid(bookmarkTreeNode) {
 }
 
 async function saveBookmarkTo(info) {
+    // Must be captured first
+    const { folderId } = info.currentTarget.dataset;
     const activeTab = await Utils.getActiveTab();
     const bookmarkTreeNode = {
-        title: activeTab.title,
+        title: `${activeTab.title}${DBF_INTERAL_INDICATOR}`,
         url: activeTab.url,
-        parentId: info.originalTarget.dataset.folderId,
+        parentId: folderId,
     };
     if (nodeIsValid(bookmarkTreeNode)) {
         await browser.bookmarks.create(bookmarkTreeNode);
@@ -75,6 +79,11 @@ async function saveBookmarkTo(info) {
         const currentOptions = new Options(extensionsSettings);
         await currentOptions.updateLastUsedFolder(bookmarkTreeNode.parentId);
         window.close();
+    } else {
+        const errorMessage = document.getElementById('save-error');
+        errorMessage.style.display = 'block';
+        const displayedResults = document.getElementById('search-results');
+        displayedResults.className = 'disabled';
     }
 }
 
@@ -86,7 +95,10 @@ function performSearch(input) {
     // Empty the list of results
     const message = document.getElementById('not-found');
     message.style.display = 'none';
+    const errorMessage = document.getElementById('save-error');
+    errorMessage.style.display = 'none';
     const displayedResults = document.getElementById('search-results');
+    displayedResults.className = '';
     while (displayedResults.firstChild) {
         displayedResults.removeChild(displayedResults.firstChild);
     }
@@ -108,9 +120,9 @@ function performSearch(input) {
                 folder.appendChild(folderTitle);
                 link.appendChild(folderParentTitle);
                 link.appendChild(folder);
-                link.dataset.folderId = result.id;
                 node.appendChild(link);
-                node.addEventListener('click', saveBookmarkTo);
+                node.dataset.folderId = result.id;
+                node.addEventListener('click', info => saveBookmarkTo(info));
                 node.setAttribute('tabindex', index);
                 displayedResults.appendChild(node);
                 index += 1;
@@ -161,4 +173,4 @@ async function popupOpened() {
  * =================================================================================================
  */
 document.addEventListener('DOMContentLoaded', insertDataFromLocales);
-document.addEventListener('DOMContentLoaded', popupOpened);
+document.addEventListener('DOMContentLoaded', () => popupOpened());

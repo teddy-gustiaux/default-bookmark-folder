@@ -33,10 +33,14 @@ const FOLDER_NONE = 'none';
 const FOLDER_LAST_USED = 'last';
 const ICON_DEFAULT_COLOR = 'red';
 const QUICK_BOOOKMARKING_COMMAND = 'quick-bookmark';
+const DBF_INTERAL_INDICATOR = '[dbf_internal]';
 
 // Default bookmark folders ('unfiled' by default for all versions, 'menu' with shortcut/context menu on stable version)
 const FIREFOX_DEFAULT_FOLDERS = ['unfiled_____', 'menu________'];
 const FIREFOX_ROOT_BOOKMARK_FOLDER = 'root________';
+
+// Default bookmark URL if manually created without changes via the "New Bookmark..." context menu
+const FIREFOX_BOOKMARK_DEFAULT_MANUAL_URL = 'about:blank';
 
 // List of status
 const ST_BOOKMARKED = 100;

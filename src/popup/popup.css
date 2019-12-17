@@ -25,6 +25,11 @@ body {
     text-align: center;
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
 #open-settings {
     padding: 0.5rem;
     color: #f2f2f2;
@@ -34,7 +39,7 @@ body {
     margin-top: 0rem;
     font-family:inherit;
     display: inline-flex;
-    align-items: center; 
+    align-items: center;
 }
 
 #test {
@@ -49,8 +54,8 @@ body {
 #search-input {
     border-radius: 25px;
     border: 5px solid #f2f2f2;
-    padding: 20px; 
-    height: 15px;  
+    padding: 20px;
+    height: 15px;
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
@@ -65,7 +70,7 @@ body {
     padding: 0;
     margin: 0;
 }
-  
+
 #search-results li a {
     display: block;
     text-decoration: none;
@@ -77,4 +82,10 @@ body {
 
 #search-results li a:hover:not(.header) {
     background-color: #f2f2f2;
+}
+
+#save-error {
+    display: none;
+    color: hsl(348, 86%, 61%);
+    font-weight: 600;
 }

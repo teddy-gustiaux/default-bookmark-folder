@@ -45,6 +45,10 @@ Access this feature via the extension browser action (toolbar icon) or via its d
 
 It will allow you to search and select a specific folder within your bookmarks to quickly bookmark the current page into it.
 
+### Known issues
+
+Please refer to the [list](https://github.com/teddy-gustiaux/default-bookmark-folder/wiki/Known-issues) in the [official wiki](https://github.com/teddy-gustiaux/default-bookmark-folder/wiki).
+
 ### Support
 
 If you want to report a bug or ask for a new feature, you can open an issue on [GitHub](https://github.com/teddy-gustiaux/default-bookmark-folder/issues). If you do not have an account, you can create one for free.

@@ -122,6 +122,20 @@ class Utils {
         return result;
     }
 
+    // Indicate if a bookmark object has been created internally by the add-on.
+    // This is done in order to perform specific business logic.
+    static bookmarkIsAddonInternal(bookmarkInfo) {
+        let isInternal = false;
+        if (
+            Object.prototype.hasOwnProperty.call(bookmarkInfo, 'title') &&
+            bookmarkInfo.title.length > 0
+        ) {
+            const indexStart = bookmarkInfo.title.length - DBF_INTERAL_INDICATOR.length;
+            isInternal = bookmarkInfo.title.substring(indexStart) === DBF_INTERAL_INDICATOR;
+        }
+        return isInternal;
+    }
+
     // -------------------------------------------------------------------------------------------------
     // FIREFOX
     // -------------------------------------------------------------------------------------------------

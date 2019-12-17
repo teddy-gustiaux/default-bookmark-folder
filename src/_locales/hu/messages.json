@@ -232,5 +232,8 @@
   },
   "popup_quick_bookmarking_folder_not_found": {
     "message": "No matching folders were found."
+  },
+  "popup_quick_bookmarking_folder_save_error": {
+    "message": "An error happened when trying to save the bookmark."
   }
 }

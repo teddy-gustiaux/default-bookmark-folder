@@ -9,6 +9,18 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate this [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
+# [2.11.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.10.1...v2.11.0) (2019-12-17)
+
+### Features
+
+* display message when failing to save bookmark directly to folder ([649f00d](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/649f00d2fd653f1f6519d9bea38883404f2218c4))
+
+### Bug Fixes
+
+* manually added bookmarks in system folders moved to default folder ([cb1e8f7](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/cb1e8f754a4e2f0c7b79662470238a741ac97397))
+* quick bookmarking to folder saving in wrong folder (close [#111](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/111)) ([31b7fcc](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/31b7fccb9db5b62bf0eabb2ec78e6005941976ae))
+* quick bookmarking to system folders failing when default folder on ([b0808d4](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/b0808d497bb4eab9cbc5ab39f4c823f67399380a))
+
 ## [2.10.1](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.10.0...v2.10.1) (2019-07-04)
 
 ### Bug Fixes
