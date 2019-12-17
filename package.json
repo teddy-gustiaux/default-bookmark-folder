@@ -1,6 +1,6 @@
 {
   "name": "default-bookmark-folder",
-  "version": "2.10.1",
+  "version": "2.11.0",
   "description": "WebExtension allowing you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon.",
   "main": "background.js",
   "scripts": {
