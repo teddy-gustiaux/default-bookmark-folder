@@ -71,9 +71,13 @@ class BuiltinBookmarking {
         return isValid;
     }
 
-    async move(id, bookmarkInfo) {
-        if (!this._isSystemCreated(bookmarkInfo)) return;
-        if (Utils.bookmarkIsSeparator(bookmarkInfo)) return;
+    async _renameBookmark(bookmarkInfo) {
+        await browser.bookmarks.update(bookmarkInfo.id, {
+            title: bookmarkInfo.title.replace(DBF_INTERAL_INDICATOR, ''),
+        });
+    }
+
+    async _moveBookmarkToDefinedLocation(bookmarkInfo) {
         let bookmarkTreeNode;
         if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
             bookmarkTreeNode = this._createMovingPropertiesForBookmark();
@@ -82,8 +86,18 @@ class BuiltinBookmarking {
             bookmarkTreeNode = this._createMovingPropertiesForAllTabsFolder();
         }
         if (this._nodeIsValidForMoving(bookmarkTreeNode)) {
-            browser.bookmarks.move(id, bookmarkTreeNode);
+            browser.bookmarks.move(bookmarkInfo.id, bookmarkTreeNode);
             await this._options.updateLastUsedFolder(bookmarkTreeNode.parentId);
+        }
+    }
+
+    async move(id, bookmarkInfo) {
+        if (Utils.bookmarkIsAddonInternal(bookmarkInfo)) {
+            await this._renameBookmark(bookmarkInfo);
+        } else {
+            if (!this._isSystemCreated(bookmarkInfo)) return;
+            if (Utils.bookmarkIsSeparator(bookmarkInfo)) return;
+            await this._moveBookmarkToDefinedLocation(bookmarkInfo);
         }
     }
 }

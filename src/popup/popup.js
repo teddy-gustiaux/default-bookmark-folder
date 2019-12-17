@@ -69,7 +69,7 @@ async function saveBookmarkTo(info) {
     const { folderId } = info.currentTarget.dataset;
     const activeTab = await Utils.getActiveTab();
     const bookmarkTreeNode = {
-        title: activeTab.title,
+        title: `${activeTab.title}${DBF_INTERAL_INDICATOR}`,
         url: activeTab.url,
         parentId: folderId,
     };
