@@ -2,13 +2,10 @@
   "manifest_version": 2,
   "name": "Default Bookmark Folder",
   "author": "Teddy Gustiaux",
-  "version": "2.10.1",
-
+  "version": "2.11.0",
   "description": "__MSG_manifest_extension_description__",
   "homepage_url": "https://github.com/teddy-gustiaux/default-bookmark-folder",
-
   "default_locale": "en",
-
   "permissions": [
     "bookmarks",
     "activeTab",
@@ -16,7 +13,6 @@
     "storage",
     "menus"
   ],
-
   "page_action": {
     "default_icon": {
       "16": "icons/cross/cross-16.png",
@@ -33,7 +29,6 @@
     "default_title": "__MSG_manifest_page_action_default_title__",
     "browser_style": true
   },
-
   "browser_action": {
     "default_icon": "icons/browser-action/icon-for-light-text.svg",
     "theme_icons": [
@@ -51,7 +46,6 @@
     "default_popup": "popup/popup.html",
     "browser_style": true
   },
-
   "icons": {
     "16": "icons/logo/default-bookmark-folder-16.png",
     "24": "icons/logo/default-bookmark-folder-24.png",
@@ -64,7 +58,6 @@
     "512": "icons/logo/default-bookmark-folder-512.png",
     "1024": "icons/logo/default-bookmark-folder-1024.png"
   },
-
   "background": {
     "scripts": [
       "globals.js",
@@ -81,13 +74,11 @@
       "background/background.js"
     ]
   },
-
   "options_ui": {
     "page": "options/options.html",
     "browser_style": true,
     "open_in_tab": true
   },
-
   "commands": {
     "quick-bookmark": {
       "suggested_key": {
@@ -102,7 +93,6 @@
       "description": "__MSG_manifest_shortcut_browser_action_description__"
     }
   },
-
   "applications": {
     "gecko": {
       "id": "default-bookmark-folder@gustiaux.com",
