@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/teddy-gustiaux/default-bookmark-folder#readme",
   "devDependencies": {
-    "@babel/core": "7.7.5",
+    "@babel/core": "7.7.7",
     "@babel/polyfill": "7.7.0",
     "@babel/preset-env": "7.7.7",
     "babel-plugin-istanbul": "5.2.0",
