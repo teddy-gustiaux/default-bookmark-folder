@@ -64,7 +64,7 @@
     "npm-check-updates": "4.0.1",
     "nyc": "15.0.0",
     "prettier": "1.19.1",
-    "sinon": "8.1.0",
+    "sinon": "8.1.1",
     "sinon-chrome": "3.0.1",
     "web-ext": "4.0.0"
   },
