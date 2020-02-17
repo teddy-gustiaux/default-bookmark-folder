@@ -85,6 +85,9 @@ class BuiltinBookmarking {
             if (!this._isAllTabsSystemCreatedFolder(bookmarkInfo)) return;
             bookmarkTreeNode = this._createMovingPropertiesForAllTabsFolder();
         }
+        if (!Object.prototype.hasOwnProperty.call(bookmarkTreeNode, 'parentId')) {
+            bookmarkTreeNode.parentId = bookmarkInfo.parentId;
+        }
         if (this._nodeIsValidForMoving(bookmarkTreeNode)) {
             browser.bookmarks.move(bookmarkInfo.id, bookmarkTreeNode);
             await this._options.updateLastUsedFolder(bookmarkTreeNode.parentId);
