@@ -1,0 +1,239 @@
+{
+  "manifest_extension_description": {
+    "message": "Ermöglicht die Auswahl des Standardordners zum Speichern von Lesezeichen und das schnelle Speichern von Lesezeichen über ein spezielles Symbol."
+  },
+  "manifest_page_action_default_title": {
+    "message": "Das Symbol ist deaktiviert. Aktivieren Sie es in den Einstellungen des Add-ons."
+  },
+  "manifest_browser_action_default_title": {
+    "message": "Schnelles Setzen von Lesezeichen im Ordner"
+  },
+  "manifest_shortcut_quick_bookmark_description": {
+    "message": "Tastenkürzel zum schnellen Setzen von Lesezeichen auf der aktuellen Seite."
+  },
+  "icon_remove_bookmark": {
+    "message": "Lesezeichen für diese Seite entfernen"
+  },
+  "icon_prevent_removal_bookmark": {
+    "message": "Einstellung zum Verhindern des Entfernens von Lesezeichen aktiviert"
+  },
+  "icon_quick_bookmark_page": {
+    "message": "Lesezeichen für diese Seite schnell speichern"
+  },
+  "icon_quick_bookmark_disabled": {
+    "message": "Das Schnell-Lesezeichensymbol ist deaktiviert"
+  },
+  "context_menu_remove_bookmark": {
+    "message": "Lesezeichen für diese Seite entfernen"
+  },
+  "context_menu_quick_bookmark_page": {
+    "message": "Lesezeichen für diese Seite schnell speichern"
+  },
+  "context_menu_quick_bookmark_bookmark": {
+    "message": "Lesezeichen für diese Seite schnell hier speichern"
+  },
+  "options_folder_last": {
+    "message": "Zuletzt benutzter Ordner (durch eine beliebige Lesezeichen- oder Sortiermethode)"
+  },
+  "welcome_title": {
+    "message": "Willkommen!"
+  },
+  "welcome_thank_you": {
+    "message": "Vielen Dank für die Installation dieses Add-ons!"
+  },
+  "welcome_configure": {
+    "message": "Bitte nehmen Sie sich einen Moment Zeit, um es für Ihre Bedürfnisse zu konfigurieren."
+  },
+  "welcome_message_display": {
+    "message": "Diese Meldung wird nur einmal angezeigt."
+  },
+  "welcome_ok": {
+    "message": "Verstanden!"
+  },
+  "options_title": {
+    "message": "Optionen für Standard-Lesezeichenordner"
+  },
+  "options_thank_you": {
+    "message": "Vielen Dank für die Nutzung dieses Add-ons!"
+  },
+  "options_release_notes": {
+    "message": "Versionshinweise"
+  },
+  "options_ff_built_in": {
+    "message": "In Firefox integrierte Lesezeichen"
+  },
+  "options_quick_bookmark_icon": {
+    "message": "Schnelles Lesezeichen"
+  },
+  "options_about": {
+    "message": "Über"
+  },
+  "options_release_open_changelog": {
+    "message": "Versionshinweise auf GitHub anzeigen, wenn das Add-on aktualisiert wird"
+  },
+  "options_release_changelog_github": {
+    "message": "Die Versionshinweise des Add-ons sind auf GitHub zugänglich (nur auf Englisch)."
+  },
+  "options_release_full_changelog": {
+    "message": "Zugang zum Changelog"
+  },
+  "options_ff_built_in_note": {
+    "message": "Folgende Einstellungen gelten nur für das eingebaute Lesezeichensystem von Firefox. Sie können auswählen, in welchem Ordner (und an welcher Stelle dieses Ordners) die neuen Lesezeichen hinzugefügt werden. Sie betreffen nur Lesezeichen, die über das eingebaute Lesezeichensymbol, die Tastenkombination Strg+D, das Kontextmenü oder das Lesezeichen-Menü hinzugefügt werden."
+  },
+  "options_ff_built_in_folder": {
+    "message": "Wählen Sie, wo neue Lesezeichen hinzugefügt werden sollen:"
+  },
+  "options_ff_built_in_folder_default": {
+    "message": "Kein Ordner ausgewählt (Standard-Lesezeichenspeicherort von Firefox wird verwendet)"
+  },
+  "options_ff_built_in_folder_help_1": {
+    "message": "Hinweis: Der Standard-Lesezeichenspeicherort von Firefox ist"
+  },
+  "options_ff_built_in_folder_help_2": {
+    "message": "Weitere Lesezeichen"
+  },
+  "options_ff_built_in_folder_top": {
+    "message": "Neue Lesezeichen am Anfang des ausgewählten Ordners hinzufügen"
+  },
+  "options_ff_built_in_folder_top_help": {
+    "message": "Wenn deaktiviert, werden neue Lesezeichen am Ende des ausgewählten Ordners hinzugefügt."
+  },
+  "options_ff_built_in_folder_all_tabs_note": {
+    "message": "Folgende Einstellungen gelten nur, wenn Sie mehrere ausgewählte Tabs gleichzeitig mit einem Lesezeichen versehen oder die Funktion \"Tabs als Lesezeichen hinzufügen...\" für alle geöffneten Tabs verwenden. Damit können Sie den Standard-Speicherort des neu erstellten Ordners, der je nach Funktion ein Lesezeichen für alle ausgewählten oder geöffneten Tab enthält, sowie die Position des Ordners an diesem Speicherort überschreiben."
+  },
+  "options_ff_built_in_folder_all_tabs": {
+    "message": "Wählen Sie aus, wo neue Ordner der mit Lesezeichen versehenen Tabs hinzugefügt werden sollen:"
+  },
+  "options_ff_built_in_folder_all_tabs_default": {
+    "message": "Kein Ordner ausgewählt (Standard-Lesezeichenspeicherort von Firefox wird verwendet)"
+  },
+  "options_ff_built_in_folder_all_tabs_help_1": {
+    "message": "Hinweis: Der Standard-Lesezeichenspeicherort von Firefox ist"
+  },
+  "options_ff_built_in_folder_all_tabs_help_2": {
+    "message": "Lesezeichen-Menü"
+  },
+  "options_ff_built_in_folder_all_tabs_top": {
+    "message": "Neue Ordner der mit Lesezeichen versehenen Tabs am Anfang des ausgewählten Ordners hinzufügen"
+  },
+  "options_ff_built_in_folder_all_tabs_top_help": {
+    "message": "Wenn deaktiviert, werden neue Ordner der mit Lesezeichen versehenen Tabs am Ende des ausgewählten Ordners hinzugefügt."
+  },
+  "options_icon_explanation": {
+    "message": "Diese Funktion fügt ein rundes Sternsymbol in der Adressleiste hinzu, um eine Seite mit nur einem Klick mit einem Lesezeichen zu versehen oder es zu entfernen. Wenn die aktuelle Seite mit einem Lesezeichen versehen wird, ändert sich die Symbolfarbe in die unten ausgewählte (Standard ist rot). Hier sind zwei Screenshots als Beispiele: Wenn die aktuelle Seite nicht mit einem Lesezeichen versehen ist und wenn sie es ist."
+  },
+  "options_icon_enable": {
+    "message": "Schnelles Lesezeichensymbol aktivieren"
+  },
+  "options_icon_enable_shortcut": {
+    "message": "Tastenkürzel für schnelles Lesezeichen aktivieren (Alt+Umschalt+D)"
+  },
+  "options_icon_enable_context_menu": {
+    "message": "Schnelles Lesezeichen-Kontextmenü aktivieren"
+  },
+  "options_icon_enable_context_menu_help": {
+    "message": "Schnelles Setzen von Lesezeichen über das Seiten-Kontextmenü oder direkt in einen bestimmten Ordner über dessen Kontextmenü (benötigt Firefox 59+)"
+  },
+  "options_icon_note": {
+    "message": "Folgende Einstellungen gelten nur für die schnelle Lesezeichenfunktion."
+  },
+  "options_icon_folder": {
+    "message": "Wählen Sie, wo neue Lesezeichen hinzugefügt werden sollen:"
+  },
+  "options_icon_folder_default": {
+    "message": "Kein Ordner ausgewählt (Standard-Lesezeichenspeicherort von Firefox wird verwendet)"
+  },
+  "options_icon_folder_help_1": {
+    "message": "Hinweis: Der Standard-Lesezeichenspeicherort von Firefox ist"
+  },
+  "options_icon_folder_help_2": {
+    "message": "Weitere Lesezeichen"
+  },
+  "options_icon_top": {
+    "message": "Neue Lesezeichen am Anfang des ausgewählten Ordners hinzufügen"
+  },
+  "options_icon_top_help": {
+    "message": "Wenn deaktiviert, werden neue Lesezeichen am Ende des ausgewählten Ordners hinzugefügt."
+  },
+  "options_icon_inbox": {
+    "message": "Schnelles Lesezeichensymbol für die Seite nur dann farbig anzeigen, wenn sich alle Lesezeichen dieser Seite in dem oben ausgewählten Ordner befinden"
+  },
+  "options_icon_inbox_help": {
+    "message": "Wenn diese Einstellung aktiviert ist, wird das schnelle Lesezeichensymbol nur dann farbig dargestellt (d. h., die aktuelle Seite wurde mit einem Lesezeichen versehen), wenn sich alle Lesezeichen dieser Seite in dem oben von Ihnen ausgewählten Ordner befinden"
+  },
+  "options_icon_prevent_removal": {
+    "message": "Entfernung von Lesezeichen verhindern"
+  },
+  "options_icon_prevent_removal_help": {
+    "message": "Wenn diese Einstellung aktiviert ist, kann das schnelle Lesezeichensystem (Symbol, Tastenkürzel und Kontextmenü) keine Lesezeichen entfernen, aber immer noch neue erstellen."
+  },
+  "options_icon_color": {
+    "message": "Symbolfarbe wählen, wenn die aktuelle Seite mit einem Lesezeichen versehen ist:"
+  },
+  "options_icon_color_default": {
+    "message": "Standard ist die Symbolfarbe rot, wenn die aktuelle Seite mit einem Lesezeichen versehen ist."
+  },
+  "options_color_black": {
+    "message": "Schwarz"
+  },
+  "options_color_blue": {
+    "message": "Blau"
+  },
+  "options_color_green": {
+    "message": "Grün"
+  },
+  "options_color_orange": {
+    "message": "Orange"
+  },
+  "options_color_purple": {
+    "message": "Violett"
+  },
+  "options_color_red": {
+    "message": "Rot"
+  },
+  "options_color_yellow": {
+    "message": "Gelb"
+  },
+  "options_feedback": {
+    "message": "Feedback"
+  },
+  "options_please_review_1": {
+    "message": "Wenn Ihnen das Add-on gefällt, geben Sie ihm bitte eine positive"
+  },
+  "options_please_review_2": {
+    "message": "Bewertung"
+  },
+  "options_bug_feature_1": {
+    "message": "Wenn Sie einen Fehler melden oder nach einem neuen Feature fragen wollen, können Sie ein Thema eröffnen auf"
+  },
+  "options_bug_feature_2": {
+    "message": "GitHub"
+  },
+  "options_bug_feature_3": {
+    "message": "Wenn Sie noch kein Konto haben, können Sie kostenlos eins erstellen."
+  },
+  "options_version": {
+    "message": "Version:"
+  },
+  "options_author": {
+    "message": "Autor:"
+  },
+  "options_license": {
+    "message": "Lizenz:"
+  },
+  "popup_quick_bookmarking_folder_title": {
+    "message": "Schnelles Setzen von Lesezeichen im Ordner"
+  },
+  "popup_quick_bookmarking_folder_info": {
+    "message": "Ordner suchen und auswählen, in dem die aktuelle Seite als Lesezeichen gespeichert werden soll."
+  },
+  "popup_quick_bookmarking_folder_search": {
+    "message": "Ordner suchen..."
+  },
+  "popup_quick_bookmarking_folder_not_found": {
+    "message": "Es wurden keine passenden Ordner gefunden."
+  },
+  "popup_quick_bookmarking_folder_save_error": {
+    "message": "Beim Speichern des Lesezeichens ist ein Fehler aufgetreten."
+  }
+}
