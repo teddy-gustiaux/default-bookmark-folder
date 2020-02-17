@@ -9,6 +9,16 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate this [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
+# [2.12.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.11.0...v2.12.0) (2020-02-17)
+
+### Features
+
+* add German translation (thanks to @Mr-Update) ([2febf70](https://github.com/teddy-gustiaux/default-bookmark-folder/pull/143/commits/2febf70ac272075106482a1b17772c9b2afb168d))
+
+### Bug Fixes
+
+* add to top does not work with built-in bookmarking default location (close [#172](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/172)) ([fd411c8](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/fd411c8c6bf0a5d7d6cc2e24ccf3c50d8c513186))
+
 # [2.11.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.10.1...v2.11.0) (2019-12-17)
 
 ### Features
