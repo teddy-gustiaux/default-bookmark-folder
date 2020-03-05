@@ -30,7 +30,7 @@
     "browser_style": true
   },
   "browser_action": {
-    "default_icon": "icons/browser-action/icon-for-light-text.svg",
+    "default_icon": "icons/browser-action/icon-for-dark-text.svg",
     "theme_icons": [
       {
         "light": "icons/browser-action/icon-for-light-text.svg",
