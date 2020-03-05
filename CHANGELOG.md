@@ -9,6 +9,12 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate this [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
+## [2.12.1](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.12.0...v2.12.1) (2020-03-05)
+
+### Bug Fixes
+
+* browser action icon color for default theme ([257904e](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/257904e1621197f8880b5c481596e679c676f400))
+
 # [2.12.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.11.0...v2.12.0) (2020-02-17)
 
 ### Features
