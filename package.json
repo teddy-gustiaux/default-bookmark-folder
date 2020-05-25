@@ -60,7 +60,7 @@
     "karma-htmlfile-reporter": "0.3.8",
     "karma-mocha": "2.0.1",
     "karma-mocha-reporter": "2.2.5",
-    "mocha": "7.1.2",
+    "mocha": "7.2.0",
     "npm-check-updates": "6.0.1",
     "nyc": "15.0.1",
     "prettier": "2.0.5",
