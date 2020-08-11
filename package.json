@@ -62,7 +62,7 @@
     "karma-mocha": "2.0.1",
     "karma-mocha-reporter": "2.2.5",
     "mocha": "8.1.1",
-    "npm-check-updates": "7.0.4",
+    "npm-check-updates": "7.1.0",
     "nyc": "15.1.0",
     "prettier": "2.0.5",
     "sinon": "9.0.2",
