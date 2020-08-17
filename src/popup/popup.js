@@ -118,7 +118,6 @@ function performSearch(input) {
         );
         // Add each result to the displayed list or display information message
         if (results.length > 0) {
-            let index = 1;
             results.forEach(result => {
                 const node = document.createElement('li');
                 const link = document.createElement('a');
@@ -132,9 +131,8 @@ function performSearch(input) {
                 node.dataset.folderId = result.id;
                 node.addEventListener('click', info => saveBookmarkTo(info));
                 node.addEventListener('keyup', event => handleKeyboardEnter(event));
-                node.setAttribute('tabindex', index);
+                node.setAttribute('tabindex', 0);
                 displayedResults.appendChild(node);
-                index += 1;
             });
         } else {
             message.style.display = 'block';
