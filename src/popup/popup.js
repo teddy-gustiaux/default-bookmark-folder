@@ -87,6 +87,14 @@ async function saveBookmarkTo(info) {
     }
 }
 
+async function handleKeyboardEnter(event) {
+    // Enter" key
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        event.originalTarget.click();
+    }
+}
+
 // -------------------------------------------------------------------------------------------------
 // SEARCH LOGIC
 // -------------------------------------------------------------------------------------------------
@@ -123,6 +131,7 @@ function performSearch(input) {
                 node.appendChild(link);
                 node.dataset.folderId = result.id;
                 node.addEventListener('click', info => saveBookmarkTo(info));
+                node.addEventListener('keyup', event => handleKeyboardEnter(event));
                 node.setAttribute('tabindex', index);
                 displayedResults.appendChild(node);
                 index += 1;
