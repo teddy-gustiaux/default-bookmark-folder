@@ -49,7 +49,7 @@ function tabManagement() {
     const menuTabs = document.querySelectorAll(TAB_MENU);
     Array.from(menuTabs).forEach(link => {
         // eslint-disable-next-line func-names
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             switchTab(this.dataset.tab);
         });
     });
