@@ -88,10 +88,39 @@ async function saveBookmarkTo(info) {
 }
 
 // -------------------------------------------------------------------------------------------------
+// KEYBOARD NAVIGATION LOGIC
+// -------------------------------------------------------------------------------------------------
+
+async function handleBookmarkKeyboardInput(event) {
+    if (event.code === 'Enter') {
+        event.preventDefault();
+        event.originalTarget.click();
+    } else if (event.code === 'ArrowDown') {
+        const nextIndex = parseInt(event.originalTarget.dataset.index, 10) + 1;
+        const nextResult = document.getElementById(`search-result-${nextIndex}`);
+        if (nextResult) nextResult.focus();
+    } else if (event.code === 'ArrowUp') {
+        const previousIndex = parseInt(event.originalTarget.dataset.index, 10) - 1;
+        const previousResult = document.getElementById(`search-result-${previousIndex}`);
+        if (previousResult) {
+            previousResult.focus();
+        } else {
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) searchInput.focus();
+        }
+    }
+}
+
+// -------------------------------------------------------------------------------------------------
 // SEARCH LOGIC
 // -------------------------------------------------------------------------------------------------
 
-function performSearch(input) {
+function performSearch(event) {
+    if (event.code === 'Enter' || event.code === 'ArrowDown') {
+        const firstSearchResult = document.getElementById('search-result-1');
+        if (firstSearchResult) firstSearchResult.focus();
+        return;
+    }
     // Empty the list of results
     const message = document.getElementById('not-found');
     message.style.display = 'none';
@@ -103,7 +132,7 @@ function performSearch(input) {
         displayedResults.removeChild(displayedResults.firstChild);
     }
     // Perform search based on user input
-    const searchFilter = input.originalTarget.value.toLowerCase();
+    const searchFilter = event.originalTarget.value.toLowerCase();
     if (searchFilter.length > 0) {
         const results = globalBookmarkFolderTreeInformation.filter(bookmarkFolder =>
             bookmarkFolder.title.toLowerCase().includes(searchFilter),
@@ -123,7 +152,10 @@ function performSearch(input) {
                 node.appendChild(link);
                 node.dataset.folderId = result.id;
                 node.addEventListener('click', info => saveBookmarkTo(info));
-                node.setAttribute('tabindex', index);
+                node.addEventListener('keyup', handleBookmarkKeyboardInput);
+                node.setAttribute('tabindex', 0);
+                node.setAttribute('data-index', index);
+                node.setAttribute('id', `search-result-${index}`);
                 displayedResults.appendChild(node);
                 index += 1;
             });
