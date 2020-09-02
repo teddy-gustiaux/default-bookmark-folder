@@ -46,7 +46,7 @@
     "chai": "4.2.0",
     "conventional-changelog-cli": "2.1.0",
     "dirty-chai": "2.0.1",
-    "eslint": "7.8.0",
+    "eslint": "7.8.1",
     "eslint-config-airbnb-base": "14.2.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-import": "2.22.0",
