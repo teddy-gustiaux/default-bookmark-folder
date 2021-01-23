@@ -9,6 +9,18 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate this [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
+# [2.13.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.12.1...v2.13.0) (2020-08-18)
+
+### Features
+
+*  add support for selection using "enter" key in "quick bookmarking to folder" (close [#250](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/250)) ([6cc475d](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/6cc475d599e77d0856086f04708ca385b65de263))
+*  add keyboard navigation in "quick bookmarking to folder" results (close [#270](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/270)) ([196ba20](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/196ba2043802d8ec2e75273b7af6d378d2a5a474))
+
+### Bug Fixes
+
+* incorrect tabulation order in "quick bookmarking to folder" (see [#270](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/270)) ([71a9bc7](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/71a9bc7d71ff827338778dfe4b63994763c0cf6c))
+
+
 ## [2.12.1](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.12.0...v2.12.1) (2020-03-05)
 
 ### Bug Fixes
