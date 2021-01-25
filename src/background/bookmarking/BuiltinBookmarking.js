@@ -11,7 +11,7 @@ class BuiltinBookmarking {
         this._options = options;
     }
 
-    _createMovingPropertiesForBookmark() {
+    _createMovingPropertiesForBookmark(bookmarkInfo) {
         const bookmarkTreeNode = {};
         if (this._options.isBuiltinFolderSet()) {
             if (this._options.isBuiltinFolderLastUsed()) {
@@ -20,7 +20,11 @@ class BuiltinBookmarking {
                 bookmarkTreeNode.parentId = this._options.getBuiltinFolder();
             }
         }
-        if (this._options.addBuiltinBookmarksOnTop()) bookmarkTreeNode.index = 0;
+        if (this._options.addBuiltinBookmarksOnTop()) {
+            bookmarkTreeNode.index = 0;
+        } else {
+            if (bookmarkInfo.index) bookmarkTreeNode.index = bookmarkInfo.index;
+        }
         return bookmarkTreeNode;
     }
 
@@ -60,7 +64,7 @@ class BuiltinBookmarking {
         let bookmarkTreeNode;
         if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
             if (await Utils.bookmarkIsPartOfAllTabsFolder(bookmarkInfo)) return;
-            bookmarkTreeNode = this._createMovingPropertiesForBookmark();
+            bookmarkTreeNode = this._createMovingPropertiesForBookmark(bookmarkInfo);
         } else if (Utils.bookmarkIsFolder(bookmarkInfo)) {
             if (!Utils.bookmarkIsAllTabsSystemCreatedFolder(bookmarkInfo)) return;
             bookmarkTreeNode = this._createMovingPropertiesForAllTabsFolder();

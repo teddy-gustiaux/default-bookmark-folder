@@ -96,7 +96,7 @@
     "message": "Neue Lesezeichen am Anfang des ausgewählten Ordners hinzufügen"
   },
   "options_ff_built_in_folder_top_help": {
-    "message": "Wenn deaktiviert, werden neue Lesezeichen am Ende des ausgewählten Ordners hinzugefügt."
+    "message": "If disabled, new bookmarks will be added to the bottom of the selected folder or where dragged-and-dropped"
   },
   "options_ff_built_in_folder_all_tabs_note": {
     "message": "Folgende Einstellungen gelten nur, wenn Sie mehrere ausgewählte Tabs gleichzeitig mit einem Lesezeichen versehen oder die Funktion \"Tabs als Lesezeichen hinzufügen...\" für alle geöffneten Tabs verwenden. Damit können Sie den Standard-Speicherort des neu erstellten Ordners, der je nach Funktion ein Lesezeichen für alle ausgewählten oder geöffneten Tab enthält, sowie die Position des Ordners an diesem Speicherort überschreiben."
