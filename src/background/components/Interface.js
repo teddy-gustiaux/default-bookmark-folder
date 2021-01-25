@@ -11,7 +11,7 @@ class Interface {
         this._webPage = webPage;
         this._options = options;
         this._firefoxVersion = firefoxVersion;
-        this._isBookmarkContextMenuSupported = firefoxVersion >= '59';
+        this._isBookmarkContextMenuSupported = firefoxVersion >= 59;
     }
 
     updatePageAction() {

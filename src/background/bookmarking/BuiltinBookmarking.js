@@ -11,27 +11,6 @@ class BuiltinBookmarking {
         this._options = options;
     }
 
-    // Check if the bookmark has been created by an automatic built-in method
-    _isSystemCreated(bookmarkInfo) {
-        let isSystemCreated = false;
-        if (
-            Object.prototype.hasOwnProperty.call(bookmarkInfo, 'parentId') &&
-            FIREFOX_DEFAULT_FOLDERS.includes(bookmarkInfo.parentId) &&
-            bookmarkInfo.url !== FIREFOX_BOOKMARK_DEFAULT_MANUAL_URL
-        ) {
-            isSystemCreated = true;
-        }
-        return isSystemCreated;
-    }
-
-    // The default name template is "[Folder Name]", but is language-specific
-    _isAllTabsSystemCreatedFolder(bookmarkInfo) {
-        if (bookmarkInfo.title.length < 3) return false;
-        const firstLetter = bookmarkInfo.title[0];
-        const lastLetter = bookmarkInfo.title[bookmarkInfo.title.length - 1];
-        return firstLetter === '[' && lastLetter === ']';
-    }
-
     _createMovingPropertiesForBookmark() {
         const bookmarkTreeNode = {};
         if (this._options.isBuiltinFolderSet()) {
@@ -80,9 +59,10 @@ class BuiltinBookmarking {
     async _moveBookmarkToDefinedLocation(bookmarkInfo) {
         let bookmarkTreeNode;
         if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
+            if (await Utils.bookmarkIsPartOfAllTabsFolder(bookmarkInfo)) return;
             bookmarkTreeNode = this._createMovingPropertiesForBookmark();
         } else if (Utils.bookmarkIsFolder(bookmarkInfo)) {
-            if (!this._isAllTabsSystemCreatedFolder(bookmarkInfo)) return;
+            if (!Utils.bookmarkIsAllTabsSystemCreatedFolder(bookmarkInfo)) return;
             bookmarkTreeNode = this._createMovingPropertiesForAllTabsFolder();
         }
         if (!Object.prototype.hasOwnProperty.call(bookmarkTreeNode, 'parentId')) {
@@ -98,8 +78,9 @@ class BuiltinBookmarking {
         if (Utils.bookmarkIsAddonInternal(bookmarkInfo)) {
             await this._renameBookmark(bookmarkInfo);
         } else {
-            if (!this._isSystemCreated(bookmarkInfo)) return;
             if (Utils.bookmarkIsSeparator(bookmarkInfo)) return;
+            if (Utils.bookmarkIsBlankWebPage(bookmarkInfo)) return;
+            if (Utils.bookmarkIsRegularFolder(bookmarkInfo)) return;
             await this._moveBookmarkToDefinedLocation(bookmarkInfo);
         }
     }
