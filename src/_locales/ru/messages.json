@@ -86,17 +86,11 @@
   "options_ff_built_in_folder_default": {
     "message": "Папка не выбрана (Firefox использует расположение по умолчанию)"
   },
-  "options_ff_built_in_folder_help_1": {
-    "message": "Обратите внимание: по умолчанию для этих целей Firefox использует"
-  },
-  "options_ff_built_in_folder_help_2": {
-    "message": "Другие закладки"
-  },
   "options_ff_built_in_folder_top": {
     "message": "Добавлять новые закладки на первую позицию (внутри выбранной папки)"
   },
   "options_ff_built_in_folder_top_help": {
-    "message": "Если эта настройка отключена, новые закладки будут добавляться после уже имеющихся элементов (в выбранной папке)"
+    "message": "If disabled, new bookmarks will be added to the bottom of the selected folder or where dragged-and-dropped"
   },
   "options_ff_built_in_folder_all_tabs_note": {
     "message": "The settings below only apply when bookmarking multiple selected tabs at once or when using the \"Bookmark All Tabs...\" feature for all open tabs. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected or open tabs (depending on the feature), as well as the position of the folder in this location."
@@ -106,12 +100,6 @@
   },
   "options_ff_built_in_folder_all_tabs_default": {
     "message": "Папка не выбрана (Firefox использует расположение по умолчанию)"
-  },
-  "options_ff_built_in_folder_all_tabs_help_1": {
-    "message": "Note: Firefox's default location for folders of bookmarked tabs is"
-  },
-  "options_ff_built_in_folder_all_tabs_help_2": {
-    "message": "Меню закладок"
   },
   "options_ff_built_in_folder_all_tabs_top": {
     "message": "Add new folders of bookmarked tabs to the top of the selected folder"
@@ -142,12 +130,6 @@
   },
   "options_icon_folder_default": {
     "message": "Папка не выбрана (используется расположение по умолчанию)"
-  },
-  "options_icon_folder_help_1": {
-    "message": "Обратите внимание: по умолчанию для этих целей используются"
-  },
-  "options_icon_folder_help_2": {
-    "message": "Другие закладки"
   },
   "options_icon_top": {
     "message": "Добавлять новые закладки на первую позицию (внутри выбранной папки)"

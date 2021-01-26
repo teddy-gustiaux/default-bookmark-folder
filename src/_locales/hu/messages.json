@@ -86,17 +86,11 @@
   "options_ff_built_in_folder_default": {
     "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzõzési helyét használja)"
   },
-  "options_ff_built_in_folder_help_1": {
-    "message": "Megjegyzés: A Firefox alapértelmezett könyvjelzõzési helye ez:"
-  },
-  "options_ff_built_in_folder_help_2": {
-    "message": "Egyéb könyvjelzõk"
-  },
   "options_ff_built_in_folder_top": {
     "message": "Új könyvjelzõk hozzáadása a kiválasztott mappa tetejéhez"
   },
   "options_ff_built_in_folder_top_help": {
-    "message": "Ha tiltott, akkor az új könyvjelzõk a kiválasztott mappa aljára kerülnek"
+    "message": "If disabled, new bookmarks will be added to the bottom of the selected folder or where dragged-and-dropped"
   },
   "options_ff_built_in_folder_all_tabs_note": {
     "message": "The settings below only apply when bookmarking multiple selected tabs at once or when using the \"Bookmark All Tabs...\" feature for all open tabs. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected or open tabs (depending on the feature), as well as the position of the folder in this location."
@@ -106,12 +100,6 @@
   },
   "options_ff_built_in_folder_all_tabs_default": {
     "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzõzési helye)"
-  },
-  "options_ff_built_in_folder_all_tabs_help_1": {
-    "message": "Note: Firefox's default location for folders of bookmarked tabs is"
-  },
-  "options_ff_built_in_folder_all_tabs_help_2": {
-    "message": "Könyvjelzõk menü"
   },
   "options_ff_built_in_folder_all_tabs_top": {
     "message": "Add new folders of bookmarked tabs to the top of the selected folder"
@@ -142,12 +130,6 @@
   },
   "options_icon_folder_default": {
     "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzõzési helye)"
-  },
-  "options_icon_folder_help_1": {
-    "message": "Megjegyzés: A Firefox alapértelmezett könyvjelzõzési helye ez:"
-  },
-  "options_icon_folder_help_2": {
-    "message": "Más könyvjelzõk"
   },
   "options_icon_top": {
     "message": "Új könyvjelzõk hozzáadása a kiválasztott mappa tetejéhez"
