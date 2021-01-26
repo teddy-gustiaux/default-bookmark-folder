@@ -136,6 +136,11 @@ a.navbar-item:hover {
     color: var(--font-color);
 }
 
+.info-message {
+    display: flex;
+    align-items: center;
+}
+
 #tab_container .container-item {
     display: none;
 }
@@ -244,6 +249,17 @@ hr {
     fill: var(--font-color);
     width: 1.2rem;
     height: 1.2rem;
+}
+
+.svg-icon-regular {
+    display: inline-flex;
+    align-self: center;
+}
+
+.svg-icon-regular svg {
+    height:1.2rem;
+    width:1.2rem;
+    fill: var(--font-color);
 }
 
 /* ======================== */

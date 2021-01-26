@@ -86,12 +86,6 @@
   "options_ff_built_in_folder_default": {
     "message": "Kein Ordner ausgewählt (Standard-Lesezeichenspeicherort von Firefox wird verwendet)"
   },
-  "options_ff_built_in_folder_help_1": {
-    "message": "Hinweis: Der Standard-Lesezeichenspeicherort von Firefox ist"
-  },
-  "options_ff_built_in_folder_help_2": {
-    "message": "Weitere Lesezeichen"
-  },
   "options_ff_built_in_folder_top": {
     "message": "Neue Lesezeichen am Anfang des ausgewählten Ordners hinzufügen"
   },
@@ -106,12 +100,6 @@
   },
   "options_ff_built_in_folder_all_tabs_default": {
     "message": "Kein Ordner ausgewählt (Standard-Lesezeichenspeicherort von Firefox wird verwendet)"
-  },
-  "options_ff_built_in_folder_all_tabs_help_1": {
-    "message": "Hinweis: Der Standard-Lesezeichenspeicherort von Firefox ist"
-  },
-  "options_ff_built_in_folder_all_tabs_help_2": {
-    "message": "Lesezeichen-Menü"
   },
   "options_ff_built_in_folder_all_tabs_top": {
     "message": "Neue Ordner der mit Lesezeichen versehenen Tabs am Anfang des ausgewählten Ordners hinzufügen"
@@ -142,12 +130,6 @@
   },
   "options_icon_folder_default": {
     "message": "Kein Ordner ausgewählt (Standard-Lesezeichenspeicherort von Firefox wird verwendet)"
-  },
-  "options_icon_folder_help_1": {
-    "message": "Hinweis: Der Standard-Lesezeichenspeicherort von Firefox ist"
-  },
-  "options_icon_folder_help_2": {
-    "message": "Weitere Lesezeichen"
   },
   "options_icon_top": {
     "message": "Neue Lesezeichen am Anfang des ausgewählten Ordners hinzufügen"

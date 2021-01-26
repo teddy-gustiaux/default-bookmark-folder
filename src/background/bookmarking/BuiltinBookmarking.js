@@ -22,9 +22,8 @@ class BuiltinBookmarking {
         }
         if (this._options.addBuiltinBookmarksOnTop()) {
             bookmarkTreeNode.index = 0;
-        } else {
-            if ( Object.prototype.hasOwnProperty.call(bookmarkInfo, 'index')) bookmarkTreeNode.index = bookmarkInfo.index;
-        }
+        } else if (Object.prototype.hasOwnProperty.call(bookmarkInfo, 'index'))
+            bookmarkTreeNode.index = bookmarkInfo.index;
         return bookmarkTreeNode;
     }
 

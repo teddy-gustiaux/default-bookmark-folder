@@ -86,12 +86,6 @@
   "options_ff_built_in_folder_default": {
     "message": "Pas de dossier sélectionné (le dossier par défaut de Firefox sera utilisé)"
   },
-  "options_ff_built_in_folder_help_1": {
-    "message": "Note : le dossier par défaut de Firefox pour les marque-pages est"
-  },
-  "options_ff_built_in_folder_help_2": {
-    "message": "Autres marque-pages"
-  },
   "options_ff_built_in_folder_top": {
     "message": "Ajouter les nouveaux marque-pages en haut du dossier sélectionné"
   },
@@ -106,12 +100,6 @@
   },
   "options_ff_built_in_folder_all_tabs_default": {
     "message": "Pas de dossier sélectionné (le dossier par défaut de Firefox sera utilisé)"
-  },
-  "options_ff_built_in_folder_all_tabs_help_1": {
-    "message": "Note : le dossier par défaut de Firefox pour les dossiers d’onglets marqués est"
-  },
-  "options_ff_built_in_folder_all_tabs_help_2": {
-    "message": "Menu des marque-pages"
   },
   "options_ff_built_in_folder_all_tabs_top": {
     "message": "Ajouter les nouveaux dossiers d’onglets marqués en haut du dossier sélectionné"
@@ -142,12 +130,6 @@
   },
   "options_icon_folder_default": {
     "message": "Pas de dossier sélectionné (le dossier par défaut de Firefox sera utilisé)"
-  },
-  "options_icon_folder_help_1": {
-    "message": "Note: le dossier par défaut de Firefox pour les marque-pages est"
-  },
-  "options_icon_folder_help_2": {
-    "message": "Autres marque-pages"
   },
   "options_icon_top": {
     "message": "Ajouter les nouveaux marque-pages en haut du dossier sélectionné"
