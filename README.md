@@ -51,7 +51,11 @@ Please refer to the [list](https://github.com/teddy-gustiaux/default-bookmark-fo
 
 ### Support
 
-If you want to report a bug or ask for a new feature, you can open an issue on [GitHub](https://github.com/teddy-gustiaux/default-bookmark-folder/issues). If you do not have an account, you can create one for free.
+If you want to report a bug or help with translations, you can open an issue on [GitHub](https://github.com/teddy-gustiaux/default-bookmark-folder/issues). If you do not have an account, you can create one for free.
+
+### Changelog
+
+Please refer to the <a href="https://github.com/teddy-gustiaux/default-bookmark-folder/blob/master/CHANGELOG.md">full changelog</a> on GitHub.
 
 ### Attribution
 
