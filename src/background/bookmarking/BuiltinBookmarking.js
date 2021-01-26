@@ -23,7 +23,7 @@ class BuiltinBookmarking {
         if (this._options.addBuiltinBookmarksOnTop()) {
             bookmarkTreeNode.index = 0;
         } else {
-            if (bookmarkInfo.index) bookmarkTreeNode.index = bookmarkInfo.index;
+            if ( Object.prototype.hasOwnProperty.call(bookmarkInfo, 'index')) bookmarkTreeNode.index = bookmarkInfo.index;
         }
         return bookmarkTreeNode;
     }
