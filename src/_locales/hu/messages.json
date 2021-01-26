@@ -9,7 +9,10 @@
     "message": "Quick bookmarking to folder"
   },
   "manifest_shortcut_quick_bookmark_description": {
-    "message": "Shortcut to quickly bookmark the current page."
+    "message": "Quickly bookmark the current page"
+  },
+  "manifest_shortcut_browser_action_description": {
+    "message": "Quickly bookmark to a folder"
   },
   "icon_remove_bookmark": {
     "message": "Remove the bookmark(s) for this page"
@@ -204,16 +207,16 @@
     "message": "Licenc:"
   },
   "popup_quick_bookmarking_folder_title": {
-    "message": "Quick bookmarking to folder"
+    "message": "Quick bookmarking to folder:"
   },
   "popup_quick_bookmarking_folder_info": {
     "message": "Search and select a folder to bookmark the current page into it."
   },
   "popup_quick_bookmarking_folder_search": {
-    "message": "Search folders..."
+    "message": "Search folder..."
   },
   "popup_quick_bookmarking_folder_not_found": {
-    "message": "No matching folders were found."
+    "message": "No matching folder was found."
   },
   "popup_quick_bookmarking_folder_save_error": {
     "message": "An error happened when trying to save the bookmark."
