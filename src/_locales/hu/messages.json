@@ -1,48 +1,48 @@
 {
   "manifest_extension_description": {
-    "message": "Allows you to choose the default bookmark location folder and quickly bookmark pages there via a dedicated icon."
+    "message": "Lehetővé teszi az alapértelmezett könyvjelzőhely-mappa kiválasztását, valamint az oldalak egy kattintásos könyvjelzőzését egy erre szolgáló ikon segítségével."
   },
   "manifest_page_action_default_title": {
-    "message": "The icon is disabled. Enable it in the add-on settings."
+    "message": "Az ikon letiltva. Engedélyezze a kiegészítő beállításaiban."
   },
   "manifest_browser_action_default_title": {
-    "message": "Quick bookmarking to folder"
+    "message": "Gyors könyvjelzőzés mappába"
   },
   "manifest_shortcut_quick_bookmark_description": {
-    "message": "Shortcut to quickly bookmark the current page."
+    "message": "Gyorsbillentyű a megnyitott oldal gyors könyvjelzőzéséhez."
   },
   "icon_remove_bookmark": {
-    "message": "Remove the bookmark(s) for this page"
+    "message": "Az oldal könyvjelzőinek eltávolítása"
   },
   "icon_prevent_removal_bookmark": {
     "message": "Könyvjelzõ eltávolítás megakadályozása aktiválva"
   },
   "icon_quick_bookmark_page": {
-    "message": "Lap gyors könyvjelzõzése"
+    "message": "Lap gyors könyvjelzőzése"
   },
   "icon_quick_bookmark_disabled": {
-    "message": "A gyors könyvjelzõzés ikon tiltott"
+    "message": "A gyors könyvjelzőzés ikon tiltott"
   },
   "context_menu_remove_bookmark": {
-    "message": "Remove the bookmark(s) for this page"
+    "message": "Az oldal könyvjelzőinek eltávolítása"
   },
   "context_menu_quick_bookmark_page": {
-    "message": "Quickly bookmark this page"
+    "message": "Lap gyors könyvjelzőzése"
   },
   "context_menu_quick_bookmark_bookmark": {
-    "message": "Quickly bookmark this page there"
+    "message": "Az oldal gyors könyvjelzőzése"
   },
   "options_folder_last": {
-    "message": "Last used folder (by any bookmarking or sorting method)"
+    "message": "Legutóbb használt mappa (bármilyen könyvjelzővel vagy rendezéssel)"
   },
   "welcome_title": {
     "message": "Üdvözöljük!"
   },
   "welcome_thank_you": {
-    "message": "Köszönjük, hogy a telepíti ezt a kiegészítõt!"
+    "message": "Köszönjük, hogy a telepíti ezt a kiegészítőt!"
   },
   "welcome_configure": {
-    "message": "Szánjon rá egy pillanatot, hogy a saját igényeire szabja."
+    "message": "Szánjon rá egy kis időt, hogy a saját igényeire szabja."
   },
   "welcome_message_display": {
     "message": "Ez az üzenet csak egyszer lesz megjelenítve."
@@ -51,109 +51,109 @@
     "message": "Megvan!"
   },
   "options_title": {
-    "message": "Alapértelmezett könyvjelzõmappa beállítások"
+    "message": "Alapértelmezett könyvjelzőmappa beállítások"
   },
   "options_thank_you": {
-    "message": "Köszönjük, hogy használja ezt a kiegészítõt!"
+    "message": "Köszönjük, hogy használja ezt a kiegészítőt!"
   },
   "options_release_notes": {
     "message": "Kiadási megjegyzések"
   },
   "options_ff_built_in": {
-    "message": "A Firefox beépített könyvjelzõzése"
+    "message": "A Firefox beépített könyvjelzőzése"
   },
   "options_quick_bookmark_icon": {
-    "message": "Gyors könyvjelzõzés"
+    "message": "Gyors könyvjelzőzés"
   },
   "options_about": {
-    "message": "About"
+    "message": "Névjegy"
   },
   "options_release_open_changelog": {
-    "message": "Show the release notes on GitHub when the add-on is updated"
+    "message": "A kiegészítő frissítésekor jelenítse meg a kiadási megjegyzéseket a GitHubon"
   },
   "options_release_changelog_github": {
-    "message": "The release notes of the add-on are accessible on GitHub (in English only)."
+    "message": "A változási jegyzék a GitHubon érhető el (csak angol nyelven)."
   },
   "options_release_full_changelog": {
-    "message": "Access the changelog"
+    "message": "A változási jegyzék megtekintése"
   },
   "options_ff_built_in_note": {
-    "message": "The settings below only apply to the built-in bookmarking system of Firefox. They allow you to select in which folder (and in which position of this folder) the new bookmarks will be added. It only affects bookmarks added through the built-in Firefox bookmark icon or shortcut (Ctrl+D), through the context menu or via the bookmarks menu."
+    "message": "Az alábbi beállítások csak a Firefox beépített könyvjelző rendszerére vonatkoznak. Ezek lehetővé teszik, hogy kiválassza, melyik mappában (és ennek a mappának melyik pozíciójában) adja hozzá az új könyvjelzőket. Csak a beépített Firefox könyvjelzőikonon vagy parancsikonon (Ctrl + D), a helyi menüben vagy a könyvjelzők menüben keresztül hozzáadott könyvjelzőket érinti.."
   },
   "options_ff_built_in_folder": {
-    "message": "Válassza ki, hogy az új könyvjelzõk hova legyenek hozzáadva:"
+    "message": "Válassza ki, hogy az új könyvjelzõk hova kerüljenek:"
   },
   "options_ff_built_in_folder_default": {
     "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzõzési helyét használja)"
   },
   "options_ff_built_in_folder_top": {
-    "message": "Új könyvjelzõk hozzáadása a kiválasztott mappa tetejéhez"
+    "message": "Új könyvjelzők hozzáadása a kiválasztott mappa tetejéhez"
   },
   "options_ff_built_in_folder_top_help": {
     "message": "If disabled, new bookmarks will be added to the bottom of the selected folder or where dragged-and-dropped"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "The settings below only apply when bookmarking multiple selected tabs at once or when using the \"Bookmark All Tabs...\" feature for all open tabs. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected or open tabs (depending on the feature), as well as the position of the folder in this location."
+    "message": "Az alábbi beállítások csak akkor alkalmazhatók, ha egyszerre több kiválasztott lapot könyvjelzővel látnak el, vagy ha az összes nyitott fülnél a \"Minden lap könyvjelzőbe ... \" funkciót használják. Lehetővé teszi az újonnan létrehozott mappa alapértelmezett helyének felülírását, amely magában foglal egy könyvjelzőt a kiválasztott vagy megnyitott fülek mindegyikéhez (a funkciótól függően), valamint a mappa helyzetét ezen a helyen."
   },
   "options_ff_built_in_folder_all_tabs": {
-    "message": "Select where new folders of bookmarked tabs will be added:"
+    "message": "Válassza ki, hová kerüljenek a könyvjelzővel ellátott lapok új mappái:"
   },
   "options_ff_built_in_folder_all_tabs_default": {
-    "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzõzési helye)"
+    "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzőzési helye)"
   },
   "options_ff_built_in_folder_all_tabs_top": {
-    "message": "Add new folders of bookmarked tabs to the top of the selected folder"
+    "message": "Új könyvjelzők hozzáadása a kiválasztott mappa tetejére"
   },
   "options_ff_built_in_folder_all_tabs_top_help": {
-    "message": "If disabled, new folders of bookmarked tabs will be added to the bottom of the selected folder"
+    "message": "Ha ki van kapcsolva, akkor a könyvjelzővel ellátott fülek új mappái a kiválasztott mappa aljára kerülnek"
   },
   "options_icon_explanation": {
-    "message": "Ez a funkció egy gyors könyvjelzõzés ikont tesz a címsávhoz, a könyvjelzõzés (és megszüntetése) csak egy kattintás. Az ikon egy kör alakú csillag ikon a címsávban. Ha a jelenlegi oldal könyvjelzõzött, akkor az ikon a kiválasztott színre vált (alapértelmezetten piros). Itt van két képernyõkép példaként: egyiken a jelenlegi oldal nincs könyvjelzõzve, a másikon pedig igen."
+    "message": "Ez a funkció egy gyors könyvjelzőzés ikont tesz a címsávhoz, a könyvjelzőzés (és megszüntetése) csak egy kattintás. Az ikon egy kör alakú csillag ikon a címsávban. Ha a jelenlegi oldal könyvjelzőzött, akkor az ikon a kiválasztott színre vált (alapértelmezetten vörös). Itt van két képernyőkép példaként: egyiken a jelenlegi oldal nincs könyvjelzőzve, a másikon pedig igen."
   },
   "options_icon_enable": {
-    "message": "Gyors könyvjelzõzés ikon engedélyezése"
+    "message": "Gyors könyvjelzőzés ikon engedélyezése"
   },
   "options_icon_enable_shortcut": {
-    "message": "Gyors könyvjelzõzés gyorsbillentyû engedélyezése (Alt+Shift+D)"
+    "message": "Gyors könyvjelzőzés gyorsbillentyû engedélyezése (Alt+Shift+D)"
   },
   "options_icon_enable_context_menu": {
-    "message": "Enable the quick bookmark context menu"
+    "message": "Gyors könyvjelző helyi menü engedélyezése"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Quickly bookmark via the page context menu, or directly into a specific folder via its context menu (requires Firefox 59+)"
+    "message": "Gyors könyvjelző az oldal helyi menüjén keresztül, vagy közvetlenül egy adott mappába a helyi menü segítségével (Firefox 59+ szükséges)"
   },
   "options_icon_note": {
-    "message": "A lenti beállítások csak a Gyors könyvjelzõzés."
+    "message": "A lenti beállítások csak a Gyors könyvjelzőzésre vonatkoznak."
   },
   "options_icon_folder": {
-    "message": "Válassza ki, hogy az új könyvjelzõk hová kerüljenek:"
+    "message": "Válassza ki, hogy az új könyvjelzők hová kerüljenek:"
   },
   "options_icon_folder_default": {
-    "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzõzési helye)"
+    "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzőzési helye)"
   },
   "options_icon_top": {
     "message": "Új könyvjelzõk hozzáadása a kiválasztott mappa tetejéhez"
   },
   "options_icon_top_help": {
-    "message": "Ha tiltott, akkor az új könyvjelzõk a kiválasztott mappa aljára kerülnek"
+    "message": "Ha tiltott, akkor az új könyvjelzők a kiválasztott mappa aljára kerülnek"
   },
   "options_icon_inbox": {
-    "message": "Only show page as bookmarked if all the bookmarks of this page are in the folder selected above"
+    "message": "Az oldal csak akkor jelenik meg könyvjelzőként, ha az oldal összes könyvjelzője a fent kiválasztott mappában található"
   },
   "options_icon_inbox_help": {
-    "message": "If this setting is enabled, the quick bookmark icon will be colored (i.e. the current page has been bookmarked) only if all the bookmarks of this page are located in the folder you have selected above"
+    "message": "Ha ez a beállítás engedélyezve van, akkor a gyors könyvjelző ikon csak akkor lesz színes (azaz az aktuális oldalt könyvjelzőzve megjelölő), ha az oldal összes könyvjelzője a fent kiválasztott mappában található"
   },
   "options_icon_prevent_removal": {
-    "message": "Könyvjelzõk eltávolításának megakadályozása"
+    "message": "Könyvjelzők eltávolításának megakadályozása"
   },
   "options_icon_prevent_removal_help": {
-    "message": "If this setting is enabled, the quick bookmarking system (icon, shortcut and context menu) will not be able to remove bookmarks (but can still create new ones)"
+    "message": "Ha ez a beállítás engedélyezve van, a gyorskönyvjelzőző rendszer (ikon, parancsikon és helyi menü) nem tudja eltávolítani a könyvjelzőket (de újak továbbra is létrehozhatóak)"
   },
   "options_icon_color": {
-    "message": "Válasz ki az ikonszínt, ha a jelenlegi oldal könyvjelzõzésre kerül:"
+    "message": "Válassza ki az ikonszínt, ha a jelenlegi oldal könyvjelzőzésre került:"
   },
   "options_icon_color_default": {
-    "message": "Alapértelmezetten az ikonszín vörös, ha a jelenlegi oldal könyvjelzõzésre kerül"
+    "message": "Alapértelmezetten az ikonszín vörös, ha a jelenlegi oldal könyvjelzőzésre kerül"
   },
   "options_color_black": {
     "message": "Fekete"
@@ -180,7 +180,7 @@
     "message": "Visszajelzés"
   },
   "options_please_review_1": {
-    "message": "Ha tetszik önnek ez a kiegészítõ, akkor kérjük adjon pozitív"
+    "message": "Ha tetszik önnek ez a kiegészítő, akkor kérjük adjon pozitív"
   },
   "options_please_review_2": {
     "message": "értékelést"
@@ -204,18 +204,18 @@
     "message": "Licenc:"
   },
   "popup_quick_bookmarking_folder_title": {
-    "message": "Quick bookmarking to folder"
+    "message": "Gyors könyvjelzőzés mappába"
   },
   "popup_quick_bookmarking_folder_info": {
-    "message": "Search and select a folder to bookmark the current page into it."
+    "message": "Mappa keresése és kiválasztása az oldal könyvjelzőbe mentéséhez."
   },
   "popup_quick_bookmarking_folder_search": {
-    "message": "Search folders..."
+    "message": "Mappák keresése..."
   },
   "popup_quick_bookmarking_folder_not_found": {
-    "message": "No matching folders were found."
+    "message": "Nem található megfelelő mappa."
   },
   "popup_quick_bookmarking_folder_save_error": {
-    "message": "An error happened when trying to save the bookmark."
+    "message": "Hiba történt a könyvjelző mentése közben."
   }
 }
