@@ -86,17 +86,11 @@
   "options_ff_built_in_folder_default": {
     "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzõzési helyét használja)"
   },
-  "options_ff_built_in_folder_help_1": {
-    "message": "Megjegyzés: A Firefox alapértelmezett könyvjelzőzési helye ez:"
-  },
-  "options_ff_built_in_folder_help_2": {
-    "message": "Egyéb könyvjelzők"
-  },
   "options_ff_built_in_folder_top": {
     "message": "Új könyvjelzők hozzáadása a kiválasztott mappa tetejéhez"
   },
   "options_ff_built_in_folder_top_help": {
-    "message": "Ha tiltott, akkor az új könyvjelzők a kiválasztott mappa aljára kerülnek"
+    "message": "If disabled, new bookmarks will be added to the bottom of the selected folder or where dragged-and-dropped"
   },
   "options_ff_built_in_folder_all_tabs_note": {
     "message": "Az alábbi beállítások csak akkor alkalmazhatók, ha egyszerre több kiválasztott lapot könyvjelzővel látnak el, vagy ha az összes nyitott fülnél a \"Minden lap könyvjelzőbe ... \" funkciót használják. Lehetővé teszi az újonnan létrehozott mappa alapértelmezett helyének felülírását, amely magában foglal egy könyvjelzőt a kiválasztott vagy megnyitott fülek mindegyikéhez (a funkciótól függően), valamint a mappa helyzetét ezen a helyen."
@@ -106,12 +100,6 @@
   },
   "options_ff_built_in_folder_all_tabs_default": {
     "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzőzési helye)"
-  },
-  "options_ff_built_in_folder_all_tabs_help_1": {
-    "message": "Megjegyzés: A Firefox alapértelmezett helye a könyvjelzővel ellátott lapokhoz:"
-  },
-  "options_ff_built_in_folder_all_tabs_help_2": {
-    "message": "Könyvjelzők menü"
   },
   "options_ff_built_in_folder_all_tabs_top": {
     "message": "Új könyvjelzők hozzáadása a kiválasztott mappa tetejére"
@@ -142,12 +130,6 @@
   },
   "options_icon_folder_default": {
     "message": "Nincs mappa kiválasztva (a Firefox alapértelmezett könyvjelzőzési helye)"
-  },
-  "options_icon_folder_help_1": {
-    "message": "Megjegyzés: A Firefox alapértelmezett könyvjelzőzési helye ez:"
-  },
-  "options_icon_folder_help_2": {
-    "message": "Más könyvjelzők"
   },
   "options_icon_top": {
     "message": "Új könyvjelzõk hozzáadása a kiválasztott mappa tetejéhez"

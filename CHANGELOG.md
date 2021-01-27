@@ -9,6 +9,22 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate this [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
+# [3.0.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.13.0...v3.0.0) (2021-01-25)
+
+### BREAKING CHANGES
+
+* bookmarks created by drag-and-drop will automatically be moved to the configured default folder (if option is enabled) instead of staying where dragged (moving bookmarks is not affected).
+
+This regression cannot be fixed in the current state of the APIs.
+See [#399](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/399).
+
+### Bug Fixes
+
+* support Firefox internal changes related to "2020H2 bookmarks improvements" ([da2e46a](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/da2e46a4a95e34ff9695d587741a80970ee93819)), closes [#356](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/356) [#399](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/399) [#400](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/400)
+* remove notes regarding default folders and add link to known issues ([ca2cc07](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/ca2cc076c8864f13d1218a58ff3131e348a093c3))
+* retain position when drag-and-dropping new bookmark ([28d6b85](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/28d6b85af791e09d82631a4d062ebc94db27fb79))
+* keeping index even if "0" when moving bookmarks ([cf4655e](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/cf4655e2b7795f4fe6e1c1196086ec8369685683))
+
 # [2.13.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.12.1...v2.13.0) (2020-08-18)
 
 ### Features
