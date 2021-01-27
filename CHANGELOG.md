@@ -9,6 +9,16 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate this [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
+# [3.1.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v3.0.0...v3.1.0) (2021-01-26)
+
+### Features
+
+* update Hungarian translation (thanks to @efi99) ([4d525b6](https://github.com/teddy-gustiaux/default-bookmark-folder/pull/392/commits/4d525b672e0d63b02831c10c743a7d99579d6e2f))
+
+### Bug Fixes
+
+* bookmark added at wrong index (closes [#405](https://github.com/teddy-gustiaux/default-bookmark-folder/issues/405)) ([f988f1f](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/f988f1f2196099eb952bd1f345b96d155feaf87b))
+
 # [3.0.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v2.13.0...v3.0.0) (2021-01-25)
 
 ### BREAKING CHANGES
