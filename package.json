@@ -41,7 +41,7 @@
   "devDependencies": {
     "@babel/core": "7.14.0",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.14.0",
+    "@babel/preset-env": "7.14.1",
     "babel-plugin-istanbul": "6.0.0",
     "chai": "4.3.4",
     "conventional-changelog-cli": "2.1.1",
