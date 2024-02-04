@@ -81,6 +81,8 @@ class BuiltinBookmarking {
             if (Utils.bookmarkIsSeparator(bookmarkInfo)) return;
             if (Utils.bookmarkIsBlankWebPage(bookmarkInfo)) return;
             if (Utils.bookmarkIsRegularFolder(bookmarkInfo)) return;
+            const bookmarkIsCurrentPage = await Utils.bookmarkIsCurrentPage(bookmarkInfo);
+            if (!bookmarkIsCurrentPage) return;
             await this._moveBookmarkToDefinedLocation(bookmarkInfo);
         }
     }

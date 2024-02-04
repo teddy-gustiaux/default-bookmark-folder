@@ -149,6 +149,16 @@ class Utils {
         return isRegularFolder;
     }
 
+    // Indicate if a bookmark object is for the current page
+    static async bookmarkIsCurrentPage(bookmarkInfo) {
+        let isCurrentPage = false;
+        if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
+            const newlyActiveTab = await Utils.getActiveTab();
+            isCurrentPage = bookmarkInfo.url === newlyActiveTab.url;
+        }
+        return isCurrentPage;
+    }
+
     // Indicate if the provided bookmarks are all in the specified folder
     static allBookmarksAreInFolder(folderId, bookmarks) {
         let result = true;
