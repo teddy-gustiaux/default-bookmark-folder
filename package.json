@@ -64,6 +64,6 @@
     "prettier": "3.2.5",
     "sinon": "17.0.1",
     "sinon-chrome": "3.0.1",
-    "web-ext": "^0.0.1"
+    "web-ext": "7.11.0"
   }
 }
