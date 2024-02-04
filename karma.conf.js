@@ -20,7 +20,7 @@ module.exports = config => {
         basePath: '',
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['mocha', 'chai', 'dirty-chai'],
+        frameworks: ['mocha', 'chai'],
         // list of files / patterns to load in the browser
         files: [
             // Babel polyfill (to be used by the Babel preprocessor)
