@@ -8,63 +8,63 @@
 
 // Boilerplate of all add-on options
 const OPTIONS_BOILERPLATE = {
-    [THEME]: {
-        [DARK_THEME_ENABLED]: 'boolean',
-    },
-    [RELEASE]: {
-        [OPEN_NOTES]: 'boolean',
-    },
-    [BUILTIN]: {
-        [FOLDER]: 'string',
-        [TOP]: 'boolean',
-    },
-    [ALLTABS]: {
-        [FOLDER]: 'string',
-        [TOP]: 'boolean',
-    },
-    [ICON]: {
-        [ENABLED]: 'boolean',
-        [SHORTCUT]: 'boolean',
-        [CONTEXT_MENU]: 'boolean',
-        [FOLDER]: 'string',
-        [TOP]: 'boolean',
-        [PREVENT_REMOVAL]: 'boolean',
-        [INBOX]: 'boolean',
-        [COLOR]: 'string',
-    },
-    [MISC]: {
-        [LAST_USED_FOLDER]: 'string',
-    },
-    [NOTIFICATION]: 'boolean', // Welcome message displayed (at least once)
-    [TAB]: 'integer',
+	[THEME]: {
+		[DARK_THEME_ENABLED]: 'boolean',
+	},
+	[RELEASE]: {
+		[OPEN_NOTES]: 'boolean',
+	},
+	[BUILTIN]: {
+		[FOLDER]: 'string',
+		[TOP]: 'boolean',
+	},
+	[ALLTABS]: {
+		[FOLDER]: 'string',
+		[TOP]: 'boolean',
+	},
+	[ICON]: {
+		[ENABLED]: 'boolean',
+		[SHORTCUT]: 'boolean',
+		[CONTEXT_MENU]: 'boolean',
+		[FOLDER]: 'string',
+		[TOP]: 'boolean',
+		[PREVENT_REMOVAL]: 'boolean',
+		[INBOX]: 'boolean',
+		[COLOR]: 'string',
+	},
+	[MISC]: {
+		[LAST_USED_FOLDER]: 'string',
+	},
+	[NOTIFICATION]: 'boolean', // Welcome message displayed (at least once)
+	[TAB]: 'integer',
 };
 
 // List of all add-on options IDs for selection
 const OPTIONS_IDS = {
-    [THEME]: {
-        [DARK_THEME_ENABLED]: 'theme-switch',
-    },
-    [RELEASE]: {
-        [OPEN_NOTES]: 'release-open-changelog',
-    },
-    [BUILTIN]: {
-        [FOLDER]: 'builtin-folder',
-        [TOP]: 'builtin-top',
-    },
-    [ALLTABS]: {
-        [FOLDER]: 'alltabs-folder',
-        [TOP]: 'alltabs-top',
-    },
-    [ICON]: {
-        [ENABLED]: 'icon-enabled',
-        [SHORTCUT]: 'icon-shortcut',
-        [CONTEXT_MENU]: 'icon-context-menu',
-        [FOLDER]: 'icon-folder',
-        [TOP]: 'icon-top',
-        [INBOX]: 'icon-inbox',
-        [PREVENT_REMOVAL]: 'icon-prevent-removal',
-        [COLOR]: 'icon-color',
-    },
+	[THEME]: {
+		[DARK_THEME_ENABLED]: 'theme-switch',
+	},
+	[RELEASE]: {
+		[OPEN_NOTES]: 'release-open-changelog',
+	},
+	[BUILTIN]: {
+		[FOLDER]: 'builtin-folder',
+		[TOP]: 'builtin-top',
+	},
+	[ALLTABS]: {
+		[FOLDER]: 'alltabs-folder',
+		[TOP]: 'alltabs-top',
+	},
+	[ICON]: {
+		[ENABLED]: 'icon-enabled',
+		[SHORTCUT]: 'icon-shortcut',
+		[CONTEXT_MENU]: 'icon-context-menu',
+		[FOLDER]: 'icon-folder',
+		[TOP]: 'icon-top',
+		[INBOX]: 'icon-inbox',
+		[PREVENT_REMOVAL]: 'icon-prevent-removal',
+		[COLOR]: 'icon-color',
+	},
 };
 
 // List of tab management items
