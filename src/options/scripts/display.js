@@ -52,7 +52,7 @@ function insertDataFromLocales() {
 // Inserts data from the manifest into the options page
 function insertDataFromManifest() {
 	const manifest = browser.runtime.getManifest();
-	document.querySelector(VERSION).textContent = manifest.version;
+	document.querySelectorAll(VERSION).forEach(element => element.textContent = manifest.version);
 }
 
 // Inserts SVG icons inline

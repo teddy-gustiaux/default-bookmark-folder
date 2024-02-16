@@ -74,4 +74,4 @@ const UNNAMED_FOLDER = '[no name]';
 const WELCOME = '#welcome';
 const CLOSE_WELCOME = '#close-welcome';
 const DELETE_WELCOME = '#delete-welcome';
-const VERSION = '#placeholder-version';
+const VERSION = '[id^="placeholder-version"]';
