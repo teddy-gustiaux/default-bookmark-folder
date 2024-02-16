@@ -105,7 +105,7 @@ class ManifestBuilder {
 			browser_specific_settings: {
 				gecko: {
 					id: 'default-bookmark-folder@gustiaux.com',
-					strict_min_version: '56.0a1',
+					strict_min_version: '115.0',
 				},
 			},
 		};
