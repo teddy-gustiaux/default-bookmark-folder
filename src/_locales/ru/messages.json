@@ -38,17 +38,20 @@
   "welcome_title": {
     "message": "Добро пожаловать!"
   },
-  "welcome_thank_you": {
-    "message": "Благодарим вас за установку этого расширения!"
+  "welcome_installation_1": {
+    "message": "You have successfully installed Default Bookmark Folder!"
   },
-  "welcome_configure": {
+  "welcome_installation_2": {
+    "message": "Features are disabled by default and will not affect your Firefox installation."
+  },
+  "welcome_installation_3": {
     "message": "Пожалуйста, уделите немножко времени чтобы настроить его в соответствии со своими предпочтениями."
   },
   "welcome_message_display": {
     "message": "Данное сообщение появляется только один раз."
   },
   "welcome_ok": {
-    "message": "Понятно!"
+    "message": "Let's go! 🚀"
   },
   "options_title": {
     "message": "Настройки Default Bookmark Folder"

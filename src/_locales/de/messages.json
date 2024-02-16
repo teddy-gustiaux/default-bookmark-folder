@@ -38,17 +38,20 @@
   "welcome_title": {
     "message": "Willkommen!"
   },
-  "welcome_thank_you": {
-    "message": "Vielen Dank für die Installation dieses Add-ons!"
+  "welcome_installation_1": {
+    "message": "You have successfully installed Default Bookmark Folder!"
   },
-  "welcome_configure": {
+  "welcome_installation_2": {
+    "message": "Features are disabled by default and will not affect your Firefox installation."
+  },
+  "welcome_installation_3": {
     "message": "Bitte nehmen Sie sich einen Moment Zeit, um es für Ihre Bedürfnisse zu konfigurieren."
   },
   "welcome_message_display": {
     "message": "Diese Meldung wird nur einmal angezeigt."
   },
   "welcome_ok": {
-    "message": "Verstanden!"
+    "message": "Let's go! 🚀"
   },
   "options_title": {
     "message": "Optionen für Standard-Lesezeichenordner"

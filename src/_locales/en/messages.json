@@ -38,17 +38,20 @@
   "welcome_title": {
     "message": "Welcome!"
   },
-  "welcome_thank_you": {
-    "message": "Thank you for installing this add-on!"
+  "welcome_installation_1": {
+    "message": "You have successfully installed Default Bookmark Folder!"
   },
-  "welcome_configure": {
+  "welcome_installation_2": {
+    "message": "Features are disabled by default and will not affect your Firefox installation."
+  },
+  "welcome_installation_3": {
     "message": "Please take a moment to configure it to fit your needs."
   },
   "welcome_message_display": {
     "message": "This message will only be displayed once."
   },
   "welcome_ok": {
-    "message": "Got it!"
+    "message": "Let's go! 🚀"
   },
   "options_title": {
     "message": "Default Bookmark Folder Options"

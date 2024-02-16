@@ -127,10 +127,6 @@ a.navbar-item:hover {
     margin-top: 1.5em;
 }
 
-.modal-card-body p {
-    margin-top: 2em;
-}
-
 .divider {
     margin-top: 2em;
     margin-bottom: 2em;
@@ -228,6 +224,14 @@ hr {
 /* MODAL                    */
 /* ======================== */
 
+#welcome {
+	font-size: 1.5rem;
+}
+
+.modal-card {
+	width: 40vw;
+}
+
 .modal-card-head, .modal-card-foot {
     background-color: var(--bg-color-alternate);
 }
@@ -242,11 +246,19 @@ hr {
 
 .modal-card-title {
     color: var(--font-color);
+	font-size: 2rem;
 }
 
 .modal-card-body {
     background-color: var(--bg-color);
     color: var(--font-color);
+	p {
+		margin-bottom: 0.8em;
+	}
+}
+
+#close-welcome {
+	font-size: 1.5rem;
 }
 
 /* ======================== */

@@ -38,17 +38,20 @@
   "welcome_title": {
     "message": "Üdvözöljük!"
   },
-  "welcome_thank_you": {
-    "message": "Köszönjük, hogy a telepíti ezt a kiegészítőt!"
+  "welcome_installation_1": {
+    "message": "You have successfully installed Default Bookmark Folder!"
   },
-  "welcome_configure": {
+  "welcome_installation_2": {
+    "message": "Features are disabled by default and will not affect your Firefox installation."
+  },
+  "welcome_installation_3": {
     "message": "Szánjon rá egy kis időt, hogy a saját igényeire szabja."
   },
   "welcome_message_display": {
     "message": "Ez az üzenet csak egyszer lesz megjelenítve."
   },
   "welcome_ok": {
-    "message": "Megvan!"
+    "message": "Let's go! 🚀"
   },
   "options_title": {
     "message": "Alapértelmezett könyvjelzőmappa beállítások"
