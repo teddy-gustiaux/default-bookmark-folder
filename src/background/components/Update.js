@@ -37,4 +37,9 @@ class Update {
 	updateRemovedNewReleaseOption() {
 		browser.storage.local.remove('newRelease');
 	}
+
+	//  Update from version 3.1.0
+	updateRemovedThemeSwitchOption() {
+		browser.storage.local.remove('theme');
+	}
 }

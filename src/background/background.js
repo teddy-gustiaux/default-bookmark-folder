@@ -97,6 +97,7 @@ async function onAddonInstallation(details) {
 	} else if (details.reason === 'update') {
 		if (details.previousVersion[0] === '1') update.updateFromFirstVersion();
 		if (details.previousVersion === '2.10.0') update.updateRemovedNewReleaseOption();
+		if (details.previousVersion === '3.1.0') update.updateRemovedThemeSwitchOption();
 		await update.displayReleaseNotes();
 	}
 }

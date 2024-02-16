@@ -207,12 +207,6 @@ hr {
     height: 1.2rem;
 }
 
-.svg-icon-theme-switch svg {
-    fill: var(--font-color);
-    width: 1.8rem;
-    height: 1.8rem;
-}
-
 .svg-icon-dropdown {
     fill: var(--font-color);
     width: 1.2rem;
@@ -228,18 +222,6 @@ hr {
     height:1.2rem;
     width:1.2rem;
     fill: var(--font-color);
-}
-
-/* ======================== */
-/* THEME SWITCH             */
-/* ======================== */
-
-.theme-switch-icon-left {
-    padding-right: 0.25rem;
-}
-
-.theme-switch-wrapper .switch[type="checkbox"] + label {
-    padding-top: 0.7rem;
 }
 
 /* ======================== */

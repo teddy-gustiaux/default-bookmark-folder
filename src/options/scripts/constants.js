@@ -8,9 +8,6 @@
 
 // Boilerplate of all add-on options
 const OPTIONS_BOILERPLATE = {
-	[THEME]: {
-		[DARK_THEME_ENABLED]: 'boolean',
-	},
 	[RELEASE]: {
 		[OPEN_NOTES]: 'boolean',
 	},
@@ -41,9 +38,6 @@ const OPTIONS_BOILERPLATE = {
 
 // List of all add-on options IDs for selection
 const OPTIONS_IDS = {
-	[THEME]: {
-		[DARK_THEME_ENABLED]: 'theme-switch',
-	},
 	[RELEASE]: {
 		[OPEN_NOTES]: 'release-open-changelog',
 	},
