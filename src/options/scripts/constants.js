@@ -76,7 +76,6 @@ const DATA_TAB = 'data-tab';
 
 // Miscellaneous
 const CONTENT_WRAPPER = '#content-wrapper';
-const THEME_SWITCH = '#theme-switch';
 const UNNAMED_FOLDER = '[no name]';
 const WELCOME = '#welcome';
 const CLOSE_WELCOME = '#close-welcome';
