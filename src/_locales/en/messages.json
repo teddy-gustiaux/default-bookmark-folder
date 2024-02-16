@@ -183,19 +183,22 @@
     "message": "Feedback"
   },
   "options_please_review_1": {
-    "message": "If you enjoy the add-on, please give it a positive"
+    "message": "❤️ Enjoying the add-on? Please take a minute to give it a positive"
   },
   "options_please_review_2": {
     "message": "review"
   },
   "options_bug_1": {
-    "message": "If you want to report a bug, you can open an issue on"
+    "message": "🐛 Found a bug? If you can, please open an issue on"
   },
   "options_bug_2": {
     "message": "GitHub"
   },
-  "options_bug_3": {
-    "message": "If you do not have an account, you can create one for free."
+  "options_limitations_1": {
+    "message": "Please beware of the add-on limitations due to Firefox's internal system. More details on this"
+  },
+  "options_limitations_2": {
+    "message": "wiki page"
   },
   "options_version": {
     "message": "Version"

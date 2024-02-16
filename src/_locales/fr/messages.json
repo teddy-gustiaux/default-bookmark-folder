@@ -183,19 +183,22 @@
     "message": "Commentaires"
   },
   "options_please_review_1": {
-    "message": "Si vous aimez cette extension, n’hésitez pas à lui donner une "
+    "message": "❤️ Vous aimez cette extension ? Merci de prendre un moment pour lui donner une"
   },
   "options_please_review_2": {
-    "message": "note "
+    "message": "note"
   },
   "options_bug_1": {
-    "message": "Si vous souhaitez signaler un problème, merci de le faire sur"
+    "message": "🐛 Vous avez trouvé un problème ? Si vous pouvez, merci de le signaler sur"
   },
   "options_bug_2": {
     "message": "GitHub"
   },
-  "options_bug_3": {
-    "message": "Si vous n’avez pas de compte, vous pouvez en créer un gratuitement."
+  "options_limitations_1": {
+    "message": "Please beware of the add-on limitations due to Firefox's internal system. More details on this"
+  },
+  "options_limitations_2": {
+    "message": "wiki page"
   },
   "options_version": {
     "message": "Version"
