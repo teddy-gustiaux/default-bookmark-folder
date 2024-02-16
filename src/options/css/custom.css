@@ -34,6 +34,10 @@ a:hover {
     font-size: 2rem;
 }
 
+.navbar-brand {
+	margin-right: 0.5rem;
+}
+
 .navbar.is-light {
 	background-color: var(--bg-color-alternate);
 }
@@ -55,6 +59,9 @@ a:hover {
     color: var(--font-color-navbar);
 }
 
+.navbar-item {
+	margin-right: 0.5rem;
+}
 
 a.navbar-item span,
 a.navbar-item.is-active span svg {
