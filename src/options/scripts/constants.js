@@ -81,4 +81,3 @@ const WELCOME = '#welcome';
 const CLOSE_WELCOME = '#close-welcome';
 const DELETE_WELCOME = '#delete-welcome';
 const VERSION = '#placeholder-version';
-const AUTHOR = '#placeholder-author';

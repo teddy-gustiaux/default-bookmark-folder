@@ -53,7 +53,6 @@ function insertDataFromLocales() {
 function insertDataFromManifest() {
 	const manifest = browser.runtime.getManifest();
 	document.querySelector(VERSION).textContent = manifest.version;
-	document.querySelector(AUTHOR).textContent = manifest.author;
 }
 
 // Inserts SVG icons inline
@@ -140,4 +139,14 @@ function toggleIconOptions(options) {
 		const itemLabelsToDisable = [FOLDER, COLOR];
 		toggleFeatures(false, itemsToDisable, itemLabelsToDisable);
 	}
+}
+
+function isDarkThemeEnabled() {
+	return window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+function toggleThemeHandling() {
+	const tags = document.querySelectorAll('.tags');
+	const classToApply = isDarkThemeEnabled() ? 'is-dark' : 'is-light';
+	tags.forEach(element => element.classList.add(classToApply));
 }

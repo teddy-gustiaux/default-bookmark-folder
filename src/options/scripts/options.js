@@ -27,6 +27,7 @@ async function restoreOptions() {
 	});
 
 	toggleIconOptions(options);
+	toggleThemeHandling();
 	const tabNumber = typeof options[TAB] !== 'undefined' ? options[TAB] : TAB_DEFAULT_NUMBER;
 	switchTab(tabNumber);
 }

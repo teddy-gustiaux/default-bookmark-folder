@@ -185,23 +185,20 @@
   "options_please_review_2": {
     "message": "Bewertung"
   },
-  "options_bug_feature_1": {
-    "message": "Wenn Sie einen Fehler melden oder nach einem neuen Feature fragen wollen, können Sie ein Thema eröffnen auf"
+  "options_bug_1": {
+    "message": "If you want to report a bug, you can open an issue on"
   },
-  "options_bug_feature_2": {
+  "options_bug_2": {
     "message": "GitHub"
   },
-  "options_bug_feature_3": {
+  "options_bug_3": {
     "message": "Wenn Sie noch kein Konto haben, können Sie kostenlos eins erstellen."
   },
   "options_version": {
-    "message": "Version:"
-  },
-  "options_author": {
-    "message": "Autor:"
+    "message": "Version"
   },
   "options_license": {
-    "message": "Lizenz:"
+    "message": "Lizenz"
   },
   "popup_quick_bookmarking_folder_title": {
     "message": "Schnelles Setzen von Lesezeichen im Ordner"

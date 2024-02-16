@@ -185,23 +185,20 @@
   "options_please_review_2": {
     "message": "review"
   },
-  "options_bug_feature_1": {
-    "message": "If you want to report a bug or ask for a new feature, you can open an issue on"
+  "options_bug_1": {
+    "message": "If you want to report a bug, you can open an issue on"
   },
-  "options_bug_feature_2": {
+  "options_bug_2": {
     "message": "GitHub"
   },
-  "options_bug_feature_3": {
+  "options_bug_3": {
     "message": "If you do not have an account, you can create one for free."
   },
   "options_version": {
-    "message": "Version:"
-  },
-  "options_author": {
-    "message": "Author:"
+    "message": "Version"
   },
   "options_license": {
-    "message": "License:"
+    "message": "License"
   },
   "popup_quick_bookmarking_folder_title": {
     "message": "Quick bookmarking to folder"

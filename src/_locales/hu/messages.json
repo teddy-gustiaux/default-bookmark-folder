@@ -185,23 +185,20 @@
   "options_please_review_2": {
     "message": "értékelést"
   },
-  "options_bug_feature_1": {
-    "message": "Ha hibát szeretne jelenteni, vagy új funkciót kérni, akkor nyithat egy új bejelentést a"
+  "options_bug_1": {
+    "message": "If you want to report a bug, you can open an issue on"
   },
-  "options_bug_feature_2": {
+  "options_bug_2": {
     "message": "GitHubon"
   },
-  "options_bug_feature_3": {
+  "options_bug_3": {
     "message": "Ha nincs fiókja, akkor ingyen létrehozhat egyet."
   },
   "options_version": {
-    "message": "Verzió:"
-  },
-  "options_author": {
-    "message": "Szerzõ:"
+    "message": "Verzió"
   },
   "options_license": {
-    "message": "Licenc:"
+    "message": "Licenc"
   },
   "popup_quick_bookmarking_folder_title": {
     "message": "Gyors könyvjelzőzés mappába"

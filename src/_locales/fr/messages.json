@@ -185,23 +185,20 @@
   "options_please_review_2": {
     "message": "note "
   },
-  "options_bug_feature_1": {
-    "message": "Si vous souhaitez signaler un problème ou demander une nouvelle fonctionnalité, merci de le faire sur"
+  "options_bug_1": {
+    "message": "Si vous souhaitez signaler un problème, merci de le faire sur"
   },
-  "options_bug_feature_2": {
+  "options_bug_2": {
     "message": "GitHub"
   },
-  "options_bug_feature_3": {
+  "options_bug_3": {
     "message": "Si vous n’avez pas de compte, vous pouvez en créer un gratuitement."
   },
   "options_version": {
-    "message": "Version:"
-  },
-  "options_author": {
-    "message": "Auteur:"
+    "message": "Version"
   },
   "options_license": {
-    "message": "Licence:"
+    "message": "Licence"
   },
   "popup_quick_bookmarking_folder_title": {
     "message": "Marque-page rapide dans un dossier"

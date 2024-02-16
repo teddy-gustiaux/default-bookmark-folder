@@ -185,23 +185,20 @@
   "options_please_review_2": {
     "message": "отзыв"
   },
-  "options_bug_feature_1": {
-    "message": "Если вы хотите сообщить об ошибке или попросить добавить новую функцию, вы можете создать тему на"
+  "options_bug_1": {
+    "message": "If you want to report a bug, you can open an issue on"
   },
-  "options_bug_feature_2": {
+  "options_bug_2": {
     "message": "GitHub"
   },
-  "options_bug_feature_3": {
+  "options_bug_3": {
     "message": "Если у вас нет учётной записи на GitHub, вы всегда можете создать её совершенно бесплатно."
   },
   "options_version": {
-    "message": "Версия:"
-  },
-  "options_author": {
-    "message": "Автор:"
+    "message": "Версия"
   },
   "options_license": {
-    "message": "Лицензия:"
+    "message": "Лицензия"
   },
   "popup_quick_bookmarking_folder_title": {
     "message": "Quick bookmarking to folder"
