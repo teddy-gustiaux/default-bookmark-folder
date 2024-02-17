@@ -31,7 +31,6 @@ class ManifestBuilder {
 					1024: 'icons/cross/cross-1024.png',
 				},
 				default_title: '__MSG_manifest_page_action_default_title__',
-				browser_style: true,
 			},
 			browser_action: {
 				default_icon: 'icons/browser-action/icon-for-dark-text.svg',
@@ -48,7 +47,6 @@ class ManifestBuilder {
 					},
 				],
 				default_popup: 'popup/popup.html',
-				browser_style: true,
 			},
 			icons: {
 				16: 'icons/logo/default-bookmark-folder-16.png',
@@ -80,7 +78,6 @@ class ManifestBuilder {
 			},
 			options_ui: {
 				page: 'options/options.html',
-				browser_style: true,
 				open_in_tab: true,
 			},
 			commands: {
