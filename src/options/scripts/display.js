@@ -53,6 +53,7 @@ function insertDataFromLocales() {
 function insertDataFromManifest() {
 	const manifest = browser.runtime.getManifest();
 	document.querySelectorAll(VERSION).forEach(element => element.textContent = manifest.version);
+	document.querySelectorAll(NAME).forEach(element => element.textContent = manifest.name);
 }
 
 // Inserts SVG icons inline
