@@ -40,8 +40,8 @@ async function getNewEnvironment(previousWebPage, newlyActiveTab) {
 	return currentWebPage;
 }
 
-function updateInterface(webPage, options, version) {
-	const userInterface = new Interface(webPage, options, version);
+function updateInterface(webPage, options) {
+	const userInterface = new Interface(webPage, options);
 	userInterface.updatePageAction();
 	userInterface.updateBrowserAction();
 	userInterface.updateContextMenus();
@@ -53,10 +53,8 @@ async function processUpdate() {
 	// Update the extension environment
 	const newlyActiveTab = await Utils.getActiveTab();
 	globalWebPage = await getNewEnvironment(globalWebPage, newlyActiveTab);
-	// Get Firefox version
-	const version = await Utils.getFirefoxMainVersion();
 	// Update the extension interface
-	updateInterface(globalWebPage, globalOptions, version);
+	updateInterface(globalWebPage, globalOptions);
 }
 
 async function onBookmarksCreated(id, bookmarkInfo) {

@@ -1,6 +1,7 @@
 import { promises as fs } from 'node:fs';
 import * as path from 'node:path';
 import * as url from 'node:url';
+import merge from 'lodash.merge';
 
 class ManifestBuilder {
 	static FIREFOX = 'firefox';
@@ -108,11 +109,19 @@ class ManifestBuilder {
 		};
 	}
 
+	get firefoxDevelopmentValues() {
+		return {
+			browser_action: {
+				default_area: 'navbar',
+			},
+		};
+	}
+
 	get chromeTranslations() {
 		return {};
 	}
 
-	constructor(target, location) {
+	constructor(target, location, developmentMode) {
 		const targets = [ManifestBuilder.FIREFOX, ManifestBuilder.CHROME];
 		if (targets.includes(target)) this.target = target;
 		this.location = location;
@@ -135,7 +144,7 @@ class ManifestBuilder {
 	}
 
 	#makeForFirefox() {
-		return { ...this.baseValues, ...this.firefoxValues };
+		return merge({ ...this.baseValues, ...this.firefoxValues}, this.firefoxDevelopmentValues);
 	}
 
 	#makeForChrome() {
@@ -157,13 +166,13 @@ class ManifestBuilder {
 	}
 }
 
-const buildManifest = async (target) => {
+const buildManifest = async (target, developmentMode = false) => {
 	const currentDirectory = url.fileURLToPath(new URL('.', import.meta.url));
 	const sourceDir = path.resolve(currentDirectory, '../../', 'src/');
 	const browser =
 		target === ManifestBuilder.CHROME ? ManifestBuilder.CHROME : ManifestBuilder.FIREFOX;
 
-	const builder = new ManifestBuilder(browser, path.join(sourceDir, '/manifest.json'));
+	const builder = new ManifestBuilder(browser, path.join(sourceDir, '/manifest.json'), developmentMode);
 	await builder.make();
 
 	let specificOptions = {};
