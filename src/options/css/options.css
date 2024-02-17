@@ -1,4 +1,4 @@
-@import '/css/variables.css';
+@import '../../css/variables.css';
 
 /* ======================== */
 /* MAIN ELEMENTS            */
@@ -263,9 +263,10 @@ hr {
 .modal-card-body {
     background-color: var(--bg-color);
     color: var(--font-color);
-	p {
-		margin-bottom: 0.8em;
-	}
+}
+
+.modal-card-body > p {
+	margin-bottom: 0.8em;
 }
 
 #close-welcome {
