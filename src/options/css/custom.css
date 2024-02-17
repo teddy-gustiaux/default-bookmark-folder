@@ -191,6 +191,10 @@ hr {
     border-color: var(--font-color);
 }
 
+[class~='section']:last-of-type  {
+    padding-bottom: 0;
+}
+
 /* ======================== */
 /* SVG ICONS                */
 /* ======================== */
@@ -232,7 +236,7 @@ hr {
 /* ======================== */
 
 #welcome {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 }
 
 .modal-card {
@@ -265,7 +269,7 @@ hr {
 }
 
 #close-welcome {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 }
 
 /* ======================== */

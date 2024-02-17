@@ -1,21 +1,24 @@
 @import '/css/variables.css';
 
+html {
+    background-color: var(--bg-color);
+}
+
 body {
-	font-family: 'Open Sans', sans-serif;
-	background-color: var(--bg-color-alternate);
-	color: var(--font-color);
+    font-family: "Open Sans", sans-serif;
+    color: var(--font-color);
+	margin: 0;
 }
 
 .banner {
 	background-color: var(--bg-color-alternate);
-	margin: 0;
 	padding: 0;
 	width: 100%;
 }
 
 .content {
-	background-color: var(--bg-color);
-	padding-top: 0rem;
+	margin: 0.5rem;
+	padding-top: 0;
 	padding-bottom: 1rem;
 	padding-right: 1rem;
 	padding-left: 1rem;
@@ -25,6 +28,7 @@ body {
 	background-color: var(--bg-color-alternate);
 	display: flex;
 	justify-content: flex-end;
+	margin: 0;
 	padding-top: 0.75rem;
 	padding-bottom: 0.75rem;
 	text-align: center;
@@ -41,7 +45,7 @@ body {
 	background-color: var(--primary-color);
 	border: 1px solid transparent;
 	border-radius: 4px;
-	margin-top: 0rem;
+	margin-top: 0;
 	font-weight: 500;
 	display: inline-flex;
 	align-items: center;
@@ -69,6 +73,7 @@ body {
 	padding: 20px;
 	height: 15px;
 	font-weight: 600;
+	font-size: 1.2rem;
 	margin-bottom: 1.5rem;
 	color: var(--font-color);
 }
