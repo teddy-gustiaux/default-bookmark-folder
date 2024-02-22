@@ -11,7 +11,7 @@ class ManifestBuilder {
 	get baseValues() {
 		return {
 			manifest_version: 2,
-			name: 'Default Bookmark Folder',
+			name: `Default Bookmark Folder ${this.developmentMode ? ' [DEV]' : ''}`,
 			author: 'Teddy Gustiaux',
 			version: '3.1.0',
 			description: '__MSG_manifest_extension_description__',
@@ -20,65 +20,74 @@ class ManifestBuilder {
 			permissions: ['bookmarks', 'activeTab', 'tabs', 'storage', 'menus'],
 			page_action: {
 				default_icon: {
-					16: 'icons/cross/cross-16.png',
-					24: 'icons/cross/cross-24.png',
-					32: 'icons/cross/cross-32.png',
-					48: 'icons/cross/cross-48.png',
-					64: 'icons/cross/cross-64.png',
-					96: 'icons/cross/cross-96.png',
-					128: 'icons/cross/cross-128.png',
-					256: 'icons/cross/cross-256.png',
-					512: 'icons/cross/cross-512.png',
-					1024: 'icons/cross/cross-1024.png',
+					16: 'images/icons/cross/cross-16.png',
+					24: 'images/icons/cross/cross-24.png',
+					32: 'images/icons/cross/cross-32.png',
+					48: 'images/icons/cross/cross-48.png',
+					64: 'images/icons/cross/cross-64.png',
+					96: 'images/icons/cross/cross-96.png',
+					128: 'images/icons/cross/cross-128.png',
+					256: 'images/icons/cross/cross-256.png',
+					512: 'images/icons/cross/cross-512.png',
+					1024: 'images/icons/cross/cross-1024.png',
 				},
 				default_title: '__MSG_manifest_page_action_default_title__',
 			},
 			browser_action: {
-				default_icon: 'icons/browser-action/icon-for-dark-text.svg',
+				default_icon: 'images/icons/browser-action/icon-for-dark-text.svg',
 				theme_icons: [
 					{
-						light: 'icons/browser-action/icon-for-light-text.svg',
-						dark: 'icons/browser-action/icon-for-dark-text.svg',
+						light: 'images/icons/browser-action/icon-for-light-text.svg',
+						dark: 'images/icons/browser-action/icon-for-dark-text.svg',
 						size: 16,
 					},
 					{
-						light: 'icons/browser-action/icon-for-light-text.svg',
-						dark: 'icons/browser-action/icon-for-dark-text.svg',
+						light: 'images/icons/browser-action/icon-for-light-text.svg',
+						dark: 'images/icons/browser-action/icon-for-dark-text.svg',
 						size: 32,
 					},
 				],
-				default_popup: 'popup/popup.html',
+				default_popup: 'views/popup.html',
 			},
 			icons: {
-				16: 'icons/logo/default-bookmark-folder-16.png',
-				24: 'icons/logo/default-bookmark-folder-24.png',
-				32: 'icons/logo/default-bookmark-folder-32.png',
-				48: 'icons/logo/default-bookmark-folder-48.png',
-				64: 'icons/logo/default-bookmark-folder-64.png',
-				96: 'icons/logo/default-bookmark-folder-96.png',
-				128: 'icons/logo/default-bookmark-folder-128.png',
-				256: 'icons/logo/default-bookmark-folder-256.png',
-				512: 'icons/logo/default-bookmark-folder-512.png',
-				1024: 'icons/logo/default-bookmark-folder-1024.png',
+				16: 'images/icons/logo/default-bookmark-folder-16.png',
+				24: 'images/icons/logo/default-bookmark-folder-24.png',
+				32: 'images/icons/logo/default-bookmark-folder-32.png',
+				48: 'images/icons/logo/default-bookmark-folder-48.png',
+				64: 'images/icons/logo/default-bookmark-folder-64.png',
+				96: 'images/icons/logo/default-bookmark-folder-96.png',
+				128: 'images/icons/logo/default-bookmark-folder-128.png',
+				256: 'images/icons/logo/default-bookmark-folder-256.png',
+				512: 'images/icons/logo/default-bookmark-folder-512.png',
+				1024: 'images/icons/logo/default-bookmark-folder-1024.png',
 			},
 			background: {
 				scripts: [
-					'globals.js',
-					'background/utils/Utils.js',
-					'background/utils/BrowserAction.js',
-					'background/utils/PageAction.js',
-					'background/utils/ContextMenus.js',
-					'background/components/Options.js',
-					'background/components/Update.js',
-					'background/components/WebPage.js',
-					'background/components/Interface.js',
-					'background/bookmarking/BuiltinBookmarking.js',
-					'background/bookmarking/QuickBookmarking.js',
-					'background/background.js',
+					'scripts/constants.js',
+					'scripts/utils/Logger.js',
+					'scripts/background/bootstrap.js',
+
+					'scripts/utils/Utils.js',
+					'scripts/utils/BrowserAction.js',
+					'scripts/utils/PageAction.js',
+					'scripts/utils/ContextMenus.js',
+
+					'scripts/components/Options.js',
+					'scripts/components/Update.js',
+					'scripts/components/WebPage.js',
+					'scripts/components/Interface.js',
+
+					'scripts/bookmarking/BuiltinBookmarking.js',
+					'scripts/bookmarking/QuickBookmarking.js',
+					'scripts/bookmarking/BookmarkingHistory.js',
+					'scripts/bookmarking/BookmarkingGatekeeper.js',
+
+					'scripts/background/listeners.js',
+					'scripts/background/background.js',
 				],
 			},
 			options_ui: {
-				page: 'options/options.html',
+				page: 'views/options.html',
 				open_in_tab: true,
 			},
 			commands: {
@@ -125,6 +134,7 @@ class ManifestBuilder {
 		const targets = [ManifestBuilder.FIREFOX, ManifestBuilder.CHROME];
 		if (targets.includes(target)) this.target = target;
 		this.location = location;
+		this.developmentMode = developmentMode;
 	}
 
 	#translateKeys(objectToProcess, translations) {

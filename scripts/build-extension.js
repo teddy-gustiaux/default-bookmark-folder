@@ -4,7 +4,6 @@ import { buildManifest } from './helpers/ManifestBuilder.js';
 
 const target = process.argv[2];
 const { browser, sourceDir } = await buildManifest(target);
-console.log(path.join(sourceDir.replace('src', 'dist'), browser));
 
 webExt.cmd.build(
 	{

@@ -2,7 +2,7 @@ import webExt from 'web-ext';
 import { ManifestBuilder, buildManifest } from './helpers/ManifestBuilder.js';
 
 const target = process.argv[2];
-const { browser, sourceDir } = await buildManifest(target);
+const { browser, sourceDir } = await buildManifest(target, true);
 
 let specificOptions = {};
 if (browser === ManifestBuilder.FIREFOX) {
