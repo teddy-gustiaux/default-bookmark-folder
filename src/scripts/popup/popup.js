@@ -23,7 +23,7 @@ async function buildBookmarkFolderPopupItems(bookmarkItem, indent) {
 		Object.prototype.hasOwnProperty.call(bookmarkItem, 'children') &&
 		bookmarkItem.children.length !== 0
 	) {
-		Array.from(bookmarkItem.children).forEach((child) => buildItems(child, indentProgress));
+		Array.from(bookmarkItem.children).forEach((child) => buildBookmarkFolderPopupItems(child, indentProgress));
 	}
 }
 

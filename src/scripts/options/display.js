@@ -21,14 +21,29 @@ function buildBookmarkFolderItems(bookmarkItem, indent, selectors) {
 		bookmarkItem.children.length !== 0
 	) {
 		Array.from(bookmarkItem.children).forEach((child) =>
-			buildItems(child, indentProgress, selectors),
+		buildBookmarkFolderItems(child, indentProgress, selectors),
 		);
 	}
 }
 
-// Build the bookmarks tree
 function buildBookmarkFolderTree(bookmarkItems, selectors) {
+	resetBookmarkFolderTree(selectors);
 	buildBookmarkFolderItems(bookmarkItems[0], 0, selectors);
+}
+
+function resetBookmarkFolderTree(selectors) {
+	Array.from(selectors).forEach((selector) => {
+		const select = document.querySelector(selector);
+		for (let i = select.options.length; i >= 0; i--) {
+			const item = select.item(i);
+			if (
+				item !== null
+				&& !BOOKMARK_TREE_FIXED_OPTIONS.includes(item.value)
+			) {
+				select.remove(i);
+			}
+		}
+	});
 }
 
 // Inserts data from the manifest into the options page

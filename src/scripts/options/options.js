@@ -1,7 +1,6 @@
 'use strict';
 
-// Restore and display the extension saved options
-async function restoreOptions() {
+async function restoreInputs(options) {
 	const bookmarkTree = await browser.bookmarks.getTree();
 	const folderSelections = [];
 	folderSelections.push(buildSelector(BUILTIN, FOLDER));
@@ -9,7 +8,6 @@ async function restoreOptions() {
 	folderSelections.push(buildSelector(ICON, FOLDER));
 	buildBookmarkFolderTree(bookmarkTree, folderSelections);
 
-	const options = await Utils.getOptions();
 	Object.keys(OPTIONS_IDS).forEach((key) => {
 		if (typeof options[key] !== 'undefined') {
 			Object.keys(options[key]).forEach((subkey) => {
@@ -19,7 +17,12 @@ async function restoreOptions() {
 			});
 		}
 	});
+}
 
+// Restore and display the extension saved options
+async function restoreOptions() {
+	const options = await Utils.getOptions();
+	restoreInputs(options);
 	toggleIconOptions(options);
 	toggleThemeHandling();
 	const tabNumber = typeof options[TAB] !== 'undefined' ? options[TAB] : TAB_DEFAULT_NUMBER;
@@ -70,6 +73,16 @@ function mobileMenuManagement() {
 	}
 }
 
+async function reloadOnBookmarkFolderChanges(id, info) {
+	if (
+		(Object.prototype.hasOwnProperty.call(info, 'node') && Utils.bookmarkIsFolder(info.node)) ||
+		Utils.bookmarkIsFolder(info))
+	{
+		const options = await Utils.getOptions();
+		restoreInputs(options);
+	}
+}
+
 // Listen for loading of the options page
 document.addEventListener('DOMContentLoaded', welcomeMessage);
 document.addEventListener('DOMContentLoaded', restoreOptions);
@@ -78,3 +91,8 @@ document.addEventListener('DOMContentLoaded', tabManagement);
 document.addEventListener('DOMContentLoaded', mobileMenuManagement);
 // Listen for saving of the options page
 document.querySelector(CONTENT_WRAPPER).addEventListener('change', saveOptions);
+// Listen for bookmark changes
+browser.bookmarks.onCreated.addListener(reloadOnBookmarkFolderChanges);
+browser.bookmarks.onMoved.addListener(reloadOnBookmarkFolderChanges);
+browser.bookmarks.onChanged.addListener(reloadOnBookmarkFolderChanges);
+browser.bookmarks.onRemoved.addListener(reloadOnBookmarkFolderChanges);
