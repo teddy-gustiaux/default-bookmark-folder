@@ -1,7 +1,7 @@
 'use strict';
 
 class ContextMenus {
-	static _createBookmarkContextMenu() {
+	static #createBookmarkContextMenu() {
 		browser.menus.create({
 			enabled: true,
 			id: CM_BOOKMARK,
@@ -16,10 +16,10 @@ class ContextMenus {
 
 	static updateBookmarkContextMenu() {
 		this.removeBookmarkContextMenu();
-		this._createBookmarkContextMenu();
+		this.#createBookmarkContextMenu();
 	}
 
-	static _createPageContextMenu(title) {
+	static #createPageContextMenu(title) {
 		browser.menus.create({
 			enabled: true,
 			id: CM_PAGE,
@@ -28,17 +28,17 @@ class ContextMenus {
 		});
 	}
 
-	static _createPageBookmarkedContextMenu(preventRemoval) {
+	static #createPageBookmarkedContextMenu(preventRemoval) {
 		const title =
 			preventRemoval === true
 				? null
 				: browser.i18n.getMessage('context_menu_remove_bookmark');
-		if (title !== null) this._createPageContextMenu(title);
+		if (title !== null) this.#createPageContextMenu(title);
 	}
 
-	static _createPageNotBookmarkedContextMenu() {
+	static #createPageNotBookmarkedContextMenu() {
 		const title = browser.i18n.getMessage('context_menu_quick_bookmark_page');
-		this._createPageContextMenu(title);
+		this.#createPageContextMenu(title);
 	}
 
 	static removePageContextMenu() {
@@ -47,11 +47,11 @@ class ContextMenus {
 
 	static updatePageContextMenuAsBookmarked(preventRemoval) {
 		this.removePageContextMenu();
-		this._createPageBookmarkedContextMenu(preventRemoval);
+		this.#createPageBookmarkedContextMenu(preventRemoval);
 	}
 
 	static updatePageContextMenuAsNotBookmarked() {
 		this.removePageContextMenu();
-		this._createPageNotBookmarkedContextMenu();
+		this.#createPageNotBookmarkedContextMenu();
 	}
 }

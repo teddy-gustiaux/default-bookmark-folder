@@ -22,7 +22,7 @@ class BookmarkingHistory {
 		this.#index++;
 	}
 
-	_isThisPartOfBatchRecording(indexStart, triggeredAt) {
+	#isThisPartOfBatchRecording(indexStart, triggeredAt) {
 		let latestRecordedBookmarkTime = this.#history.get(indexStart).__DBF__loadedAt;
 		// Count number of bookmark entries within the 500 ms of the creation time of the entry
 		let stepsBack = 1;
@@ -56,7 +56,7 @@ class BookmarkingHistory {
 			if (indexStart === 0) {
 				await builtinBookmarking._moveBookmarkToDefinedLocation(bookmarkInfo);
 			} else {
-				if (this._isThisPartOfBatchRecording(indexStart, triggeredAt)) {
+				if (this.#isThisPartOfBatchRecording(indexStart, triggeredAt)) {
 					Logger.debug('Skipping this bookmark (reason: batch recording)');
 				} else {
 					await builtinBookmarking.move(bookmarkInfo.id, bookmarkInfo, false);

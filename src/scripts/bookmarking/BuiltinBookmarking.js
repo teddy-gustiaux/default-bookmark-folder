@@ -7,7 +7,7 @@ class BuiltinBookmarking {
 		this.#options = options;
 	}
 
-	_createMovingPropertiesForBookmark() {
+	#createMovingPropertiesForBookmark() {
 		const bookmarkTreeNode = {};
 		if (this.#options.isBuiltinFolderSet()) {
 			if (this.#options.isBuiltinFolderLastUsed()) {
@@ -20,7 +20,7 @@ class BuiltinBookmarking {
 		return bookmarkTreeNode;
 	}
 
-	_createMovingPropertiesForAllTabsFolder() {
+	#createMovingPropertiesForAllTabsFolder() {
 		const bookmarkTreeNode = {};
 		if (this.#options.isAllTabsFolderSet()) {
 			if (this.#options.isAllTabsFolderLastUsed()) {
@@ -33,7 +33,7 @@ class BuiltinBookmarking {
 		return bookmarkTreeNode;
 	}
 
-	_nodeIsValidForMoving(bookmarkTreeNode) {
+	#nodeIsValidForMoving(bookmarkTreeNode) {
 		let isValid = false;
 		if (Object.keys(bookmarkTreeNode).length !== 0 && bookmarkTreeNode.constructor === Object) {
 			if (
@@ -46,20 +46,20 @@ class BuiltinBookmarking {
 		return isValid;
 	}
 
-	async _moveBookmarkToDefinedLocation(bookmarkInfo) {
+	async #moveBookmarkToDefinedLocation(bookmarkInfo) {
 		Logger.debug('Processing this bookmark', bookmarkInfo);
 		let bookmarkTreeNode;
 		if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
 			if (await Utils.bookmarkIsPartOfMultiTabsFolder(bookmarkInfo)) return;
-			bookmarkTreeNode = this._createMovingPropertiesForBookmark();
+			bookmarkTreeNode = this.#createMovingPropertiesForBookmark();
 		} else if (Utils.bookmarkIsFolder(bookmarkInfo)) {
 			if (!await Utils.bookmarkIsMultiTabsSystemCreatedFolder(bookmarkInfo)) return;
-			bookmarkTreeNode = this._createMovingPropertiesForAllTabsFolder();
+			bookmarkTreeNode = this.#createMovingPropertiesForAllTabsFolder();
 		}
 		if (!Object.prototype.hasOwnProperty.call(bookmarkTreeNode, 'parentId')) {
 			bookmarkTreeNode.parentId = bookmarkInfo.parentId;
 		}
-		if (this._nodeIsValidForMoving(bookmarkTreeNode)) {
+		if (this.#nodeIsValidForMoving(bookmarkTreeNode)) {
 			browser.bookmarks.move(bookmarkInfo.id, bookmarkTreeNode);
 			await this.#options.updateLastUsedFolder(bookmarkTreeNode.parentId);
 		}
@@ -81,6 +81,6 @@ class BuiltinBookmarking {
 				if (!bookmarkIsCurrentPage) return;
 			}
 		}
-		await this._moveBookmarkToDefinedLocation(bookmarkInfo);
+		await this.#moveBookmarkToDefinedLocation(bookmarkInfo);
 	}
 }

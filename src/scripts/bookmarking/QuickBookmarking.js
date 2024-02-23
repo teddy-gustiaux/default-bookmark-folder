@@ -53,7 +53,7 @@ class QuickBookmarking {
 		browser.bookmarks.onCreated.addListener(onBookmarksCreated);
 	}
 
-	async _createBookmarkFromIcon() {
+	async #createBookmarkFromIcon() {
 		const bookmarkTreeNode = this._createNode();
 		if (this._nodeIsValid(bookmarkTreeNode)) {
 			this._removeBookmarkCreationListener();
@@ -74,11 +74,11 @@ class QuickBookmarking {
 				) {
 					if (!this.#options.isRemovalPreventionEnabled()) this._removeBookmarks();
 				} else {
-					await this._createBookmarkFromIcon();
+					await this.#createBookmarkFromIcon();
 				}
 			} else if (!this.#options.isRemovalPreventionEnabled()) this._removeBookmarks();
 		} else {
-			await this._createBookmarkFromIcon();
+			await this.#createBookmarkFromIcon();
 		}
 	}
 
