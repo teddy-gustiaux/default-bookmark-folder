@@ -143,6 +143,8 @@ class Options {
 	async updateLastUsedFolder(folderId) {
 		const object = { [LAST_USED_FOLDER]: folderId };
 		await browser.storage.local.set({ [MISC]: object });
+		const folderDetails = await browser.bookmarks.get(folderId);
+		Logger.info(`Updated last used folder to: [${folderId}]`, folderDetails[0])
 	}
 
 	getLastUsedFolder() {
