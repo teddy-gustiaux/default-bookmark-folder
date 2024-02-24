@@ -96,7 +96,7 @@
     "message": "If disabled, new bookmarks will be added to the bottom of the selected folder or where dragged-and-dropped"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "Folgende Einstellungen gelten nur, wenn Sie mehrere ausgewählte Tabs gleichzeitig mit einem Lesezeichen versehen oder die Funktion \"Tabs als Lesezeichen hinzufügen...\" für alle geöffneten Tabs verwenden. Damit können Sie den Standard-Speicherort des neu erstellten Ordners, der je nach Funktion ein Lesezeichen für alle ausgewählten oder geöffneten Tab enthält, sowie die Position des Ordners an diesem Speicherort überschreiben."
+    "message": "The settings below only apply when bookmarking multiple selected tabs at once. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected, as well as the position of the folder in this location."
   },
   "options_ff_built_in_folder_all_tabs": {
     "message": "Wählen Sie aus, wo neue Ordner der mit Lesezeichen versehenen Tabs hinzugefügt werden sollen:"
@@ -123,7 +123,7 @@
     "message": "Schnelles Lesezeichen-Kontextmenü aktivieren"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Schnelles Setzen von Lesezeichen über das Seiten-Kontextmenü oder direkt in einen bestimmten Ordner über dessen Kontextmenü (benötigt Firefox 59+)"
+    "message": "Schnelles Setzen von Lesezeichen über das Seiten-Kontextmenü oder direkt in einen bestimmten Ordner über dessen Kontextmenü"
   },
   "options_icon_note": {
     "message": "Folgende Einstellungen gelten nur für die schnelle Lesezeichenfunktion."

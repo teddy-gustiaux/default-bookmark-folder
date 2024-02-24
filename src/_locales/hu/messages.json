@@ -96,7 +96,7 @@
     "message": "If disabled, new bookmarks will be added to the bottom of the selected folder or where dragged-and-dropped"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "Az alábbi beállítások csak akkor alkalmazhatók, ha egyszerre több kiválasztott lapot könyvjelzővel látnak el, vagy ha az összes nyitott fülnél a \"Minden lap könyvjelzőbe ... \" funkciót használják. Lehetővé teszi az újonnan létrehozott mappa alapértelmezett helyének felülírását, amely magában foglal egy könyvjelzőt a kiválasztott vagy megnyitott fülek mindegyikéhez (a funkciótól függően), valamint a mappa helyzetét ezen a helyen."
+    "message": "The settings below only apply when bookmarking multiple selected tabs at once. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected, as well as the position of the folder in this location."
   },
   "options_ff_built_in_folder_all_tabs": {
     "message": "Válassza ki, hová kerüljenek a könyvjelzővel ellátott lapok új mappái:"
@@ -123,7 +123,7 @@
     "message": "Gyors könyvjelző helyi menü engedélyezése"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Gyors könyvjelző az oldal helyi menüjén keresztül, vagy közvetlenül egy adott mappába a helyi menü segítségével (Firefox 59+ szükséges)"
+    "message": "Gyors könyvjelző az oldal helyi menüjén keresztül, vagy közvetlenül egy adott mappába a helyi menü segítségével"
   },
   "options_icon_note": {
     "message": "A lenti beállítások csak a Gyors könyvjelzőzésre vonatkoznak."

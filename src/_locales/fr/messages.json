@@ -96,7 +96,7 @@
     "message": "Si désactivé, les nouveaux marque-pages seront ajoutés en bas du dossier sélectionné ou à la position du glisser-déposer"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "Les paramètres ci-dessous ne s’applique qu’aux fonctionnalités permettant de marquer les onglets sélectionnés ou de \"Marquer tous les onglets...\" ouverts de Firefox. Ils vous permettent de choisir le dossier (et la position) par défaut du dossier nouvellement créé, qui contient un marque-page pour chaque onglet sélectionné ou ouvert (suivant la fonctionnalité utilisée)."
+    "message": "Les paramètres ci-dessous ne s’applique qu’aux fonctionnalités permettant de marquer les onglets sélectionnés. Ils vous permettent de choisir le dossier (et la position) par défaut du dossier nouvellement créé, qui contient un marque-page pour chaque onglet sélectionné."
   },
   "options_ff_built_in_folder_all_tabs": {
     "message": "Sélectionner où les nouveaux dossiers d’onglets marqués seront ajoutés :"
@@ -123,7 +123,7 @@
     "message": "Activer le menu contextuel de marquage rapide"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Marquer rapidement via le menu contextuel d’une page, ou directement dans un dossier spécifique via son menu contextuel (requiert Firefox 59+)"
+    "message": "Marquer rapidement via le menu contextuel d’une page, ou directement dans un dossier spécifique via son menu contextuel"
   },
   "options_icon_note": {
     "message": "Les paramètres ci-dessous ne s’appliquent qu’au système de marquage rapide."
