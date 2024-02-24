@@ -74,7 +74,14 @@ class QuickBookmarking {
 				) {
 					if (!this.#options.isRemovalPreventionEnabled()) this._removeBookmarks();
 				} else {
-					await this.#createBookmarkFromIcon();
+					if (
+						Utils.noBookmarksAreInFolder(
+							this.#options.getQuickFolder(),
+							this.#webPage.bookmarks,
+						)
+					) {
+						await this.#createBookmarkFromIcon();
+					}
 				}
 			} else if (!this.#options.isRemovalPreventionEnabled()) this._removeBookmarks();
 		} else {

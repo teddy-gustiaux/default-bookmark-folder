@@ -166,6 +166,15 @@ class Utils {
 		return result;
 	}
 
+	// Indicate if the provided bookmarks are all not in the specified folder
+	static noBookmarksAreInFolder(folderId, bookmarks) {
+		return bookmarks.every(
+			(bookmark) =>
+				Object.prototype.hasOwnProperty.call(bookmark, 'parentId') &&
+				bookmark.parentId !== folderId,
+		);
+	}
+
 	// Indicate if a bookmark object has been created internally by the add-on.
 	// This is done in order to perform specific business logic.
 	static bookmarkIsAddonInternal(bookmarkInfo) {
