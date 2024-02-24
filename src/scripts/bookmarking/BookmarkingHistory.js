@@ -54,7 +54,7 @@ class BookmarkingHistory {
 		const indexStart = this.#index > 0 ? this.#index - 1 : 0;
 		try {
 			if (indexStart === 0) {
-				await builtinBookmarking._moveBookmarkToDefinedLocation(bookmarkInfo);
+				await builtinBookmarking.moveBookmarkToDefinedLocation(bookmarkInfo);
 			} else {
 				if (this.#isThisPartOfBatchRecording(indexStart, triggeredAt)) {
 					Logger.debug('Skipping this bookmark (reason: batch recording)');

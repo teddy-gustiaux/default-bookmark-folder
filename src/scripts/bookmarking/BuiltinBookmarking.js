@@ -46,7 +46,7 @@ class BuiltinBookmarking {
 		return isValid;
 	}
 
-	async #moveBookmarkToDefinedLocation(bookmarkInfo) {
+	async moveBookmarkToDefinedLocation(bookmarkInfo) {
 		Logger.debug('Processing this bookmark', bookmarkInfo);
 		let bookmarkTreeNode;
 		if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
@@ -81,6 +81,6 @@ class BuiltinBookmarking {
 				if (!bookmarkIsCurrentPage) return;
 			}
 		}
-		await this.#moveBookmarkToDefinedLocation(bookmarkInfo);
+		await this.moveBookmarkToDefinedLocation(bookmarkInfo);
 	}
 }
