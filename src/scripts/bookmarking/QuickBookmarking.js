@@ -9,14 +9,14 @@ class QuickBookmarking {
 		this.#options = options;
 	}
 
-	_removeBookmarks() {
+	#removeBookmarks() {
 		const bookmarksToRemove = this.#webPage.bookmarks;
 		bookmarksToRemove.forEach((bookmark) => {
 			browser.bookmarks.remove(bookmark.id);
 		});
 	}
 
-	_createNode() {
+	#_createNode() {
 		const bookmarkTreeNode = {
 			title: this.#webPage.title,
 			url: this.#webPage.url,
@@ -32,7 +32,7 @@ class QuickBookmarking {
 		return bookmarkTreeNode;
 	}
 
-	_nodeIsValid(bookmarkTreeNode) {
+	#_nodeIsValid(bookmarkTreeNode) {
 		let isValid = false;
 		if (Object.keys(bookmarkTreeNode).length !== 0 && bookmarkTreeNode.constructor === Object) {
 			if (
@@ -45,20 +45,20 @@ class QuickBookmarking {
 		return isValid;
 	}
 
-	_removeBookmarkCreationListener() {
+	#removeBookmarkCreationListener() {
 		browser.bookmarks.onCreated.removeListener(onBookmarksCreated);
 	}
 
-	_addBookmarkCreationListener() {
+	#addBookmarkCreationListener() {
 		browser.bookmarks.onCreated.addListener(onBookmarksCreated);
 	}
 
 	async #createBookmarkFromIcon() {
-		const bookmarkTreeNode = this._createNode();
-		if (this._nodeIsValid(bookmarkTreeNode)) {
-			this._removeBookmarkCreationListener();
+		const bookmarkTreeNode = this.#_createNode();
+		if (this.#_nodeIsValid(bookmarkTreeNode)) {
+			this.#removeBookmarkCreationListener();
 			await browser.bookmarks.create(bookmarkTreeNode);
-			this._addBookmarkCreationListener();
+			this.#addBookmarkCreationListener();
 			await this.#options.updateLastUsedFolder(bookmarkTreeNode.parentId);
 		}
 	}
@@ -72,7 +72,7 @@ class QuickBookmarking {
 						this.#webPage.bookmarks,
 					)
 				) {
-					if (!this.#options.isRemovalPreventionEnabled()) this._removeBookmarks();
+					if (!this.#options.isRemovalPreventionEnabled()) this.#removeBookmarks();
 				} else {
 					if (
 						Utils.noBookmarksAreInFolder(
@@ -83,7 +83,7 @@ class QuickBookmarking {
 						await this.#createBookmarkFromIcon();
 					}
 				}
-			} else if (!this.#options.isRemovalPreventionEnabled()) this._removeBookmarks();
+			} else if (!this.#options.isRemovalPreventionEnabled()) this.#removeBookmarks();
 		} else {
 			await this.#createBookmarkFromIcon();
 		}
@@ -93,7 +93,7 @@ class QuickBookmarking {
 		if (this.#options.isShortcutEnabled() && this.#webPage.isSupported) await this.toggle();
 	}
 
-	_createBookmarkHereNode(clickedBookmark) {
+	#createBookmarkHereNode(clickedBookmark) {
 		const bookmarkTreeNode = {
 			title: this.#webPage.title,
 			url: this.#webPage.url,
@@ -110,11 +110,11 @@ class QuickBookmarking {
 	async bookmarkHereViaContextMenu(clickData) {
 		if (this.#options.areContextMenusEnabled() && this.#webPage.isSupported) {
 			const bookmarks = await browser.bookmarks.get(clickData.bookmarkId);
-			const bookmarkTreeNode = this._createBookmarkHereNode(bookmarks[0]);
-			if (this._nodeIsValid(bookmarkTreeNode)) {
-				this._removeBookmarkCreationListener();
+			const bookmarkTreeNode = this.#createBookmarkHereNode(bookmarks[0]);
+			if (this.#_nodeIsValid(bookmarkTreeNode)) {
+				this.#removeBookmarkCreationListener();
 				await browser.bookmarks.create(bookmarkTreeNode);
-				this._addBookmarkCreationListener();
+				this.#addBookmarkCreationListener();
 				await this.#options.updateLastUsedFolder(bookmarkTreeNode.parentId);
 			}
 		}

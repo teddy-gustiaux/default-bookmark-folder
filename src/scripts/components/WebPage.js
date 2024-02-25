@@ -4,6 +4,10 @@ class WebPage {
 	#id;
 	#url;
 	#title;
+	#isSupported;
+	#isBookmarked;
+	#numberOfBookmarks;
+	#bookmarks;
 
 	constructor(id, url, title) {
 		this.#id = id;
@@ -28,51 +32,51 @@ class WebPage {
 	}
 
 	get isSupported() {
-		return this._isSupported;
+		return this.#isSupported;
 	}
 
 	get isBookmarked() {
-		return this._isBookmarked;
+		return this.#isBookmarked;
 	}
 
 	get numberOfBookmarks() {
-		return this._numberOfBookmarks;
+		return this.#numberOfBookmarks;
 	}
 
 	get bookmarks() {
-		return this._bookmarks;
+		return this.#bookmarks;
 	}
 
 	// Set values for a page not supported by the extension
-	_unsupportedPage() {
-		this._isBookmarked = false;
-		this._numberOfBookmarks = 0;
-		this._bookmarks = [];
+	#unsupportedPage() {
+		this.#isBookmarked = false;
+		this.#numberOfBookmarks = 0;
+		this.#bookmarks = [];
 	}
 
 	// Set values for a page supported by the extension but not bookmarked
-	_notBookmarkedPage() {
-		this._isBookmarked = false;
-		this._numberOfBookmarks = 0;
-		this._bookmarks = [];
+	#notBookmarkedPage() {
+		this.#isBookmarked = false;
+		this.#numberOfBookmarks = 0;
+		this.#bookmarks = [];
 	}
 
 	// Set values for a page supported by the extension and bookmarked
-	_bookmarkedPage(bookmarks) {
-		this._isBookmarked = true;
-		this._numberOfBookmarks = bookmarks.length;
-		this._bookmarks = bookmarks;
+	#bookmarkedPage(bookmarks) {
+		this.#isBookmarked = true;
+		this.#numberOfBookmarks = bookmarks.length;
+		this.#bookmarks = bookmarks;
 	}
 
 	async determineSupportedStatus() {
 		const isSupported = await Utils.isSupportedURL(this.#url);
-		this._isSupported = isSupported === true;
+		this.#isSupported = isSupported === true;
 	}
 
 	// Check if current page is supported and search for bookmarks if it is the case
 	async determineBookmarkingStatus() {
-		if (this._isSupported === false) {
-			this._unsupportedPage();
+		if (this.#isSupported === false) {
+			this.#unsupportedPage();
 		} else {
 			let bookmarks;
 			if (Utils.isSupportedProtocol(this.#url)) {
@@ -81,11 +85,11 @@ class WebPage {
 				bookmarks = await browser.bookmarks.search(decodeURIComponent(this.#url));
 			}
 			if (bookmarks.constructor !== Array) {
-				this._unsupportedPage();
+				this.#unsupportedPage();
 			} else if (bookmarks.length === 0) {
-				this._notBookmarkedPage();
+				this.#notBookmarkedPage();
 			} else {
-				this._bookmarkedPage(bookmarks);
+				this.#bookmarkedPage(bookmarks);
 			}
 		}
 	}

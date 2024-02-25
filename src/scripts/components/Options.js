@@ -14,7 +14,7 @@ class Options {
 	// GENERIC
 
 	// Indicate if an option has been enabled or not for a specific option category
-	_isOptionEnabled(optionCategory, optionName) {
+	#isOptionEnabled(optionCategory, optionName) {
 		let isEnabled = false;
 		if (Object.prototype.hasOwnProperty.call(this.#options, optionCategory)) {
 			const category = this.#options[optionCategory];
@@ -29,7 +29,7 @@ class Options {
 	}
 
 	// Indicate if an option has been set or not for a specific option category
-	_isOptionSet(optionCategory, optionName) {
+	#isOptionSet(optionCategory, optionName) {
 		let isSet = false;
 		if (Object.prototype.hasOwnProperty.call(this.#options, optionCategory)) {
 			const category = this.#options[optionCategory];
@@ -46,20 +46,20 @@ class Options {
 	}
 
 	// Get the folder which has been set for a specific option category
-	_getSetFolder(optionCategory) {
+	#getSetFolder(optionCategory) {
 		return this.#options[optionCategory][FOLDER];
 	}
 
 	// RELEASE NOTES
 
 	isDisplayReleaseNotesEnabled() {
-		return this._isOptionEnabled(RELEASE, OPEN_NOTES);
+		return this.#isOptionEnabled(RELEASE, OPEN_NOTES);
 	}
 
 	// BUILT-IN BOOKMARKING
 
 	isBuiltinFolderSet() {
-		return this._isOptionSet(BUILTIN, FOLDER);
+		return this.#isOptionSet(BUILTIN, FOLDER);
 	}
 
 	isBuiltinFolderLastUsed() {
@@ -67,29 +67,29 @@ class Options {
 	}
 
 	getBuiltinFolder() {
-		return this._getSetFolder(BUILTIN);
+		return this.#getSetFolder(BUILTIN);
 	}
 
 	addBuiltinBookmarksOnTop() {
-		return this._isOptionEnabled(BUILTIN, TOP);
+		return this.#isOptionEnabled(BUILTIN, TOP);
 	}
 
 	// QUICK BOOKMARKING
 
 	isIconEnabled() {
-		return this._isOptionEnabled(ICON, ENABLED);
+		return this.#isOptionEnabled(ICON, ENABLED);
 	}
 
 	isShortcutEnabled() {
-		return this._isOptionEnabled(ICON, SHORTCUT);
+		return this.#isOptionEnabled(ICON, SHORTCUT);
 	}
 
 	areContextMenusEnabled() {
-		return this._isOptionEnabled(ICON, CONTEXT_MENU);
+		return this.#isOptionEnabled(ICON, CONTEXT_MENU);
 	}
 
 	isQuickFolderSet() {
-		return this._isOptionSet(ICON, FOLDER);
+		return this.#isOptionSet(ICON, FOLDER);
 	}
 
 	isQuickFolderLastUsed() {
@@ -97,24 +97,24 @@ class Options {
 	}
 
 	getQuickFolder() {
-		return this._getSetFolder(ICON);
+		return this.#getSetFolder(ICON);
 	}
 
 	addQuickBookmarksOnTop() {
-		return this._isOptionEnabled(ICON, TOP);
+		return this.#isOptionEnabled(ICON, TOP);
 	}
 
 	isInboxModeEnabled() {
-		return this._isOptionEnabled(ICON, INBOX);
+		return this.#isOptionEnabled(ICON, INBOX);
 	}
 
 	isRemovalPreventionEnabled() {
-		return this._isOptionEnabled(ICON, PREVENT_REMOVAL);
+		return this.#isOptionEnabled(ICON, PREVENT_REMOVAL);
 	}
 
 	getIconColor() {
 		let color = ICON_DEFAULT_COLOR;
-		if (this._isOptionSet(ICON, COLOR)) {
+		if (this.#isOptionSet(ICON, COLOR)) {
 			color = this.#options[ICON][COLOR];
 		}
 		return color;
@@ -123,7 +123,7 @@ class Options {
 	// "ALL TABS" BOOKMARKING
 
 	isAllTabsFolderSet() {
-		return this._isOptionSet(ALLTABS, FOLDER);
+		return this.#isOptionSet(ALLTABS, FOLDER);
 	}
 
 	isAllTabsFolderLastUsed() {
@@ -131,11 +131,11 @@ class Options {
 	}
 
 	getAllTabsFolder() {
-		return this._getSetFolder(ALLTABS);
+		return this.#getSetFolder(ALLTABS);
 	}
 
 	addAllTabsBookmarksOnTop() {
-		return this._isOptionEnabled(ALLTABS, TOP);
+		return this.#isOptionEnabled(ALLTABS, TOP);
 	}
 
 	// MISCELLANEOUS
@@ -149,7 +149,7 @@ class Options {
 
 	getLastUsedFolder() {
 		let folderId = FIREFOX_FOLDER_UNFILED;
-		if (this._isOptionSet(MISC, LAST_USED_FOLDER)) {
+		if (this.#isOptionSet(MISC, LAST_USED_FOLDER)) {
 			folderId = this.#options[MISC][LAST_USED_FOLDER];
 		}
 		return folderId;
