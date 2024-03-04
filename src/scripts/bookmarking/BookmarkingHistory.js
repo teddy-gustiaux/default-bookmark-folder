@@ -3,32 +3,32 @@
 class BookmarkingHistory {
 	#history;
 	#index = 0;
-	#maxEntries = 1000;
+	#maxEntries = 10_000;
 	#isLocked = false;
 
 	constructor() {
-		this.#history = new Map();
+		this.#history = {};
 	}
 
 	recordBookmark(bookmarkInfo) {
 		if (this.#index > this.#maxEntries) {
 			Logger.warn('Exceeded maximum number of history records (oldest one will be deleted)');
-			this.#history.delete(this.#index - this.#maxEntries);
+			delete this.#history[this.#index - this.#maxEntries];
 		}
 		// We cannot use `bookmarkInfo.dateAdded` because it is the original creation time of the bookmark entry, not the time it is being loaded onto the system.
 		const loadedAd = Date.now();
 		bookmarkInfo.__DBF__loadedAt = loadedAd;
-		this.#history.set(this.#index, bookmarkInfo);
+		this.#history[this.#index] = bookmarkInfo;
 		this.#index++;
 	}
 
 	#isThisPartOfBatchRecording(indexStart, triggeredAt) {
-		let latestRecordedBookmarkTime = this.#history.get(indexStart).__DBF__loadedAt;
+		let latestRecordedBookmarkTime = this.#history[indexStart].__DBF__loadedAt;
 		// Count number of bookmark entries within the 500 ms of the creation time of the entry
 		let stepsBack = 1;
 		while (latestRecordedBookmarkTime >= triggeredAt - 500) {
-			if (!this.#history.get(indexStart - stepsBack)) break;
-			latestRecordedBookmarkTime = this.#history.get(indexStart - stepsBack).__DBF__loadedAt;
+			if (!this.#history[indexStart - stepsBack]) break;
+			latestRecordedBookmarkTime = this.#history[indexStart - stepsBack].__DBF__loadedAt;
 			stepsBack++;
 		}
 		return stepsBack > 2;
@@ -37,21 +37,33 @@ class BookmarkingHistory {
 
 	async processQueue(builtinBookmarking, bookmarkInfo) {
 		const triggeredAt = Date.now();
+		const indexTriggeredAt = JSON.parse(JSON.stringify(this.#index));
 
-		// Let's get a lock before processing
-		await Utils.wait(100);
+		let indexStart = indexTriggeredAt > 0 ? indexTriggeredAt - 1 : 0;
+		if (this.#isThisPartOfBatchRecording(indexStart, triggeredAt)) {
+			Logger.debug('Skipping this bookmark early (reason: batch recording)');
+			return;
+		}
+
+		// Let's get a lock before processing.
+		// Wait is proportional to queue size after the first 2 recorded items.
+		const waitTime = this.#history.length > 2
+			? ( Math.log(10) / Math.log(10 + this.#history.length) ) * 100
+			: 150;
+		await Utils.wait(waitTime);
 		let loops = 0;
-		while (this.#isLocked && loops < 1000) {
+		const maxLoops = 1000;
+		while (this.#isLocked && loops < maxLoops) {
 			loops++;
 			await Utils.wait(5);
 		}
-		if (loops >= 1000) {
+		if (loops >= maxLoops) {
 			Logger.error('Fail-sage exiting. Queue processing taking too long.');
 			return;
 		}
 		this.#isLocked = true;
 
-		const indexStart = this.#index > 0 ? this.#index - 1 : 0;
+		indexStart = this.#index > 0 ? this.#index - 1 : 0;
 		try {
 			if (indexStart === 0) {
 				await builtinBookmarking.moveBookmarkToDefinedLocation(bookmarkInfo);

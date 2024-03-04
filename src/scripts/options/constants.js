@@ -70,4 +70,4 @@ const CLOSE_WELCOME = '#close-welcome';
 const DELETE_WELCOME = '#delete-welcome';
 const VERSION = '[data-manifest*="placeholder-version"]';
 const NAME = '[data-manifest*="placeholder-name"]';
-const BOOKMARK_TREE_FIXED_OPTIONS = ['none', 'last'];
+const BOOKMARK_TREE_FIXED_OPTIONS = [FOLDER_NONE, FOLDER_LAST_USED];
