@@ -2,11 +2,11 @@
 
 class BookmarkingGatekeeper {
 	#options;
-	#globalBookmarkingHistory;
+	#bookmarkingHistory;
 
-	constructor(options, globalBookmarkingHistory) {
+	constructor(options, bookmarkingHistory) {
 		this.#options = options;
-		this.#globalBookmarkingHistory = globalBookmarkingHistory;
+		this.#bookmarkingHistory = bookmarkingHistory;
 	}
 
 	async onBookmarksCreated(id, bookmarkInfo) {
@@ -26,8 +26,8 @@ class BookmarkingGatekeeper {
 				Logger.debug('Processing this bookmark (multi-tabs bookmark creation event)', bookmarkInfo);
 				await builtinBookmarking.move(id, bookmarkInfo, true);
 			} else {
-				this.#globalBookmarkingHistory.recordBookmark(bookmarkInfo);
-				await this.#globalBookmarkingHistory.processQueue(builtinBookmarking, bookmarkInfo);
+				this.#bookmarkingHistory.recordBookmark(bookmarkInfo);
+				await this.#bookmarkingHistory.processQueue(builtinBookmarking, bookmarkInfo);
 			}
 		}
 	}

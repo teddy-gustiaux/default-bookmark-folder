@@ -64,9 +64,8 @@ class ManifestBuilder {
 			background: {
 				scripts: [
 					'scripts/constants.js',
-					'scripts/utils/Logger.js',
-					'scripts/background/bootstrap.js',
 
+					'scripts/utils/Logger.js',
 					'scripts/utils/Utils.js',
 					'scripts/utils/BrowserAction.js',
 					'scripts/utils/PageAction.js',
@@ -76,13 +75,16 @@ class ManifestBuilder {
 					'scripts/components/Update.js',
 					'scripts/components/WebPage.js',
 					'scripts/components/Interface.js',
+					'scripts/components/Orchestrator.js',
 
 					'scripts/bookmarking/BuiltinBookmarking.js',
 					'scripts/bookmarking/QuickBookmarking.js',
 					'scripts/bookmarking/BookmarkingHistory.js',
 					'scripts/bookmarking/BookmarkingGatekeeper.js',
 
-					'scripts/background/listeners.js',
+					'scripts/components/Global.js',
+
+					'scripts/background/bootstrap.js',
 					'scripts/background/background.js',
 				],
 			},

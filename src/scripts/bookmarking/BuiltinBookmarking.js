@@ -62,6 +62,7 @@ class BuiltinBookmarking {
 		if (this.#nodeIsValidForMoving(bookmarkTreeNode)) {
 			browser.bookmarks.move(bookmarkInfo.id, bookmarkTreeNode);
 			await this.#options.updateLastUsedFolder(bookmarkTreeNode.parentId);
+			await Orchestrator.processBookmarkEvent();
 		}
 	}
 

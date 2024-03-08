@@ -21,11 +21,15 @@ class Utils {
 
 	// Get the current tab information
 	static async getActiveTab() {
-		const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-		if (typeof tabs !== 'undefined' && tabs.length > 0) {
-			return tabs[0];
+		try {
+			const tabs = await browser.tabs.query({ active: true, currentWindow: true });
+			if (typeof tabs !== 'undefined' && tabs.length > 0) {
+				return tabs[0];
+			}
+			return null;
+		} catch {
+			return null;
 		}
-		return null;
 	}
 
 	// URLS

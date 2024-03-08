@@ -7,7 +7,7 @@ class Logger {
 	static WARNING = 'warn';
 
 	static #add(type, level, payload, dump = null) {
-		if (!globalIsDevelopment && [Logger.DEBUG, Logger.INFO].includes(type)) return;
+		if (!GLOBAL.isDevelopment && [Logger.DEBUG, Logger.INFO].includes(type)) return;
 
 		let message = `[${level}]`;
 		const now = new Date().toTimeString().slice(0, 8);
@@ -42,6 +42,6 @@ class Logger {
 	}
 
 	static clear() {
-		if (globalIsDevelopment) console.clear();
+		if (GLOBAL.isDevelopment) console.clear();
 	}
 }
