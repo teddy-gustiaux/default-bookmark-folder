@@ -18,9 +18,10 @@ class QuickBookmarking {
 
 	#_createNode() {
 		const bookmarkTreeNode = {
-			title: this.#webPage.title,
+			title: `${this.#webPage.title}${DBF_INTERNAL_INDICATOR}`,,
 			url: this.#webPage.url,
 		};
+
 		if (this.#options.isQuickFolderSet()) {
 			if (this.#options.isQuickFolderLastUsed()) {
 				bookmarkTreeNode.parentId = this.#options.getLastUsedFolder();
@@ -45,20 +46,10 @@ class QuickBookmarking {
 		return isValid;
 	}
 
-	#removeBookmarkCreationListener() {
-		browser.bookmarks.onCreated.removeListener(onBookmarksCreated);
-	}
-
-	#addBookmarkCreationListener() {
-		browser.bookmarks.onCreated.addListener(onBookmarksCreated);
-	}
-
 	async #createBookmarkFromIcon() {
 		const bookmarkTreeNode = this.#_createNode();
 		if (this.#_nodeIsValid(bookmarkTreeNode)) {
-			this.#removeBookmarkCreationListener();
 			await browser.bookmarks.create(bookmarkTreeNode);
-			this.#addBookmarkCreationListener();
 			await this.#options.updateLastUsedFolder(bookmarkTreeNode.parentId);
 		}
 	}
