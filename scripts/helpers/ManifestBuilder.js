@@ -75,16 +75,16 @@ class ManifestBuilder {
 					'scripts/components/Update.js',
 					'scripts/components/WebPage.js',
 					'scripts/components/Interface.js',
-					'scripts/components/Orchestrator.js',
 
 					'scripts/bookmarking/BuiltinBookmarking.js',
 					'scripts/bookmarking/QuickBookmarking.js',
 					'scripts/bookmarking/BookmarkingHistory.js',
 					'scripts/bookmarking/BookmarkingGatekeeper.js',
 
+					'scripts/components/Orchestrator.js',
 					'scripts/components/Global.js',
 
-					'scripts/background/bootstrap.js',
+					'scripts/bootstrap.js',
 					'scripts/background/background.js',
 				],
 			},

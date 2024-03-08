@@ -28,21 +28,29 @@ class Orchestrator {
 
 
 	static async processBookmarkEvent() {
-		Logger.info('Processing bookmark event')
-		// Update the extension options
-		GLOBAL.updateOptions();
-		// Update the extension environment
-		const newlyActiveTab = await Utils.getActiveTab();
-		if (newlyActiveTab) {
-			GLOBAL.webPage = await Orchestrator.#getNewEnvironment(GLOBAL.webPage, newlyActiveTab);
-			// Update the extension interface
-			Orchestrator.#updateInterface(GLOBAL.webPage, GLOBAL.options);
+		try {
+			Logger.info('Processing bookmark event and updating interface')
+			// Update the extension options
+			await GLOBAL.updateOptions();
+			// Update the extension environment
+			const newlyActiveTab = await Utils.getActiveTab();
+			if (newlyActiveTab) {
+				GLOBAL.webPage = await Orchestrator.#getNewEnvironment(GLOBAL.webPage, newlyActiveTab);
+				// Update the extension interface
+				Orchestrator.#updateInterface(GLOBAL.webPage, GLOBAL.options);
+			}
+		} catch (e) {
+			Logger.error(e);
 		}
 	}
 
 	// Update the extension options after user changes
 	static async onOptionsUpdated() {
-		GLOBAL.updateOptions();
+		try {
+			await GLOBAL.updateOptions();
+		} catch (e) {
+			Logger.error(e);
+		}
 	}
 
 	static async onBookmarksCreated(id, bookmarkInfo) {
@@ -55,40 +63,60 @@ class Orchestrator {
 	}
 
 	static async onBookmarksMoved(id, moveInfo) {
-		await GLOBAL.options.updateLastUsedFolder(moveInfo.parentId);
+		try {
+			await GLOBAL.options.updateLastUsedFolder(moveInfo.parentId);
+		} catch (e) {
+			Logger.error(e);
+		}
 	}
 
 	static async onPageActionClick() {
-		const quickBookmarking = new QuickBookmarking(GLOBAL.webPage, GLOBAL.options);
-		await quickBookmarking.toggle();
+		try {
+			const quickBookmarking = new QuickBookmarking(GLOBAL.webPage, GLOBAL.options);
+			await quickBookmarking.toggle();
+		} catch (e) {
+			Logger.error(e);
+		}
 	}
 
 	static async onShortcutUsed(command) {
-		if (command === QUICK_BOOKMARKING_COMMAND) {
-			const quickBookmarking = new QuickBookmarking(GLOBAL.webPage, GLOBAL.options);
-			await quickBookmarking.shortcutToggle();
+		try {
+			if (command === QUICK_BOOKMARKING_COMMAND) {
+				const quickBookmarking = new QuickBookmarking(GLOBAL.webPage, GLOBAL.options);
+				await quickBookmarking.shortcutToggle();
+			}
+		} catch (e) {
+			Logger.error(e);
 		}
 	}
 
 	static async onContextMenuClick(info, tab) {
-		const quickBookmarking = new QuickBookmarking(GLOBAL.webPage, GLOBAL.options);
-		if (info.menuItemId === CM_BOOKMARK) {
-			await quickBookmarking.bookmarkHereViaContextMenu(info);
-		} else if (info.menuItemId === CM_PAGE) {
-			await quickBookmarking.bookmarkToggleViaPageContextMenu(info);
+		try {
+			const quickBookmarking = new QuickBookmarking(GLOBAL.webPage, GLOBAL.options);
+			if (info.menuItemId === CM_BOOKMARK) {
+				await quickBookmarking.bookmarkHereViaContextMenu(info);
+			} else if (info.menuItemId === CM_PAGE) {
+				await quickBookmarking.bookmarkToggleViaPageContextMenu(info);
+			}
+		} catch (e) {
+			Logger.error(e);
 		}
 	}
 
 	static async onAddonInstallation(details) {
-		GLOBAL.updateOptions();
-		const update = new Update(GLOBAL.options);
-		if (details.reason === 'install') {
-			update.openOptionsPage();
-		} else if (details.reason === 'update') {
-			if (details.previousVersion[0] === '1') update.updateFromFirstVersion();
-			if (details.previousVersion === '2.10.0') update.updateRemovedNewReleaseOption();
-			if (details.previousVersion === '3.1.0') update.updateRemovedThemeSwitchOption();
-			await update.displayReleaseNotes();
+		try {
+			await GLOBAL.updateOptions();
+			const update = new Update(GLOBAL.options);
+			if (details.reason === 'install') {
+				update.openOptionsPage();
+			} else if (details.reason === 'update') {
+				if (details.previousVersion[0] === '1') update.updateFromFirstVersion();
+				if (details.previousVersion === '2.10.0') update.updateRemovedNewReleaseOption();
+				if (details.previousVersion === '3.1.0') update.updateRemovedThemeSwitchOption();
+				await update.displayReleaseNotes();
+			}
+		} catch (e) {
+			Logger.error(e);
 		}
 	}
 }

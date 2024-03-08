@@ -141,6 +141,7 @@ class Options {
 	// MISCELLANEOUS
 
 	async updateLastUsedFolder(folderId) {
+		if (!folderId) return;
 		const object = { [LAST_USED_FOLDER]: folderId };
 		await browser.storage.local.set({ [MISC]: object });
 		const folderDetails = await browser.bookmarks.get(folderId);

@@ -47,9 +47,10 @@ class BookmarkingHistory {
 
 		// Let's get a lock before processing.
 		// Wait is proportional to queue size after the first 2 recorded items.
-		const waitTime = this.#history.length > 2
+		let waitTime = this.#history.length > 2
 			? ( Math.log(10) / Math.log(10 + this.#history.length) ) * 100
-			: 150;
+			: 100;
+		if (waitTime > 200) waitTime = 100;
 		await Utils.wait(waitTime);
 		let loops = 0;
 		const maxLoops = 1000;

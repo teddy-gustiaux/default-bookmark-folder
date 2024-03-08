@@ -70,6 +70,7 @@ class BuiltinBookmarking {
 		await browser.bookmarks.update(bookmarkInfo.id, {
 			title: bookmarkInfo.title.replace(DBF_INTERNAL_INDICATOR, ''),
 		});
+		await Orchestrator.processBookmarkEvent();
 	}
 
 	async move(id, bookmarkInfo, skipChecks) {
