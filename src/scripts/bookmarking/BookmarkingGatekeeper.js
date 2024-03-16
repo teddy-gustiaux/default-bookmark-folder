@@ -23,8 +23,7 @@ class BookmarkingGatekeeper {
 			const bookmarkIsVeryRecent = bookmarkInfo.dateAdded >= Date.now() - 1000;
 
 			if ((bookmarkIsMultiTabsSystemCreatedFolder || bookmarkIsPartOfMultiTabsFolder) && bookmarkIsVeryRecent) {
-				Logger.debug('Processing this bookmark (multi-tabs bookmark creation event)', bookmarkInfo);
-				await builtinBookmarking.move(id, bookmarkInfo, true);
+				await builtinBookmarking.move(id, bookmarkInfo, true, 'multi-tabs bookmark creation event');
 			} else {
 				this.#bookmarkingHistory.recordBookmark(bookmarkInfo);
 				await this.#bookmarkingHistory.processQueue(builtinBookmarking, bookmarkInfo);

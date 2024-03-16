@@ -46,8 +46,9 @@ class BuiltinBookmarking {
 		return isValid;
 	}
 
-	async moveBookmarkToDefinedLocation(bookmarkInfo) {
-		Logger.debug('Processing this bookmark', bookmarkInfo);
+	async moveBookmarkToDefinedLocation(bookmarkInfo, reason = '') {
+		const details = reason ? `(reason: ${reason}` : '';
+		Logger.debug(`Processing this bookmark${details}`, bookmarkInfo);
 		let bookmarkTreeNode;
 		if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
 			if (await Utils.bookmarkIsPartOfMultiTabsFolder(bookmarkInfo)) return;
@@ -62,7 +63,7 @@ class BuiltinBookmarking {
 		if (this.#nodeIsValidForMoving(bookmarkTreeNode)) {
 			browser.bookmarks.move(bookmarkInfo.id, bookmarkTreeNode);
 			await this.#options.updateLastUsedFolder(bookmarkTreeNode.parentId);
-			await Orchestrator.processBookmarkEvent();
+			await Orchestrator.processUpdateEvent();
 		}
 	}
 
@@ -70,10 +71,15 @@ class BuiltinBookmarking {
 		await browser.bookmarks.update(bookmarkInfo.id, {
 			title: bookmarkInfo.title.replace(DBF_INTERNAL_INDICATOR, ''),
 		});
-		await Orchestrator.processBookmarkEvent();
+		await Orchestrator.processUpdateEvent();
 	}
 
-	async move(id, bookmarkInfo, skipChecks) {
+	async skipBookmark(bookmarkInfo, reason) {
+		Logger.debug(`Skipping this bookmark (reason: ${reason})`);
+		await this.#options.updateLastUsedFolder(bookmarkInfo.parentId);
+	}
+
+	async move(id, bookmarkInfo, skipChecks, reason = '') {
 		if (!skipChecks) {
 			if (Utils.bookmarkIsSeparator(bookmarkInfo)) return;
 			if (Utils.bookmarkIsBlankWebPage(bookmarkInfo)) return;
@@ -83,6 +89,6 @@ class BuiltinBookmarking {
 				if (!bookmarkIsCurrentPage) return;
 			}
 		}
-		await this.moveBookmarkToDefinedLocation(bookmarkInfo);
+		await this.moveBookmarkToDefinedLocation(bookmarkInfo, reason);
 	}
 }

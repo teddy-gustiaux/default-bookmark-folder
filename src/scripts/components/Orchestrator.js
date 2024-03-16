@@ -27,9 +27,9 @@ class Orchestrator {
 	}
 
 
-	static async processBookmarkEvent() {
+	static async processUpdateEvent() {
 		try {
-			Logger.info('Processing bookmark event and updating interface')
+			Logger.info('Processing update event')
 			// Update the extension options
 			await GLOBAL.updateOptions();
 			// Update the extension environment

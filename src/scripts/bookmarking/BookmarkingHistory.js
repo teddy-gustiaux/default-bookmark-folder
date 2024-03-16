@@ -41,7 +41,7 @@ class BookmarkingHistory {
 
 		let indexStart = indexTriggeredAt > 0 ? indexTriggeredAt - 1 : 0;
 		if (this.#isThisPartOfBatchRecording(indexStart, triggeredAt)) {
-			Logger.debug('Skipping this bookmark early (reason: batch recording)');
+			await builtinBookmarking.skipBookmark(bookmarkInfo, 'batch recording (detected early)')
 			return;
 		}
 
@@ -70,7 +70,7 @@ class BookmarkingHistory {
 				await builtinBookmarking.moveBookmarkToDefinedLocation(bookmarkInfo);
 			} else {
 				if (this.#isThisPartOfBatchRecording(indexStart, triggeredAt)) {
-					Logger.debug('Skipping this bookmark (reason: batch recording)');
+					await builtinBookmarking.skipBookmark(bookmarkInfo, 'batch recording')
 				} else {
 					await builtinBookmarking.move(bookmarkInfo.id, bookmarkInfo, false);
 				}
