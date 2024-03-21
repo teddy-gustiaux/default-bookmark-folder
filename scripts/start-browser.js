@@ -22,6 +22,7 @@ webExt.cmd.run(
 		devtools: true,
 		pref: {
 			'browser.toolbars.bookmarks.visibility': 'always',
+			'browser.bookmarks.addedImportButton': true,
 		},
 	},
 	{
