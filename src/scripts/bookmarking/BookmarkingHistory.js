@@ -25,13 +25,24 @@ class BookmarkingHistory {
 	#isThisPartOfBatchRecording(indexStart, triggeredAt) {
 		let latestRecordedBookmarkTime = this.#history[indexStart].__DBF__loadedAt;
 		// Count number of bookmark entries within the 500 ms of the creation time of the entry
+		// (either before or after the entry creation event)
 		let stepsBack = 1;
 		while (latestRecordedBookmarkTime >= triggeredAt - 500) {
 			if (!this.#history[indexStart - stepsBack]) break;
 			latestRecordedBookmarkTime = this.#history[indexStart - stepsBack].__DBF__loadedAt;
 			stepsBack++;
 		}
-		return stepsBack > 2;
+		if (stepsBack > 2 ) {
+			return true;
+		} else {
+			let stepsForward = 1;
+			while (latestRecordedBookmarkTime >= triggeredAt - 500) {
+				if (!this.#history[indexStart + stepsForward]) break;
+				latestRecordedBookmarkTime = this.#history[indexStart + stepsForward].__DBF__loadedAt;
+				stepsForward++;
+			}
+			return stepsForward > 2;
+		}
 
 	}
 
@@ -66,14 +77,10 @@ class BookmarkingHistory {
 
 		indexStart = this.#index > 0 ? this.#index - 1 : 0;
 		try {
-			if (indexStart === 0) {
-				await builtinBookmarking.moveBookmarkToDefinedLocation(bookmarkInfo);
+			if (this.#isThisPartOfBatchRecording(indexStart, triggeredAt)) {
+				await builtinBookmarking.skipBookmark(bookmarkInfo, 'batch recording')
 			} else {
-				if (this.#isThisPartOfBatchRecording(indexStart, triggeredAt)) {
-					await builtinBookmarking.skipBookmark(bookmarkInfo, 'batch recording')
-				} else {
-					await builtinBookmarking.move(bookmarkInfo.id, bookmarkInfo, false);
-				}
+				await builtinBookmarking.move(bookmarkInfo.id, bookmarkInfo, false);
 			}
 		} catch (e) {
 			Logger.error(e);
