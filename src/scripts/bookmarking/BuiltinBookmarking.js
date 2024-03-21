@@ -46,8 +46,8 @@ class BuiltinBookmarking {
 		return isValid;
 	}
 
-	async moveBookmarkToDefinedLocation(bookmarkInfo, reason = '') {
-		const details = reason ? `(reason: ${reason}` : '';
+	async #moveBookmarkToDefinedLocation(bookmarkInfo, reason = '') {
+		const details = reason ? ` (reason: ${reason}` : '';
 		Logger.debug(`Processing this bookmark${details}`, bookmarkInfo);
 		let bookmarkTreeNode;
 		if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
@@ -81,14 +81,39 @@ class BuiltinBookmarking {
 
 	async move(id, bookmarkInfo, skipChecks, reason = '') {
 		if (!skipChecks) {
-			if (Utils.bookmarkIsSeparator(bookmarkInfo)) return;
-			if (Utils.bookmarkIsBlankWebPage(bookmarkInfo)) return;
-			if (await Utils.bookmarkIsRegularFolder(bookmarkInfo)) return;
+
+			if (Utils.bookmarkIsSeparator(bookmarkInfo)) {
+				Logger.debug('Skipping this bookmark (reason: separator)');
+				return;
+			}
+
+			if (Utils.bookmarkIsBlankWebPage(bookmarkInfo)) {
+				Logger.debug('Skipping this bookmark (reason: blank web page)');
+				return;
+			}
+
+			if (await Utils.bookmarkIsRegularFolder(bookmarkInfo)) {
+				Logger.debug('Skipping this bookmark (reason: regular folder)');
+				return;
+			}
+
 			if (!await Utils.bookmarkIsMultiTabsSystemCreatedFolder(bookmarkInfo)) {
 				const bookmarkIsCurrentPage = await Utils.bookmarkIsCurrentPage(bookmarkInfo);
-				if (!bookmarkIsCurrentPage) return;
+				if (!bookmarkIsCurrentPage) {
+					Logger.debug('Skipping this bookmark (reason: drag-and-drop other URL)');
+					await this.#options.updateLastUsedFolder(bookmarkInfo.parentId);
+					return;
+				} else {
+					const children = await browser.bookmarks.getChildren(bookmarkInfo.parentId);
+					if (bookmarkInfo.index !== children.length - 1) {
+						Logger.debug('Skipping this bookmark (reason: drag-and-drop current URL)');
+						await this.#options.updateLastUsedFolder(bookmarkInfo.parentId);
+						return;
+					}
+				}
 			}
 		}
-		await this.moveBookmarkToDefinedLocation(bookmarkInfo, reason);
+
+		await this.#moveBookmarkToDefinedLocation(bookmarkInfo, reason);
 	}
 }
