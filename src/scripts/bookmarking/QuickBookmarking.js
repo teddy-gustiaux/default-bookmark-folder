@@ -56,9 +56,9 @@ class QuickBookmarking {
 		}
 	}
 
-	async toggle() {
+	async toggle(ignoreInboxMode = false) {
 		if (this.#webPage.isBookmarked) {
-			if (this.#options.isInboxModeEnabled()) {
+			if (!ignoreInboxMode && this.#options.isInboxModeEnabled()) {
 				if (
 					Utils.allBookmarksAreInFolder(
 						this.#options.getQuickFolder(),
@@ -113,7 +113,7 @@ class QuickBookmarking {
 
 	async bookmarkToggleViaPageContextMenu(clickData) {
 		if (this.#options.areContextMenusEnabled() && this.#webPage.isSupported) {
-			await this.toggle();
+			await this.toggle(true);
 		}
 	}
 }
