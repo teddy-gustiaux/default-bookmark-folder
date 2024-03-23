@@ -3,7 +3,8 @@ import webExt from 'web-ext';
 import { buildManifest } from './helpers/ManifestBuilder.js';
 
 const target = process.argv[2];
-const { browser, sourceDir } = await buildManifest(target);
+const isDevelopmentMode = process.argv[3] === 'debug';
+const { browser, sourceDir } = await buildManifest(target, isDevelopmentMode);
 
 webExt.cmd.build(
 	{

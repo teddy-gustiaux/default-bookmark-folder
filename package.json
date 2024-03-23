@@ -15,6 +15,7 @@
     "deps:outdated": "ncu",
     "deps:update": "ncu --upgrade",
     "webext:lint:firefox": "node ./scripts/lint-extension.js firefox",
+    "webext:build:debug:firefox": "node ./scripts/build-extension.js firefox debug",
     "webext:build:firefox": "node ./scripts/build-extension.js firefox",
     "webext:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
