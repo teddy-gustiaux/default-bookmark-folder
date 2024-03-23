@@ -28,6 +28,8 @@ class QuickBookmarking {
 			} else {
 				bookmarkTreeNode.parentId = this.#options.getQuickFolder();
 			}
+		} else {
+			bookmarkTreeNode.parentId = FIREFOX_FOLDER_UNFILED;
 		}
 		if (this.#options.addQuickBookmarksOnTop()) bookmarkTreeNode.index = 0;
 		return bookmarkTreeNode;

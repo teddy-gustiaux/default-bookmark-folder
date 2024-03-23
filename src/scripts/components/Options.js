@@ -97,7 +97,8 @@ class Options {
 	}
 
 	getQuickFolder() {
-		return this.#getSetFolder(ICON);
+		const folder = this.#getSetFolder(ICON);
+		return folder === FOLDER_NONE ? FIREFOX_FOLDER_UNFILED : folder;
 	}
 
 	addQuickBookmarksOnTop() {
