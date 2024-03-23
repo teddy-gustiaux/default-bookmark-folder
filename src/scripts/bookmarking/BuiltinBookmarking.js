@@ -47,7 +47,7 @@ class BuiltinBookmarking {
 	}
 
 	async #moveBookmarkToDefinedLocation(bookmarkInfo, reason = '') {
-		const details = reason ? ` (reason: ${reason}` : '';
+		const details = reason ? ` (reason: ${reason})` : '';
 		Logger.debug(`Processing this bookmark${details}`, bookmarkInfo);
 		let bookmarkTreeNode;
 		if (Utils.bookmarkIsWebPage(bookmarkInfo)) {
@@ -76,7 +76,6 @@ class BuiltinBookmarking {
 
 	async skipBookmark(bookmarkInfo, reason) {
 		Logger.debug(`Skipping this bookmark (reason: ${reason})`);
-		await this.#options.updateLastUsedFolder(bookmarkInfo.parentId);
 	}
 
 	async move(id, bookmarkInfo, skipChecks, reason = '') {
