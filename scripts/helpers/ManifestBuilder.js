@@ -11,9 +11,9 @@ class ManifestBuilder {
 	get baseValues() {
 		return {
 			manifest_version: 2,
-			name: `Default Bookmark Folder ${this.developmentMode ? ' [DEV]' : ''}`,
+			name: `Default Bookmark Folder${this.developmentMode ? ' [DEV]' : ''}`,
 			author: 'Teddy Gustiaux',
-			version: '3.1.0',
+			version: '4.0.0',
 			description: '__MSG_manifest_extension_description__',
 			homepage_url: 'https://github.com/teddy-gustiaux/default-bookmark-folder',
 			default_locale: 'en',
