@@ -88,7 +88,7 @@ class QuickBookmarking {
 
 	#createBookmarkHereNode(clickedBookmark) {
 		const bookmarkTreeNode = {
-			title:  `${this.#webPage.title}${DBF_INTERNAL_INDICATOR}`,
+			title: `${this.#webPage.title}${DBF_INTERNAL_INDICATOR}`,
 			url: this.#webPage.url,
 		};
 		if (Utils.bookmarkIsFolder(clickedBookmark)) {

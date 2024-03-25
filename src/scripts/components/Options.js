@@ -97,6 +97,7 @@ class Options {
 	}
 
 	getQuickFolder() {
+		if (this.isQuickFolderLastUsed()) return this.getLastUsedFolder();
 		const folder = this.#getSetFolder(ICON);
 		return folder === FOLDER_NONE ? FIREFOX_FOLDER_UNFILED : folder;
 	}
