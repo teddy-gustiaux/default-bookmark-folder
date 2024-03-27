@@ -38,17 +38,20 @@
   "welcome_title": {
     "message": "Üdvözöljük!"
   },
-  "welcome_thank_you": {
-    "message": "Köszönjük, hogy a telepíti ezt a kiegészítőt!"
+  "welcome_installation_1": {
+    "message": "You have successfully installed Default Bookmark Folder!"
   },
-  "welcome_configure": {
+  "welcome_installation_2": {
+    "message": "Features are disabled by default and will not affect your Firefox installation."
+  },
+  "welcome_installation_3": {
     "message": "Szánjon rá egy kis időt, hogy a saját igényeire szabja."
   },
   "welcome_message_display": {
     "message": "Ez az üzenet csak egyszer lesz megjelenítve."
   },
   "welcome_ok": {
-    "message": "Megvan!"
+    "message": "Let's go! 🚀"
   },
   "options_title": {
     "message": "Alapértelmezett könyvjelzőmappa beállítások"
@@ -93,7 +96,7 @@
     "message": "If disabled, new bookmarks will be added to the bottom of the selected folder or where dragged-and-dropped"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "Az alábbi beállítások csak akkor alkalmazhatók, ha egyszerre több kiválasztott lapot könyvjelzővel látnak el, vagy ha az összes nyitott fülnél a \"Minden lap könyvjelzőbe ... \" funkciót használják. Lehetővé teszi az újonnan létrehozott mappa alapértelmezett helyének felülírását, amely magában foglal egy könyvjelzőt a kiválasztott vagy megnyitott fülek mindegyikéhez (a funkciótól függően), valamint a mappa helyzetét ezen a helyen."
+    "message": "The settings below only apply when bookmarking multiple selected tabs at once. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected, as well as the position of the folder in this location."
   },
   "options_ff_built_in_folder_all_tabs": {
     "message": "Válassza ki, hová kerüljenek a könyvjelzővel ellátott lapok új mappái:"
@@ -120,7 +123,7 @@
     "message": "Gyors könyvjelző helyi menü engedélyezése"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Gyors könyvjelző az oldal helyi menüjén keresztül, vagy közvetlenül egy adott mappába a helyi menü segítségével (Firefox 59+ szükséges)"
+    "message": "Gyors könyvjelző az oldal helyi menüjén keresztül, vagy közvetlenül egy adott mappába a helyi menü segítségével"
   },
   "options_icon_note": {
     "message": "A lenti beállítások csak a Gyors könyvjelzőzésre vonatkoznak."
@@ -180,28 +183,28 @@
     "message": "Visszajelzés"
   },
   "options_please_review_1": {
-    "message": "Ha tetszik önnek ez a kiegészítő, akkor kérjük adjon pozitív"
+    "message": "❤️ Enjoying the add-on? Please take a minute to give it a positive"
   },
   "options_please_review_2": {
-    "message": "értékelést"
+    "message": "review"
   },
-  "options_bug_feature_1": {
-    "message": "Ha hibát szeretne jelenteni, vagy új funkciót kérni, akkor nyithat egy új bejelentést a"
+  "options_bug_1": {
+    "message": "🐛 Found a bug? If you can, please open an issue on"
   },
-  "options_bug_feature_2": {
-    "message": "GitHubon"
+  "options_bug_2": {
+    "message": "GitHub"
   },
-  "options_bug_feature_3": {
-    "message": "Ha nincs fiókja, akkor ingyen létrehozhat egyet."
+  "options_limitations_1": {
+    "message": "Please beware of the add-on limitations due to Firefox's internal system. More details on this"
+  },
+  "options_limitations_2": {
+    "message": "wiki page"
   },
   "options_version": {
-    "message": "Verzió:"
-  },
-  "options_author": {
-    "message": "Szerzõ:"
+    "message": "Verzió"
   },
   "options_license": {
-    "message": "Licenc:"
+    "message": "Licenc"
   },
   "popup_quick_bookmarking_folder_title": {
     "message": "Gyors könyvjelzőzés mappába"

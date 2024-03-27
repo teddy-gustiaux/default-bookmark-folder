@@ -38,17 +38,20 @@
   "welcome_title": {
     "message": "Bienvenue !"
   },
-  "welcome_thank_you": {
-    "message": "Merci d’avoir installé cette extension !"
+  "welcome_installation_1": {
+    "message": "Vous avez installé Default Bookmark Folder avec succès!"
   },
-  "welcome_configure": {
+  "welcome_installation_2": {
+    "message": "Les fonctionnalités sont désactivées par défaut et n’affecteront pas votre installation de Firefox."
+  },
+  "welcome_installation_3": {
     "message": "Merci de prendre quelques instants pour la configurer selon vos préférences."
   },
   "welcome_message_display": {
     "message": "Ce message ne s’affichera qu’une seule fois."
   },
   "welcome_ok": {
-    "message": "OK !"
+    "message": "C’est parti ! 🚀"
   },
   "options_title": {
     "message": "Paramètres de Default Bookmark Folder"
@@ -93,7 +96,7 @@
     "message": "Si désactivé, les nouveaux marque-pages seront ajoutés en bas du dossier sélectionné ou à la position du glisser-déposer"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "Les paramètres ci-dessous ne s’applique qu’aux fonctionnalités permettant de marquer les onglets sélectionnés ou de \"Marquer tous les onglets...\" ouverts de Firefox. Ils vous permettent de choisir le dossier (et la position) par défaut du dossier nouvellement créé, qui contient un marque-page pour chaque onglet sélectionné ou ouvert (suivant la fonctionnalité utilisée)."
+    "message": "Les paramètres ci-dessous ne s’applique qu’aux fonctionnalités permettant de marquer les onglets sélectionnés. Ils vous permettent de choisir le dossier (et la position) par défaut du dossier nouvellement créé, qui contient un marque-page pour chaque onglet sélectionné."
   },
   "options_ff_built_in_folder_all_tabs": {
     "message": "Sélectionner où les nouveaux dossiers d’onglets marqués seront ajoutés :"
@@ -120,7 +123,7 @@
     "message": "Activer le menu contextuel de marquage rapide"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Marquer rapidement via le menu contextuel d’une page, ou directement dans un dossier spécifique via son menu contextuel (requiert Firefox 59+)"
+    "message": "Marquer rapidement via le menu contextuel d’une page, ou directement dans un dossier spécifique via son menu contextuel"
   },
   "options_icon_note": {
     "message": "Les paramètres ci-dessous ne s’appliquent qu’au système de marquage rapide."
@@ -180,28 +183,28 @@
     "message": "Commentaires"
   },
   "options_please_review_1": {
-    "message": "Si vous aimez cette extension, n’hésitez pas à lui donner une "
+    "message": "❤️ Vous aimez cette extension ? Merci de prendre un moment pour lui donner une"
   },
   "options_please_review_2": {
-    "message": "note "
+    "message": "note"
   },
-  "options_bug_feature_1": {
-    "message": "Si vous souhaitez signaler un problème ou demander une nouvelle fonctionnalité, merci de le faire sur"
+  "options_bug_1": {
+    "message": "🐛 Vous avez trouvé un problème ? Si vous pouvez, merci de le signaler sur"
   },
-  "options_bug_feature_2": {
+  "options_bug_2": {
     "message": "GitHub"
   },
-  "options_bug_feature_3": {
-    "message": "Si vous n’avez pas de compte, vous pouvez en créer un gratuitement."
+  "options_limitations_1": {
+    "message": "Please beware of the add-on limitations due to Firefox's internal system. More details on this"
+  },
+  "options_limitations_2": {
+    "message": "wiki page"
   },
   "options_version": {
-    "message": "Version:"
-  },
-  "options_author": {
-    "message": "Auteur:"
+    "message": "Version"
   },
   "options_license": {
-    "message": "Licence:"
+    "message": "Licence"
   },
   "popup_quick_bookmarking_folder_title": {
     "message": "Marque-page rapide dans un dossier"

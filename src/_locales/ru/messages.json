@@ -38,17 +38,20 @@
   "welcome_title": {
     "message": "Добро пожаловать!"
   },
-  "welcome_thank_you": {
-    "message": "Благодарим вас за установку этого расширения!"
+  "welcome_installation_1": {
+    "message": "You have successfully installed Default Bookmark Folder!"
   },
-  "welcome_configure": {
+  "welcome_installation_2": {
+    "message": "Features are disabled by default and will not affect your Firefox installation."
+  },
+  "welcome_installation_3": {
     "message": "Пожалуйста, уделите немножко времени чтобы настроить его в соответствии со своими предпочтениями."
   },
   "welcome_message_display": {
     "message": "Данное сообщение появляется только один раз."
   },
   "welcome_ok": {
-    "message": "Понятно!"
+    "message": "Let's go! 🚀"
   },
   "options_title": {
     "message": "Настройки Default Bookmark Folder"
@@ -93,7 +96,7 @@
     "message": "If disabled, new bookmarks will be added to the bottom of the selected folder or where dragged-and-dropped"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "The settings below only apply when bookmarking multiple selected tabs at once or when using the \"Bookmark All Tabs...\" feature for all open tabs. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected or open tabs (depending on the feature), as well as the position of the folder in this location."
+    "message": "The settings below only apply when bookmarking multiple selected tabs at once. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected, as well as the position of the folder in this location."
   },
   "options_ff_built_in_folder_all_tabs": {
     "message": "Select where new folders of bookmarked tabs will be added:"
@@ -120,7 +123,7 @@
     "message": "Добавить пункт быстрых закладок в контекстное меню"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Позволяет добавлять быстрые закладки через контекстное меню страницы, или напрямую в выбранную папку через её контекстное меню (требуется Firefox 59+)"
+    "message": "Позволяет добавлять быстрые закладки через контекстное меню страницы, или напрямую в выбранную папку через её контекстное меню"
   },
   "options_icon_note": {
     "message": "Настройки ниже, применимы только к функциям быстрых закладок."
@@ -180,28 +183,28 @@
     "message": "Обратная связь"
   },
   "options_please_review_1": {
-    "message": "Если вам нравится это расширение, пожалуйста оставьте о нём хороший"
+    "message": "❤️ Enjoying the add-on? Please take a minute to give it a positive"
   },
   "options_please_review_2": {
-    "message": "отзыв"
+    "message": "review"
   },
-  "options_bug_feature_1": {
-    "message": "Если вы хотите сообщить об ошибке или попросить добавить новую функцию, вы можете создать тему на"
+  "options_bug_1": {
+    "message": "🐛 Found a bug? If you can, please open an issue on"
   },
-  "options_bug_feature_2": {
+  "options_bug_2": {
     "message": "GitHub"
   },
-  "options_bug_feature_3": {
-    "message": "Если у вас нет учётной записи на GitHub, вы всегда можете создать её совершенно бесплатно."
+  "options_limitations_1": {
+    "message": "Please beware of the add-on limitations due to Firefox's internal system. More details on this"
+  },
+  "options_limitations_2": {
+    "message": "wiki page"
   },
   "options_version": {
-    "message": "Версия:"
-  },
-  "options_author": {
-    "message": "Автор:"
+    "message": "Версия"
   },
   "options_license": {
-    "message": "Лицензия:"
+    "message": "Лицензия"
   },
   "popup_quick_bookmarking_folder_title": {
     "message": "Quick bookmarking to folder"
