@@ -2,7 +2,9 @@
 
 // TABS
 // Listen to tab URL changes (limit to necessary events)
-browser.tabs.onUpdated.addListener(Orchestrator.processUpdateEvent, { properties: ['status', 'title'] });
+browser.tabs.onUpdated.addListener(Orchestrator.processUpdateEvent, {
+	properties: ['status', 'title'],
+});
 // Listen to tab activation and tab switching
 browser.tabs.onActivated.addListener(Orchestrator.processUpdateEvent);
 

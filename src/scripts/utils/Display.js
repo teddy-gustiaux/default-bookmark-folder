@@ -1,7 +1,6 @@
 'use strict';
 
 class Display {
-
 	// Inserts SVG icons inline
 	static insertSvgIcons() {
 		const parser = new DOMParser();

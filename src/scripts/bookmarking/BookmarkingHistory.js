@@ -32,18 +32,18 @@ class BookmarkingHistory {
 			latestRecordedBookmarkTime = this.#history[indexStart - stepsBack].__DBF__loadedAt;
 			stepsBack++;
 		}
-		if (stepsBack > 2 ) {
+		if (stepsBack > 2) {
 			return true;
 		} else {
 			let stepsForward = 1;
 			while (latestRecordedBookmarkTime >= triggeredAt - 500) {
 				if (!this.#history[indexStart + stepsForward]) break;
-				latestRecordedBookmarkTime = this.#history[indexStart + stepsForward].__DBF__loadedAt;
+				latestRecordedBookmarkTime =
+					this.#history[indexStart + stepsForward].__DBF__loadedAt;
 				stepsForward++;
 			}
 			return stepsForward > 2;
 		}
-
 	}
 
 	async processQueue(builtinBookmarking, bookmarkInfo) {
@@ -52,15 +52,16 @@ class BookmarkingHistory {
 
 		let indexStart = indexTriggeredAt > 0 ? indexTriggeredAt - 1 : 0;
 		if (this.#isThisPartOfBatchRecording(indexStart, triggeredAt)) {
-			await builtinBookmarking.skipBookmark(bookmarkInfo, 'batch recording (detected early)')
+			await builtinBookmarking.skipBookmark(bookmarkInfo, 'batch recording (detected early)');
 			return;
 		}
 
 		// Let's get a lock before processing.
 		// Wait is proportional to queue size after the first 2 recorded items.
-		let waitTime = this.#history.length > 2
-			? ( Math.log(10) / Math.log(10 + this.#history.length) ) * 100
-			: 100;
+		let waitTime =
+			this.#history.length > 2
+				? (Math.log(10) / Math.log(10 + this.#history.length)) * 100
+				: 100;
 		if (waitTime > 200) waitTime = 100;
 		await Utils.wait(waitTime);
 		let loops = 0;
@@ -78,7 +79,7 @@ class BookmarkingHistory {
 		indexStart = this.#index > 0 ? this.#index - 1 : 0;
 		try {
 			if (this.#isThisPartOfBatchRecording(indexStart, triggeredAt)) {
-				await builtinBookmarking.skipBookmark(bookmarkInfo, 'batch recording')
+				await builtinBookmarking.skipBookmark(bookmarkInfo, 'batch recording');
 			} else {
 				await builtinBookmarking.move(bookmarkInfo.id, bookmarkInfo, false);
 			}

@@ -76,8 +76,8 @@ function mobileMenuManagement() {
 async function reloadOnBookmarkFolderChanges(id, info) {
 	if (
 		(Object.prototype.hasOwnProperty.call(info, 'node') && Utils.bookmarkIsFolder(info.node)) ||
-		Utils.bookmarkIsFolder(info))
-	{
+		Utils.bookmarkIsFolder(info)
+	) {
 		const options = await Utils.getOptions();
 		restoreInputs(options);
 	}

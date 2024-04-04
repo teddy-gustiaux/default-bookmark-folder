@@ -1,7 +1,6 @@
 'use strict';
 
 class Orchestrator {
-
 	// Get the new web page environment (if necessary) for the new currently active tab
 	static async #getNewEnvironment(previousWebPage, newlyActiveTab) {
 		const newURL = newlyActiveTab.url;
@@ -26,16 +25,18 @@ class Orchestrator {
 		userInterface.updateContextMenus();
 	}
 
-
 	static async processUpdateEvent() {
 		try {
-			Logger.info('Processing update event')
+			Logger.info('Processing update event');
 			// Update the extension options
 			await GLOBAL.updateOptions();
 			// Update the extension environment
 			const newlyActiveTab = await Utils.getActiveTab();
 			if (newlyActiveTab) {
-				GLOBAL.webPage = await Orchestrator.#getNewEnvironment(GLOBAL.webPage, newlyActiveTab);
+				GLOBAL.webPage = await Orchestrator.#getNewEnvironment(
+					GLOBAL.webPage,
+					newlyActiveTab,
+				);
 				// Update the extension interface
 				Orchestrator.#updateInterface(GLOBAL.webPage, GLOBAL.options);
 			}

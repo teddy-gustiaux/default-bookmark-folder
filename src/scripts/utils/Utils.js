@@ -11,8 +11,8 @@ class Utils {
 	// MISCELLANEOUS
 
 	// Wait for a minimum of time (beware of limitations of setTimeout)
-	static async wait(milliseconds){
-		return new Promise(resolve => {
+	static async wait(milliseconds) {
+		return new Promise((resolve) => {
 			setTimeout(resolve, milliseconds);
 		});
 	}
@@ -123,8 +123,8 @@ class Utils {
 	static async bookmarkIsMultiTabsSystemCreatedFolder(bookmarkInfo) {
 		const children = await browser.bookmarks.getChildren(bookmarkInfo.id);
 		if (children.length === 0) return false;
-		return children.every(child => {
-			return (Utils.bookmarkIsWebPage(child) && child.dateAdded === bookmarkInfo.dateAdded);
+		return children.every((child) => {
+			return Utils.bookmarkIsWebPage(child) && child.dateAdded === bookmarkInfo.dateAdded;
 		});
 	}
 
@@ -133,7 +133,7 @@ class Utils {
 		const parents = await browser.bookmarks.get(bookmarkInfo.parentId);
 		if (parents[0]) {
 			result =
-				await Utils.bookmarkIsMultiTabsSystemCreatedFolder(parents[0]) &&
+				(await Utils.bookmarkIsMultiTabsSystemCreatedFolder(parents[0])) &&
 				bookmarkInfo.dateAdded === parents[0].dateAdded;
 		}
 		return result;
@@ -143,7 +143,7 @@ class Utils {
 	static async bookmarkIsRegularFolder(bookmarkInfo) {
 		let isRegularFolder = false;
 		if (Utils.bookmarkIsFolder(bookmarkInfo)) {
-			isRegularFolder = !await Utils.bookmarkIsMultiTabsSystemCreatedFolder(bookmarkInfo);
+			isRegularFolder = !(await Utils.bookmarkIsMultiTabsSystemCreatedFolder(bookmarkInfo));
 		}
 		return isRegularFolder;
 	}

@@ -156,7 +156,7 @@ class ManifestBuilder {
 	}
 
 	#makeForFirefox() {
-		return merge({ ...this.baseValues, ...this.firefoxValues}, this.firefoxDevelopmentValues);
+		return merge({ ...this.baseValues, ...this.firefoxValues }, this.firefoxDevelopmentValues);
 	}
 
 	#makeForChrome() {
@@ -184,7 +184,11 @@ const buildManifest = async (target, developmentMode = false) => {
 	const browser =
 		target === ManifestBuilder.CHROME ? ManifestBuilder.CHROME : ManifestBuilder.FIREFOX;
 
-	const builder = new ManifestBuilder(browser, path.join(sourceDir, '/manifest.json'), developmentMode);
+	const builder = new ManifestBuilder(
+		browser,
+		path.join(sourceDir, '/manifest.json'),
+		developmentMode,
+	);
 	await builder.make();
 
 	let specificOptions = {};

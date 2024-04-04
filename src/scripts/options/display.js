@@ -21,7 +21,7 @@ function buildBookmarkFolderItems(bookmarkItem, indent, selectors) {
 		bookmarkItem.children.length !== 0
 	) {
 		Array.from(bookmarkItem.children).forEach((child) =>
-		buildBookmarkFolderItems(child, indentProgress, selectors),
+			buildBookmarkFolderItems(child, indentProgress, selectors),
 		);
 	}
 }
@@ -36,10 +36,7 @@ function resetBookmarkFolderTree(selectors) {
 		const select = document.querySelector(selector);
 		for (let i = select.options.length; i >= 0; i--) {
 			const item = select.item(i);
-			if (
-				item !== null
-				&& !BOOKMARK_TREE_FIXED_OPTIONS.includes(item.value)
-			) {
+			if (item !== null && !BOOKMARK_TREE_FIXED_OPTIONS.includes(item.value)) {
 				select.remove(i);
 			}
 		}
@@ -49,8 +46,12 @@ function resetBookmarkFolderTree(selectors) {
 // Inserts data from the manifest into the options page
 function insertDataFromManifest() {
 	const manifest = browser.runtime.getManifest();
-	document.querySelectorAll(VERSION).forEach(element => element.textContent = manifest.version);
-	document.querySelectorAll(NAME).forEach(element => element.childNodes[0].textContent = manifest.name);
+	document
+		.querySelectorAll(VERSION)
+		.forEach((element) => (element.textContent = manifest.version));
+	document
+		.querySelectorAll(NAME)
+		.forEach((element) => (element.childNodes[0].textContent = manifest.name));
 }
 
 // TABS
@@ -126,5 +127,5 @@ function isDarkThemeEnabled() {
 function toggleThemeHandling() {
 	const tags = document.querySelectorAll('.tags');
 	const classToApply = isDarkThemeEnabled() ? 'is-dark' : 'is-light';
-	tags.forEach(element => element.classList.add(classToApply));
+	tags.forEach((element) => element.classList.add(classToApply));
 }

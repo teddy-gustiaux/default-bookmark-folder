@@ -54,7 +54,7 @@ class BuiltinBookmarking {
 			if (await Utils.bookmarkIsPartOfMultiTabsFolder(bookmarkInfo)) return;
 			bookmarkTreeNode = this.#createMovingPropertiesForBookmark();
 		} else if (Utils.bookmarkIsFolder(bookmarkInfo)) {
-			if (!await Utils.bookmarkIsMultiTabsSystemCreatedFolder(bookmarkInfo)) return;
+			if (!(await Utils.bookmarkIsMultiTabsSystemCreatedFolder(bookmarkInfo))) return;
 			bookmarkTreeNode = this.#createMovingPropertiesForAllTabsFolder();
 		}
 		if (!Object.prototype.hasOwnProperty.call(bookmarkTreeNode, 'parentId')) {
@@ -80,7 +80,6 @@ class BuiltinBookmarking {
 
 	async move(id, bookmarkInfo, skipChecks, reason = '') {
 		if (!skipChecks) {
-
 			if (Utils.bookmarkIsSeparator(bookmarkInfo)) {
 				Logger.debug('Skipping this bookmark (reason: separator)');
 				return;
@@ -96,7 +95,7 @@ class BuiltinBookmarking {
 				return;
 			}
 
-			if (!await Utils.bookmarkIsMultiTabsSystemCreatedFolder(bookmarkInfo)) {
+			if (!(await Utils.bookmarkIsMultiTabsSystemCreatedFolder(bookmarkInfo))) {
 				const bookmarkIsCurrentPage = await Utils.bookmarkIsCurrentPage(bookmarkInfo);
 				if (!bookmarkIsCurrentPage) {
 					Logger.debug('Skipping this bookmark (reason: drag-and-drop other URL)');
