@@ -9,7 +9,7 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate this [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
-# [4.0.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v3.1.0...v4.0.0) (2024-03-25)
+# [4.0.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v3.1.0...v4.0.0) (2024-04-03)
 
 ### BREAKING CHANGES
 
