@@ -38,17 +38,20 @@
   "welcome_title": {
     "message": "Welcome!"
   },
-  "welcome_thank_you": {
-    "message": "Thank you for installing this add-on!"
+  "welcome_installation_1": {
+    "message": "You have successfully installed Default Bookmark Folder!"
   },
-  "welcome_configure": {
+  "welcome_installation_2": {
+    "message": "Features are disabled by default and will not affect your Firefox installation."
+  },
+  "welcome_installation_3": {
     "message": "Please take a moment to configure it to fit your needs."
   },
   "welcome_message_display": {
     "message": "This message will only be displayed once."
   },
   "welcome_ok": {
-    "message": "Got it!"
+    "message": "Let's go! 🚀"
   },
   "options_title": {
     "message": "Default Bookmark Folder Options"
@@ -93,7 +96,7 @@
     "message": "If disabled, new bookmarks will be added to the bottom of the selected folder or where dragged-and-dropped"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "The settings below only apply when bookmarking multiple selected tabs at once or when using the \"Bookmark All Tabs...\" feature for all open tabs. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected or open tabs (depending on the feature), as well as the position of the folder in this location."
+    "message": "The settings below only apply when bookmarking multiple selected tabs at once. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected, as well as the position of the folder in this location."
   },
   "options_ff_built_in_folder_all_tabs": {
     "message": "Select where new folders of bookmarked tabs will be added:"
@@ -120,7 +123,7 @@
     "message": "Enable the quick bookmark context menu"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Quickly bookmark via the page context menu, or directly into a specific folder via its context menu (requires Firefox 59+)"
+    "message": "Quickly bookmark via the page context menu, or directly into a specific folder via its context menu"
   },
   "options_icon_note": {
     "message": "The settings below only apply to the quick bookmarking feature."
@@ -180,28 +183,28 @@
     "message": "Feedback"
   },
   "options_please_review_1": {
-    "message": "If you enjoy the add-on, please give it a positive"
+    "message": "❤️ Enjoying the add-on? Please take a minute to give it a positive"
   },
   "options_please_review_2": {
     "message": "review"
   },
-  "options_bug_feature_1": {
-    "message": "If you want to report a bug or ask for a new feature, you can open an issue on"
+  "options_bug_1": {
+    "message": "🐛 Found a bug? If you can, please open an issue on"
   },
-  "options_bug_feature_2": {
+  "options_bug_2": {
     "message": "GitHub"
   },
-  "options_bug_feature_3": {
-    "message": "If you do not have an account, you can create one for free."
+  "options_limitations_1": {
+    "message": "Please beware of the add-on limitations due to Firefox's internal system. More details on this"
+  },
+  "options_limitations_2": {
+    "message": "wiki page"
   },
   "options_version": {
-    "message": "Version:"
-  },
-  "options_author": {
-    "message": "Author:"
+    "message": "Version"
   },
   "options_license": {
-    "message": "License:"
+    "message": "License"
   },
   "popup_quick_bookmarking_folder_title": {
     "message": "Quick bookmarking to folder"

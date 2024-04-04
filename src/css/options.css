@@ -1,0 +1,297 @@
+@import '../../css/variables.css';
+
+/* ======================== */
+/* MAIN ELEMENTS            */
+/* ======================== */
+
+html {
+    background-color: var(--bg-color);
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--font-color);
+}
+
+strong {
+    color: var(--font-color);
+}
+
+a:hover {
+    color: var(--font-color-focus);
+}
+
+.title {
+    color: var(--font-color-focus);
+}
+
+.subtitle {
+    color: var(--font-color);
+}
+
+#navbar-title {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.navbar-brand {
+	margin-right: 0.5rem;
+}
+
+.navbar.is-light {
+	background-color: var(--bg-color-alternate);
+}
+
+.navbar.has-shadow {
+	box-shadow: 0 2px 0 0 var(--bg-color-alternate);
+}
+
+.navbar-menu {
+    background-color: var(--bg-color-alternate);
+}
+
+.navbar.is-light .navbar-burger {
+    color: var(--font-color);
+}
+
+.navbar.is-light .navbar-burger:hover {
+    background-color: var(--bg-color-navbar-active);
+    color: var(--font-color-navbar);
+}
+
+.navbar-item {
+	margin-right: 0.5rem;
+}
+
+a.navbar-item span,
+a.navbar-item.is-active span svg {
+    fill: var(--font-color);
+    color: var(--font-color);
+}
+
+a.navbar-item.is-active span,
+a.navbar-item.is-active span svg,
+a.navbar-item:hover,
+a.navbar-item:hover p,
+a.navbar-item:hover span,
+a.navbar-item:hover span svg {
+    fill: var(--font-color-navbar);
+    color: var(--font-color-navbar);
+}
+
+.navbar.is-light .navbar-brand .navbar-link.is-active,
+.navbar.is-light .navbar-brand .navbar-link:hover,
+.navbar.is-light .navbar-brand > a.navbar-item.is-active,
+.navbar.is-light .navbar-brand > a.navbar-item:hover {
+	background-color: var(--bg-color-navbar-active);
+	color: var(--font-color);
+}
+
+.navbar-link.is-active,
+.navbar-link:hover,
+a.navbar-item.is-active,
+a.navbar-item:hover {
+	background-color: var(--bg-color-navbar-active);
+}
+
+.notification {
+    background-color: var(--bg-color-notification);
+}
+
+.notification.notification-global {
+    background-color: var(--bg-color-notification-global);
+}
+
+.message {
+    background-color: var(--bg-color-alternate);
+}
+
+.message-body {
+    border-color: var(--article-border-color);
+    color: var(--font-color);
+}
+
+.info-message {
+    display: flex;
+    align-items: center;
+}
+
+#tab_container .container-item {
+    display: none;
+}
+
+#tab_container .container-item.is-active {
+    display: block;
+}
+
+.box {
+    background-color: var(--bg-color-box);
+    color: var(--font-color);
+    box-shadow: 0 2px 3px var(--bg-color-box-shadow),0 0 0 1px var(--bg-color-box-shadow);
+}
+
+.field, article {
+    margin-top: 1.5em;
+}
+
+.divider {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+hr {
+    background-color: var(--bg-color-alternate);;
+}
+
+.label {
+    color: var(--font-color-focus);
+}
+
+.select-label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.disabled-item {
+    opacity: 0.65;
+}
+
+.release-info {
+    margin-right: 0.8rem;
+}
+
+.select select {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+.select select[disabled] {
+    background-color: var(--bg-color-alternate);
+}
+
+.button.is-link.is-outlined:focus, .button.is-link.is-outlined:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    fill: white;
+}
+
+.button.is-link.is-outlined {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    fill: var(--primary-color);
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-color: var(--primary-color);
+}
+
+.select:not(.is-multiple):not(.is-loading):hover::after {
+    border-color: var(--font-color);
+}
+
+[class~='section']:last-of-type  {
+    padding-bottom: 0;
+}
+
+/* ======================== */
+/* SVG ICONS                */
+/* ======================== */
+
+.svg-icon-tab {
+    display: inline-flex;
+    align-self: center;
+}
+
+.svg-icon-tab svg {
+    height:1.2rem;
+    width:1.2rem;
+}
+
+.svg-icon-link {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.svg-icon-dropdown {
+    fill: var(--font-color);
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.svg-icon-regular {
+    display: inline-flex;
+    align-self: center;
+}
+
+.svg-icon-regular svg {
+    height:1.2rem;
+    width:1.2rem;
+    fill: var(--font-color);
+}
+
+/* ======================== */
+/* MODAL                    */
+/* ======================== */
+
+#welcome {
+	font-size: 1.3rem;
+}
+
+.modal-card {
+	width: 40vw;
+}
+
+.modal-card-head, .modal-card-foot {
+    background-color: var(--bg-color-alternate);
+}
+
+.modal-card-head {
+    border-bottom: 1px solid var(--bg-color-box-shadow);
+}
+
+.modal-card-foot {
+    border-top: 1px solid var(--bg-color-box-shadow);
+}
+
+.modal-card-title {
+    color: var(--font-color);
+	font-size: 2rem;
+}
+
+.modal-card-body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+.modal-card-body > p {
+	margin-bottom: 0.8em;
+}
+
+#close-welcome {
+	font-size: 1.3rem;
+}
+
+/* ======================== */
+/* MEDIA QUERIES            */
+/* ======================== */
+
+@media only screen and (max-width: 420px) {
+    #navbar-title {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .baseline svg {
+        top: .125em;
+        position: relative;
+    }
+
+    .svg-icon-tab svg,
+    .svg-icon-link,
+    .svg-icon-dropdown {
+        width: 1em;
+        height: 1rem;
+    }
+}

@@ -38,17 +38,20 @@
   "welcome_title": {
     "message": "Willkommen!"
   },
-  "welcome_thank_you": {
-    "message": "Vielen Dank für die Installation dieses Add-ons!"
+  "welcome_installation_1": {
+    "message": "You have successfully installed Default Bookmark Folder!"
   },
-  "welcome_configure": {
+  "welcome_installation_2": {
+    "message": "Features are disabled by default and will not affect your Firefox installation."
+  },
+  "welcome_installation_3": {
     "message": "Bitte nehmen Sie sich einen Moment Zeit, um es für Ihre Bedürfnisse zu konfigurieren."
   },
   "welcome_message_display": {
     "message": "Diese Meldung wird nur einmal angezeigt."
   },
   "welcome_ok": {
-    "message": "Verstanden!"
+    "message": "Let's go! 🚀"
   },
   "options_title": {
     "message": "Optionen für Standard-Lesezeichenordner"
@@ -93,7 +96,7 @@
     "message": "If disabled, new bookmarks will be added to the bottom of the selected folder or where dragged-and-dropped"
   },
   "options_ff_built_in_folder_all_tabs_note": {
-    "message": "Folgende Einstellungen gelten nur, wenn Sie mehrere ausgewählte Tabs gleichzeitig mit einem Lesezeichen versehen oder die Funktion \"Tabs als Lesezeichen hinzufügen...\" für alle geöffneten Tabs verwenden. Damit können Sie den Standard-Speicherort des neu erstellten Ordners, der je nach Funktion ein Lesezeichen für alle ausgewählten oder geöffneten Tab enthält, sowie die Position des Ordners an diesem Speicherort überschreiben."
+    "message": "The settings below only apply when bookmarking multiple selected tabs at once. It allows you to override the default location of the newly created folder, which contains itself one bookmark for each of the selected, as well as the position of the folder in this location."
   },
   "options_ff_built_in_folder_all_tabs": {
     "message": "Wählen Sie aus, wo neue Ordner der mit Lesezeichen versehenen Tabs hinzugefügt werden sollen:"
@@ -120,7 +123,7 @@
     "message": "Schnelles Lesezeichen-Kontextmenü aktivieren"
   },
   "options_icon_enable_context_menu_help": {
-    "message": "Schnelles Setzen von Lesezeichen über das Seiten-Kontextmenü oder direkt in einen bestimmten Ordner über dessen Kontextmenü (benötigt Firefox 59+)"
+    "message": "Schnelles Setzen von Lesezeichen über das Seiten-Kontextmenü oder direkt in einen bestimmten Ordner über dessen Kontextmenü"
   },
   "options_icon_note": {
     "message": "Folgende Einstellungen gelten nur für die schnelle Lesezeichenfunktion."
@@ -180,28 +183,28 @@
     "message": "Feedback"
   },
   "options_please_review_1": {
-    "message": "Wenn Ihnen das Add-on gefällt, geben Sie ihm bitte eine positive"
+    "message": "❤️ Enjoying the add-on? Please take a minute to give it a positive"
   },
   "options_please_review_2": {
-    "message": "Bewertung"
+    "message": "review"
   },
-  "options_bug_feature_1": {
-    "message": "Wenn Sie einen Fehler melden oder nach einem neuen Feature fragen wollen, können Sie ein Thema eröffnen auf"
+  "options_bug_1": {
+    "message": "🐛 Found a bug? If you can, please open an issue on"
   },
-  "options_bug_feature_2": {
+  "options_bug_2": {
     "message": "GitHub"
   },
-  "options_bug_feature_3": {
-    "message": "Wenn Sie noch kein Konto haben, können Sie kostenlos eins erstellen."
+  "options_limitations_1": {
+    "message": "Please beware of the add-on limitations due to Firefox's internal system. More details on this"
+  },
+  "options_limitations_2": {
+    "message": "wiki page"
   },
   "options_version": {
-    "message": "Version:"
-  },
-  "options_author": {
-    "message": "Autor:"
+    "message": "Version"
   },
   "options_license": {
-    "message": "Lizenz:"
+    "message": "Lizenz"
   },
   "popup_quick_bookmarking_folder_title": {
     "message": "Schnelles Setzen von Lesezeichen im Ordner"

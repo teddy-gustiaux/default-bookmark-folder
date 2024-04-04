@@ -9,6 +9,37 @@ All notable changes to this project are documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Additionally, the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format is respected and used to generate this [conventional changelog](https://github.com/conventional-changelog/conventional-changelog).
 
+# [4.0.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v3.1.0...v4.0.0) (2024-03-25)
+
+### BREAKING CHANGES
+
+The add-on will now officially support only versions of Firefox that are equal or more recent that the current [Extended Support Release (ESR)](https://support.mozilla.org/en-US/kb/choosing-firefox-update-channel).
+As of this release, that means versions `115.x` and above are supported.
+
+Additionally, a lot of work has been done on the internals of the add-on to try and fix (or at least improve) some of the issues introduced with the `3.x` branch of the add-on (and themselves related to the internal bookmarking changes that happened back then in Firefox).
+
+While this should provide a better user experience, it also means the internal logic to identify which bookmarks to process and how has changed significantly, and this is made explicit via the major version number.
+
+* update minimum Firefox version to current ESR branch ([87b862e](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/87b862ee913edae1668764f22b3ef66517858d03))
+* refactoring of the code to prevent processing bookmark that should not be (and re-organization of the add-on's structure) ([725213f](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/725213febea6b467b152e075f778bf888ec6b24e))
+
+### Features
+
+* update bookmark tree in real-time on options page if there is any folder-related changes ([2cfd4b7](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/2cfd4b7ea94f10ae8948d4c9d9509cb969f0c26f))
+* automatic dark mode for settings page  ([422470b](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/422470bd3b216b96a99c450576f432d6900f53d8))
+* automatic dark mode for quick bookmarking to folder popup ([cfc0a2d](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/cfc0a2dcf30619773ac5ba8545dfe8bccc74cf13))
+
+### Bug Fixes
+
+* better handling for drag-and-drop ([49ed724](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/49ed7243796871ae6267de6ec7c9acfbaaf21c31))
+* do not apply add-on logic when bookmark is created for a page different than the current one ([270025d](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/270025d128406b7fb0cbddd060584c4572cc6550))
+* do not update last used folder when importing bookmarks ([09ed406](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/09ed406730d43af8088b55fa235feef9892abe0e))
+* inbox mode consistently creating bookmarks (now limiting to a single one) ([48c94ba](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/48c94ba97644a86d2d688ede772709de8e63df3b))
+* allow removal of multiple bookmarks via page context menu even if inbox mode is enabled ([95fc6a2](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/95fc6a263f267d2b5474aa781469e4ea775e31cb))
+* update copy to be more accurate regarding how the feature works ([fbde721](https://github.com/teddy-gustiaux/default-bookmark-folder/commit/fbde721619fc5355eaabe067f8aa2c115921b8b6))
+* various UI and copy improvements
+* various code cleanup
+
 # [3.1.0](https://github.com/teddy-gustiaux/default-bookmark-folder/compare/v3.0.0...v3.1.0) (2021-01-26)
 
 ### Features

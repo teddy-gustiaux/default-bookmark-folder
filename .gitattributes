@@ -1,3 +1,9 @@
-{
-  "endOfLine": "lf"
-}
+.editorconfig	text eol=lf
+.gitattributes	text eol=lf
+.gitignore		text eol=lf
+*.json			text eol=lf
+*.yml			text eol=lf
+*.js			text eol=lf
+*.css			text eol=lf
+*.sh			text eol=lf
+*.md			text eol=lf
